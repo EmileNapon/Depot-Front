@@ -1,0 +1,196 @@
+
+       
+    <body>
+    
+        <!-- Entête principale -->
+    
+                <nav class="navbar-light navbar-fixed-top py-4">
+    
+                    <ul class="nav " >
+                        <li class="nav-item">
+                            <img src="assets/icon.png" alt="FuturAlliés Logo" routerLink='/acceuil' class="logo" height="50">
+                         </li>
+                    
+                      <li class="nav-item a_droite">
+                        <a routerLink='#' class="nav-link " >Etablissements</a>
+                      </li>
+                      <li class="nav-item">
+                        <a routerLink='/formation/contenuLibre' class="nav-link" >Vous etes</a>
+                      </li>
+                      <li class="nav-item">
+                        <a routerLink='/formation/certification' class="nav-link" > Formations </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a routerLink='/formation/certification' class="nav-link"> Emplois </a>
+                      </li>
+                      <li class="nav-item">
+                        <a routerLink='/formation/certification' class="nav-link" > Statistiques </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#trainers" class="nav-link" >Bourses </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="#trainers" class="nav-link" >Contact</a>
+                      </li>
+
+                      <li class="nav-item a_droite1" >
+                        <a routerLink="/usersPages/login" class='btn btn-warning'>Se connecter</a>
+                      </li>
+                    
+                    </ul>
+                  </nav>
+                  
+    
+    
+    
+        <section class="banner bg-secondary text-white " style="position: relative; overflow: hidden; ">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; no-repeat center center; background-size: cover; filter: brightness(1.2);"></div>
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 255, 0.3); mix-blend-mode: overlay;"></div>
+            <div class="container" style="position: relative; z-index: 1;">
+                <br/>
+                  <h1> Etablissements</h1>
+                   <p>Tous les établissements supérieurs au Burkina Faso.</p>
+                   <p>Utilisez les filtres pour affiner votre sélection par localité, type d'établissement, domaines de formation, diplômes proposés...</p>
+                <br/>
+                <br/>               
+            </div>
+        </section>
+
+
+
+
+        <div class="container py-5">
+            <!-- Recherche -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <input class="form-control" placeholder='Faire une recherche' >
+                </div>
+            </div>
+        
+            <!-- Première ligne de sélection -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                        <label for="locality-select" class="form-label">Localité</label>
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>Toutes les localités</option>
+                            <option value="burkina-faso">Burkina Faso&nbsp;(13)</option>
+                            <option value="bobo-dioulasso">&emsp;Bobo Dioulasso&nbsp;(1)</option>
+                            <option value="kaya">&emsp;Kaya&nbsp;(1)</option>
+                            <option value="koudougou">&emsp;Koudougou&nbsp;(1)</option>
+                            <option value="ouagadougou">&emsp;Ouagadougou&nbsp;(10)</option>
+                        </select>      
+                </div>
+                <div class="col-md-4">
+                    <label for="locality-select" class="form-label">Type d'établissement</label>
+                    <select class="form-select form-select-sm" aria-label="Small select example">
+                        <option selected>Tous les établissements</option>
+                        <option value="etablissement-prive">Etablissement privé&nbsp;(12)</option>
+                        <option value="ecole-superieure-privee">&emsp;Ecole supérieure privée&nbsp;(4)</option>
+                        <option value="institut-superieur-prive">&emsp;Institut supérieur privé&nbsp;(6)</option>
+                        <option value="universite-privee">&emsp;Université privée&nbsp;(2)</option>
+                        <option value="etablissement-public">Etablissement public&nbsp;(1)</option>
+                        <option value="grande-ecole-publique">&emsp;Grande école publique&nbsp;(1)</option>
+                    </select>
+                </div>
+            </div>
+        
+            <!-- Deuxième ligne de sélection -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="locality-select" class="form-label">Domaines</label>
+                    <select class="form-select form-select-sm" aria-label="Small select example">
+                        <option selected>Tous les domaines</option>
+                        <option value="commerce-administration-et-droit">Commerce, administration et droit&nbsp;(49)</option>
+                        <option value="commerce-et-administration">&emsp;Commerce et administration&nbsp;(47)</option>
+                        <option value="marketing-et-publicite">&emsp;&emsp;Marketing et publicité&nbsp;(36)</option>
+                        <option value="communication">&emsp;&emsp;&emsp;Communication&nbsp;(22)</option>
+                        <option value="marketing">&emsp;&emsp;&emsp;Marketing&nbsp;(21)</option>
+                    </select>
+                </div>
+
+
+                <div class="col-md-4">
+                    <label for="locality-select" class="form-label">Diplômes</label>
+                    <select class="form-select form-select-sm" aria-label="Small select example">
+                        <option selected>Tous les diplomes</option>
+                        <option value="">Tous les diplômes</option>
+                        <option value="bts">BTS&nbsp;(9)</option>
+                        <option value="doctorat">Doctorat&nbsp;(1)</option>
+                        <option value="dts">DTS&nbsp;(8)</option>
+                        <option value="licence">Licence&nbsp;(13)</option>
+                        <option value="master">Master&nbsp;(9)</option>
+                        <option value="master-recherche">Master recherche&nbsp;(1)</option>
+                        <option value="mba">MBA&nbsp;(1)</option>
+                    </select>
+                 </div>
+
+
+                
+            </div>
+            <!-- Troisième ligne de sélection -->
+            <div class="row mb-3">
+
+
+
+                <div class="col-md-4">
+                    <label for="locality-select" class="form-label">Classement ministère 2021</label>
+                    <select class="form-select form-select-sm" aria-label="Small select example">
+                        <option selected>Tous les cours</option>
+                        <option value="1">Très bonne qualité&nbsp;(5)</option>
+                        <option value="2">Bonne qualité&nbsp;(4)</option>
+                        <option value="4">Moyenne qualité&nbsp;(2)</option>
+                        <option value="8">Non classé&nbsp;(2)</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+
+                    <label for="locality-select" class="form-label">Bourses et remises</label>
+                    <select class="form-select form-select-sm" aria-label="Small select example">
+                        <option selected>Bourses et remises</option>
+                        <option value="">Toutes les bourses et remises</option>
+  
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="container">
+            <div class="row">
+              <div class="col-md-4" *ngFor="let education of educationList">
+                <div class="card mb-3">
+                  <header class="card-header" [ngStyle]="{'background-image': 'url(' + education.imgSrc + ')'}"></header>
+                  <section class="card-body">
+                    <h3 class="card-title">
+                      <a class="btn btn-link">{{ education.title }}</a>
+                    </h3>
+                  </section>
+                  <div class="card-footer">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a  title="Voir tous les établissements de type {{education.schoolType}}">
+                          <i class="fas fa-school"></i> {{ education.schoolType }}
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a  title="Voir tous les établissements de {{education.location}}">
+                          <i class="fas fa-map-marker-alt"></i> {{ education.location }}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+
+<app-footer></app-footer>
+

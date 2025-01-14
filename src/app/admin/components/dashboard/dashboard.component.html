@@ -1,0 +1,72 @@
+<!-- Section des statistiques -->
+<mat-card class="stats-card">
+  <div class="stats-item">
+    <mat-icon matTooltip="Utilisateurs actifs">groups</mat-icon>
+    <div>
+      <span>{{ dashboardData.stats.activeUsers }}</span>
+      <p>Utilisateurs actifs</p>
+    </div>
+  </div>
+  <div class="stats-item">
+    <mat-icon matTooltip="Cours récents">menu_book</mat-icon>
+    <div>
+      <span>{{ dashboardData.stats.recentCourses }}</span>
+      <p>Cours récents</p>
+    </div>
+  </div>
+  <div class="stats-item">
+    <mat-icon matTooltip="Offres d'emploi">work</mat-icon>
+    <div>
+      <span>{{ dashboardData.stats.jobOffers }}</span>
+      <p>Offres d'emploi</p>
+    </div>
+  </div>
+  <div class="stats-item">
+    <mat-icon matTooltip="Certifications délivrées">verified</mat-icon>
+    <div>
+      <span>{{ dashboardData.stats.certificationsIssued }}</span>
+      <p>Certifications délivrées</p>
+    </div>
+  </div>
+</mat-card>
+
+<!-- Section des tendances (Graphique) -->
+<mat-card>
+<ngx-charts-bar-vertical
+  [view]="[900, 500]" 
+  [scheme]="'vivid'"
+  [results]="trendsData"
+  [gradient]="false"
+  [xAxis]="true"
+  [yAxis]="true"
+
+  [legend]="true"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  xAxisLabel="Mois"
+  yAxisLabel="Utilisateurs">
+  [xAxisTicks]="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']"
+</ngx-charts-bar-vertical>
+</mat-card>
+
+<!-- Section des actions rapides -->
+<mat-card class="quick-actions">
+<h3>Actions rapides</h3>
+<div *ngFor="let action of dashboardData.quickActions">
+  <button mat-raised-button color="primary" [routerLink]="action.route" matTooltip="Accéder à {{ action.label }}">
+    <mat-icon>{{ action.icon }}</mat-icon>
+    {{ action.label }}
+  </button>
+</div>
+</mat-card>
+
+<!-- Section des offres récentes -->
+<mat-card class="recent-offers">
+<h3>Offres récentes</h3>
+<mat-list>
+  <mat-list-item *ngFor="let offer of dashboardData.recentOffers" matTooltip="Voir les détails de l'offre">
+    <h4>{{ offer.title }}</h4>
+    <p>{{ offer.company }} - Date limite: {{ offer.deadline }}</p>
+  </mat-list-item>
+</mat-list>
+</mat-card>

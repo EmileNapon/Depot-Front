@@ -1,0 +1,96 @@
+<div class="list-candidatures">
+    <h2>Liste des candidatures</h2>
+  
+    <!-- Barre de recherche et filtres -->
+    <div class="filters">
+      <mat-form-field appearance="outline">
+        <mat-label>Rechercher</mat-label>
+        <input
+          matInput
+          placeholder="Nom du candidat, offre, etc."
+          [(ngModel)]="filterValue"
+          (input)="applyFilter()"
+        />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Statut</mat-label>
+        <mat-select (selectionChange)="applyFilter()">
+          <mat-option value="all">Tous</mat-option>
+          <mat-option value="pending">En attente</mat-option>
+          <mat-option value="accepted">Accepté</mat-option>
+          <mat-option value="rejected">Refusé</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <!-- Tableau des candidatures -->
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Colonne : Nom du candidat -->
+      <ng-container matColumnDef="candidateName">
+        <mat-header-cell *matHeaderCellDef>Nom du candidat</mat-header-cell>
+        <mat-cell *matCellDef="let candidature">
+          <div class="candidate-info">
+            <img [src]="candidature.avatarUrl" alt="Avatar" class="avatar" />
+            <span>{{ candidature.candidateName }}</span>
+          </div>
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Colonne : Offre -->
+      <ng-container matColumnDef="offer">
+        <mat-header-cell *matHeaderCellDef>Offre</mat-header-cell>
+        <mat-cell *matCellDef="let candidature">{{ candidature.offer }}</mat-cell>
+      </ng-container>
+  
+      <!-- Colonne : Date de candidature -->
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef>Date de candidature</mat-header-cell>
+        <mat-cell *matCellDef="let candidature">
+          {{ candidature.date | date: 'dd/MM/yyyy' }}
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Colonne : Statut -->
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef>Statut</mat-header-cell>
+        <mat-cell *matCellDef="let candidature">
+          <mat-chip-list>
+            <mat-chip [ngClass]="getStatusClass(candidature.status)">
+              {{ candidature.status }}
+            </mat-chip>
+          </mat-chip-list>
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Colonne : Actions -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+        <mat-cell *matCellDef="let candidature">
+          <button mat-icon-button matTooltip="Voir le CV">
+            <mat-icon>description</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            matTooltip="Accepter"
+            (click)="acceptCandidature(candidature)"
+          >
+            <mat-icon>check_circle</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            matTooltip="Refuser"
+            (click)="rejectCandidature(candidature)"
+          >
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+  
+      <!-- En-tête du tableau -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <!-- Lignes du tableau -->
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  </div>

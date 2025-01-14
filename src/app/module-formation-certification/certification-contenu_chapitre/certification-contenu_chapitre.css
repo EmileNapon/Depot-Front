@@ -1,0 +1,63 @@
+.container.main-content {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #34495e;
+  margin: 10px 0;
+}
+
+.section-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #7f8c8d;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.navigation-buttons .btn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.navigation-buttons .btn-primary {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+.navigation-buttons .btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+}
+
+.navigation-buttons .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.no-chapters-message {
+  text-align: center;
+  font-size: 18px;
+  color: #e74c3c;
+  margin-top: 20px;
+}

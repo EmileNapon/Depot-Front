@@ -1,0 +1,108 @@
+
+
+/* Application de la police */
+body {
+  font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #333; /* Couleur de texte par défaut */
+  background-color: #f5f5f5; /* Couleur de fond */
+  font-size:97%;
+}
+
+
+/* Couleurs des liens */
+a {
+  color: #007bff; /* Couleur bleue pour les liens */
+}
+
+a:hover {
+  color: #0056b3; /* Couleur bleue plus foncée pour les liens au survol */
+}
+
+/* Couleurs des titres */
+h1, h2, h3, h4, h5, h6 {
+  color: #222; /* Couleur légèrement plus foncée pour les titres */
+}
+
+
+
+
+.images-fixed {
+  background-image: url('assets/im3.webp');
+  background-size: cover; /* Ajuste l'image pour couvrir tout le conteneur */
+  background-position: center; /* Centre l'image */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  width: 100%;
+  height: 30vh; /* Ajustez la hauteur selon vos besoins */
+  text-align: center;
+
+}
+
+
+
+
+
+
+
+  .container-l {
+    border-radius: 2px; /* Les coins de l'élément sont arrondis avec un rayon de 10px */
+    box-shadow: 0 10px 15px rgba(79, 78, 78, 0.397),
+                0 5px 5px rgba(16, 15, 15, 0.397); /* Ajoute une ombre autour de l'élément, avec deux couches d'ombres */
+    position: relative; /* Positionne l'élément par rapport à sa position normale, permettant un positionnement plus précis des éléments enfants */
+    overflow: hidden; /* Cache tout le contenu qui dépasse les dimensions du conteneur */
+    width: 600px; /* Définit la largeur du conteneur à 768 pixels */
+    max-width: 100%; /* Empêche la largeur du conteneur de dépasser 100% de la largeur du conteneur parent */
+    min-height: 0px; /* Définit une hauteur minimale pour le conteneur de 550 pixels */
+    text-align: center;
+    
+  }
+  button {
+    border: none; /* Supprime la bordure du bouton */
+    outline: none; /* Supprime le contour du bouton lorsque celui-ci est focalisé (par exemple, lorsqu'il est sélectionné) */
+    background-color: transparent; /* Optionnel : rend l'arrière-plan transparent, si vous voulez que le bouton n'ait pas d'arrière-plan */
+    cursor: pointer; /* Change le curseur pour indiquer que le bouton est cliquable */
+  }
+
+.ModuleColor{
+  color: #1678db;
+}
+
+
+
+
+
+  footer {
+    background-color: #003366; /* Bleu foncé */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+.footer-section {
+    margin: 10px;
+    flex: 1;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-section ul li a {
+    color: #ffcc00; /* Jaune doré */
+    text-decoration: none;
+  }
+  

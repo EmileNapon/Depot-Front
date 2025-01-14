@@ -1,0 +1,33 @@
+
+    
+           
+    
+    
+        <app-headerPrincipale></app-headerPrincipale>
+    <body>
+
+    
+              
+     <div class='container-fluid images-fixed' >
+
+    </div>
+    
+      <section class="training-domains py-5 bg-light" >
+          <div class="container">
+            <div class='row' >
+              <div class="col-md-4" *ngFor="let domaine of domaines"  style='padding:10px'> 
+                  <button class=" container-l" (click)="onSelectDomaine(domaine.id)">
+                    <img src="assets/im1.jpg" class="card-img-top" alt="Développement Web" height='160px'>  
+                    <br/><br/>                        
+                     <p  class="card-title ModuleColor">{{domaine.nom_domaine}}</p>
+                     <br/>    
+                  </button>      
+              </div>
+          </div>
+      </div>
+      
+     
+  </section>
+
+</body> 
+ <app-footer></app-footer>

@@ -1,0 +1,118 @@
+/* Styles pour la carte de l'offre */
+.offer-card {
+    background: linear-gradient(135deg, #ffffff, #f8faff);
+    border-radius: 15px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1), 0px -5px 10px rgba(255, 255, 255, 0.5);
+    padding: 32px;
+    margin: 40px auto;
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Styles pour le titre */
+.offer-header h2 {
+    color: #004aad;
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.company-name {
+    font-size: 1.1em;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* Conteneur pour les informations de l'offre */
+.offer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Organisation des informations en sections */
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0f4ff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    flex: 1 1 48%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-item:hover {
+    background-color: #e4ecff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    font-size: 1.5em;
+    color: #004aad;
+}
+
+.info-item p {
+    color: #333;
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Bouton de détails */
+.details-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.details-link {
+    display: inline-block;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #ffb703, #f48c06);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 600;
+}
+
+.details-link:hover {
+    background: linear-gradient(135deg, #f48c06, #e76f00);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Améliorations supplémentaires */
+.offer-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 74, 173, 0.2);
+    border-radius: 50%;
+    transform: scale(0.5);
+    transition: transform 0.5s ease;
+}
+
+.offer-card:hover::before {
+    transform: scale(1);
+}

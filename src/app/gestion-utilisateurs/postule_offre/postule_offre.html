@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postuler à des Offres - FuturAlliés</title>
+    <link rel="stylesheet" href="postule_offre.css">
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="top-header">
+            <ul>
+                <li><a href="#about">À propos de nous</a></li>
+                <li><a href="#contact">Nous contacter</a></li>
+                <li>
+                    <select id="language">
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </li>
+                <li>
+                    <input type="text" id="search-bar" placeholder="Rechercher...">
+                </li>
+            </ul>
+        </div>
+        <div class="main-header">
+            <img src="logo.png" alt="FuturAlliés Logo" class="logo">
+            <nav>
+                <a href="#orientation">Orientation</a>
+                <a href="#formations">Formations</a>
+                <a href="#employers">Pour les employeurs</a>
+                <a href="#trainers">Pour les formateurs</a>
+                <a href="#login" class="login-btn">Se connecter</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Hero -->
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Postulez à des offres de stage, emploi, et capacitation</h1>
+            <p>Explorez les différentes opportunités pour booster votre carrière</p>
+        </div>
+        <div class="hero-right">
+            <video controls>
+                <source src="testimonials.mp4" type="video/mp4">
+                Votre navigateur ne prend pas en charge la balise vidéo.
+            </video>
+        </div>
+    </section>
+
+    <!-- Filtre de type d'offres -->
+    <section class="offer-filter">
+        <div class="filter-options">
+            <button class="filter-btn" id="stage-btn">Stages</button>
+            <button class="filter-btn" id="emploi-btn">Emplois</button>
+            <button class="filter-btn" id="capacitation-btn">Capacitation</button>
+        </div>
+    </section>
+
+    <!-- Liste des Offres -->
+    <section class="offers-list">
+        <h2>Offres Disponibles</h2>
+        <div class="offers">
+            <!-- Exemple d'offre (Stage) -->
+            <div class="offer-item stage">
+                <h3 class="offer-title">Stage en Développement Web</h3>
+                <p class="offer-date">Publié le : 20 août 2024</p>
+                <p class="offer-deadline">Délai : 10 septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc1')">Voir Description</button>
+                <div class="offer-description" id="desc1" style="display:none;">
+                    <p>Stage en développement web pour jeunes diplômés...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+
+            <div class="offer-item stage">
+                <h3 class="offer-title">Stage en Développement Web</h3>
+                <p class="offer-date">Publié le : 20 août 2024</p>
+                <p class="offer-deadline">Délai : 10 septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc1')">Voir Description</button>
+                <div class="offer-description" id="desc1" style="display:none;">
+                    <p>Stage en développement web pour jeunes diplômés...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+            <div class="offer-item stage">
+                <h3 class="offer-title">Stage en Développement Web</h3>
+                <p class="offer-date">Publié le : 20 août 2024</p>
+                <p class="offer-deadline">Délai : 10 septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc1')">Voir Description</button>
+                <div class="offer-description" id="desc1" style="display:none;">
+                    <p>Stage en développement web pour jeunes diplômés...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+            <div class="offer-item stage">
+                <h3 class="offer-title">Stage en Développement Web</h3>
+                <p class="offer-date">Publié le : 20 août 2024</p>
+                <p class="offer-deadline">Délai : 10 septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc1')">Voir Description</button>
+                <div class="offer-description" id="desc1" style="display:none;">
+                    <p>Stage en développement web pour jeunes diplômés...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+            <div class="offer-item stage">
+                <h3 class="offer-title">Stage en Développement Web</h3>
+                <p class="offer-date">Publié le : 20 août 2024</p>
+                <p class="offer-deadline">Délai : 10 septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc1')">Voir Description</button>
+                <div class="offer-description" id="desc1" style="display:none;">
+                    <p>Stage en développement web pour jeunes diplômés...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+
+            <!-- Exemple d'offre (Emploi) -->
+            <div class="offer-item emploi">
+                <h3 class="offer-title">Offre d'Emploi en Marketing Digital</h3>
+                <p class="offer-date">Publié le : 15 août 2024</p>
+                <p class="offer-deadline">Délai : 5 septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc2')">Voir Description</button>
+                <div class="offer-description" id="desc2" style="display:none;">
+                    <p>Recherchons un expert en marketing digital...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+
+            <div class="offer-item emploi">
+                <h3 class="offer-title">Offre d'Emploi en Marketing Digital</h3>
+                <p class="offer-date">Publié le : 15 août 2024</p>
+                <p class="offer-deadline">Délai : 5 septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc2')">Voir Description</button>
+                <div class="offer-description" id="desc2" style="display:none;">
+                    <p>Recherchons un expert en marketing digital...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+
+            <div class="offer-item emploi">
+                <h3 class="offer-title">Offre d'Emploi en Marketing Digital</h3>
+                <p class="offer-date">Publié le : 15 août 2024</p>
+                <p class="offer-deadline">Délai : 5 septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc2')">Voir Description</button>
+                <div class="offer-description" id="desc2" style="display:none;">
+                    <p>Recherchons un expert en marketing digital...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+
+            <div class="offer-item emploi">
+                <h3 class="offer-title">Offre d'Emploi en Marketing Digital</h3>
+                <p class="offer-date">Publié le : 15 août 2024</p>
+                <p class="offer-deadline">Délai : 5 septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc2')">Voir Description</button>
+                <div class="offer-description" id="desc2" style="display:none;">
+                    <p>Recherchons un expert en marketing digital...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+
+            <div class="offer-item emploi">
+                <h3 class="offer-title">Offre d'Emploi en Marketing Digital</h3>
+                <p class="offer-date">Publié le : 15 août 2024</p>
+                <p class="offer-deadline">Délai : 5 septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc2')">Voir Description</button>
+                <div class="offer-description" id="desc2" style="display:none;">
+                    <p>Recherchons un expert en marketing digital...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+
+            <!-- Exemple d'offre (Capacitation) -->
+            <div class="offer-item capacitation">
+                <h3 class="offer-title">Programme de Capacitation en Leadership</h3>
+                <p class="offer-date">Publié le : 10 août 2024</p>
+                <p class="offer-deadline">Délai : 1er septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc3')">Voir Description</button>
+                <div class="offer-description" id="desc3" style="display:none;">
+                    <p>Programme destiné à former des leaders de demain...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+
+            <div class="offer-item capacitation">
+                <h3 class="offer-title">Programme de Capacitation en Leadership</h3>
+                <p class="offer-date">Publié le : 10 août 2024</p>
+                <p class="offer-deadline">Délai : 1er septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc3')">Voir Description</button>
+                <div class="offer-description" id="desc3" style="display:none;">
+                    <p>Programme destiné à former des leaders de demain...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+
+            <div class="offer-item capacitation">
+                <h3 class="offer-title">Programme de Capacitation en Leadership</h3>
+                <p class="offer-date">Publié le : 10 août 2024</p>
+                <p class="offer-deadline">Délai : 1er septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc3')">Voir Description</button>
+                <div class="offer-description" id="desc3" style="display:none;">
+                    <p>Programme destiné à former des leaders de demain...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+
+            <div class="offer-item capacitation">
+                <h3 class="offer-title">Programme de Capacitation en Leadership</h3>
+                <p class="offer-date">Publié le : 10 août 2024</p>
+                <p class="offer-deadline">Délai : 1er septembre 2024</p>
+                <button class="expand-btn" onclick="toggleDescription('desc3')">Voir Description</button>
+                <div class="offer-description" id="desc3" style="display:none;">
+                    <p>Programme destiné à former des leaders de demain...</p>
+                    <button class="apply-btn">Postuler</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>À propos de nous</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="#about">À propos de nous</a></li>
+                    <li><a href="#contact">Nous contacter</a></li>
+                    <li><a href="#privacy">Politique de Confidentialité</a></li>
+                    <li><a href="#terms">Conditions d'Utilisation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <ul class="social-links">
+                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FuturAlliés. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="postule_offre.js"></script>
+</body>
+</html>

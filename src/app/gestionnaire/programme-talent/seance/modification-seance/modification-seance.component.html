@@ -1,0 +1,74 @@
+
+
+<div  class="container-xl">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-6">
+                      <h2>Modification <b>d'une seance</b></h2>
+                  </div>
+                  <div class="col-sm-6">
+                      <a  class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span></span></a>
+                      <a   class="btn btn-primary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span></span></a>
+                      <a  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span></span></a>  						
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Modifier la Séance</h1>
+  <form [formGroup]="seanceForm" (ngSubmit)="updateSeance()">
+    <div class="mb-3">
+      <label for="lieu" class="form-label">Lieu</label>
+      <input type="text" id="lieu" class="form-control" formControlName="lieu" required>
+      <div *ngIf="seanceForm.get('lieu')?.invalid && seanceForm.get('lieu')?.touched" class="text-danger">
+        Lieu requis.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="date_formation" class="form-label">Date de Formation</label>
+      <input type="date" id="date_formation" class="form-control" formControlName="date_formation" required>
+      <div *ngIf="seanceForm.get('date_formation')?.invalid && seanceForm.get('date_formation')?.touched" class="text-danger">
+        Date de formation requise.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="heure_debut" class="form-label">Heure de Début</label>
+      <input type="time" id="heure_debut" class="form-control" formControlName="heure_debut" required>
+      <div *ngIf="seanceForm.get('heure_debut')?.invalid && seanceForm.get('heure_debut')?.touched" class="text-danger">
+        Heure de début requise.
+      </div>
+    </div>
+
+
+    <div class="mb-3">
+      <label for="heure_fin" class="form-label">Heure de Fin</label>
+      <input type="time" id="heure_fin" class="form-control" formControlName="heure_fin" required>
+      <div *ngIf="seanceForm.get('heure_fin')?.invalid && seanceForm.get('heure_fin')?.touched" class="text-danger">
+        Heure de fin requise.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="statut" class="form-label">Statut</label>
+      <select id="statut" class="form-select" formControlName="statut" required>
+        <option value="" disabled selected>Sélectionnez un statut</option>
+        <option value="confirmé">confirmé</option>
+        <option value="attente">attente</option>
+        <option value="annulé">annulé</option>
+      </select>
+      <div *ngIf="seanceForm.get('statut')?.invalid && seanceForm.get('statut')?.touched" class="text-danger">
+        Statut requis.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="seanceForm.invalid">Modifier la Séance</button>
+  </form>
+</div>
+

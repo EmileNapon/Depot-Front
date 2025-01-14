@@ -1,0 +1,481 @@
+<body>
+  <div  class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Dashbord<b> gestionnaire</b> </h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a  class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i><span></span></a>
+                        <a   class="btn btn-primary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span></span></a>
+                        <a  class="btn btn-success" data-toggle="modal" ><i class="material-icons">&#xE147;</i><span></span></a>  						
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+
+    
+    <div class="container-fluid">
+        <div class="row">
+          <!-- Sidebar gauche -->
+          <nav class="col-2 bg-light text-black  d-flex flex-column">
+            <h2 class="text-center my-4">Manager Dashbord</h2>
+            <ul class="nav flex-column">
+              <li class="nav-item btn text-start">
+                <a class="nav-link text-black" (click)="onShowAnnonce()">Annonces</a>
+              </li>
+              <li class="nav-item btn text-start">
+                <a class="nav-link text-black" (click)="onShowFormation()">Formation</a>
+              </li>
+              <li class="nav-item btn text-start">
+                <a class="nav-link text-black" (click)="onShowGroupe()">Groupes</a>
+              </li>
+              <li class="nav-item btn text-start">
+                <a class="nav-link text-black" (click)="onShowListe()">Utilisateurs de cohorte</a>
+              </li>
+              <li class="nav-item btn text-start">
+                <a class="nav-link text-black" (click)="onShowCalendar()">Calendrier complet</a>
+              </li>
+              <li class="nav-item btn text-start">
+                <a class="nav-link text-black" (click)="onShowExo()">TD & Examens</a>
+              </li>
+              <!-- <li class="nav-item btn text-start">
+                <a class="nav-link text-white" (click)="onShowWebinaire()">Webinaire</a>
+              </li> -->
+            </ul>
+          </nav>
+      
+          <!-- Conteneur principal -->
+          <main class="col-10">
+            <!-- Titre en haut -->
+            <div class="bg-light p-3 border-bottom">
+                <div class="row d-flex align-items-center justify-content-between" *ngIf="showAnnonce">
+                    <div class="col">
+                        <h1 class="text-left">Tableau de bord Gestionnaire</h1>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" (click)='isStatut()' class="btn btn-secondary btn-lg" >Créer une annonce</button>
+                    </div>
+                </div>
+                <div class="row d-flex align-items-center justify-content-between" *ngIf="showFormation">
+                    <div class="col">
+                        <h1 class="text-left">Les Programme de Formation Talent</h1>
+                    </div>
+                </div> 
+                <div class="row d-flex align-items-center justify-content-between" *ngIf="showGroupe">
+                    <div class="col">
+                        <h1 class="text-left">Répartition des groupes</h1>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-secondary btn-lg" routerLink="">Créer un groupe</button>
+                    </div>
+                </div> 
+                <div class="row d-flex align-items-center justify-content-between" *ngIf="showListe">
+                    <div class="col">
+                        <h1 class="text-left">Liste des participants de la cohorte</h1>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-secondary btn-lg mx-2" routerLink="/gestionnaire/ajout-encadrant">Ajouter un formateur</button>
+                        <!-- <button type="button" class="btn btn-secondary btn-lg">Ajouter un participant</button> -->
+                    </div>
+                </div> 
+                <div class="row d-flex align-items-center justify-content-between" *ngIf="showCalendar">
+                    <div class="col">
+                        <h1 class="text-left">Liste des modules</h1>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-secondary btn-lg" (click)="onSelectFormationModule(dasbordId)">Ajouter des modules</button>
+                    </div>
+                </div>
+                <div class="row d-flex align-items-center justify-content-between"  *ngIf="showExo">
+                    <div class="col">
+                        <h1 class="text-left">Programme des Exercices et Examens</h1>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-secondary btn-lg" routerLink="">Créer un Quiz</button>
+                    </div>
+                </div> 
+                <div class="row d-flex align-items-center justify-content-between" *ngIf="showWebinar">
+                    <div class="col">
+                        <h1 class="text-left">Webinaire des talents</h1>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-secondary btn-lg">Programmer un Webinaire</button>
+                    </div>
+                </div> 
+                                 
+              
+              <!-- <h1 *ngIf="showGroupe">Répartition des groupes</h1>
+              <h1 *ngIf="showListe">Liste de la cohorte</h1>
+              <h1 *ngIf="showCalendar">Le programme complet de la Formation</h1>
+              <h1 *ngIf="showExo">Programme des Exercices et Examens</h1>
+              <h1 *ngIf="showWebinar">Webinaire des talents</h1> -->
+    
+            </div>
+      
+            <!------------------------- Contenu principal ------------------------------------->
+    
+            <!-- Annonces -->
+             <div class="container my-4" *ngIf="showAnnonce">
+              <div *ngIf='statuts2'>  <app-annonce/></div>
+              
+
+
+
+
+
+                <div class="container mt-4" *ngIf="statuts">
+                  <h2>Ajouter une nouvelle Annonce</h2>
+                
+                  <form [formGroup]="annonceForm" (ngSubmit)="ajouterAnnonce()">
+                    <!-- Titre de l'annonce -->
+                    <div class="form-group mb-3">
+                      <label for="titre">Titre</label>
+                      <input type="text" id="titre" formControlName="titre" class="form-control">
+                      <div *ngIf="annonceForm.get('titre')?.invalid && annonceForm.get('titre')?.touched" class="text-danger">
+                        Le titre est requis.
+                      </div>
+                    </div>
+                
+                    <!-- Lieu de l'annonce -->
+                    <div class="form-group mb-3">
+                      <label for="lieu">Lieu</label>
+                      <input type="text" id="lieu" formControlName="lieu" class="form-control">
+                      <div *ngIf="annonceForm.get('lieu')?.invalid && annonceForm.get('lieu')?.touched" class="text-danger">
+                        Le lieu est requis.
+                      </div>
+                    </div>
+                
+                    <!-- Date du cours -->
+                    <div class="form-group mb-3">
+                      <label for="date_cours">Date du Cours</label>
+                      <input type="date" id="date_cours" formControlName="date_cours" class="form-control">
+                      <div *ngIf="annonceForm.get('date_cours')?.invalid && annonceForm.get('date_cours')?.touched" class="text-danger">
+                        La date du cours est requise.
+                      </div>
+                    </div>
+                
+                    <!-- Description de l'annonce -->
+                    <div class="form-group mb-3">
+                      <label for="description">Description</label>
+                      <textarea id="description" formControlName="description" class="form-control" rows="3"></textarea>
+                      <div *ngIf="annonceForm.get('description')?.invalid && annonceForm.get('description')?.touched" class="text-danger">
+                        La description est requise.
+                      </div>
+                    </div>
+                
+                    <!-- Gestionnaire ID -->
+                    <!-- <div class="form-group mb-3">
+                      <label for="gestionnaire_id">ID du Gestionnaire</label>
+                      <input type="number" id="gestionnaire_id" formControlName="gestionnaire_id" class="form-control">
+                      <div *ngIf="annonceForm.get('gestionnaire_id')?.invalid && annonceForm.get('gestionnaire_id')?.touched" class="text-danger">
+                        L'ID du gestionnaire est requis.
+                      </div>
+                    </div> -->
+                
+                    <!-- Bouton d'ajout -->
+                    <div class="mt-3 mb-3 d-flex">
+                      <button type="submit" class="btn btn-outline-danger mx-2" routerLink="/gestionnaire/dasbord-prog-talent">Annuler</button>
+                      <button type="submit" class="btn btn-primary" [disabled]="annonceForm.invalid">Ajouter Annonce</button>
+                    </div>
+                    <!-- <button type="submit" class="btn btn-primary" [disabled]="annonceForm.invalid">Ajouter Annonce</button> -->
+                  </form>
+                </div>
+                
+             </div>
+
+
+
+              <div class="container my-4" *ngIf="showFormation">
+
+
+                <div class="offer-card" *ngFor="let formation of filteredIncritsFormations">
+                  <div class="offer-card"  >  
+              
+                      <div ></div>
+                      <div class="offer-header">  
+                          <h2>{{ formation.titre }}</h2>  
+                          <p class="company-name">{{ formation.localisation }}</p> <!-- Affichage du nom de l'entreprise -->  
+                      </div>  
+                      <!-- (Reste du code HTML...) -->  
+                  </div>
+              
+                  <div class="offer-info">
+                      <div class="info-section" >
+                          <div class="info-item">
+                              <i class="icon">📝</i>
+                              <p><strong>Type :</strong> {{ formation.type }}</p>
+                          </div>
+                          <div class="info-item" *ngFor="let module of filterModulesForFormation(formation.id)">
+                              <i class="icon">📄</i>
+                              <p><strong>Module :</strong> {{ module.nom_module }}</p>
+                          </div>
+              
+                          <div class="info-item">
+                              <i class="icon">📄</i>
+                              <p><strong>Nombre de places:</strong> {{ formation.nombre }}</p>
+                          </div>
+                          <div class="info-item" >
+                              <i class="icon">💵</i>
+                              <p><strong>Prix :</strong> {{ formation.prix }} cfa</p>
+                          </div>
+                          <div class="info-item">
+                              <i class="icon">⏳</i>
+                              <p><strong>Durée :</strong> {{formation.duree}} </p>
+                          </div>
+                          <div class="info-item">
+                              <i class="icon">🏠</i>
+                              <p><strong>Niveau requis :</strong> {{ formation.niveau}}</p>
+                          </div>
+                          <div class="info-item">
+                              <i class="icon">📅</i>
+                              <p><strong>Date de publication :</strong> {{ formation.date | date: 'short' }}</p>
+                          </div>
+              
+                          <div class="info-item">
+                              <i class="icon">🏢</i>
+                              <p><strong>Entreprise :</strong> {{ formation.localisation }}</p>
+                          </div>
+                      </div>
+
+
+                      <div *ngIf="showDetail">
+                            <div class="details-cards">  
+                                  <div class="description-card">  
+                                      <h4>Resume du programme de formation</h4>  
+                                        <p>{{ formation.resume }}</p>  
+                                      </div>  
+
+                                  <div class="description-card">  
+                                      <h4>Description du programme de formation</h4>  
+                                      <p>{{ formation.description }}</p>  
+                                  </div> 
+                                </div>  
+                         </div>
+
+
+                      <div class="row" *ngIf="shutDetail">
+                        <div class="text-end" >
+                            <button class="btn btn-outline-secondary" style="color: red;" (click)="onShutDetail()">Voir les details</button>  
+                        </div>
+                    </div>
+            
+                    <div class="text-end d-flex " *ngIf="showDetail">
+                        <div class="mx-2">
+                            <button class="btn btn-outline-danger" (click)="onShowDetail()">Réduire</button>
+                        </div>
+                        <div class="text-end">
+                          <button class="btn btn-warning mx-2" (click)='onSelectFormation(formation.id)'>Modifier</button>
+                          <button class="btn btn-danger" (click)="deleteFormation(formation.id)">Supprimer</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+              
+
+             </div>
+    
+            <!-- Groupes -->
+             <div class="container my-4" *ngIf="showGroupe">
+                <!-- liste des groupe -->
+                <app-groupe-etudiant/>
+                
+        
+             </div>
+    
+             <!-- Liste de cohorte utilisateurs -->
+             <div class="container my-4" *ngIf="showListe">
+                <div class="container my-4">
+
+                  <!-- Liste des étudiants -->
+                  <app-etudiant/>
+                   
+                    
+                  </div>
+
+                  <!-- Ajouter un formateur -->
+                  <div class="container my-4">
+
+                    <!-- /iste des formateurs -->
+                    <app-encadrant/>
+                    
+                  </div>
+                  
+             </div>
+
+             <!-- Bloc d'ajout de module------------ -->
+             <div class="addModuleContainer" *ngIf="showAjoutModule">
+              <h2>Ajouter des modules</h2>
+
+              <!-- <div class="row">
+                <div class="col-md-6">
+                  <h6>Modules disponibles</h6>
+                  <div *ngFor="let module of modules">
+                    <input type="checkbox" (change)="onModuleSelectionChange(module.id, $event)">
+                    <label>{{ module.nom_module }}</label>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <h6>Formateurs enregistés</h6>
+                  <div *ngFor="let selected of selectedModules">
+                    <h6>Choisir des formateurs pour le module {{ getModuleName(selected.moduleId) }}</h6>
+                    <div *ngFor="let formateur of encadrants">
+                      <input type="checkbox" (change)="onFormateurSelectionChange(selected.moduleId, formateur.id, $event)">
+                      <label>{{ formateur.nom }}</label>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <div class="row">
+                <div class="col-md-6">
+                  <h6>Modules disponibles</h6>
+                  <div class="scrollable">
+                    <div *ngFor="let module of modules">
+                      <input type="checkbox" (change)="onModuleSelectionChange(module.id, $event)">
+                      <label>{{ module.nom_module }}</label>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-md-6">
+                  <h6>Formateurs enregistrés</h6>
+                  <div *ngFor="let selected of selectedModules" class="scrollable">
+                    <h6>Choisir des formateurs pour le module {{ getModuleName(selected.moduleId) }}</h6>
+                    <div *ngFor="let formateur of encadrants">
+                      <input type="checkbox" (change)="onFormateurSelectionChange(selected.moduleId, formateur.id, $event)">
+                      <label>{{ formateur.nom }}</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+
+              <div class="mt-3 mb-3 d-flex">
+                <button type="submit" class="btn btn-outline-danger mx-2" (click)="onShutAjoutModule()">Annuler</button>
+                <button type="submit" class="btn btn-primary" (click)="onShutAjoutModule()">Ajouter</button>
+              </div>
+            </div>
+    
+             <!-- calendrier de la formation -->
+             <div class="container my-4" *ngIf="showCalendar">
+
+
+              <h2 class="mb-4">Planning des modules</h2>
+ 
+
+              <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                    <th  style="width: 5%; text-align: center; vertical-align: middle;">Code Module</th>
+                    <th style="width: 20%; text-align: center; vertical-align: middle;">Nom de module</th>
+                    <th style="width: 75%;">
+                        <table class="table table-striped">
+                            <tr style="border-bottom: 2px solid black;">
+                                <th colspan="6" style="width: 100%; text-align: center;">Séances</th>
+                            </tr>
+                            <tr>
+                                
+                                <th style="width: 20%;">Lieu</th>
+                                <th style="width: 20%;">Formateur</th>
+                                <th style="width: 15%;">Date</th>
+                                <th style="width: 15%;">Heure</th>
+                                <th style="width: 10%;">Statut</th>
+                                <th style="width: 20%;">Actions</th>
+                            </tr>
+                        </table>
+                    </th>
+                    </tr>
+                </thead>
+
+
+
+                <tbody>
+                    <tr *ngFor="let modules of FiltresModules; let i = index">
+                        <td  style="width: 5%; text-align: center; vertical-align: middle;">{{ modules.code }}</td>
+                        <td  style="width: 20%; text-align: center; vertical-align: middle;">{{ modules.nom_module }}</td>
+                        <td style="width: 75%;">
+                            <table class="table table-striped" >
+                                    <tr *ngFor="let seance of seances" style="border-bottom: 1px solid black;" >
+                                        <td  *ngIf='seance.module==modules.id' style="width: 20%;">{{ seance.lieu }}</td>
+                                        <td *ngIf='seance.module==modules.id'  style="width: 20%;">#</td>
+                                        <td  *ngIf='seance.module==modules.id' style="width: 15%;">{{ seance.date_formation }}</td>
+                                        <td  *ngIf='seance.module==modules.id' style="width: 15%;">{{ seance.heure_debut }}-{{ seance.heure_fin }}</td> 
+                                        <td  *ngIf='seance.module==modules.id' style="width: 10%;"><div style="height: 70%; background-color: aqua; border-radius: 10px; margin: 5px; padding: 5px;">{{ seance.statut }}</div>
+                                        </td>
+                                        <!-- <td style="width: 10%;"><i [ngClass]="{
+                                          'badge-confirmed': seance.statut === 'Confirmé',
+                                          'badge-pending': seance.statut === 'En attente',
+                                          'badge-cancelled': seance.statut === 'Annulé'
+                                      }">{{ seance.statut }}</i>
+                                      </td> -->
+                                        <td style="width: 20%;" *ngIf='seance.module==modules.id'>
+                                          <div class="d-flex">
+                                              <button  class="btn btn-warning btn-sm mx-2" [routerLink]="['/gestionnaire/modification-seance', seance.id]">Modifier</button>
+                                              <button  class="btn btn-danger btn-sm" (click)="deleteSeance(seance.id)">Supprimer</button>
+                                          </div>
+                                      </td>
+                                    </tr>
+                            </table>
+                            <div class="d-flex">
+                              <!-- <a class="btn btn-warning btn-sm" [routerLink]="['/gestionnaire/modification-module', module.id]">Modifier le module</a> -->
+                              <button class="btn btn-danger btn-sm mx-2" (click)="deleteModule(modules.id)">Retirer le module</button>
+                              
+                                
+                              
+                                <div *ngIf='dasbordId'>
+                                    <button class="btn btn-secondary btn-sm" (click)="onSelectModule(dasbordId,modules.id)">Ajouter une séance llll</button>
+                        
+                                </div>
+                        
+                           
+                      
+                              
+                          </div>
+                            
+                        </td>
+                        </tr>
+            
+                </tbody>
+            </table>
+                
+             </div>
+    
+             <!-- TD & Examens -->
+             <div class="container my-4" *ngIf="showExo">
+                <h1>Pas d'exo</h1>
+             </div>
+    
+             <!-- Webinaire -->
+             <div class="container my-4" *ngIf="showWebinar">
+                <h1>Pas de webinaire en cours</h1>
+             </div>
+          </main>
+        </div>
+    
+        
+      </div>
+      <app-footer/>
+          
+    </body>
+
+
+
+
+

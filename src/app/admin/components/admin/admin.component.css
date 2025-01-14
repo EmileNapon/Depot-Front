@@ -1,0 +1,80 @@
+.sidenav-container {
+  height: 100vh;
+  display: flex;
+}
+.sidenav-toolbar a{
+  text-decoration: none;
+  color: rgb(255, 136, 0);
+}
+
+.mat-toolbar {
+  padding-top: 15px;
+  background: #3f51b5;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.sidenav {
+  width: 250px;
+  height: 100vh;
+  background: #f4f4f4;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.header{
+  width: 100%;
+}
+
+.content {
+  padding: 16px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+
+.mat-sidenav {
+  width: 250px;
+}
+
+.mat-sidenav-content {
+  flex: 1;
+  overflow: auto;
+}
+
+
+/* Position spécifique pour les badges liés aux boutons */
+.badge-button .mat-badge-content {
+  position: absolute; /* Permet un positionnement spécifique */
+  top: 5px; /* Ajuste verticalement */
+  right: 5px; /* Ajuste horizontalement */
+  transform: none; /* Annule tout effet par défaut */
+  font-size: 0.75rem; /* Ajuste la taille */
+  font-weight: bold; /* Assure la lisibilité */
+  background-color: inherit; /* Préserve les couleurs configurées */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ajoute une ombre subtile */
+}
+
+/* Assure que le bouton parent est correctement positionné */
+.badge-button {
+  position: relative; /* Parent pour permettre le positionnement absolu du badge */
+}
+
+.badge-button .mat-badge-content {
+  font-size: 0.7rem; /* Réduit encore plus la taille */
+  padding: 0; /* Supprime les marges inutiles */
+}
+
+

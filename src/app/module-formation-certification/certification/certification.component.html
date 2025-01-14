@@ -1,0 +1,32 @@
+
+    
+           
+    
+    <app-headerPrincipale></app-headerPrincipale>
+    
+    <body>
+
+      
+    
+    <div class='container-fluid images-fixed' ></div>
+     
+          <section class="training-domains py-5 bg-light" >
+            <div class="container">
+              <div class='row' >
+                <div class="col-md-4" *ngFor="let certificat of ListCertificat"  style='padding:10px'> 
+                    <button class=" container-l" (click)="onSelectDomaine(certificat.id)">
+                      <img src="assets/im1.jpg" class="card-img-top" height='160px'>  
+                      <br/><br/>                        
+                       <p  class="card-title ModuleColor">{{certificat.title}}</p><p class="card-title ModuleColor" style='font-size:70%;color:black'>Parcours certifiant</p>
+                       <br/>    
+                    </button>      
+                </div>
+              </div>
+            </div>
+
+          </section>
+    </body>
+      
+    <app-footer></app-footer>
+
+    

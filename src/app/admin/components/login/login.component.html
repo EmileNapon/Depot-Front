@@ -1,0 +1,43 @@
+<div class="login-page">
+    <div class="login-container">
+        <!-- Bloc de gauche -->
+        <div class="left-block">
+          <img src="assets/futurallies-logo.png" alt="Logo" class="logo" />
+          <p class="welcome-message">Connectez-vous et gérez le contenu facilement</p>
+        </div>
+      
+        <!-- Bloc de droite -->
+        <div class="right-block">
+          <h2>CONNEXION A LA PAGE D'ADMINISTRATION</h2>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+            <!-- Champ Username avec icône -->
+            <mat-form-field appearance="fill" class="input-field">
+              <mat-label>Nom d'utilisateur</mat-label>
+              <mat-icon matPrefix>person</mat-icon> <!-- Icône utilisateur -->
+              <input matInput formControlName="username" [class.invalid]="f['username'].invalid && f['username'].touched" />
+              <mat-error *ngIf="f['username'].invalid && f['username'].touched">
+                Le nom d'utilisateur est requis (min. 4 caractères)
+              </mat-error>
+            </mat-form-field>
+      
+            <!-- Champ Password avec icône -->
+            <mat-form-field appearance="fill" class="input-field">
+              <mat-label>Mot de passe</mat-label>
+              <mat-icon matPrefix>lock</mat-icon> <!-- Icône mot de passe -->
+              <input matInput formControlName="password" type="password" [class.invalid]="f['password'].invalid && f['password'].touched" />
+              <mat-error *ngIf="f['password'].invalid && f['password'].touched">
+                Le mot de passe est requis (min. 6 caractères)
+              </mat-error>
+            </mat-form-field>
+      
+            <!-- Bouton de connexion -->
+            <button mat-raised-button color="primary" type="submit" [disabled]="isSubmitting" class="login-btn">
+              Se connecter
+            </button>
+      
+            <!-- Message d'erreur -->
+            <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+          </form>
+        </div>
+      </div>    
+</div>

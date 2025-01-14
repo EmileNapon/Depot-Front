@@ -1,0 +1,13 @@
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 20px; /* Les coins de l'élément sont arrondis avec un rayon de 10px */
+    box-shadow: 0 14px 28px rgba(136, 135, 135, 0.329), 
+                0 15px 15px rgba(76, 76, 76, 0.397); /* Ajoute une ombre autour de l'élément, avec deux couches d'ombres */
+    /*position: relative;  Positionne l'élément par rapport à sa position normale, permettant un positionnement plus précis des éléments enfants */
+    overflow: hidden; /* Cache tout le contenu qui dépasse les dimensions du conteneur */
+    /*min-height: 100px;  Définit une hauteur minimale pour le conteneur de 550 pixels */
+    /* text-align: center; */
+    
+  }

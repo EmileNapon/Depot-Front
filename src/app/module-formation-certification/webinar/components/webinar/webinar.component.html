@@ -1,0 +1,68 @@
+
+  <body>
+  <div class="webinar-section py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+      <h2 class="text-center text-primary fw-bold mb-5"> Nos webinaires disponibles</h2>
+    
+      <!-- Liste des webinaires -->
+      <div class="row g-4">
+        <!-- Carte Webinaire -->
+        <div class="col-md-6 col-lg-4" *ngFor="let webinar of webinars">
+          <div class="card shadow-sm h-100">
+            <!-- Image de couverture -->
+            <img
+              [src]="webinar.image"
+              class="card-img-top"
+              alt="Image Webinaire"
+              style="height: 200px; object-fit: cover;"
+            />
+            <!-- Contenu du webinaire -->
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title text-primary fw-bold">{{ webinar.title }}</h5>
+              <p class="card-text text-muted">
+                <strong>Thème :</strong> {{ webinar.theme }}
+              </p>
+              <p class="card-text text-muted">
+                <i class="bi bi-calendar3"></i> <strong>Date :</strong> {{ webinar.date }}
+                <br />
+                <i class="bi bi-clock"></i> <strong>Heure :</strong> {{ webinar.time }}
+              </p>
+              <div class="mt-auto">
+                <span
+                  class="badge text-uppercase"
+                  [ngStyle]="{
+                    'background-color': webinar.format === 'Gratuit' ? 'green' : 'gold',
+                    color: webinar.format === 'Gratuit' ? 'white' : 'black'
+                  }"
+                >
+                  {{ webinar.format }}
+                </span>
+              </div>
+
+            </div>
+            <a
+              class="btn btn-danger btn-custom ms-auto"
+              [routerLink]="['/webinar-details', webinar.id]"
+            >
+              <i class="bi bi-pencil-square"></i> Details
+            </a>
+
+
+            <!-- Bouton d'inscription -->
+            <div class="card-footer text-center bg-light" id='align_button'>
+              <button
+                class="btn btn-primary w-100"
+                (click)="register(webinar.id)"
+              >
+                <i class="bi bi-pencil-square"></i> S'inscrire Maintenant
+              </button>
+
+            </div>
+          </div>
+        </div>
+        <!-- Fin de la carte Webinaire -->
+      </div>
+    </div>
+  </div>
+</body>
+  

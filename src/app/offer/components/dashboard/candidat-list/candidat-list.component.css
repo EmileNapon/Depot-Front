@@ -1,0 +1,67 @@
+.list-candidatures {
+    padding: 24px;
+    background-color: #f9f9f9; /* Fond léger pour le conteneur */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #3f51b5; /* Couleur du titre */
+    font-weight: 600; /* Titre plus gras */
+  }
+  
+  .filters {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  mat-form-field {
+    flex: 1;
+  }
+  
+  .candidate-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  
+  .status-pending {
+    background-color: #ffd740; /* Jaune pour "En attente" */
+    color: #000;
+  }
+  
+  .status-accepted {
+    background-color: #69f0ae; /* Vert pour "Accepté" */
+    color: #000;
+  }
+  
+  .status-rejected {
+    background-color: #ff6e6e; /* Rouge pour "Refusé" */
+    color: #000;
+  }
+  
+  mat-table {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  mat-icon {
+    cursor: pointer;
+    color: #3f51b5; /* Couleur des icônes */
+  }
+  
+  mat-icon:hover {
+    opacity: 0.8; /* Effet de survol */
+  }
+
+  

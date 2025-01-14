@@ -1,0 +1,24 @@
+<app-headerPrincipale></app-headerPrincipale>
+
+
+<div class= "container">
+    <h2>Formation programme talent</h2>
+
+  <div class="webinar-card" *ngFor="let progrtalent of filteredIncritsFormations">
+    <h2>{{ progrtalent.titre }}</h2>
+    <p><strong>Titre :</strong> {{ progrtalent.titre }}</p>
+    <p><strong>type :</strong> {{ progrtalent.type }}</p>
+    <p><strong>Niveau :</strong> {{ progrtalent.niveau }}</p>
+    <p><strong>Date :</strong> {{ progrtalent.date }}</p>
+    <p><strong>Duree de la formation :</strong> {{ progrtalent.duree }}</p>
+    <p>{{ progrtalent.date }} à {{ progrtalent.localisation }}</p>
+    
+    <!-- Lien vers les détails du webinaire avec l'ID -->
+    <div class="custom-padding">
+    <button class='btn btn-outline-primary ' (click)="onSelectProgrammeTalent(progrtalent.id)" style='border:none'>Voir le programme</button> 
+    
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

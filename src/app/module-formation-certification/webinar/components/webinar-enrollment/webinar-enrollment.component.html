@@ -1,0 +1,39 @@
+<!-- webinar-enroll.component.html -->
+<app-headerPrincipale></app-headerPrincipale>
+<div class="enroll-form-container">
+  <div class="text-center">
+    <h1 class="webinaire-title">WEBINAIRE N°{{webinarId}}</h1>
+  </div>
+    <form [formGroup]="enrollForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input id="lastName" type="text" formControlName="lastName" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="firstName">Prenom </label>
+        <input id="firstName" type="text" formControlName="firstName" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="whatsapp">WhatsApp</label>
+        <input id="whatsapp" type="text" formControlName="whatsapp" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="acceptTerms">
+          <input id="acceptTerms" type="checkbox" formControlName="acceptTerms" />
+          J'accepte les <a href="#">conditions générales</a>.
+        </label>
+        <div *ngIf="enrollForm.get('acceptTerms')?.invalid && enrollForm.get('acceptTerms')?.touched" class="alert alert-danger">
+          Vous devez accepter les conditions pour vous inscrire.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">S'inscrire</button>
+    </form>
+  </div>
+  
+  <app-footer></app-footer>

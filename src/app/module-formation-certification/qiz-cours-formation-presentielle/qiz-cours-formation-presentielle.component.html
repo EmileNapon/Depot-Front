@@ -1,0 +1,105 @@
+<div class="webinar-container" style="background-color: #f5f7fa; padding: 2rem;">
+    <div class="container text-center py-5">
+      <!-- En-tête avec les logos et texte -->
+      <div class="webinar-header position-relative d-flex justify-content-between align-items-center mb-4">
+        <!-- Logo de gauche avec texte -->
+        <div class="logo-left-wrapper text-center">
+          <img src="assets/icon.png" alt="Logo Gauche" class="logo-left mb-2" />
+          <p class="text-secondary fw-bold m-0">Une initiative de <span class="text-primary">FIDALLI</span></p>
+        </div>
+  
+        <!-- Logo de droite avec "Webinaire" en arrière-plan -->
+        <div class="logo-right-wrapper position-relative text-center">
+          <img src="path_to_logo_right.png" alt="Logo Droit" class="logo-right mb-2" />
+          <div class="webinaire-background text-light fw-bold position-absolute">
+            WEBINAIRE
+          </div>
+          
+        </div>
+      </div>
+  
+      <!-- Titre principal -->
+      <div style='padding'>
+      <h1 class="text-primary fw-bold mb-3" style="font-size: 2.5rem;">
+        {{ webinarData.title }}
+      </h1>
+    </div>
+      <i style="letter-spacing: 2px;">
+        HEBDOMADAIRE
+      </i>
+      <!-- Sous-titre / Thème -->
+  
+      <h3 class=" date-time-container1 text-light ">
+        {{ webinarData.theme }}
+      </h3>
+      <br/>
+      <div class="date-time-container">
+        
+        <div class="date-time-box">
+          <!-- Date et jour -->
+          <div class="date-info">
+            <i class="bi bi-calendar3 text-success"></i>
+            <span class="fw-bold text-uppercase">Samedi</span>
+            <span class="date-large">
+              <strong>23</strong> <span class="badge bg-danger">Novembre</span> 2024
+            </span>
+          </div>
+          <!-- Heure -->
+          <div class="time-info">
+            <span class="text-uppercase">À partir de</span>
+            <span class="time-large">
+              <strong>10H00</strong>
+            </span>
+          </div>
+        </div>
+      
+        <!-- Webinaire gratuit -->
+        <div class="webinaire-info">
+          <span class="badge bg-success text-uppercase">
+            <i class="bi bi-play-circle"></i> Webinaire Gratuit
+          </span>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6" style="padding-right: 5px; padding-left: 5px;"> 
+          <!-- Formateur -->
+          <div class="text-center">
+            <img [src]="webinar.formateur.imageUrl" alt="Formateur" class="rounded-circle" width="120">
+            <h4>{{ webinar.formateur.nom }}</h4>
+            <p>{{ webinar.formateur.role }}</p>
+          </div>
+        </div>
+      
+        <div class="col-md-6" style="padding-right: 5px; padding-left: 5px;"> 
+          <!-- Modératrice -->
+          <div class="text-center">
+            <img [src]="webinar.moderatrice.imageUrl" alt="Modératrice" class="rounded-circle" width="120">
+            <h4>{{ webinar.moderatrice.nom }}</h4>
+            <p>{{ webinar.moderatrice.role }}</p>
+          </div>
+        </div>
+      </div>
+      
+  
+      <!-- Liens -->
+      <div class="links d-flex justify-content-center gap-3" >
+        <a [href]="webinarData.links.youtube" class="btn btn-danger" target="_blank">
+          <i class="bi bi-youtube me-2" ></i> YouTube
+        </a>
+        <a href="mailto:{{ webinarData.links.email }}" class="btn btn-primary" >
+          <i class="bi bi-envelope me-2"></i> Email
+        </a>
+        <a
+          href="https://wa.me/{{ webinarData.links.whatsapp }}"
+          class="btn btn-success"
+          target="_blank"
+        >
+          <i class="bi bi-whatsapp me-2"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  
+  

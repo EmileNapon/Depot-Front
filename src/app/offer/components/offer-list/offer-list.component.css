@@ -1,0 +1,73 @@
+/* Styles de base pour la section de la liste des offres */
+.offer-list {
+    background-color: #f9f9f9;
+    padding: 24px;
+    border-radius: 8px;
+    margin: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour le titre */
+.offer-list h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 24px;
+}
+/* Styles pour les boutons de filtre */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.filter-buttons button {
+    background: #ffffff;
+    border: 2px solid #004aad;
+    color: #004aad;
+    border-radius: 50px;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+.filter-buttons button.active {
+    background: #004aad;
+    color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 74, 173, 0.3);
+}
+
+.filter-buttons button:hover {
+    background: #004aad;
+    color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 74, 173, 0.3);
+}
+
+/* Styles pour le spinner */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    gap: 15px;
+}
+
+.loading-spinner p {
+    font-size: 1.5em;
+    color: #004aad;
+    animation: fade-in-out 2s infinite;
+}
+
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,53 @@
+<mat-card class="generic-edit-card">
+  <mat-toolbar color="primary" class="generic-edit-toolbar">
+    <button mat-icon-button (click)="handleBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>Modifier un(e) {{ resource.model | lowercase }}</span>
+  </mat-toolbar>
+
+  <!-- Formulaire principal -->
+  <form [formGroup]="form" (ngSubmit)="handleSubmit()" class="generic-edit-form">
+    <div class="form-field-container">
+      <div *ngFor="let field of resourceFieldsToEdit" class="form-field">
+        <mat-form-field appearance="outline" *ngIf="['text', 'email', 'password', 'tel', 'phone'].includes(field.type)">
+          <mat-label>{{ field.label }}</mat-label>
+         
+          <input
+            matInput
+            [type]="field.type"
+            [formControlName]="field.name" 
+            [placeholder]="field.placeholder || ''"
+          />
+          <mat-error *ngIf="form.get(field.name)?.hasError('required')">{{field.errorMessage}}.</mat-error>
+          <mat-error *ngIf="form.get(field.name)?.hasError('pattern')">{{field.errorMessage}}</mat-error>
+          <mat-error *ngIf="form.get(field.name)?.hasError('email')">{{field.errorMessage}}.</mat-error>
+          <mat-error *ngIf="form.get(field.name)?.hasError('minlength')">{{field.errorMessage}}.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" *ngIf="field.type === 'file'">
+          <mat-label>{{ field.label }}</mat-label>
+          <input
+            matInput
+            type="file"
+            (change)="handleFileInput($event, field.name)"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="actions">
+        <button mat-raised-button color="warn" type="button" (click)="handleCancel()">
+          Annuler
+        </button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || isLoading">
+          Valider
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Overlay pour le spinner -->
+  <div *ngIf="isLoading" class="overlay">
+    <mat-spinner diameter="50"></mat-spinner> <!-- Le spinner central -->
+  </div>
+</mat-card>

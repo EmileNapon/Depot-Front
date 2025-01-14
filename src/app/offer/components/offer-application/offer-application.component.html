@@ -1,0 +1,68 @@
+<div class="application-form-container">
+  <!-- Overlay et spinner de chargement couvrant toute la page -->
+  <div *ngIf="isSubmitting" class="loading-overlay">
+    <mat-progress-spinner
+      mode="indeterminate"
+      diameter="100"
+      color="accent"
+      class="loading-spinner">
+    </mat-progress-spinner>
+    <p>Veuillez patienter, soumission en cours...</p>
+  </div>
+
+  <!-- Contenu du formulaire -->
+  <div class="application-card" [ngClass]="{ 'blurred': isSubmitting }">
+    <h1 *ngIf="offer">Candidature à l'offre : {{ offer.title }}</h1>
+    <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()">
+      
+      <!-- Message de motivation -->
+      <div class="form-group">
+        <label for="message">Message de Motivation</label>
+        <textarea id="message" formControlName="message" rows="4" class="form-control" placeholder="Expliquez votre motivation"></textarea>
+      </div>
+
+      <!-- Fichiers requis -->
+      <div *ngIf="isRequiredCvDoc" class="upload-card" (click)="cvInput.click()">
+        <input #cvInput id="cv" type="file" (change)="onFileSelected($event, 'CV')" accept=".pdf,.doc,.docx" class="hidden"/>
+        <div class="upload-icon">📄</div>
+        <div class="doc-name">{{ cvFile?.progress === 100 ? cvFile?.name : 'Télécharger votre CV' }}</div>
+        <mat-progress-bar *ngIf="cvFile && cvFile.progress < 100" mode="determinate" [value]="cvFile.progress"></mat-progress-bar>
+      </div>
+
+      <div *ngIf="isRequiredMlDoc" class="upload-card" (click)="lmInput.click()">
+        <input #lmInput id="lm" type="file" (change)="onFileSelected($event, 'LM')" accept=".pdf,.doc,.docx" class="hidden"/>
+        <div class="upload-icon">📝</div>
+        <div class="doc-name">{{ lmFile?.progress === 100 ? lmFile?.name : 'Télécharger votre Lettre de Motivation' }}</div>
+        <mat-progress-bar *ngIf="lmFile && lmFile.progress < 100" mode="determinate" [value]="lmFile.progress"></mat-progress-bar>
+      </div>
+
+      <div *ngIf="canAddOthersDoc" id="otherFilesContainer">
+        <!-- Bouton d'ajout de fichier -->
+        <button type="button" (click)="addOtherFileField()" class="btn-add">
+          <mat-icon>add_circle_outline</mat-icon> Ajouter un autre document
+        </button>
+
+        <!-- Affichage de l'état de progression des autres fichiers téléchargés -->
+        <div *ngFor="let otherFile of otherFiles" class="upload-card">
+          <div class="upload-icon">📎</div>
+          <div class="doc-name">{{ otherFile.progress === 100 ? otherFile.name : 'Télécharger d\'autres documents' }}</div>
+          <mat-progress-bar *ngIf="otherFile.progress < 100" mode="determinate" [value]="otherFile.progress"></mat-progress-bar>
+        </div>
+      </div>
+
+      <!-- Accepter les termes -->
+      <div class="checkbox-group">
+        <mat-checkbox formControlName="acceptTerms">
+          J'accepte les termes et conditions.
+        </mat-checkbox>
+      </div>
+
+      <!-- Bouton de soumission -->
+      <div class="submit-button-container">
+        <button type="submit" [disabled]="applicationForm.invalid" class="btn-primary">
+          Soumettre
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="bg-light py-4 navbar-scroll" [class.fixed]="isFixed">
+    <div class="container-fluid d-flex align-items-center ">
+        <a>
+          <img src="assets/icon.png" alt="FuturAlliés" routerLink='/acceuil' class="logo" height="50">
+        </a>
+        <nav class="nav nav-underline">
+            <ul class="nav">
+
+                <li class='nav-item'>
+                    <a class="nav-link   dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Formations
+                    </a>
+                      <ul class="dropdown-menu">
+                        <li><button class="dropdown-item" routerLink='/domaines'>Auditions libres</button></li>
+                        <li><button class="dropdown-item" routerLink='/formation/certification'>certifications</button></li>
+                        <li><button class="dropdown-item" routerLink='/formation/progTalent'>Programmes talents </button></li> <!--ancien chemin: /FormationWebinaire-->
+                        <li><button class="dropdown-item" routerLink='/formation/FormationPresentielle'>Webinaires </button></li>
+                        <li><button class="dropdown-item" routerLink='/formation/FormationPresentielle'>Nos formations presentielles </button></li>        
+                      </ul>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="#trainers" class="nav-link" >Offre d'emplois</a>
+                </li>
+
+                <li class="nav-item">
+                    <a routerLink="/orientation/etablissement" class="nav-link" >Orientations </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="#trainers" class="nav-link" >Statistiques </a>
+                </li>
+                <form class="d-flex" role="search">
+                    <input  class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+
+                <li class="nav-item">
+                    <a href="#trainers" class="nav-link" >Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#trainers" class="nav-link" >Equipes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a routerLink="/usersPages/login" class="btn btn-warning " >Se connecter</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

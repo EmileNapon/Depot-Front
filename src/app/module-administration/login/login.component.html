@@ -1,0 +1,82 @@
+<body class="imgs">
+    <div>
+      
+     
+          <div class="words word-2">
+            <span>..</span>
+            <span>...</span>
+            <span>*</span>
+            <span>...</span>
+            <span>...</span>
+           
+           
+          </div>
+    </div>
+    <div class="row jusify-content-center" *ngIf="isAuth == false">
+        <div class="col ">
+            <div class="alert alert-danger alert-with-icon" data-notify="container">
+                <i class="material-icons" data-notify="icon">add_alert</i>
+                <span data-notify="message">{{ alertMess }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="boxmarge ">
+        <div class="container" id="container">
+       <!--     <div class="form-container sign-up-container">
+                <form action="#">
+                    <h4>Always be careful on the net</h4>
+                    <p>Cookie: Formerly sweet little cake, which we
+                        accepted with pleasure. Today: a small, oddly salty computer file, which must be
+                        vehemently refuse.</p>
+                    <div class="social-container">
+                        <a href="#" class="social"></a>
+                        <a href="#" class="social"></a>
+                        <a href="#" class="social"></a>
+                    </div>
+                    It is clear that we must find an African solution to our problems and that it can only be found in African unity.                          </form>
+            </div>
+            -->
+            <div class="form-container sign-in-container">
+                     
+                <form action="#">
+                    <div>
+                        <!--<img src="https://www.nepad.org/sites/default/files/Logo.png" alt="AUDA -NEPAD" width="" height="">
+                        <img src="../icons/eco-icbt-bando-bon.gif" alt="ECO-ICBT" width="" height="">-->
+                        <img src="https://eco-icbt.org/wp-content/uploads/2019/11/eco-icbt-bando-bon.gif" alt="ECO-ICBT" width="300" height="150">
+                        
+
+                    </div>
+                    <div class="social-container ">
+                       <a href="#" class="social social-hover "></a>
+                       <a href="#" class="social social-hover"></a>
+                       <a href="#" class="social social-hover"></a>
+
+                    </div>
+                    <input type="email" placeholder="Email" [(ngModel)]="operateur.meloper" name="meloper" />
+                    <input type="password" placeholder="Password" [(ngModel)]="operateur.password" name="password" />
+                    <a href="#">Forgot your password?</a>
+                    <button  type="button" (click)="onLoggedin()" class="btn btn-success">Login</button>
+
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Security</h1>
+                        <p>
+                            To access the administration area, please log in with your personal information.
+                        </p>
+                        <button class="ghost" id="signIn">login</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h2>Welcome</h2>
+                        <h3>ECO-ICBT</h3>
+                        <h4>ECOWAS -Informal Cross Border Trade</h4>
+                        <button class="ghost" id="signUp">Sécurity Info</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</body>

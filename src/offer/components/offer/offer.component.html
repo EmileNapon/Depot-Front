@@ -1,0 +1,62 @@
+<div class="offer-card">
+    <div class="offer-card">  
+        <div class="offer-header">  
+            <h2>{{ offer.title }}</h2>  
+            <p class="company-name">{{ enterprise?.name || 'Entreprise inconnue' }}</p> <!-- Affichage du nom de l'entreprise -->  
+        </div>  
+        <!-- (Reste du code HTML...) -->  
+    </div>
+
+    <div class="offer-info">
+        <div class="info-section">
+            <div class="info-item">
+                <i class="icon">🏢</i>
+                <p><strong>Domaine :</strong> {{ offer.domain }}</p>
+            </div>
+            <div class="info-item">
+                <i class="icon">📍</i>
+                <p><strong>Lieu :</strong> {{ offer.location }}</p>
+            </div>
+            <div class="info-item">
+                <i class="icon">📝</i>
+                <p><strong>Type :</strong> {{ offer.type }}</p>
+            </div>
+            <div class="info-item">
+                <i class="icon">📄</i>
+                <p><strong>Contrat :</strong> {{ offer.contract_type }}</p>
+            </div>
+            <div class="info-item" *ngIf="offer.salary">
+                <i class="icon">💵</i>
+                <p><strong>Salaire :</strong> {{ offer.salary | currency: 'USD' }}</p>
+            </div>
+            <div class="info-item" *ngIf="offer.duration">
+                <i class="icon">⏳</i>
+                <p><strong>Durée :</strong> {{ offer.duration }} mois</p>
+            </div>
+            <div class="info-item">
+                <i class="icon">🏠</i>
+                <p><strong>Télétravail :</strong> {{ offer.is_remote ? 'Oui' : 'Non' }}</p>
+            </div>
+            <div class="info-item">
+                <i class="icon">📅</i>
+                <p><strong>Date de publication :</strong> {{ offer.posted_date | date: 'short' }}</p>
+            </div>
+            <div class="info-item">
+                <i class="icon">⏰</i>
+                <p><strong>Date d'expiration :</strong> {{ offer.expiration_date | date: 'short' }}</p>
+            </div>
+            <div class="info-item">
+                <i class="icon">📈</i>
+                <p><strong>Statut :</strong> {{ offer.status }}</p>
+            </div>
+            <div class="info-item">
+                <i class="icon">🏢</i>
+                <p><strong>Entreprise :</strong> {{ enterprise?.name }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="details-container">
+        <a [routerLink]="['/offers/details', offer.id]" class="details-link">Voir Détails</a>
+    </div>
+</div>

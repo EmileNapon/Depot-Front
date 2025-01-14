@@ -1,0 +1,66 @@
+
+
+
+
+
+
+
+
+
+  /* Styles de base pour la carte du webinaire */
+.webinar-card {
+    background-color: white; /* Fond blanc */
+    border-radius: 8px; /* Bords arrondis */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 16px; /* Espacement interne */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'animation */
+    margin: 16px; /* Espacement externe entre les cartes */
+    border-left: 5px solid #ffcc00; /* Bordure gauche jaune doré */
+}
+
+/* Effet au survol */
+.webinar-card:hover {
+    transform: translateY(-5px); /* Déplacement vers le haut au survol */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+}
+
+/* Styles pour le titre */
+.webinar-card h2 {
+    color: #007bff; /* Couleur bleue pour le titre */
+    font-size: 1.5em; /* Taille de police pour le titre */
+    margin-bottom: 8px; /* Espacement inférieur */
+}
+
+/* Styles pour le texte */
+.webinar-card p {
+    color: #333; /* Couleur du texte */
+    margin: 4px 0; /* Marges verticales */
+}
+
+/* Styles pour le lien de détails */
+.details-link {
+    display: inline-block; /* Affichage en bloc */
+    padding: 10px 16px; /* Espacement interne du bouton */
+    background-color: #ffcc00; /* Fond jaune doré */
+    color: #007bff; /* Couleur du texte bleue */
+    text-decoration: none; /* Pas de soulignement */
+    border-radius: 4px; /* Bords arrondis du bouton */
+    transition: background-color 0.3s ease; /* Transition pour la couleur */
+}
+
+/* Effet au survol du lien */
+.details-link:hover {
+    background-color: #007bff; /* Changement de couleur au survol */
+    color: white; /* Couleur du texte blanche */
+}
+
+
+.custom-padding {
+    padding-left: 25px;
+  }
+  
+
+  .custom-padding {
+    padding-left: 25px;
+  }
+  

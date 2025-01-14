@@ -1,0 +1,48 @@
+
+
+    
+           
+    
+    
+    
+
+    
+    
+    
+  <body>
+    <app-headerPrincipale></app-headerPrincipale>
+    
+
+<div class='container py-5' style='padding-left:150px'>
+<div class="row">
+  <div class="col-sm-10 mb-10 mb-sm-0">
+    <div class="card" style='border:none; '>
+      <div class="card-body">
+          <br/> <br/> 
+        <span style='border:none; font-size:140%;paddig-left:80px; display:inline-flex;' *ngFor='let cour of coursFiltres '>
+          <button (click)="onSelectPage(cour.id)" class='btn btn-outline-secondary' style='border:none;padding:30px;'>
+            {{cour.nom_cours}}
+          </button>
+  
+           
+   
+            <br/><br/>
+                  
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+<app-footer></app-footer>

@@ -1,0 +1,74 @@
+
+<body>
+
+
+  <div  class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2><b>Contenus</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a  class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span></span></a>
+                        <a   class="btn btn-primary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span></span></a>
+                        <a  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span></span></a>  						
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+              <div class="container main-content">
+                  <br/> <br/> 
+                <span style='font-size:110%;' *ngFor='let chapitre of __filteredChapitresGestionnaire__; let i=index'>
+                  <h2 >
+                    {{chapitre.titre}}<span (click)='onSelectgestionnaireCours(chapitre.id)' style='border:none;padding-left:20px;'>    <i class="bi bi-pencil" style='font-size:70%; '></i></span>
+                  </h2>
+                
+
+                  <section class="course-details" >
+                    <ul class="objectives-list">
+                      <li class="course-section" *ngFor="let section of __filteredSessionGestionnaire__" [hidden]="section.chapitre !== chapitre.id">
+                        <section>
+                          <hr />
+                          <ul class="course-content">
+                            <ul class="course-item completed">
+                              <p [innerHTML]="section.nom_section"></p>
+                            </ul>
+                            <!--
+                            <div *ngFor="let contenu of ContenusFiltres" [hidden]="contenu.section !== section.id">
+                              <p [innerHTML]="contenu.description"></p>
+                            </div>
+                            -->
+                          </ul>
+                        </section>
+                      </li>
+                    </ul>
+                  </section>
+           
+
+
+                    <br/><br/>                
+                </span>
+              </div>
+
+        
+        <footer>
+          <div class="footer-bottom" style='text-align: center'>
+              <p>&copy; 2024 FuturAlliés. Tous droits réservés.</p>
+          </div>
+        </footer>
+
+
+
+
+<div>
+    
+</div>
+          
+    </body>
+    

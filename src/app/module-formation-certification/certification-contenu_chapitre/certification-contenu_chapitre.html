@@ -1,0 +1,91 @@
+<app-headerPrincipale></app-headerPrincipale>
+<div class="container main-content" *ngIf="filtreChapitre.length > 0; else noChapters">
+  <div>
+    <section class="course-details" *ngFor="let chapitre of filtreChapitre; let i = index">
+      <div *ngIf="i === currentIndex">
+        <h2 class="chapter-title">{{ chapitre.titre }}</h2>
+
+        <div *ngFor="let section of getCurrentChapterSections(); let j = index">
+          <div *ngIf="j === currentSectionIndex">
+            <div class="section-details" *ngIf="!showQuestions">
+              <h3 class="section-title">{{ section.nom_section }}</h3>
+              <div class="section-content" *ngFor="let contenu of filtreContenu">
+                <p *ngIf="contenu.section === section.id" [innerHTML]="contenu.description"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+          <div *ngIf="showQuestions" >
+            <div *ngIf='!isAffiche'>
+           <h2>Quiz : {{ chapitre.titre }} </h2>
+          <section *ngFor="let question of getCurrentChapterQuestions(),let u=index">
+            <div *ngIf="chapitre.id=== question.chapitre ">
+              
+              <h4 >{{ chapitre.id }}. {{ question.texte }} lllllllllllllllllllllllllllllllllll</h4>
+              <div *ngFor="let option of options">
+                <label *ngIf="option.question === question.id">
+                  <input 
+                    type="radio" 
+                    name="question{{ question.id }}" 
+                    [value]="option.id" 
+                    (click)="selectOption(question.id, option.id)"
+                  />
+                  {{ option.texte }}
+                </label>
+              </div>
+
+
+            </div>
+
+          </section>
+        </div>
+          <button class="navigation-buttons" *ngIf="showSubmitButton" (click)="submitReponses(chapitre.id)">
+            Soumettre les réponses
+          </button>
+        </div> 
+
+
+
+
+        
+        <div *ngIf="showScore">
+          <div *ngIf='isAffiche' >
+          <p>Score : {{ score }}%</p>
+          <p *ngIf="canContinue">Félicitations ! Vous pouvez continuer.</p>
+          <p *ngIf="!canContinue">Désolé, essayez à nouveau.</p>
+          <button *ngIf="canContinue" (click)="goToNextSection()">Continuer au chapitre suivant</button>
+          </div>
+        </div>
+
+
+
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <div *ngIf= "!showQuestions" class="navigation-buttons">
+      <button
+        class="btn btn-secondary"
+        (click)="goToPreviousSection()"
+        [disabled]="currentSectionIndex === 0"
+      >
+        Précédent
+      </button>
+<div >
+      <button
+        class="btn btn-secondary"
+        (click)="goToNextSection()"
+        [disabled]="isLastSectionInChapter() && currentIndex === filtreChapitre.length"
+      >
+        Suivant
+      </button>
+</div>      
+    </div>
+  </div>
+</div>
+
+<ng-template #noChapters>
+  <p class="no-chapters-message">Aucun chapitre disponible.</p>
+</ng-template>
+<app-footer></app-footer>

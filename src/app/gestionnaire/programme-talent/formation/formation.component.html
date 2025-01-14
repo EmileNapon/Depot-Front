@@ -1,0 +1,81 @@
+
+
+
+  <div  class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2><b>programme talent</b> programme(s)</h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a  class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i><span></span></a>
+                        <a   class="btn btn-primary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span></span></a>
+                        <a  class="btn btn-success" data-toggle="modal" routerLink="/gestionnaire/ajouter-formation"><i class="material-icons">&#xE147;</i>Ajouter une formation  <span></span></a>  						
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  
+  
+  
+
+
+  <div class="offer-card" *ngFor="let formation of formations">
+    <div class="offer-card"  >  
+
+        <div ></div>
+        <div class="offer-header">  
+            <h2>{{ formation.titre }}</h2>  
+            <p class="company-name">{{ formation.localisation }}</p> <!-- Affichage du nom de l'entreprise -->  
+        </div>  
+        <!-- (Reste du code HTML...) -->  
+    </div>
+
+    <div class="offer-info">
+        <div class="info-section" >
+            <div class="info-item">
+                <i class="icon">📝</i>
+                <p><strong>Type :</strong> {{ formation.type }}</p>
+            </div>
+            <div class="info-item" *ngFor="let module of filterModulesForFormation(formation.id)">
+                <i class="icon">📄</i>
+                <p><strong>Module :</strong> {{ module.nom_module }}</p>
+            </div>
+
+            <div class="info-item">
+                <i class="icon">📄</i>
+                <p><strong>Nombre de places:</strong> {{ formation.nombre }}</p>
+            </div>
+            <div class="info-item" >
+                <i class="icon">💵</i>
+                <p><strong>Prix :</strong> {{ formation.prix }} cfa</p>
+            </div>
+            <div class="info-item">
+                <i class="icon">⏳</i>
+                <p><strong>Durée :</strong> {{formation.duree}} </p>
+            </div>
+            <div class="info-item">
+                <i class="icon">🏠</i>
+                <p><strong>Niveau requis :</strong> {{ formation.niveau}}</p>
+            </div>
+            <div class="info-item">
+                <i class="icon">📅</i>
+                <p><strong>Date de publication :</strong> {{ formation.date | date: 'short' }}</p>
+            </div>
+
+            <div class="info-item">
+                <i class="icon">🏢</i>
+                <p><strong>Entreprise :</strong> {{ formation.localisation }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="details-container">
+      <a class="details-link" (click)='onSelectProgrammeTalent(formation.id)'>Voir formation</a>
+  </div>
+  </div>
+

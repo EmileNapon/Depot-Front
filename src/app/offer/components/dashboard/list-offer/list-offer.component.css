@@ -1,0 +1,153 @@
+/* Barre de recherche et filtre par type */
+.filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.search-bar {
+  flex: 1;
+}
+
+.type-filter {
+  width: 200px;
+}
+
+/* Styles existants */
+.offer-list {
+  background-color: #f9f9f9;
+  padding: 24px;
+  border-radius: 8px;
+  margin: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.offer-list h1 {
+  color: #007bff;
+  text-align: start;
+  margin-bottom: 24px;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  gap: 15px;
+}
+
+.loading-spinner p {
+  font-size: 1.5em;
+  color: #004aad;
+  animation: fade-in-out 2s infinite;
+}
+
+@keyframes fade-in-out {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+mat-table {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+mat-header-row {
+  background-color: #007bff;
+}
+
+mat-header-cell {
+  color: white !important;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+mat-cell {
+  padding: 12px;
+  font-size: 1em;
+  color: #333;
+}
+
+mat-cell button {
+  margin: 0 4px;
+}
+
+mat-icon {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+mat-icon:hover {
+  opacity: 0.8;
+}
+
+button[mat-icon-button][color="primary"] {
+  color: #007bff;
+}
+
+button[mat-icon-button][color="primary"]:last-child {
+  color: #4CAF50;
+}
+
+button[mat-icon-button]:hover {
+  transform: scale(1.1);
+}
+
+.no-offers-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 16px;
+}
+
+.no-offers-message mat-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: #007bff;
+  margin-bottom: 16px;
+}
+
+.no-offers-message p {
+  font-size: 1.2em;
+  color: #333;
+  text-align: center;
+}
+
+.no-offers-message strong {
+  color: #007bff;
+}
+
+.create-offer-button {
+  position: fixed;
+  bottom: 80px;
+  right: 24px;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+}
+
+.create-offer-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.create-offer-button mat-icon {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}

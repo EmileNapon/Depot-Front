@@ -1,0 +1,26 @@
+
+
+<div class="col-12" *ngFor="let annonce of annonces">
+    <div class="card mb-4">
+      <div class="card-header text-white d-flex justify-content-between" style="background-color: #7609f3;">
+        <span>{{ annonce.titre }}</span>
+        <span class="text-white">Publié le : {{ annonce.date_publication | date: 'dd/MM/yyyy' }} - {{ annonce.heure }}</span>
+      </div>
+      <div class="card-body">
+        <!-- Texte coupé avec "Voir plus" -->
+         
+        <p>
+          {{ annonce.description }}
+          <!-- <a href="#" class="text-primary">Voir plus</a> -->
+        </p>
+        <p><b> Lieu: </b>{{ annonce.lieu}}</p>
+        <p><b>Date//: </b>{{ annonce.date_cours}}</p>
+        <!-- Boutons "Modifier" et "Supprimer" alignés à droite -->
+        <div class="text-end">
+      <!--    <button class="btn btn-warning btn-sm mx-2" [routerLink]="['/gestionnaire/modification-annonce', annonce.id]">Modifier</button> -->
+          <button class="btn btn-danger btn-sm" (click)="supprimerAnnonce(annonce.id)">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

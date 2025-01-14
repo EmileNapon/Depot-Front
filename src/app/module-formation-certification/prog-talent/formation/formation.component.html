@@ -1,0 +1,69 @@
+<app-headerPrincipale></app-headerPrincipale>
+  <div class="offer-card" *ngFor="let formation of formations">
+    <div class="offer-card"  >  
+
+        <div ></div>
+        <div class="offer-header">  
+            <h2>{{ formation.titre }}</h2>  
+            <p class="company-name">{{ formation.localisation }}</p> <!-- Affichage du nom de l'entreprise -->  
+        </div>  
+        <!-- (Reste du code HTML...) -->  
+    </div>
+
+    <div class="offer-info">
+        <div class="info-section" >
+            <div class="info-item">
+                <i class="icon">📝</i>
+                <p><strong>Type :</strong> {{ formation.type }}</p>
+            </div>
+            <div class="info-item" *ngFor="let module of filterModulesForFormation(formation.id)">
+                <i class="icon">📄</i>
+                <p><strong>Module :</strong> {{ module.nom_module }}</p>
+            </div>
+
+            <div class="info-item">
+                <i class="icon">📄</i>
+                <p><strong>Nombre de places:</strong> {{ formation.nombre }}</p>
+            </div>
+            <div class="info-item" >
+                <i class="icon">💵</i>
+                <p><strong>Prix :</strong> {{ formation.prix }} cfa</p>
+            </div>
+            <div class="info-item">
+                <i class="icon">⏳</i>
+                <p><strong>Durée :</strong> {{formation.duree}} </p>
+            </div>
+            <div class="info-item">
+                <i class="icon">🏠</i>
+                <p><strong>Niveau requis :</strong> {{ formation.niveau}}</p>
+            </div>
+            <div class="info-item">
+                <i class="icon">📅</i>
+                <p><strong>Date de publication :</strong> {{ formation.date | date: 'short' }}</p>
+            </div>
+
+            <div class="info-item">
+                <i class="icon">🏢</i>
+                <p><strong>Entreprise :</strong> {{ formation.localisation }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="details-container">
+      <div class="row" *ngIf="shutDetail">
+        <div class="text-end" >
+            <button class="btn btn-outline-secondary" style="color: red;" (click)="onSelectFormationDetail(formation.id)" >Voir les details</button>  
+        </div>
+    </div>
+
+    <div class="text-end d-flex " *ngIf="showDetail">
+        <div class="mx-2">
+            <button class="btn btn-outline-danger" (click)="onShowDetail()">Réduire</button>
+        </div>
+        <div class="" >
+            <button class="btn btn-outline-secondary" style="color: red;" (click)="onShowDetail()" routerLink="/formation/etudiantPage">S'inscrire</button>  
+        </div>
+    </div>
+    </div>
+</div>
+<app-footer></app-footer>

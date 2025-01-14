@@ -1,0 +1,68 @@
+
+<!-- Entête principale -->
+<div class="bg-light py-4 navbar-scroll" [class.fixed]="isFixed" >
+    <div class="container d-flex align-items-center ">
+        <a>
+          <img src="assets/icon.png" alt="FuturAlliés" routerLink='/acceuil' class="logo" height="25" >
+        </a>
+        <nav class="nav nav-underline" style='padding-left:50px'>
+            <ul class="nav">
+
+                <li class='nav-item'>
+                    <a class="nav-link   dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Formations
+                    </a>
+                      <ul class="dropdown-menu">
+                        <li><button class="dropdown-item" routerLink='/formation/progTalent'>//Programmes talents </button></li>  
+                        <li><button class="dropdown-item" routerLink='/certification'>certifications</button></li>
+                        <li><button class="dropdown-item" routerLink='/domaines'>Auditions libres</button></li>                    
+                        <li><button class="dropdown-item" routerLink='/FormationWebinaire'>Webinaires </button></li> 
+                        <li><button class="dropdown-item" routerLink='/domaines'>Cafes des alies</button></li>
+                        <li><button class="dropdown-item" routerLink='/domaines'>Catalogue</button></li>
+                      </ul>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="#trainers" class="nav-link" >Offre d'emplois</a>
+                </li>
+
+                <li class="nav-item">
+                    <a routerLink="/orientation/etablissement" class="nav-link" >Orientations </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="#trainers" class="nav-link" >Statistiques </a>
+                </li>
+                <form class="nav-item d-flex" role="search">
+                    <input  class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+
+                <li class="nav-item">
+                    <a href="#trainers" class="nav-link" >Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#trainers" class="nav-link" >Equipes</a>
+                </li>
+                 
+                <li class='nav-item' *ngIf="userInfo?.email; else loginTemplate">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img  src='assets/profil.png' style='background-color:yellow' height="25" />
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><span class="dropdown-item">{{ userInfo?.firstName }} {{ userInfo?.lastName }}</span></li>
+                      <li><span class="dropdown-item">{{ userInfo?.email }}</span></li>
+                      <li><button class="dropdown-item" (click)="onLogout()" > <i class="bi bi-power"></i><span  style='padding-left:5px'>Déconnexion</span></button></li>
+                    </ul>
+                  </li>
+                  
+                  <ng-template #loginTemplate>
+                    <li class='nav-item'>
+                      <a class="nav-link" class="btn btn-warning" href="/usersPages/login">Connexion</a> <!-- Remplacez par votre route de connexion -->
+                    </li>
+                  </ng-template>
+                    
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="stats-container">
+    <h2>Statistiques des offres</h2>
+  
+    <!-- Cartes de statistiques -->
+    <div class="stats-cards">
+      <mat-card>
+        <mat-card-title>Offres publiées</mat-card-title>
+        <mat-card-content>
+          <h3>45</h3>
+        </mat-card-content>
+      </mat-card>
+  
+      <mat-card>
+        <mat-card-title>Candidatures reçues</mat-card-title>
+        <mat-card-content>
+          <h3>320</h3>
+        </mat-card-content>
+      </mat-card>
+  
+      <mat-card>
+        <mat-card-title>Taux de conversion</mat-card-title>
+        <mat-card-content>
+          <h3>15%</h3>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  
+    <!-- Graphiques -->
+    <div class="charts">
+      <!-- Graphique en camembert -->
+      <div class="chart">
+        <h3>Répartition des candidatures par offre</h3>
+        <ngx-charts-pie-chart
+          [results]="pieChartData"
+          [labels]="true"
+          [legend]="true"
+          [legendTitle]="'Offres'"
+          [doughnut]="true"
+          [colorScheme]="colorScheme">
+        </ngx-charts-pie-chart>
+      </div>
+  
+      <!-- Graphique en ligne -->
+      <div class="chart">
+        <h3>Évolution des candidatures</h3>
+        <ngx-charts-line-chart
+          [results]="lineChartData"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="true"
+          [showXAxisLabel]="true"
+          [showYAxisLabel]="true"
+          [xAxisLabel]="'Mois'"
+          [yAxisLabel]="'Candidatures'"
+          [colorScheme]="colorScheme">
+        </ngx-charts-line-chart>
+      </div>
+    </div>
+  </div>

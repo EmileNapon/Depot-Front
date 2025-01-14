@@ -1,0 +1,78 @@
+
+<app-headerPrincipale></app-headerPrincipale>
+<body>
+
+
+<div class='container-fluid images-fixed' [class.fixed]="isFixed" >
+
+</div>
+
+
+
+<div class='container image py-5'style=' background-color: #f5f5f5;' >
+      <div class=" py-2" style='padding-left:100px'>
+        <img src="assets/im3.webp" alt="1" class="card-img-top rounded-circle" style=" left :50% ; width: 120%; height: auto; object-fit: cover; aspect-ratio: 1/1;">
+      </div>
+
+        <div class='w-70' style=" background-color: #f5f5f5;padding-left:60px">
+          <h3 class="card-title" style='color:#0056b3;'>Recrutement intelligent</h3>       
+            <p class="card-text">Trouver l'emploi idéal n'a jamais été aussi simple! Accédez aux meilleures offres d'emploi adaptées à votre profil. Optimisez vos chances de décrocher le poste de vos rêves dès aujourd'hui !</p>         
+        </div>
+
+
+        <div class='w-80' style=" background-color: #f5f5f5;padding-left:60px;">
+          <h3 class="card-title" style='color:#0056b3;'>Formations certifiantes </h3>
+            <p class="card-text">Boostez votre carrière avec nos certifications reconnues ! Suivez nos formations en ligne et obtenez des certificats. Accédez à des stages exclusifs qui vous offriront une expérience précieuse.</p>
+        </div>
+
+
+        <div class='w-90' style=" background-color: #f5f5f5;padding-left:40px;"> 
+            <h3 class="card-title" style='color:#0056b3;'>Orientation professionnelle</h3>     
+          <p class="card-text"> Consulter les statistiques exclusives sur le marché de l’emploi, vous aidant à choisir les formations et carrières les plus prometteuses. Orientez votre carrière vers le succès en suivant les tendances du marché ! </p>
+        </div>
+</div>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Domaines de formations -->
+
+
+        <div class="container py-5 " style='display:inline-flex; text-align:center;'>
+
+            <div class="row" style="width:1200px;">
+
+                <div class="col-md-4" *ngFor='let domaine of domaines'>
+                    <button class="container-l" *ngIf='domaine.id<=3'>                        
+                        <p class="card-title">{{domaine.nom_domaine}}</p>       
+                    </button>
+                </div>
+            </div> 
+
+                <div class="center-button">
+                    <button class='color' routerLink='/domaines'>VOIR TOUTES +</button>
+                </div>
+
+        
+ </div>
+
+<body>
+
+    <app-footer></app-footer>
+
+
+ 

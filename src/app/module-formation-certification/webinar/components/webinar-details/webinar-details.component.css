@@ -1,0 +1,301 @@
+
+body{
+    margin: 0 auto; /* Centre le contenu horizontalement */
+    max-width: 1000px; 
+    height: 500px; /* Limite la hauteur à 500px */
+    line-height: 1.2;
+    font-family: 'Roboto', sans-serif;
+}
+
+#btn-custom {
+    font-size: 15px;
+    padding: 5px 10px;
+    line-height: 1.3;
+  }
+  
+  
+/* Styles de base pour la section des détails du webinaire */
+.webinar-details {
+    background-color: white; /* Fond blanc */
+    border-radius: 8px; /* Bords arrondis */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 90px; /* Espacement interne */
+    margin: 50px; /* Espacement externe */
+}
+
+/* Styles pour le titre */
+.webinar-details h1 {
+    color: #007bff; /* Couleur bleue pour le titre */
+    font-size: 2em; /* Taille de police plus grande pour le titre */
+    margin-bottom: 16px; /* Espacement inférieur */
+}
+
+/* Styles pour l'image de l'orateur */
+.webinar-details img {
+    width: 100%; /* Image responsive */
+    max-width: 147px; /* Largeur maximale */
+    border-radius: 8px; /* Bords arrondis de l'image */
+    margin-bottom: 1px; /* Espacement inférieur */
+}
+
+/* Styles pour les paragraphes */
+.webinar-details p {
+    color: #333; /* Couleur du texte */
+    margin: 8px 0; /* Marges verticales */
+    line-height: 1.6; /* Espacement entre les lignes */
+}
+
+/* Styles pour le bouton d'inscription */
+.webinar-details button {
+    background-color: #ffcc00; /* Fond jaune doré */
+    color: #007bff; /* Couleur du texte bleue */
+    border: none; /* Pas de bordure */
+    border-radius: 4px; /* Bords arrondis */
+    padding: 10px 20px; /* Espacement interne */
+    font-size: 1em; /* Taille de police du bouton */
+    cursor: pointer; /* Curseur pointeur */
+    transition: background-color 0.3s ease; /* Transition pour la couleur */
+    margin-top: 16px; /* Espacement supérieur */
+}
+
+/* Effet au survol du bouton */
+.webinar-details button:hover {
+    background-color: #007bff; /* Changement de couleur au survol */
+    color: white; /* Couleur du texte blanche */
+}
+
+
+/* Titre principal */
+.webinaire-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FFA500; /* Couleur orange */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.theme-section {
+  background-color: #0047AB; /* Couleur bleu foncé */
+  color: white;
+}
+
+
+
+
+  
+  
+  
+  /*-------------------------------------------------------------------------------------------------------------*/
+  
+  
+  
+  /* Logos */
+  .logo-left,
+  .logo-right {
+    max-width: 80px;
+  }
+  
+  .logo-left-wrapper p {
+    font-size: 0.9rem;
+  }
+  
+  .webinar-header {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 1rem;
+  }
+  
+  /* "WEBINAIRE" en arrière-plan du logo droit */
+  .webinaire-background {
+    font-size: 3rem;
+    color: #ffffff;
+    background-color: #28a745; /* Vert */
+    transform: rotate(-10deg); /* Inclinaison */
+    padding: 0.5rem 1rem;
+    z-index: -1; /* Derrière le logo */
+    opacity: 0.9;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    position: absolute;
+  }
+  
+
+
+/* Style général pour espacer les éléments */
+.text-center h4 {
+  color: #093a6b; /* Couleur du titre */
+}
+
+.text-center p {
+  color: #0c3f72; /* Couleur des descriptions */
+  margin: 5px 0;
+}
+
+
+
+  
+
+  
+  
+  
+  
+  /* Conteneur principal */
+  .date-time-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  /* Bloc de la date et heure */
+  .date-time-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-grow: 2;
+  }
+  
+  /* Date */
+  .date-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .date-large {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  /* Heure */
+  .time-info {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00008b;
+  }
+  
+  .time-large {
+    color: #ff0000;
+    font-size: 1rem;
+  }
+  
+  /* Bloc Webinaire */
+  .webinaire-info {
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  .webinaire-info .badge {
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    display: inline-block;
+    color: #ffffff;
+    background-color: #28a745;
+    border-radius: 5px;
+  }
+  
+
+  
+/* Conteneur avec des coins arrondis différents */
+.photo-container {
+  width: 150px;               /* Largeur du rectangle */
+  height: 150px;              /* Hauteur du rectangle */
+  margin: auto;               /* Centrer */
+  border: 4px solid #007BFF;  /* Bordure bleue */
+  overflow: hidden;           /* L'image respectera la forme du conteneur */
+  border-radius : 40px
+}
+
+  
+#display-image{  
+display:inline-flex;
+}
+  
+  
+  
+  /* Conteneur du thème */
+  .theme-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #130679;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+  }
+  
+  /* Bloc de thème */
+  .theme-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Label du thème */
+  .theme-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  /* Valeur du thème */
+  .theme-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    text-transform: uppercase;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

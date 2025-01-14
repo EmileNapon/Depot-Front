@@ -1,0 +1,34 @@
+<div  class="container-xl">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-6">
+                      <h2>Creation <b>de formation</b></h2>
+                  </div>
+                  <div class="col-sm-6">
+                      <a  class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span></span></a>
+                      <a   class="btn btn-primary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span></span></a>
+                      <a  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span></span></a>  						
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class='container'>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Modules Disponibles</h3>
+        <div *ngFor="let module of modules">
+          <input type="checkbox" (change)="onModuleSelectionChange(module.id, $event)">
+          <label>{{ module.nom_module }}</label>
+        </div>
+      </div>     
+    </div>
+
+    <button class='btn btn-primary' (click)='valider()'>Ajouter un module</button>
+    <a   style='border: none; padding:20px' routerLink='/gestionnaire/domaines'> <i>Create domaine</i></a>
+</div>
+   

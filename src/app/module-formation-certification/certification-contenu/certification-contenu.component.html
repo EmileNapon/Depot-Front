@@ -1,0 +1,72 @@
+<app-headerPrincipale></app-headerPrincipale>
+<body>
+    <div class="container main-content">
+        <!-- En-tête -->
+        <header class="header">
+            <h2 class="main-header">{{filtredCertificat[0].title}}</h2>
+        </header>
+
+        <!-- Introduction du cours -->
+        <div class="course-introduction">
+            <div class="video-container">
+                <iframe
+                    id="video_Player_1"
+                    src="//player.vimeo.com/video/943227703?color=7451eb"
+                    frameborder="0"
+                    class="video-player"
+                    title="Vidéo introductive"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <h2 class="section-title">Présentation</h2>
+            <p class="course-description">
+                {{filtredCertificat[0].description}}
+            </p>
+        </div>
+
+        <!-- Détails du cours -->
+        <section class="course-details">
+            <h2 class="section-title">Critères</h2>
+            <p class="objectives-list">
+                {{filtredCertificat[0].criteres}}
+            </p>
+        </section>
+
+        <!-- Prérequis -->
+        <aside class="prerequisites">
+            <h2 class="section-title">Prérequis</h2>
+            <p>{{filtredCertificat[0].prerequisites}}</p>
+        </aside>
+
+        <!-- Navigation des parties du cours -->
+        <div class="course-navigation">
+            <ul class="course-list">
+                <li class="course-section" *ngFor="let chapitre of filtreListCertificatChapitre">
+                    <section>
+                        <h3 class="chapter-title">Partie {{chapitre.id}} - {{chapitre.titre}}</h3>
+                        <div class="course-content" *ngFor="let contenu of filtrecertificatContenu">
+                            <div class="course-item" *ngIf="chapitre.id == contenu.chapitre">
+                                <p>{{contenu.id}}. {{contenu.sous_titre}}</p>
+                            </div>
+                        </div>
+                        <div class="course-quiz">
+                            <ul>
+                                <li>Quiz : {{chapitre.titre}}</li>
+                            </ul>
+                        </div>
+                    </section>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+            <button class="btn btn-primary" (click)="onSelectCertificat(certificatIdDom)">
+                Continuer le cours
+            </button>
+        </div>
+    </div>
+
+
+</body>
+<app-footer></app-footer>

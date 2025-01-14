@@ -1,0 +1,102 @@
+
+
+<body>
+    
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+<div class="col-md-8 col-lg-6">
+    <h1 class="my-4 text-center">Créer votre Compte </h1>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <!-- Nom Complet -->
+        <div class="row mb-3 align-items-center">
+            <label for="nom" class="col-sm-4 col-form-label">Nom:</label>
+            <div class="col-sm-8 input-group">
+                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                <input type="text" id="nom" formControlName="nom" class="form-control" placeholder="Entrez votre nom complet">
+            </div>
+            <div *ngIf="registrationForm.get('nom')?.invalid && registrationForm.get('nom')?.touched" class="text-danger">
+                Nom requis et min 2 lettre.
+            </div>
+        </div>
+
+        <!-- Prenom -->
+        <div class="row mb-3 align-items-center">
+            <label for="prenom" class="col-sm-4 col-form-label">Prenom:</label>
+            <div class="col-sm-8 input-group">
+                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                <input type="text" id="prenom" formControlName="prenom" class="form-control" placeholder="Entrez votre nom complet">
+            </div>
+            <div *ngIf="registrationForm.get('prenom')?.invalid && registrationForm.get('prenom')?.touched" class="text-danger">
+                Prenom requis et min 2 lettre.
+            </div>
+        </div>
+
+        <!-- Adresse e-mail -->
+        <div class="row mb-3 align-items-center">
+            <label for="email" class="col-sm-4 col-form-label">Adresse e-mail:</label>
+            <div class="col-sm-8 input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input type="email" id="email" formControlName="email" class="form-control" placeholder="Entrez votre adresse e-mail">         
+            </div>
+            <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched" class="text-danger">
+                Adresse e-mail requise.
+            </div>
+        </div>
+
+        <!-- Mot de Passe -->
+        <div class="row mb-3 align-items-center">
+            <label for="password" class="col-sm-4 col-form-label">Mot de passe:</label>
+            <div class="col-sm-8 input-group">
+                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                <input type="password" id="password" formControlName="password" class="form-control" placeholder="Créez un mot de passe">
+            </div>
+            <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched" class="text-danger">
+                Mot de passe requise.
+            </div>
+        </div>
+
+        <!-- Confirmer Mot de Passe -->
+        <div class="row mb-3 align-items-center">
+            <label for="password2" class=" col-form-label">Confirmer mot de passe:</label>
+            <div class="col-sm-8 input-group">
+                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                <input type="password" id="password2" formControlName="password2" class="form-control" placeholder="Confirmez votre mot de passe">
+            </div>
+            <div *ngIf="registrationForm.get('password2')?.invalid && registrationForm.get('password2')?.touched" class="text-danger">
+                confirmer le mot de passe.
+            </div>
+        </div>
+
+        <!-- Numéro de Téléphone -->
+        <div class="row mb-3 align-items-center">
+            <label for="phone_number" class="col-sm-4 col-form-label">Numéro de téléphone:</label>
+            <div class="col-sm-8 input-group">
+                <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                <input type="tel" id="phone_number" formControlName="phone_number" class="form-control" placeholder="Entrez votre numéro de téléphone">              
+            </div>
+            <div *ngIf="registrationForm.get('phone_number')?.invalid && registrationForm.get('phone_number')?.touched" class="text-danger">
+                numero de telephone requis.
+            </div>
+        </div>
+
+        <!-- Type d'utilisateur -->
+        <div class="row mb-3 align-items-center">
+            <label for="role" class="col-sm-4 col-form-label">Type d'utilisateur:</label>
+            <div class="col-sm-8">
+                <select id="role" formControlName="role" class="form-select">
+                    <option value="apprenant">Apprenant</option>
+                    <option value="employeur">Employeur</option>
+                </select>
+            </div>
+            <div *ngIf="registrationForm.get('role')?.invalid && registrationForm.get('role')?.touched" class="text-danger">
+                Choisir vote type requis.
+            </div>
+        </div>
+
+        <button  type="submit" class="btn btn-warning w-100 mb-3">S'inscrire</button>
+    </form>
+
+
+    <p class="text-center">Vous avez déjà un compte ? <a routerLink='/usersPages/login' class="fw-bold text-decoration-none">Connectez-vous ici</a></p>
+</div>
+</div>
+</body>

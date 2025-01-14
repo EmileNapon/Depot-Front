@@ -1,0 +1,99 @@
+<div class="offer-details" *ngIf="offer">  
+    <div *ngIf="loading" class="loading-spinner">  
+        <mat-progress-spinner mode="indeterminate" diameter="70" color="primary"></mat-progress-spinner>  
+        <p>Chargement en cours...</p>  
+    </div>  
+    <div *ngIf="!loading">  
+        <div class="offer-header">  
+            <h1>{{ offer.title }}</h1>  
+        </div>  
+        
+        <div class="info-section">  
+            <div class="summary-card">  
+                <h3>Résumé de l'Offre</h3>  
+                <div class="info-item">  
+                    <i class="icon">📋</i>  
+                    <p><strong>Domaine :</strong> {{ offer.domain }}</p>  
+                </div>  
+                <div class="info-item" *ngIf="offer.enterprise"> <!-- Vérification de l'existence de enterprise -->  
+                    <i class="icon">🏢</i>  
+                    <p><strong>Société :</strong> {{ offer.enterWebsite || 'Non spécifié' }}</p> <!-- Afficher le nom de l'entreprise -->  
+                </div>  
+                <div class="info-item">  
+                    <i class="icon">📍</i>  
+                    <p><strong>Lieu :</strong> {{ offer.location }}</p>  
+                </div>  
+                <div class="info-item">  
+                    <i class="icon">📝</i>  
+                    <p><strong>Type d'offre :</strong> {{ offer.type }}</p>  
+                </div>  
+                <div class="info-item">  
+                    <i class="icon">📄</i>  
+                    <p><strong>Type de contrat :</strong> {{ offer.contractType }}</p>  
+                </div>  
+                <div class="info-item">  
+                    <i class="icon">📅</i>  
+                    <p><strong>Publicée le :</strong> {{ offer.postedDate | date: 'short' }}</p>  
+                </div>  
+                <div class="info-item">  
+                    <i class="icon">⏳</i>  
+                    <p><strong>Date d'expiration :</strong> {{ offer.expirationDate | date: 'short' }}</p>  
+                </div>  
+                <div class="info-item">  
+                    <i class="icon">💵</i>  
+                    <p><strong>Salaire :</strong> {{ offer.salary ? (offer.salary + ' FCFA') : 'Non spécifié' }}</p>  
+                </div>  
+            </div>  
+            
+            <!-- Informations sur l'entreprise -->  
+            <div *ngIf="offer.enterprise" class="company-card"> <!-- Vérification de l'existence de enterprise -->
+                <h3>Information de l'Entreprise</h3>  
+                <div class="info-item">  
+                    <i class="icon">📍</i>  
+                    <p><strong>Localisation :</strong> {{ offer.enterpriseLocation || 'Non spécifié' }}</p>  
+                </div>  
+                <div class="info-item">  
+                    <i class="icon">👥</i>  
+                    <p><strong>Taille :</strong> {{ offer.enterprise || 'Non spécifié' }}</p>  
+                </div>  
+                <div class="info-item">  
+                    <i class="icon">🌐</i>  
+                    <p>  
+                        <strong>Site Web :</strong>  
+                        <a *ngIf="offer.enterWebsite; else noWebsite" [href]="offer.enterWebsite" target="_blank">{{ offer.enterWebsite }}</a>  
+                        <ng-template #noWebsite><span>Non fourni</span></ng-template>  
+                    </p>  
+                </div>  
+                <div class="info-item">  
+                    <i class="icon">📧</i>  
+                    <p>  
+                        <strong>Email de Recrutement :</strong>  
+                        <a *ngIf="offer.enterprise; else noEmail" [href]="'mailto:' + offer.enterprise">{{ offer.enterprise }}</a>  
+                        <ng-template #noEmail><span>Non fourni</span></ng-template>  
+                    </p>  
+                </div>
+            </div>
+        </div>  
+  
+        <div class="details-cards">  
+            <div class="description-card">  
+                <h4>Description de l'Offre</h4>  
+                <p>{{ offer.description }}</p>  
+            </div>  
+            <div class="skills-card">  
+                <h4>Compétences Requises</h4>  
+                <ul>  
+                    <li *ngFor="let skill of requirementsList">{{ skill }}</li>  
+                </ul>  
+            </div>  
+            <div class="responsibilities-card">  
+                <h4>Responsabilités</h4>  
+                <ul>  
+                    <li *ngFor="let responsibility of responsibilitiesList">{{ responsibility }}</li>  
+                </ul>  
+            </div>  
+        </div>  
+  
+        <button (click)="register()" class="apply-button">Postuler</button>  
+    </div>  
+</div>

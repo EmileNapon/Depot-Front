@@ -1,0 +1,348 @@
+{
+  "CustomUsers": [
+    {
+      "id": 1,
+      "nom": "Doe",
+      "prenom": "John",
+      "structure": "Université de Technologie",
+      "sect_activite": "Informatique",
+      "email": "john.doe@example.com",
+      "phone_number": "555-1234",
+      "password": "password123",
+      "password2": "password123",
+      "role": "etudiant",
+      "profile_pic": "profile1.jpg"
+    },
+    {
+      "id": 2,
+      "nom": "Smith",
+      "prenom": "Anna",
+      "structure": "Tech Corp",
+      "sect_activite": "Informatique",
+      "email": "anna.smith@example.com",
+      "phone_number": "555-5678",
+      "password": "password456",
+      "password2": "password456",
+      "role": "employeur",
+      "profile_pic": "profile2.jpg"
+    },
+    {
+      "id": 3,
+      "nom": "SAWADOGO",
+      "prenom": "Jacques",
+      "structure": "Université de Technologie",
+      "sect_activite": "Informatique",
+      "email": "john.doe@example.com",
+      "phone_number": "555-1234",
+      "password": "password123",
+      "password2": "password123",
+      "role": "formateur",
+      "profile_pic": "profile1.jpg"
+    },
+    {
+      "id": 4,
+      "nom": "SANA",
+      "prenom": "Aïchata",
+      "structure": "",
+      "sect_activite": "",
+      "email": "aicha@example.com",
+      "phone_number": "555-1234",
+      "password": "password123",
+      "password2": "password123",
+      "role": "etudiant",
+      "profile_pic": "profile1.jpg"
+    },
+    {
+      "id": 3,
+      "nom": "NAPON",
+      "prenom": "Emile",
+      "structure": "",
+      "sect_activite": "",
+      "email": "napon@example.com",
+      "phone_number": "+226 75757575",
+      "password": "password123",
+      "password2": "password123",
+      "role": "formateur",
+      "profile_pic": "profile6.jpg"
+    }
+  ],
+  "Formations": [
+    {
+      "id": 1,
+      "titre": "Formation en Gestion de Projet",
+      "type": "Présentiel",
+      "niveau": "Intermédiaire",
+      "prix": 500,
+      "duree": "1 mois",
+      "nombre": "25",
+      "location": "Ouagadougou",
+      "resume": "Une formation complète sur la gestion de projet.",
+      "description": "Cette formation couvre les bases et les techniques avancées de la gestion de projet."
+    },
+    {
+      "id": "8f62",
+      "titre": "3e Cohorte des Futurs Alliés",
+      "type": "Formation professionnelle",
+      "niveau": "Licence",
+      "prix": 5000,
+      "duree": "1 mois",
+      "nombre": 20,
+      "location": "Fidalli",
+      "resume": "ZERTY",
+      "description": "SDFGHJ"
+    },
+    {
+      "id": "db43",
+      "titre": "4e Cohorte des Futurs Alliés",
+      "type": "Formation professionnelle",
+      "niveau": "Licence",
+      "prix": 5000,
+      "duree": "1 mois",
+      "nombre": 20,
+      "location": "Fidalli",
+      "resume": "SRHJ",
+      "description": "GIU"
+    },
+    {
+      "id": "9682",
+      "titre": "5e Cohorte des Futurs Alliés",
+      "type": "Formation professionnelle",
+      "niveau": "Licence",
+      "prix": 5000,
+      "duree": "1 mois",
+      "nombre": 20,
+      "location": "Fidalli",
+      "resume": "SZD",
+      "description": "FGHJKLM"
+    },
+    {
+      "id": "255b",
+      "titre": "2e Cohorte des Futurs Alliés",
+      "type": "Formation professionnelle",
+      "niveau": "Licence",
+      "prix": 5000,
+      "duree": "1 mois",
+      "nombre": 20,
+      "location": "Fidalli",
+      "resume": "DGJUUT",
+      "description": "QSHDJUF"
+    }
+  ],
+  "Groups": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "0": {
+        "id": 1
+      },
+      "id": "a171"
+    }
+  ],
+  "Inscrits": [
+    {
+      "id": 1,
+      "formation": 1,
+      "user_id": 1,
+      "date": "2024-10-23",
+      "group_id": 1
+    }
+  ],
+  "Domaines": [
+    {
+      "id": 1,
+      "nom_domaine": "Informatique"
+    },
+    {
+      "id": 2,
+      "nom_domaine": "Gestion"
+    }
+  ],
+  "Modules": [
+    {
+      "id": 1,
+      "nom_module": "Introduction à la Programmation",
+      "code": "CS101",
+      "domaine_id": 1
+    },
+    {
+      "id": 2,
+      "nom_module": "Planification de Projets",
+      "code": "GP201",
+      "domaine_id": 2
+    },
+    {
+      "id": "a2a5",
+      "nom_module": "Anglais professionnel 2",
+      "code": "COMPT101",
+      "domaine_id": 1
+    }
+  ],
+  "ModuleFormations": [
+    {
+      "id": 1,
+      "formation_id": 1,
+      "module_id": 2,
+      "user_id": 1
+    },
+    {
+      "id": 0,
+      "formation_id": "1d5d",
+      "module_id": 1,
+      "user_id": 1
+    },
+    {
+      "id": 0,
+      "formation_id": "1d5d",
+      "module_id": 2,
+      "user_id": 1
+    },
+    {
+      "id": 0,
+      "formation_id": "1d5d",
+      "module_id": "a2a5",
+      "user_id": 1
+    },
+    {
+      "id": "e238",
+      "formation_id": "4c2b",
+      "module_id": 1,
+      "user_id": 3
+    },
+    {
+      "id": "bf84",
+      "formation_id": "4c2b",
+      "module_id": 1,
+      "user_id": 3
+    },
+    {
+      "id": "a881",
+      "formation_id": "9682",
+      "module_id": 2,
+      "user_id": 3
+    },
+    {
+      "id": "89e8",
+      "formation_id": "9682",
+      "module_id": 2,
+      "user_id": 3
+    },
+    {
+      "id": "ec8a",
+      "formation_id": "255b",
+      "module_id": 1,
+      "user_id": 3
+    },
+    {
+      "id": "2f92",
+      "formation_id": "255b",
+      "module_id": "a2a5"
+    },
+    {
+      "id": "da64",
+      "formation_id": "255b",
+      "module_id": 1,
+      "user_id": 3
+    },
+    {
+      "id": "c332",
+      "formation_id": "255b",
+      "module_id": 2
+    }
+  ],
+  "Seances": [
+    {
+      "id": 1,
+      "lieu": "Fidalli",
+      "date_formation": "2024-11-01",
+      "heure_debut": "09:00",
+      "heure_fin": "12:00",
+      "statut": "En cours",
+      "moduleFormation_id": 1
+    },
+    {
+      "id": 2,
+      "lieu": "Fidalli",
+      "date_formation": "2024-10-10",
+      "heure_debut": "09:00",
+      "heure_fin": "12:00",
+      "statut": "Confirmé",
+      "moduleFormation_id": 2
+    },
+    {
+      "id": 1,
+      "lieu": "Fidalli",
+      "date_formation": "2024-10-24",
+      "heure_debut": "08:00",
+      "heure_fin": "12:00",
+      "statut": "En attente",
+      "moduleFormation_id": "a2a5"
+    },
+    {
+      "id": "ad34",
+      "lieu": "Fidalli",
+      "date_formation": "2024-10-26",
+      "heure_debut": "13:00",
+      "heure_fin": "18:00",
+      "statut": "Annulé",
+      "moduleFormation_id": "a2a5"
+    }
+  ],
+  "Candidatures": [
+    {
+      "id": 1,
+      "customUser_id": 1,
+      "offre_id": 1,
+      "nom_complet": "John Doe",
+      "email": "john.doe@example.com",
+      "cv": "cv_johndoe.pdf",
+      "lettre_motivation": "lettre_johndoe.pdf",
+      "date_candidate": "2024-10-23",
+      "status": "pending"
+    }
+  ],
+  "Offres": [
+    {
+      "id": 1,
+      "titre": "Stage en Développement Web",
+      "type": "stage",
+      "description": "Stage de 3 mois dans une entreprise de développement web.",
+      "nom_beneficiaire": "Tech Corp",
+      "date_debut": "2024-12-01",
+      "date_limite": "2024-11-30",
+      "duration": "3 mois",
+      "niveau": "Débutant",
+      "secteur_activite": "Informatique"
+    }
+  ],
+  "AffectationStages": [
+    {
+      "id": 1,
+      "inscrit_id": 1,
+      "offre_id": 1,
+      "date_affectation": "2024-12-01"
+    }
+  ],
+  "Annonces": [
+    {
+      "id": 1,
+      "titre": "Journée de l'orientation professionnelle",
+      "lieu": "Université de Ouagadougou",
+      "dateCours": "2024-11-15",
+      "description": "Une journée dédiée à l'orientation professionnelle des étudiants.",
+      "datePublication": "2024-10-20",
+      "heure": "09:00"
+    },
+    {
+      "id": 1,
+      "titre": "Cours de Gestion de projet",
+      "lieu": "Fidalli",
+      "dateCours": "2024-10-24",
+      "description": "jjsldds",
+      "datePublication": "2024-10-23T16:33:31.436Z"
+    }
+  ]
+}

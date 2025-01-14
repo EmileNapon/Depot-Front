@@ -1,0 +1,108 @@
+/* Styles globaux pour le conteneur du sidenav */
+.sidenav-container {
+  height: 100vh; /* Prend toute la hauteur de la vue */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styles pour le sidenav */
+.sidenav {
+  width: 250px; /* Largeur du sidenav */
+  border-right: 1px solid #e0e0e0; /* Bordure légère à droite */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Ombre portée */
+}
+
+/* Styles pour la toolbar du sidenav */
+.sidenav-toolbar {
+  background-color: #f5f5f5ad;
+  color:  #3f51b5; /* Couleur du texte */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.sidenav-toolbar a {
+  color: inherit; /* Hérite de la couleur du texte */
+  text-decoration: none; /* Supprime le soulignement */
+  font-size: 1.25rem; /* Taille de la police */
+  font-weight: 500; /* Poids de la police */
+}
+
+/* Styles pour le contenu principal */
+mat-sidenav-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Prend tout l'espace disponible */
+}
+
+/* Styles pour le header principal */
+.main-header {
+  background-color: #ffffff; /* Fond blanc */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.main-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+/* Styles pour le logo */
+.logo img {
+  height: 40px; /* Hauteur du logo */
+  margin-left: 16px; /* Marge à gauche */
+}
+
+/* Espace vide pour pousser les éléments à droite */
+.spacer {
+  flex: 1; /* Prend tout l'espace disponible */
+}
+
+/* Styles pour les boutons d'icônes */
+button[mat-icon-button] {
+  margin: 0 8px; /* Marge entre les boutons */
+}
+
+/* Styles pour l'avatar utilisateur */
+.avatar {
+  width: 32px; /* Taille de l'avatar */
+  height: 32px;
+  border-radius: 50%; /* Forme circulaire */
+  margin-right: 8px; /* Marge à droite */
+}
+
+/* Styles pour le menu utilisateur */
+mat-menu {
+  min-width: 150px; /* Largeur minimale du menu */
+}
+
+/* Styles pour le contenu principal */
+.content {
+  flex: 1; /* Prend tout l'espace disponible */
+  padding: 16px; /* Espacement intérieur */
+  background-color: #f5f5f5; /* Fond gris clair */
+}
+
+/* Styles pour le footer (optionnel) */
+.main-footer {
+  background-color: #3f51b5; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  padding: 16px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px; /* Largeur maximale du contenu */
+  margin: 0 auto; /* Centrage horizontal */
+}
+
+.footer-content nav a {
+  color: white; /* Couleur des liens */
+  text-decoration: none; /* Supprime le soulignement */
+  margin: 0 8px; /* Marge entre les liens */
+}
+
+.footer-content nav a:hover {
+  text-decoration: underline; /* Soulignement au survol */
+}

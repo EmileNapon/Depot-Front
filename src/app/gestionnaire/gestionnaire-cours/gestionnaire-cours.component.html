@@ -1,0 +1,84 @@
+
+<body>
+    <div class="container-xl">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2>Liste des cours</h2>
+                        </div>
+                        <div class="col-sm-6">
+                            <a (click)='ondelete()' class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>supprimer</span></a>
+                            <a (click)=" OnAdd()"  class="btn btn-primary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>ajouter</span></a>
+                            <a (click)='onVoirCours()' class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Voir matieres</span></a>
+
+                            
+                            						
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf=" !__addCours__">
+                <table class="table">
+                    
+                    <tbody>
+                        <tr *ngFor='let cours of __filteredCoursGestionnaire__'>
+                            <td >
+                                <div (click)="selecterDomaine(cours.id)" > 
+                                        
+                                    <i class="circle"
+                                          [ngClass]="{
+                                            'bi bi-circle': selectedCoursIndex !== cours.id,
+                                            'bi bi-circle-fill': selectedCoursIndex === cours.id
+                                          }"
+                                        ></i>
+                                </div>
+                                    
+                            </td>
+                            <td >{{cours.nom_cours}} </td>
+                            <td *ngIf='selectedCoursIndex === cours.id'>
+                                <a *ngIf='__iconVoirCours__' (click)="onSelectgestionnaireCours(cours.id)" class="matiere" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="matiere"><i class="bi bi-chevron-right"></i></i></a>
+                                <a *ngIf='__iconDelete__' href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            </td>
+                        </tr>					
+                    </tbody>
+                </table>
+                <div class="clearfix">
+                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a href="#">Previous</a></li>
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">4</a></li>
+                        <li class="page-item"><a href="#" class="page-link">5</a></li>
+                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div *ngIf='__addCours__==true' class='fixed'>           
+        <div class="container container-l d-flex justify-content-center align-items-center min-vh-10">
+            <div class="col-md-8 col-lg-6">
+                <form [formGroup]= 'CoursForm' (ngSubmit)="onSubmit()">
+                    <!-- Nom Complet -->
+
+                    <div class="row mb-3 align-items-center">
+                        <label for="nom_cours" class="col-sm-4 col-form-label"> Title</label>
+                        <div class="col-sm-8 input-group">
+                            <span class="input-group-text"><i class="bi bi-file-earmark-plus"></i></span>
+                            <input type="text" id="nom_cours" formControlName="nom_cours" class="form-control" placeholder="Titre de la formation">
+                        </div>
+                    </div> 
+                    <div class='nav'>        
+                        <button  type="submit" class="btn btn-primary mb-3">Ajouter</button>
+                        <button  (click)=" OnAdd()" type="submit" class="btn btn-danger  mb-3 nav-item">Annuler</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </body>
+    

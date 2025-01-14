@@ -1,0 +1,93 @@
+
+
+    
+           
+    
+    
+    
+
+    
+        <app-headerPrincipale></app-headerPrincipale>
+    
+  <body>
+    
+    <!-- Entête principale -->
+
+
+
+
+              <section class="banner bg-secondary text-white text-center py-5" style="position: relative; overflow: hidden;color:secondary;">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; no-repeat center center; background-size: cover; filter: brightness(1.2);"></div>
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 255, 0.3); mix-blend-mode: overlay;"></div>
+                <div class="container" style="position: relative; z-index: 1;">
+                <br/><br/>
+                </div>
+              </section>
+
+      
+
+
+          <section class="courses-list">
+            <h2>Modules Disponibles</h2>
+            <div class="row">
+              <div class="col-md-4" *ngFor='let module of filteredModules'>
+                <div class="card mb-4 shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">{{module.nom_module}}</h5>
+                    <p class="card-text">Niveau : ★★★</p>
+                    <p class="card-text">Durée : 4 heures</p>
+                    <button (click)="onSelectModule(module.id)" class="btn btn-primary">Voir les détails</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+         
+            
+<div class='py-5' style='padding-left:650px;'>
+          <div class="pagination">
+            <a href="#prev">&laquo; Précédent</a>
+            <a href="#next">Suivant &raquo;</a>
+          </div>
+
+</div>
+
+
+
+
+<!--
+
+<div class="col-md-3">                        
+<h4 class="card-title">AUDIT ET GESTION DES RISQUES</h4>
+<br/>
+<p>Audit et commissariat aux comptes </p>
+<p>Risk management </p>
+<p>Cartographie des risques </p>            
+</div>
+
+<div class="col-md-3">                        
+<h4 class="card-title">COMMUNICATION</h4>
+<br/>
+<p>Communication d'entreprise </p>
+<p>Management de la qualité </p>
+<p>La culture d’entreprise </p> 
+<p>communication digitale </p>
+<p>Digitalisation des entreprises  </p>
+<p>Négocier dans un contexte pluriculturel </p>
+<p>Collecte et analyse de données d’enquête par smartphone</p>
+<p>Community manager </p>
+<p>Gestion et administration de site web  </p>           
+</div>
+
+
+
+-->
+
+
+
+
+
+</body>
+
+<app-footer></app-footer>

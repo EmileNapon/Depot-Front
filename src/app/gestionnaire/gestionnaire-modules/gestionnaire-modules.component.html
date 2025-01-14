@@ -1,0 +1,84 @@
+
+<body>
+    <div class="container-xl">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2>Liste des modules</h2>
+                        </div>
+                        <div class="col-sm-6">
+                            <a (click)='ondelete()' class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>supprimer</span></a>
+                            <a (click)=" OnAdd()"  class="btn btn-primary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>ajouter</span></a>
+                            <a (click)=' onVoirModule()' class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Voir matieres</span></a>
+
+                            
+                            						
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf=" !__addModule__">
+                <table class="table">
+                    
+                    <tbody>
+                        <tr *ngFor='let module of __filteredModulesGestionnaire__'>
+                            <td >
+                                <div (click)="selecterModule(module.id)" > 
+                                        
+                                    <i class="circle"
+                                          [ngClass]="{
+                                            'bi bi-circle': selectedModuleIndex !== module.id,
+                                            'bi bi-circle-fill': selectedModuleIndex === module.id
+                                          }"
+                                        ></i>
+                                </div>
+                                    
+                            </td>
+                            <td >{{module.nom_module}} </td>
+                            <td *ngIf='selectedModuleIndex === module.id'>
+                                <a *ngIf='__iconVoirModule__' (click)="onSelectgestionnaireCours(module.id)" class="matiere" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="matiere"><i class="bi bi-chevron-right"></i></i></a>
+                                <a *ngIf='__iconDelete__' href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            </td>
+                        </tr>					
+                    </tbody>
+                </table>
+                <div class="clearfix">
+                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a href="#">Previous</a></li>
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">4</a></li>
+                        <li class="page-item"><a href="#" class="page-link">5</a></li>
+                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div *ngIf='__addModule__==true' class='fixed'>           
+        <div class="container container-l d-flex justify-content-center align-items-center min-vh-10">
+            <div class="col-md-8 col-lg-6">
+                <form [formGroup]= 'ModuleForm' (ngSubmit)="onSubmit()">
+                    <!-- Nom Complet -->
+
+                    <div class="row mb-3 align-items-center">
+                        <label for="nom_module" class="col-sm-4 col-form-label"> Title</label>
+                        <div class="col-sm-8 input-group">
+                            <span class="input-group-text"><i class="bi bi-file-earmark-plus"></i></span>
+                            <input type="text" id="nom_module" formControlName="nom_module" class="form-control" placeholder="Titre de la formation">
+                        </div>
+                    </div> 
+                    <div class='nav'>        
+                        <button  type="submit" class="btn btn-primary mb-3">Ajouter</button>
+                        <button  (click)=" OnAdd()" type="submit" class="btn btn-danger  mb-3 nav-item">Annuler</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </body>
+    

@@ -1,0 +1,151 @@
+.application-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Centrage vertical */
+  background-color: #f4f7fc; /* Fond légèrement gris */
+  position: relative;
+}
+
+/* Overlay de chargement couvrant toute la page */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.loading-spinner {
+  z-index: 10000;
+  color: #007bff;
+}
+
+.loading-overlay p {
+  font-size: 18px;
+  color: #333;
+  animation: fade-in-out 1.5s infinite;
+}
+
+@keyframes fade-in-out {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.application-card {
+  background-color: white;
+  margin: 16px;
+  border-radius: 16px;
+  border-top: 8px solid #6229cc; /* Bordure du haut avec couleur attrayante */
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  padding: 32px;
+  width: 100%;
+  max-width: 700px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.application-card.blurred {
+  filter: blur(5px);
+  pointer-events: none; /* Désactiver les interactions pendant le chargement */
+}
+
+.form-group textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.application-card h1 {
+  color: #6229cc;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.upload-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 140px;
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 24px;
+  padding: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.upload-card:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.upload-icon {
+  font-size: 36px;
+  color: #007bff; /* Couleur de l'icône */
+}
+
+.doc-name {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #333; /* Couleur pour le texte */
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-add {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.btn-add:hover {
+  color: #0056b3;
+}
+
+.submit-button-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Coins arrondis */
+  padding: 16px 32px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}

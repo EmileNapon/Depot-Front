@@ -1,0 +1,84 @@
+
+<body>
+    <div  class="container-xl">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2>Choisir un <b>domaine</b></h2>
+                        </div>
+                        <div class="col-sm-6">
+                             <a (click)=" OnAdd()"   class="btn btn-primary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>ajouter</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf=" !__addDomaine__">
+                <table class="table">
+                    
+                    <tbody>
+                        <tr class='tableau' *ngFor='let domaine of __domaines__'>
+                            <td >
+                                <div (click)="selecterDomaine(domaine.id)" > 
+                                        
+                                    <i class="circle"
+                                          [ngClass]="{
+                                            'bi bi-circle': selectedDomaineIndex !== domaine.id,
+                                            'bi bi-circle-fill': selectedDomaineIndex === domaine.id
+                                          }" 
+                                        ></i>
+                                </div>
+                                    
+                            </td>
+                            <td >{{domaine.nom}}</td>
+                            <td *ngIf='selectedDomaineIndex === domaine.id'>
+                                <a *ngIf='__iconVoirMatiere__' (click)='onSelectDomaine(domaine.id)' class="matiere" data-toggle="modal"><a class='btn btn-outline-secondary'>Ajouter</a></a>
+                            </td>
+                        </tr>					
+                    </tbody>
+                </table>
+                <div class="clearfix">
+                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a href="#">Previous</a></li>
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">4</a></li>
+                        <li class="page-item"><a href="#" class="page-link">5</a></li>
+                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <!-- Edit Modal HTML -->
+
+
+       <div *ngIf='__addDomaine__==true' class='fixed'>           
+            <div class="container container-l d-flex justify-content-center align-items-center min-vh-10">
+                <div class="col-md-8 col-lg-6">
+                    <form [formGroup]="DomaineForm" (ngSubmit)="onSubmit()">
+                        <!-- Nom Complet -->
+
+                        <div class="row mb-3 align-items-center">
+                            <label for="nom" class="col-sm-4 col-form-label"> Title</label>
+                            <div class="col-sm-8 input-group">
+                                <span class="input-group-text"><i class="bi bi-file-earmark-plus"></i></span>
+                                <input type="text" id="nom" formControlName="nom" class="form-control" placeholder="Titre du domaine">
+                            </div>
+                        </div> 
+                        <div class='nav'>        
+                            <button type="submit" class="btn btn-primary mb-3">Ajouter</button>
+                            <button  (click)=" OnAdd()" type="submit" class="btn btn-danger  mb-3 nav-item">Annuler</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>        
+</body>
+    
+
+

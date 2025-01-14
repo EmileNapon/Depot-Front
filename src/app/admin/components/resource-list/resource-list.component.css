@@ -1,0 +1,144 @@
+.resource-list-container {
+  margin: 16px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+}
+
+.bulk-actions-toolbar {
+  display: flex;
+  justify-content: flex-end; /* Alignement à droite */
+  align-items: center; /* Alignement vertical */
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.bulk-actions-toolbar button {
+  font-weight: bold;
+}
+
+.mat-form-field.search-bar {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.generic-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+mat-header-cell {
+  font-weight: bold;
+  background-color: #f0eeee;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+mat-row.clickable-row {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+mat-row.clickable-row:hover {
+  background-color: #f9f9f9;
+}
+
+.actions-column-header {
+  text-align: center; /* Centre l'en-tête */
+}
+
+.mat-cell.actions-cell {
+  text-align: center; /* Aligne les boutons au centre */
+}
+
+.mat-icon.info {
+  color: #0288d1; /* Couleur bleue pour info */
+}
+
+.mat-icon.edit {
+  color: #ffa000; /* Couleur orange pour modifier */
+}
+
+.mat-icon.delete {
+  color: #d32f2f; /* Couleur rouge pour supprimer */
+}
+
+mat-paginator {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-resource-button {
+  position: fixed;
+  bottom: 16px; /* Positionné en bas */
+  right: 16px; /* Positionné à droite */
+  z-index: 1000; /* Toujours au-dessus des autres éléments */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Bouton circulaire */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 24px;
+}
+
+.add-resource-button:hover {
+  transform: scale(1.1); /* Agrandit légèrement le bouton au survol */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.add-resource-button mat-icon {
+  color: white; /* Change la couleur de l'icône en blanc */
+}
+
+
+.search-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 250px; /* Ajoute un espace entre la barre de recherche et le bouton */
+}
+
+.search-bar {
+  flex: 1; /* Permet à la barre de recherche d'occuper tout l'espace disponible */
+}
+
+.delete-all-button {
+  white-space: nowrap;
+}
+
+.overlay {
+  position: fixed; /* Position fixe pour couvrir toute la page */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+  z-index: 1000; /* Placer l'overlay au-dessus du contenu */
+}
+
+mat-progress-spinner {
+  position: absolute; /* Placer le spinner au centre */
+  z-index: 1001; /* Assurer que le spinner est au-dessus de l'overlay */
+}
+
+.no-data-message:hover {
+  background-color: #f1f1f1; /* Change légèrement le fond au survol */
+  cursor: not-allowed;
+}

@@ -1,0 +1,42 @@
+<body>
+    
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="col-md-8 col-lg-6">
+        <h1 class="my-4 text-center">Créer votre Compte </h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <!-- Adresse e-mail -->
+            <div class="row mb-3 align-items-center">
+                <label for="email" class="col-sm-4 col-form-label">Adresse e-mail :</label>
+                <div class="col-sm-8 input-group">
+                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                    <input type="email" id="email" formControlName="email" class="form-control" placeholder="Entrez votre adresse e-mail">
+                </div>
+                <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger">
+                    E-mail requis.
+                </div>
+            </div>
+    
+            <!-- Mot de Passe -->
+            <div class="row mb-3 align-items-center">
+                <label for="password" class="col-sm-4 col-form-label">Mot de Passe :</label>
+                <div class="col-sm-8 input-group">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    <input type="password" id="password" formControlName="password" class="form-control" placeholder="Créez un mot de passe">
+                </div>
+                <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+                    Passe word requis.
+                </div>
+            </div>
+    
+
+    
+            <button  type="submit" class="btn btn-warning w-100 mb-3">Se connecter</button>
+        </form>
+    
+
+        <p class="text-center">Vous avez déjà un compte ? <a routerLink="/usersPages/register" class="fw-bold text-decoration-none">inscrivez-vous ici</a></p>
+    </div>
+    </div>
+    </body>
+    

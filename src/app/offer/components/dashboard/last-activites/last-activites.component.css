@@ -1,0 +1,63 @@
+.last-activities {
+    padding: 24px;
+    background-color: #f9f9f9; /* Fond léger pour le conteneur */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #3f51b5; /* Couleur du titre */
+    font-weight: 600; /* Titre plus gras */
+  }
+  
+  mat-list {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0; /* Supprimer le padding par défaut */
+  }
+  
+  mat-list-item {
+    border-bottom: 1px solid #eee; /* Séparateur entre les activités */
+    padding: 16px; /* Espacement interne */
+    display: flex;
+    align-items: center; /* Aligner les éléments verticalement */
+    transition: background-color 0.3s ease; /* Animation au survol */
+  }
+  
+  mat-list-item:hover {
+    background-color: #f5f5f5; /* Effet de survol */
+  }
+  
+  mat-list-item:last-child {
+    border-bottom: none; /* Pas de séparateur pour le dernier élément */
+  }
+  
+  mat-icon {
+    color: #3f51b5; /* Couleur des icônes */
+    margin-right: 16px; /* Espacement entre l'icône et le texte */
+    font-size: 24px; /* Taille des icônes */
+  }
+  
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: #333; /* Couleur du texte principal */
+  }
+  
+  p {
+    margin: 0;
+    color: #666; /* Couleur du texte secondaire */
+    font-size: 14px; /* Taille du texte secondaire */
+    display: flex;
+    flex-direction: column; /* Afficher la description et le timestamp en colonne */
+  }
+  
+  .timestamp {
+    font-size: 12px;
+    color: #999; /* Couleur du timestamp */
+    margin-top: 4px; /* Espacement entre la description et le timestamp */
+  }

@@ -1,0 +1,78 @@
+
+
+<body>
+    
+    <nav class="navbar-light navbar-fixed-top bg-light  py-4">
+    
+        <ul class="nav nav-underline">
+            <li class="nav-item">
+                <img src="assets/icon.png" alt="FuturAlliés Logo" routerLink='/acceuil' class="logo" height="50">
+            </li>
+            <li class="nav-item">
+                <a routerLink='/formation/acceuilFormation' class="nav-link Activate" >Auditions Libres</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink='/FormationWebinaire' class="nav-link" >Programmes talents</a>
+            </li>
+            <li class="nav-item">
+            <li class="nav-item">
+                <a routerLink='/FormationWebinaire' class="nav-link" >Webinaires</a>
+            </li>
+            <li class="nav-item">  
+                <a routerLink='/formation/certification' class="nav-link" >Certifications</a>
+            </li>
+            <li class="nav-item">
+                <form class="d-flex" role="search">
+            <input class="form-control me-2 search-input" type="search" placeholder="RESEARCH UN COURS" aria-label="Search">
+                </form>
+            </li>
+            <li class="nav-item">
+                <a href="#trainers" class="nav-link" >Entreprises</a>
+            </li>
+    
+            <li class="nav-item" style="padding-left: 30px;">
+                <a routerLink="/usersPages/login" class="btn btn-warning" >Se connecter</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+<div class='container'>
+    <div class="row " >
+      <h2><p class='col-md-12' style='background-color:rgb(2, 51, 104);color:white'> </p></h2>
+      <br/> <br/> 
+      <p><p>
+        <div class="col-sm-4 mb-6 mb-sm-0"  >
+        </div>
+        <div class="col-sm-6">
+          <div class="card" style='border:none'>
+            <div class="card-body">
+                <div class='container' style='padding-left:0px'>
+                    <div class="page-content">
+                    <h1>{{ content.title }}</h1>
+                  
+                    <h3>QCM</h3>
+                    <p>{{ content.question }}</p>
+                    <div *ngFor="let option of content.options">
+                      <input type="radio" [(ngModel)]="selectedOption" [value]="option">{{ option }}
+                    </div>
+                    <button (click)="submitAnswer()">Soumettre</button>
+                  </div>
+                </div>
+                  
+
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+   
+    </body>
+
+

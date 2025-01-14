@@ -1,0 +1,54 @@
+<app-headerPrincipale></app-headerPrincipale>
+
+<div class="container main-content" >
+  <div *ngIf="chapitreFiltres.length > 0; else noChapters">
+    <div *ngFor="let chapitre of chapitreFiltres; let i = index">
+      <div *ngIf="i === currentIndex">
+      <h2 class="main-header">{{ chapitre.titre }}</h2>
+      <br />
+
+      <section class="course-details" >
+        <ul class="objectives-list">
+          <li class="course-section" *ngFor="let section of sectionFiltres" [hidden]="section.chapitre !== chapitre.id">
+            <section>
+              <hr />
+              <ul class="course-content">
+                <li class="course-item completed">
+                  <p [innerHTML]="section.nom_section"></p>
+                </li>
+                <div *ngFor="let contenu of ContenusFiltres" [hidden]="contenu.section !== section.id">
+                  <p [innerHTML]="contenu.description"></p>
+                </div>
+              </ul>
+            </section>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+    <div class="actions">
+      <button
+        class="btn btn-secondary"
+        (click)="prevChapter()"
+        [disabled]="currentIndex === 0"
+        aria-label="Retour au chapitre précédent"
+      >
+        Retour
+      </button>
+
+      <button
+        class="btn btn-primary"
+        (click)="nextChapter()"
+        [disabled]="currentIndex === chapitreFiltres.length - 1"
+        aria-label="Passer au chapitre suivant"
+      >
+        Continuer
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #noChapters>
+  <p>Aucun chapitre disponible.</p>
+</ng-template>
+<app-footer></app-footer>

@@ -1,0 +1,225 @@
+
+
+/* Application de la police */
+body {
+  font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #333; /* Couleur de texte par défaut */
+  background-color: #f5f5f5; /* Couleur de fond */
+  font-size:97%;
+}
+
+/* Couleurs des liens */
+a {
+  color: #007bff; /* Couleur bleue pour les liens */
+}
+
+a:hover {
+  color: #0056b3; /* Couleur bleue plus foncée pour les liens au survol */
+}
+
+/* Couleurs des titres */
+h1, h2, h3, h4, h5, h6 {
+  color: #222; /* Couleur légèrement plus foncée pour les titres */
+}
+
+
+
+
+
+
+
+
+
+/* Assurez-vous également que votre champ de saisie est bien stylé en blanc */
+input[type="text"] {
+  background-color: #fff;
+  color: #000; /* Couleur du texte du champ de saisie */
+}
+
+.nav-item {
+  margin-left: 10px;
+}
+
+ nav a {
+  color:black;
+}
+
+
+
+.search-input {
+  width: 300px; /* Définir la largeur souhaitée */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f7f7f7;
+}
+
+.hero-left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.hero-left h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.hero-left p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  background-color: #ffcc00; /* Jaune doré */
+  color: #003366; /* Bleu foncé */
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.hero-right {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-right video {
+  max-width: 100%;
+  height: auto;
+}
+
+.course-filter {
+  padding: 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.filter-options {
+  margin-bottom: 20px;
+}
+
+.filter-options select, .filter-options .filter-btn {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffcc00; /* Jaune doré */
+  color: #003366; /* Bleu foncé */
+  border: none;
+}
+
+.courses-list {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.courses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 800px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.course-image {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.course-details {
+  flex: 1;
+}
+
+.course-domain, .course-title, .course-difficulty, .course-duration, .course-description {
+  margin: 5px 0;
+}
+
+.course-difficulty {
+  color: #ffcc00; /* Jaune doré */
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination a {
+  margin: 0 10px;
+  color: #003366; /* Bleu foncé */
+  text-decoration: none;
+}
+
+footer {
+  background-color: #003366; /* Bleu foncé */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  margin: 10px;
+  flex: 1;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-section ul li a {
+  color: #ffcc00; /* Jaune doré */
+  text-decoration: none;
+}
+
+.social-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  margin-top: 20px;
+}

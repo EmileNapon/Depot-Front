@@ -1,0 +1,22 @@
+<mat-nav-list>
+  <div *ngFor="let item of menuItems">
+    <!-- Menu item sans sous-menu -->
+    <a mat-list-item *ngIf="!item.children" [routerLink]="item.route" matTooltip="Accéder à {{ item.label }}">
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span>{{ item.label }}</span>
+    </a>
+
+    <!-- Menu item avec sous-menu -->
+    <mat-expansion-panel *ngIf="item.children">
+      <mat-expansion-panel-header matTooltip="Voir les sous-menus de {{ item.label }}">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span>{{ item.label }}</span>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let child of item.children" [routerLink]="child.route" matTooltip="Accéder à {{ child.label }}">
+          <span>{{ child.label }}</span>
+        </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </div>
+</mat-nav-list>

@@ -1,0 +1,153 @@
+<div class="create-offer">
+  <h2>Créer une nouvelle offre</h2>
+
+  <form [formGroup]="offerForm" (ngSubmit)="onSubmit()">
+    <!-- Type de l'offre -->
+    <fieldset class="form-section">
+      <legend>Type de l'offre</legend>
+      <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="type" (selectionChange)="onTypeChange($event.value)">
+          <mat-option value="Job">Emploi</mat-option>
+          <mat-option value="Internship">Stage</mat-option>
+          <mat-option value="Other">Autre</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </fieldset>
+
+    <!-- Informations de l'entreprise -->
+    <fieldset class="form-section">
+      <legend>Informations de l'entreprise</legend>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nom de l'entreprise</mat-label>
+        <input matInput formControlName="enterpriseName" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Localisation</mat-label>
+        <input matInput formControlName="enterpriseLocation" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Site web</mat-label>
+        <input matInput type="url" formControlName="enterpriseWebsite" />
+      </mat-form-field>
+    </fieldset>
+
+    <!-- Informations spécifiques à l'offre -->
+    <fieldset class="form-section">
+      <legend>Informations spécifiques à l'offre</legend>
+      <mat-form-field appearance="outline">
+        <mat-label>Intitulé</mat-label>
+        <input matInput formControlName="title" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Domaine</mat-label>
+        <input matInput formControlName="domain" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Lieu</mat-label>
+        <input matInput formControlName="location" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Exigences</mat-label>
+        <textarea matInput formControlName="requirement"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Responsabilités</mat-label>
+        <textarea matInput formControlName="responsabilities"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email de soumission</mat-label>
+        <input matInput type="email" formControlName="recruitmentEmail" />
+      </mat-form-field>
+
+      <!-- Statut de l'offre -->
+      <mat-form-field appearance="outline">
+        <mat-label>Statut</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="Open">Ouvert</mat-option>
+          <mat-option value="Closed">Fermé</mat-option>
+          <mat-option value="Pending">En attente</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Mode de soumission -->
+      <mat-form-field appearance="outline">
+        <mat-label>Mode de soumission</mat-label>
+        <mat-select formControlName="applicationMode">
+          <mat-option value="Online">En ligne</mat-option>
+          <mat-option value="Physical">En personne</mat-option>
+          <mat-option value="Both">Les deux</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Date d'expiration -->
+      <mat-form-field appearance="outline">
+        <mat-label>Date d'expiration</mat-label>
+        <input matInput type="date" formControlName="expirationDate" />
+      </mat-form-field>
+
+      <!-- Champs spécifiques à un emploi -->
+      <ng-container *ngIf="isJob">
+        <mat-form-field appearance="outline">
+          <mat-label>Type de Contrat</mat-label>
+          <mat-select formControlName="contratType" (selectionChange)="onContratTypeChange($event.value)">
+            <mat-option value="CDI">CDI</mat-option>
+            <mat-option value="CDD">CDD</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Salaire</mat-label>
+          <input matInput type="number" formControlName="salary" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Niveau d'expérience</mat-label>
+          <input matInput formControlName="experienceLevel" />
+        </mat-form-field>
+      </ng-container>
+
+      <!-- Champs spécifiques à un stage ou CDD -->
+      <ng-container *ngIf="isInternship || isCDD">
+        <mat-form-field appearance="outline">
+          <mat-label>Durée (en mois)</mat-label>
+          <input matInput type="number" formControlName="duration" />
+        </mat-form-field>
+      </ng-container>
+
+      <!-- Champs pour les documents requis -->
+      <div class="checkbox-group">
+        <mat-checkbox formControlName="isRequiredCvDoc">CV requis</mat-checkbox>
+        <mat-checkbox formControlName="isRequiredMlDoc">Lettre de motivation requise</mat-checkbox>
+        <mat-checkbox formControlName="canAddOthersDoc">Autres documents autorisés</mat-checkbox>
+      </div>
+
+      <!-- Télétravail -->
+      <mat-checkbox formControlName="isRemote">Télétravail</mat-checkbox>
+    </fieldset>
+
+    <!-- Bouton de soumission -->
+    <button mat-raised-button color="primary" type="submit" [disabled]="offerForm.invalid || isLoading">
+      <span *ngIf="!isLoading">Créer l'offre</span>
+      <span *ngIf="isLoading">Création en cours...</span>
+    </button>
+  </form>
+
+  <!-- Loading Spinner Overlay -->
+  <div *ngIf="isLoading" class="loading-overlay">
+    <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+  </div>
+</div>

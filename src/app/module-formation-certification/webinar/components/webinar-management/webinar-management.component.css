@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9; /* Fond léger pour le corps */
+  }
+
+  .navigation-links span {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #003366; /* Bleu foncé */
+    color: white;
+    padding: 20px;
+  }
+  
+  .sidebar-header {
+    text-align: center;
+  }
+  
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-links li {
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .sidebar-links li:hover {
+    background-color: #00509e; /* Bleu clair pour le survol */
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: white; /* Blanc pour le contenu principal */
+    overflow-y: auto;
+  }
+  
+  h1 {
+    color: #003366; /* Couleur de titre */
+  }
+  
+  .webinar-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .webinar-table th, .webinar-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .webinar-table th {
+    background-color: #003366; /* Couleur des en-têtes */
+    color: white;
+  }
+  
+  .webinar-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Lignes alternées */
+  }
+  
+  .webinar-table tr:hover {
+    background-color: #e6e6e6; /* Survol des lignes */
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9rem;
+  }
+  
+  .form-actions {
+    text-align: right;
+  }
+  
+  .form-actions button {
+    background-color: #ffcc00; /* Jaune doré */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-actions button:disabled {
+    background-color: #ccc; /* Couleur désactivée */
+  }
+  
+  .form-actions button:hover:not(:disabled) {
+    background-color: #ffb300; /* Jaune doré au survol */
+  }
+  
+
+
+
+
+  
+  
+  .sidebar-header {
+    align-items: center;
+  }
+  
+  .logo-link {
+    margin-right: 10px;
+  }
+  
+  .logo {
+    width: 50px; /* Ajustez la taille selon vos besoins */
+    height: auto;
+  }
+  
+  .main-content {
+    flex: 1;
+    margin-top: 0;
+    padding: 20px;
+  }
+  
+  .main-header {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eaeaea; /* Couleur d'arrière-plan de l'en-tête */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0; /* Fixer l'en-tête en haut de la page */
+    z-index: 1000; /* Pour s'assurer qu'il est au-dessus du contenu */
+  }
+  
+  .auth-buttons button {
+    margin-left: 10px;
+  }
+  
+
+  

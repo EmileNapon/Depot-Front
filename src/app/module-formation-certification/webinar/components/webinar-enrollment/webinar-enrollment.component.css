@@ -1,0 +1,89 @@
+/* Styles généraux pour le conteneur du formulaire */
+.enroll-form-container {
+    max-width: 600px; /* Largeur maximale du formulaire */
+    margin: 50px auto; /* Centrer le formulaire verticalement et horizontalement */
+    padding: 20px; /* Espacement interne */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+    background-color: #ffffff; /* Couleur de fond blanche */
+}
+
+/* Styles pour le titre */
+.enroll-form-container h2 {
+    text-align: center; /* Centrer le texte */
+    color: #333; /* Couleur du texte */
+    margin-bottom: 20px; /* Espacement inférieur */
+}
+
+/* Styles pour chaque groupe de formulaire */
+.form-group {
+    margin-bottom: 15px; /* Espacement entre les groupes */
+}
+
+/* Styles pour les labels */
+.form-group label {
+    display: block; /* Afficher comme bloc pour occuper toute la largeur */
+    font-weight: 600; /* Gras */
+    margin-bottom: 5px; /* Espacement inférieur */
+    color: #555; /* Couleur des labels */
+}
+
+/* Styles pour les champs de saisie */
+.form-control {
+    width: 100%; /* Prendre toute la largeur du conteneur */
+    padding: 10px; /* Espacement interne */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 4px; /* Coins arrondis */
+    font-size: 16px; /* Taille de la police */
+    transition: border-color 0.3s; /* Transition douce pour la couleur de bordure */
+}
+
+/* Changer la couleur de la bordure au focus */
+.form-control:focus {
+    border-color: #007bff; /* Couleur bleue de la bordure au focus */
+    outline: none; /* Supprimer le contour par défaut */
+}
+
+/* Styles pour les messages d'erreur */
+.alert {
+    color: #d9534f; /* Couleur rouge pour les messages d'erreur */
+    font-size: 14px; /* Taille de la police pour les messages d'erreur */
+    margin-top: 5px; /* Espacement supérieur */
+}
+
+/* Styles pour le bouton d'inscription */
+.btn {
+    width: 100%; /* Prendre toute la largeur */
+    padding: 10px; /* Espacement interne */
+    background-color: #007bff; /* Couleur de fond bleue */
+    color: #ffffff; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 4px; /* Coins arrondis */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Changer le curseur au survol */
+    transition: background-color 0.3s; /* Transition douce pour le changement de couleur */
+}
+
+/* Changer la couleur de fond au survol */
+.btn:hover {
+    background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+/* Styles pour le lien des conditions générales */
+.form-group a {
+    color: #007bff; /* Couleur bleue pour les liens */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+/* Changer la couleur du lien au survol */
+.form-group a:hover {
+    text-decoration: underline; /* Souligner le lien au survol */
+}
+/* Titre principal */
+.webinaire-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFA500; /* Couleur orange */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }

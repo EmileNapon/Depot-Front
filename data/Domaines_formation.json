@@ -1,0 +1,1674 @@
+{
+  "Domaines": [
+    {
+      "id": "1",
+      "nom": "Audit et Gestion des Risques"
+    },
+    {
+      "id": "2",
+      "nom": "COMMUNICATION"
+    },
+    {
+      "id": "3",
+      "nom": "COMPTABILITE ET CONNEXES"
+    },
+    {
+      "id": "4",
+      "nom": "CONTROLE DE GESTION ET SUIVI EVALUATION"
+    },
+    {
+      "id": "5",
+      "nom": "DEVELOPPEMENT PERSONNEL"
+    },
+    {
+      "id": "6",
+      "nom": "DECENTRALISATION - DEVELOPPEMENT ET BONNE GOUVERNANCE"
+    },
+    {
+      "id": "7",
+      "nom": "DROIT"
+    },
+    {
+      "id": "8",
+      "nom": "FINANCE ET TRESORERIE"
+    },
+    {
+      "id": "9",
+      "nom": "FISCALITE"
+    },
+    {
+      "id": "10",
+      "nom": "GESTION DE PROJETS ET PROGRAMMES"
+    },
+    {
+      "id": "11",
+      "nom": "GESTION DES RESSOURCES HUMAINES"
+    },
+    {
+      "id": "12",
+      "nom": "INFORMATIQUE"
+    },
+    {
+      "id": "13",
+      "nom": "LOGISTIQUE"
+    },
+    {
+      "id": "14",
+      "nom": "MANAGEMENT"
+    },
+    {
+      "id": "15",
+      "nom": "PETITES MOYENNES ENTREPRISES / PETITES ET MOYENNES INDUSTRIES (PME/PMI)"
+    },
+    {
+      "id": "16",
+      "nom": "SECRETARIAT – PERSONNEL D’APPUI"
+    },
+    {
+      "id": "3e41",
+      "nom": "re"
+    },
+    {
+      "id": "02a2",
+      "nom": "nnnn"
+    },
+    {
+      "id": "eb5d",
+      "nom": "b"
+    },
+    {
+      "id": "6a06",
+      "nom": "kkkk"
+    },
+    {
+      "id": "28c7",
+      "nom": "cours aujourd'hui"
+    },
+    {
+      "id": "e506",
+      "nom": "jjs"
+    }
+  ],
+  "matieres": [
+    {
+      "id": "1",
+      "nom": "Audit et commissariat aux comptes",
+      "fk_domaineId": "1"
+    },
+    {
+      "id": "2",
+      "nom": "Risk management",
+      "fk_domaineId": "1"
+    },
+    {
+      "id": "3",
+      "nom": "Cartographie des risques",
+      "fk_domaineId": "1"
+    },
+    {
+      "id": "4",
+      "nom": "Les leviers d’une bonne communication d'entreprise",
+      "fk_domaineId": "2"
+    },
+    {
+      "id": "5",
+      "nom": "Management de la qualité",
+      "fk_domaineId": "2"
+    },
+    {
+      "id": "6",
+      "nom": "La culture d’entreprise, un levier de performance durable et de prospérité partagée ",
+      "fk_domaineId": "2"
+    },
+    {
+      "id": "7",
+      "nom": "Gestion de la communication digitale de l'entreprise sur les réseaux sociaux ",
+      "fk_domaineId": "2"
+    },
+    {
+      "id": "8",
+      "nom": "Digitalisation des entreprises : Impacts et opportunités des nouveaux usages du numérique ",
+      "fk_domaineId": "2"
+    },
+    {
+      "id": "9",
+      "nom": "Négocier dans un contexte pluriculturel ",
+      "fk_domaineId": "2"
+    },
+    {
+      "id": "10",
+      "nom": "Maitriser les techniques avancées de collecte et d’analyse de données d’enquête par smartphone ou tablette avec odk, kobocollect et Capi / cawi/cati /cari - Survey ",
+      "fk_domaineId": "2"
+    },
+    {
+      "id": "11",
+      "nom": "Community manager ",
+      "fk_domaineId": "2"
+    },
+    {
+      "id": "12",
+      "nom": "Gestion et administration de site web ",
+      "fk_domaineId": "2"
+    },
+    {
+      "id": "13",
+      "nom": "Comptabilité Générale, Analytique et Budgétaire des projets, programmes et ONGs : techniques, outils de mise en place et de gestion ",
+      "fk_domaineId": "3"
+    },
+    {
+      "id": "14",
+      "nom": "SYSCEBNL et SYSCOHADA : Mise en exergue des similitudes et différences ",
+      "fk_domaineId": "3"
+    },
+    {
+      "id": "15",
+      "nom": "Gestion informatisée et manuelle des approvisionnements et des stocks  ",
+      "fk_domaineId": "3"
+    },
+    {
+      "id": "16",
+      "nom": "Clôture des comptes et production des états financiers dans le contexte du SYSCOHADA",
+      "fk_domaineId": "3"
+    },
+    {
+      "id": "17",
+      "nom": "Approche par composantes dans le secteurs miniers et industriels  ",
+      "fk_domaineId": "3"
+    },
+    {
+      "id": "18",
+      "nom": "Opération d'inventaire et de clôture des comptes SYSCOHADA : les bonnes pratiques ",
+      "fk_domaineId": "3"
+    },
+    {
+      "id": "19",
+      "nom": "Normes IPSAS et Gestion de la comptabilité publique ",
+      "fk_domaineId": "3"
+    },
+    {
+      "id": "20",
+      "nom": "Techniques et principes de consolidations des comptes SYSCOHADA",
+      "fk_domaineId": "3"
+    },
+    {
+      "id": "21",
+      "nom": "Elaboration des Etats financiers en normes IFRS dans l'espace OHADA (IAS / IFRS) ",
+      "fk_domaineId": "3"
+    },
+    {
+      "id": "22",
+      "nom": "Techniques de montage d’un dossier d’appel d’offres (DAO)  ",
+      "fk_domaineId": "3"
+    },
+    {
+      "id": "23",
+      "nom": "Gestion des stocks, des achats et des ventes avec les logiciels usuels ",
+      "fk_domaineId": "3"
+    },
+    {
+      "id": "24",
+      "nom": "Contrôle de gestion et les autres outils de pilotage de la performance ",
+      "fk_domaineId": "4"
+    },
+    {
+      "id": "25",
+      "nom": "Budget : élaboration, contrôle, analyse ",
+      "fk_domaineId": "4"
+    },
+    {
+      "id": "26",
+      "nom": "Piloter par le cash",
+      "fk_domaineId": "4"
+    },
+    {
+      "id": "27",
+      "nom": "Technique de recouvrement des créances : prévention et gestion des contentieux ",
+      "fk_domaineId": "4"
+    },
+    {
+      "id": "28",
+      "nom": "Tableau de bord et la mise en place du contrôle de gestion",
+      "fk_domaineId": "4"
+    },
+    {
+      "id": "29",
+      "nom": "Analyse des coûts et rentabilité dans le contexte d’une comptabilité analytique ",
+      "fk_domaineId": "4"
+    },
+    {
+      "id": "30",
+      "nom": "Mise en place d’un système de suivi-évaluation dans les projets et programmes ",
+      "fk_domaineId": "4"
+    },
+    {
+      "id": "31",
+      "nom": "Gestion de la redevabilité, des conflits interpersonnels et des mécanismes de gestion des plaintes  ",
+      "fk_domaineId": "4"
+    },
+    {
+      "id": "33",
+      "nom": "Confiance en soi et gestion du stress",
+      "fk_domaineId": "5"
+    },
+    {
+      "id": "34",
+      "nom": "Développement de la culture d’entrepreneur ",
+      "fk_domaineId": "5"
+    },
+    {
+      "id": "35",
+      "nom": "Gestion du changement ",
+      "fk_domaineId": "5"
+    },
+    {
+      "id": "36",
+      "nom": "Prise de parole en public",
+      "fk_domaineId": "5"
+    },
+    {
+      "id": "37",
+      "nom": "Orientation scolaire, universitaire et insertion socio-professionnelle des jeunes ",
+      "fk_domaineId": "5"
+    },
+    {
+      "id": "38",
+      "nom": "Développement du leadership",
+      "fk_domaineId": "5"
+    },
+    {
+      "id": "39",
+      "nom": "Créativité en entreprise ",
+      "fk_domaineId": "5"
+    },
+    {
+      "id": "40",
+      "nom": "Élaboration, mise   en œuvre et suivi d’un plan local de développement",
+      "fk_domaineId": "6"
+    },
+    {
+      "id": "41",
+      "nom": "Bonne gouvernance et culture de l’éthique dans l’administration ",
+      "fk_domaineId": "6"
+    },
+    {
+      "id": "42",
+      "nom": "Bonne gouvernance, cadrage budgétaire à moyen terme et gestion de l’action publique ",
+      "fk_domaineId": "6"
+    },
+    {
+      "id": "43",
+      "nom": "Maîtrise d’ouvrage et microprojets : la gestion des infrastructures communautaires",
+      "fk_domaineId": "6"
+    },
+    {
+      "id": "44",
+      "nom": "Élaboration, mise en œuvre et suivi d’un plan local de développement ",
+      "fk_domaineId": "6"
+    },
+    {
+      "id": "45",
+      "nom": "Droit des contrats ",
+      "fk_domaineId": "7"
+    },
+    {
+      "id": "46",
+      "nom": "Droits des douanes",
+      "fk_domaineId": "7"
+    },
+    {
+      "id": "47",
+      "nom": "Droit des affaires : prévention et gestion des difficultés d’entreprise en droit OHADA",
+      "fk_domaineId": "7"
+    },
+    {
+      "id": "48",
+      "nom": "Droits des sociétés : les obligations des administrateurs dans le contexte des EPE, SE et SEM",
+      "fk_domaineId": "7"
+    },
+    {
+      "id": "49",
+      "nom": "Droit social : comprendre le contenu et les exigences du cadre réglementaire en matière de droit du travail et de la sécurité sociale au Burkina ",
+      "fk_domaineId": "7"
+    },
+    {
+      "id": "50",
+      "nom": "La commande publique au Burkina : cadre règlementaire et bonnes pratiques dans le secteur des BTP",
+      "fk_domaineId": "7"
+    },
+    {
+      "id": "51",
+      "nom": "Droit administratif",
+      "fk_domaineId": "7"
+    },
+    {
+      "id": "52",
+      "nom": "Analyse financière : les équilibres financiers, la performance et les stratégies de restructurations financières d’entreprises ",
+      "fk_domaineId": "8"
+    },
+    {
+      "id": "53",
+      "nom": "Le diagnostic économiques, financiers et la valorisation d’entreprises",
+      "fk_domaineId": "8"
+    },
+    {
+      "id": "54",
+      "nom": "Les stratégies de croissance, de transmission et de financement des PME ",
+      "fk_domaineId": "8"
+    },
+    {
+      "id": "55",
+      "nom": "Outils et approches de négociation, de mobilisation des ressources et de gestion des partenaires techniques et financiers",
+      "fk_domaineId": "8"
+    },
+    {
+      "id": "56",
+      "nom": "Finance de marchés dans le contexte UEMAO : la mobilisation des ressources et l’optimisation des excédents financiers sur la place financière sous régionale",
+      "fk_domaineId": "8"
+    },
+    {
+      "id": "57",
+      "nom": "Gestion pratique de la trésorerie : la gestion du BFR et des risques d’illiquidité ",
+      "fk_domaineId": "8"
+    },
+    {
+      "id": "58",
+      "nom": "Planification et gestion de la trésorerie  ",
+      "fk_domaineId": "8"
+    },
+    {
+      "id": "59",
+      "nom": "Calendrier des obligations et souscription aux déclarations fiscales dans le contexte des PME ",
+      "fk_domaineId": "9"
+    },
+    {
+      "id": "60",
+      "nom": "Clôture des comptes et maitrise des risques fiscaux",
+      "fk_domaineId": "9"
+    },
+    {
+      "id": "61",
+      "nom": "Fiscalité internationale ",
+      "fk_domaineId": "9"
+    },
+    {
+      "id": "62",
+      "nom": "Audit fiscal : démarche, outils et techniques ",
+      "fk_domaineId": "9"
+    },
+    {
+      "id": "63",
+      "nom": "Optimisation fiscale dans le contexte des Banques, des Assurances, des microfinances et des établissements financiers ",
+      "fk_domaineId": "9"
+    },
+    {
+      "id": "64",
+      "nom": "Optimisation fiscale dans l’industrie minière",
+      "fk_domaineId": "9"
+    },
+    {
+      "id": "65",
+      "nom": "Fiscalité des ONGs, des Associations, des Projets et Programmes ",
+      "fk_domaineId": "9"
+    },
+    {
+      "id": "66",
+      "nom": "Comprendre et appliquer la nouvelle loi de finance 2024 ",
+      "fk_domaineId": "9"
+    },
+    {
+      "id": "67",
+      "nom": "Planification de projet par objectif (PPO) et suivi évaluation des projets et programmes de développement ",
+      "fk_domaineId": "10"
+    },
+    {
+      "id": "68",
+      "nom": "Gestion des subventions",
+      "fk_domaineId": "10"
+    },
+    {
+      "id": "69",
+      "nom": "Management des projets socio sanitaires",
+      "fk_domaineId": "10"
+    },
+    {
+      "id": "70",
+      "nom": "Planification stratégique et opérationnelle des projets/programmes de développement ",
+      "fk_domaineId": "10"
+    },
+    {
+      "id": "71",
+      "nom": "Intégration du genre dans la gestion des projets et programmes de développement",
+      "fk_domaineId": "10"
+    },
+    {
+      "id": "72",
+      "nom": "Réussir le démarrage et la clôture des projets et programmes de développement ",
+      "fk_domaineId": "10"
+    },
+    {
+      "id": "73",
+      "nom": "Procédures d’élaboration, d’exécution et de contrôle des dépenses publiques selon les directives de l’UEMOA",
+      "fk_domaineId": "10"
+    },
+    {
+      "id": "74",
+      "nom": "Nouveau règlement de passation des marchés dans le cadre du financement des projets d'investissement de la banque mondiale & stratégie de passation des marches du projet pour promouvoir le développement ",
+      "fk_domaineId": "10"
+    },
+    {
+      "id": "75",
+      "nom": "Gestion et suivi des engagements dans les projets et programmes avec le logiciel STEP ",
+      "fk_domaineId": "10"
+    },
+    {
+      "id": "76",
+      "nom": "Le Système d’Information RH et la quête d’une performance durable dans les EPE, les SE, les SEM, les projets et programmes",
+      "fk_domaineId": "11"
+    },
+    {
+      "id": "77",
+      "nom": "Management et leadership : processus de motivation du personnel",
+      "fk_domaineId": "11"
+    },
+    {
+      "id": "78",
+      "nom": "Gestion des recrutements et intégration du personnel",
+      "fk_domaineId": "11"
+    },
+    {
+      "id": "79",
+      "nom": "La paie et les logiciels courants",
+      "fk_domaineId": "11"
+    },
+    {
+      "id": "80",
+      "nom": "Gestion du plan de formation et gestion des carrières",
+      "fk_domaineId": "11"
+    },
+    {
+      "id": "81",
+      "nom": "Gestion de la mobilité et de la relève des retraites",
+      "fk_domaineId": "11"
+    },
+    {
+      "id": "82",
+      "nom": "Renforcement des capacités bureautiques : Word, Excel, Power point",
+      "fk_domaineId": "12"
+    },
+    {
+      "id": "83",
+      "nom": "Analyse de données via EXCEL",
+      "fk_domaineId": "12"
+    },
+    {
+      "id": "84",
+      "nom": "Analyse de données avec POWER BIA",
+      "fk_domaineId": "12"
+    },
+    {
+      "id": "85",
+      "nom": "Sécurité informatique et des données",
+      "fk_domaineId": "12"
+    },
+    {
+      "id": "86",
+      "nom": "Douane, incoterms et échanges internationaux",
+      "fk_domaineId": "13"
+    },
+    {
+      "id": "87",
+      "nom": "Les documents d'accompagnement Import -Export",
+      "fk_domaineId": "13"
+    },
+    {
+      "id": "88",
+      "nom": "Planification et optimisation du transport international",
+      "fk_domaineId": "13"
+    },
+    {
+      "id": "89",
+      "nom": "Statut d’opérateur économique agréé (OEA)",
+      "fk_domaineId": "13"
+    },
+    {
+      "id": "90",
+      "nom": "Transformation digitale",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "91",
+      "nom": "Gestion d'équipe",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "92",
+      "nom": "Gestion du management anti-corruption",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "93",
+      "nom": "Négociation et digitalisation de la relation client",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "94",
+      "nom": "Management de la sécurité de l'information",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "95",
+      "nom": "Management et commercialisation opérationnelle",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "96",
+      "nom": "Support à l'action managériale",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "97",
+      "nom": "E - commerce",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "98",
+      "nom": "Communication visuelle",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "99",
+      "nom": "Web marketing",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "100",
+      "nom": "Stratégie des réseaux sociaux",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "101",
+      "nom": "Techniques de négociation-vente",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "102",
+      "nom": "Gestion de la marque",
+      "fk_domaineId": "14"
+    },
+    {
+      "id": "103",
+      "nom": "Tenue de la comptabilité simplifiée dans les PME/PMI",
+      "fk_domaineId": "15"
+    },
+    {
+      "id": "104",
+      "nom": "Connaître son marché et le comportement des consommateurs",
+      "fk_domaineId": "15"
+    },
+    {
+      "id": "105",
+      "nom": "Gestion de la trésorerie dans les PME/PMI",
+      "fk_domaineId": "15"
+    },
+    {
+      "id": "106",
+      "nom": "Restructuration et amélioration des performances de l’entreprise",
+      "fk_domaineId": "15"
+    },
+    {
+      "id": "107",
+      "nom": "Elaboration des états financiers dans les PME/PMI",
+      "fk_domaineId": "15"
+    },
+    {
+      "id": "108",
+      "nom": "Communication et rédaction administrative ",
+      "fk_domaineId": "16"
+    },
+    {
+      "id": "109",
+      "nom": "Gestion informatisée des archives et de la documentation : organisation, codification et informatisation",
+      "fk_domaineId": "16"
+    },
+    {
+      "id": "dc20",
+      "fk_domaineId": "3e41",
+      "nom": "fg"
+    },
+    {
+      "id": "7015",
+      "fk_domaineId": "02a2",
+      "nom": "n1"
+    },
+    {
+      "id": "6a8e",
+      "fk_domaineId": "6a06",
+      "nom": "k1"
+    },
+    {
+      "id": "29f6",
+      "fk_domaineId": "28c7",
+      "nom": "cours 1"
+    },
+    {
+      "id": "06a1",
+      "fk_domaineId": "28c7",
+      "nom": "cours 3"
+    },
+    {
+      "id": "114f",
+      "fk_domaineId": "28c7",
+      "nom": "cours2"
+    },
+    {
+      "id": "2b9a",
+      "fk_domaineId": "28c7",
+      "nom": "cours4"
+    }
+  ],
+  "cours": [
+    {
+      "id": "1",
+      "nom": "chapitre 1",
+      "fk_matiere": "1"
+    },
+    {
+      "id": "2",
+      "nom": "chapitre2",
+      "fk_matiere": "1"
+    },
+    {
+      "id": "3",
+      "nom": "chapitre2",
+      "fk_matiere": "1"
+    },
+    {
+      "id": "4",
+      "nom": "chapitre1",
+      "fk_matiere": "2"
+    },
+    {
+      "id": "5",
+      "nom": "chapitre2",
+      "fk_matiere": "2"
+    },
+    {
+      "id": "6",
+      "nom": "chapitre3 ",
+      "fk_matiere": "2"
+    },
+    {
+      "id": "7",
+      "nom": "chapitre4 ",
+      "fk_matiere": "2"
+    },
+    {
+      "id": "8",
+      "nom": "chapitre5 ",
+      "fk_matiere": "2"
+    },
+    {
+      "id": "9",
+      "nom": "chapitre6",
+      "fk_matiere": "2"
+    },
+    {
+      "id": "10",
+      "nom": "Maitriser les techniques avancées de collecte et d’analyse de données d’enquête par smartphone ou tablette avec odk, kobocollect et Capi / cawi/cati /cari - Survey ",
+      "fk_matiere": "2"
+    },
+    {
+      "id": "11",
+      "nom": "Community manager ",
+      "fk_matiere": "2"
+    },
+    {
+      "id": "12",
+      "nom": "Gestion et administration de site web ",
+      "fk_matiere": "2"
+    },
+    {
+      "id": "13",
+      "nom": "Comptabilité Générale, Analytique et Budgétaire des projets, programmes et ONGs : techniques, outils de mise en place et de gestion ",
+      "fk_matiere": "3"
+    },
+    {
+      "id": "14",
+      "nom": "SYSCEBNL et SYSCOHADA : Mise en exergue des similitudes et différences ",
+      "fk_matiere": "3"
+    },
+    {
+      "id": "15",
+      "nom": "Gestion informatisée et manuelle des approvisionnements et des stocks  ",
+      "fk_matiere": "3"
+    },
+    {
+      "id": "16",
+      "nom": "Clôture des comptes et production des états financiers dans le contexte du SYSCOHADA",
+      "fk_matiere": "3"
+    },
+    {
+      "id": "17",
+      "nom": "Approche par composantes dans le secteurs miniers et industriels  ",
+      "fk_matiere": "3"
+    },
+    {
+      "id": "18",
+      "nom": "Opération d'inventaire et de clôture des comptes SYSCOHADA : les bonnes pratiques ",
+      "fk_matiere": "3"
+    },
+    {
+      "id": "19",
+      "nom": "Normes IPSAS et Gestion de la comptabilité publique ",
+      "fk_matiere": "3"
+    },
+    {
+      "id": "20",
+      "nom": "Techniques et principes de consolidations des comptes SYSCOHADA",
+      "fk_matiere": "3"
+    },
+    {
+      "id": "21",
+      "nom": "Elaboration des Etats financiers en normes IFRS dans l'espace OHADA (IAS / IFRS) ",
+      "fk_matiere": "3"
+    },
+    {
+      "id": "22",
+      "nom": "Techniques de montage d’un dossier d’appel d’offres (DAO)  ",
+      "fk_matiere": "3"
+    },
+    {
+      "id": "23",
+      "nom": "Gestion des stocks, des achats et des ventes avec les logiciels usuels ",
+      "fk_matiere": "3"
+    },
+    {
+      "id": "24",
+      "nom": "Contrôle de gestion et les autres outils de pilotage de la performance ",
+      "fk_matiere": "4"
+    },
+    {
+      "id": "25",
+      "nom": "Budget : élaboration, contrôle, analyse ",
+      "fk_matiere": "4"
+    },
+    {
+      "id": "26",
+      "nom": "Piloter par le cash",
+      "fk_matiere": "4"
+    },
+    {
+      "id": "27",
+      "nom": "Technique de recouvrement des créances : prévention et gestion des contentieux ",
+      "fk_matiere": "4"
+    },
+    {
+      "id": "28",
+      "nom": "Tableau de bord et la mise en place du contrôle de gestion",
+      "fk_matiere": "4"
+    },
+    {
+      "id": "29",
+      "nom": "Analyse des coûts et rentabilité dans le contexte d’une comptabilité analytique ",
+      "fk_matiere": "4"
+    },
+    {
+      "id": "30",
+      "nom": "Mise en place d’un système de suivi-évaluation dans les projets et programmes ",
+      "fk_matiere": "4"
+    },
+    {
+      "id": "31",
+      "nom": "Gestion de la redevabilité, des conflits interpersonnels et des mécanismes de gestion des plaintes  ",
+      "fk_matiere": "4"
+    },
+    {
+      "id": "33",
+      "nom": "Confiance en soi et gestion du stress",
+      "fk_matiere": "5"
+    },
+    {
+      "id": "34",
+      "nom": "Développement de la culture d’entrepreneur ",
+      "fk_matiere": "5"
+    },
+    {
+      "id": "35",
+      "nom": "Gestion du changement ",
+      "fk_matiere": "5"
+    },
+    {
+      "id": "36",
+      "nom": "Prise de parole en public",
+      "fk_matiere": "5"
+    },
+    {
+      "id": "37",
+      "nom": "Orientation scolaire, universitaire et insertion socio-professionnelle des jeunes ",
+      "fk_matiere": "5"
+    },
+    {
+      "id": "38",
+      "nom": "Développement du leadership",
+      "fk_matiere": "5"
+    },
+    {
+      "id": "39",
+      "nom": "Créativité en entreprise ",
+      "fk_matiere": "5"
+    },
+    {
+      "id": "40",
+      "nom": "Élaboration, mise   en œuvre et suivi d’un plan local de développement",
+      "fk_matiere": "6"
+    },
+    {
+      "id": "41",
+      "nom": "Bonne gouvernance et culture de l’éthique dans l’administration ",
+      "fk_matiere": "6"
+    },
+    {
+      "id": "42",
+      "nom": "Bonne gouvernance, cadrage budgétaire à moyen terme et gestion de l’action publique ",
+      "fk_matiere": "6"
+    },
+    {
+      "id": "43",
+      "nom": "Maîtrise d’ouvrage et microprojets : la gestion des infrastructures communautaires",
+      "fk_matiere": "6"
+    },
+    {
+      "id": "44",
+      "nom": "Élaboration, mise en œuvre et suivi d’un plan local de développement ",
+      "fk_matiere": "6"
+    },
+    {
+      "id": "45",
+      "nom": "Droit des contrats ",
+      "fk_matiere": "7"
+    },
+    {
+      "id": "46",
+      "nom": "Droits des douanes",
+      "fk_matiere": "7"
+    },
+    {
+      "id": "47",
+      "nom": "Droit des affaires : prévention et gestion des difficultés d’entreprise en droit OHADA",
+      "fk_matiere": "7"
+    },
+    {
+      "id": "48",
+      "nom": "Droits des sociétés : les obligations des administrateurs dans le contexte des EPE, SE et SEM",
+      "fk_matiere": "7"
+    },
+    {
+      "id": "49",
+      "nom": "Droit social : comprendre le contenu et les exigences du cadre réglementaire en matière de droit du travail et de la sécurité sociale au Burkina ",
+      "fk_matiere": "7"
+    },
+    {
+      "id": "50",
+      "nom": "La commande publique au Burkina : cadre règlementaire et bonnes pratiques dans le secteur des BTP",
+      "fk_matiere": "7"
+    },
+    {
+      "id": "51",
+      "nom": "Droit administratif",
+      "fk_matiere": "7"
+    },
+    {
+      "id": "52",
+      "nom": "Analyse financière : les équilibres financiers, la performance et les stratégies de restructurations financières d’entreprises ",
+      "fk_matiere": "8"
+    },
+    {
+      "id": "53",
+      "nom": "Le diagnostic économiques, financiers et la valorisation d’entreprises",
+      "fk_matiere": "8"
+    },
+    {
+      "id": "54",
+      "nom": "Les stratégies de croissance, de transmission et de financement des PME ",
+      "fk_matiere": "8"
+    },
+    {
+      "id": "55",
+      "nom": "Outils et approches de négociation, de mobilisation des ressources et de gestion des partenaires techniques et financiers",
+      "fk_matiere": "8"
+    },
+    {
+      "id": "56",
+      "nom": "Finance de marchés dans le contexte UEMAO : la mobilisation des ressources et l’optimisation des excédents financiers sur la place financière sous régionale",
+      "fk_matiere": "8"
+    },
+    {
+      "id": "57",
+      "nom": "Gestion pratique de la trésorerie : la gestion du BFR et des risques d’illiquidité ",
+      "fk_matiere": "8"
+    },
+    {
+      "id": "58",
+      "nom": "Planification et gestion de la trésorerie  ",
+      "fk_matiere": "8"
+    },
+    {
+      "id": "59",
+      "nom": "Calendrier des obligations et souscription aux déclarations fiscales dans le contexte des PME ",
+      "fk_matiere": "9"
+    },
+    {
+      "id": "60",
+      "nom": "Clôture des comptes et maitrise des risques fiscaux",
+      "fk_matiere": "9"
+    },
+    {
+      "id": "61",
+      "nom": "Fiscalité internationale ",
+      "fk_matiere": "9"
+    },
+    {
+      "id": "62",
+      "nom": "Audit fiscal : démarche, outils et techniques ",
+      "fk_matiere": "9"
+    },
+    {
+      "id": "63",
+      "nom": "Optimisation fiscale dans le contexte des Banques, des Assurances, des microfinances et des établissements financiers ",
+      "fk_matiere": "9"
+    },
+    {
+      "id": "64",
+      "nom": "Optimisation fiscale dans l’industrie minière",
+      "fk_matiere": "9"
+    },
+    {
+      "id": "65",
+      "nom": "Fiscalité des ONGs, des Associations, des Projets et Programmes ",
+      "fk_matiere": "9"
+    },
+    {
+      "id": "66",
+      "nom": "Comprendre et appliquer la nouvelle loi de finance 2024 ",
+      "fk_matiere": "9"
+    },
+    {
+      "id": "67",
+      "nom": "Planification de projet par objectif (PPO) et suivi évaluation des projets et programmes de développement ",
+      "fk_matiere": "10"
+    },
+    {
+      "id": "68",
+      "nom": "Gestion des subventions",
+      "fk_matiere": "10"
+    },
+    {
+      "id": "69",
+      "nom": "Management des projets socio sanitaires",
+      "fk_matiere": "10"
+    },
+    {
+      "id": "70",
+      "nom": "Planification stratégique et opérationnelle des projets/programmes de développement ",
+      "fk_matiere": "10"
+    },
+    {
+      "id": "71",
+      "nom": "Intégration du genre dans la gestion des projets et programmes de développement",
+      "fk_matiere": "10"
+    },
+    {
+      "id": "72",
+      "nom": "Réussir le démarrage et la clôture des projets et programmes de développement ",
+      "fk_matiere": "10"
+    },
+    {
+      "id": "73",
+      "nom": "Procédures d’élaboration, d’exécution et de contrôle des dépenses publiques selon les directives de l’UEMOA",
+      "fk_matiere": "10"
+    },
+    {
+      "id": "74",
+      "nom": "Nouveau règlement de passation des marchés dans le cadre du financement des projets d'investissement de la banque mondiale & stratégie de passation des marches du projet pour promouvoir le développement ",
+      "fk_matiere": "10"
+    },
+    {
+      "id": "75",
+      "nom": "Gestion et suivi des engagements dans les projets et programmes avec le logiciel STEP ",
+      "fk_matiere": "10"
+    },
+    {
+      "id": "76",
+      "nom": "Le Système d’Information RH et la quête d’une performance durable dans les EPE, les SE, les SEM, les projets et programmes",
+      "fk_matiere": "11"
+    },
+    {
+      "id": "77",
+      "nom": "Management et leadership : processus de motivation du personnel",
+      "fk_matiere": "11"
+    },
+    {
+      "id": "78",
+      "nom": "Gestion des recrutements et intégration du personnel",
+      "fk_matiere": "11"
+    },
+    {
+      "id": "79",
+      "nom": "La paie et les logiciels courants",
+      "fk_matiere": "11"
+    },
+    {
+      "id": "80",
+      "nom": "Gestion du plan de formation et gestion des carrières",
+      "fk_matiere": "11"
+    },
+    {
+      "id": "81",
+      "nom": "Gestion de la mobilité et de la relève des retraites",
+      "fk_matiere": "11"
+    },
+    {
+      "id": "82",
+      "nom": "Renforcement des capacités bureautiques : Word, Excel, Power point",
+      "fk_matiere": "12"
+    },
+    {
+      "id": "83",
+      "nom": "Analyse de données via EXCEL",
+      "fk_matiere": "12"
+    },
+    {
+      "id": "84",
+      "nom": "Analyse de données avec POWER BIA",
+      "fk_matiere": "12"
+    },
+    {
+      "id": "85",
+      "nom": "Sécurité informatique et des données",
+      "fk_matiere": "12"
+    },
+    {
+      "id": "86",
+      "nom": "Douane, incoterms et échanges internationaux",
+      "fk_matiere": "13"
+    },
+    {
+      "id": "87",
+      "nom": "Les documents d'accompagnement Import -Export",
+      "fk_matiere": "13"
+    },
+    {
+      "id": "88",
+      "nom": "Planification et optimisation du transport international",
+      "fk_matiere": "13"
+    },
+    {
+      "id": "89",
+      "nom": "Statut d’opérateur économique agréé (OEA)",
+      "fk_matiere": "13"
+    },
+    {
+      "id": "90",
+      "nom": "Transformation digitale",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "91",
+      "nom": "Gestion d'équipe",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "92",
+      "nom": "Gestion du management anti-corruption",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "93",
+      "nom": "Négociation et digitalisation de la relation client",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "94",
+      "nom": "Management de la sécurité de l'information",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "95",
+      "nom": "Management et commercialisation opérationnelle",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "96",
+      "nom": "Support à l'action managériale",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "97",
+      "nom": "E - commerce",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "98",
+      "nom": "Communication visuelle",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "99",
+      "nom": "Web marketing",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "100",
+      "nom": "Stratégie des réseaux sociaux",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "101",
+      "nom": "Techniques de négociation-vente",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "102",
+      "nom": "Gestion de la marque",
+      "fk_matiere": "14"
+    },
+    {
+      "id": "103",
+      "nom": "Tenue de la comptabilité simplifiée dans les PME/PMI",
+      "fk_matiere": "15"
+    },
+    {
+      "id": "104",
+      "nom": "Connaître son marché et le comportement des consommateurs",
+      "fk_matiere": "15"
+    },
+    {
+      "id": "105",
+      "nom": "Gestion de la trésorerie dans les PME/PMI",
+      "fk_matiere": "15"
+    },
+    {
+      "id": "106",
+      "nom": "Restructuration et amélioration des performances de l’entreprise",
+      "fk_matiere": "15"
+    },
+    {
+      "id": "107",
+      "nom": "Elaboration des états financiers dans les PME/PMI",
+      "fk_matiere": "15"
+    },
+    {
+      "id": "108",
+      "nom": "Communication et rédaction administrative ",
+      "fk_matiere": "16"
+    },
+    {
+      "id": "109",
+      "nom": "Gestion informatisée des archives et de la documentation : organisation, codification et informatisation",
+      "fk_matiere": "16"
+    }
+  ],
+  "infos_cours_presentiel": [
+    {
+      "id": "1",
+      "niveau": " Bac",
+      "dateDebut": "01 Octobre 2024",
+      "dateFin": "30 Septembre 2024",
+      "heureDebut": "09:00 ",
+      "heureFin": "16:00",
+      "lieu": "OUAGADOUGOU - FIDALLI",
+      "cout": "$49",
+      "anotation": "true",
+      "resume": "xxxxxxxooooooooooooooooooooooo",
+      "fk_coursId": "5"
+    },
+    {
+      "id": "2",
+      "niveau": " Licence",
+      "dateDebut": " 10 Janvier 2024",
+      "dateFin": "09 Mars 2024",
+      "heureDebut": " 10:00 ",
+      "heureFin": "17:00",
+      "lieu": "OUAGADOUGOU - FIDALLI",
+      "cout": "$49",
+      "anotation": "true",
+      "resume": "xxxxxxx1111111111111111111111111111",
+      "fk_coursId": "14"
+    },
+    {
+      "id": "3",
+      "niveau": "Master",
+      "dateDebut": "01 Octobre 2024",
+      "dateFin": " 15 Novembre 2024",
+      "heureDebut": " 08:00 ",
+      "heureFin": "16:00",
+      "lieu": "OUAGADOUGOU - FIDALLI",
+      "cout": "$49",
+      "anotation": "true",
+      "resume": "xxxxxxxx2222222222222222222222222222222222",
+      "fk_coursId": "7"
+    },
+    {
+      "id": "4",
+      "niveau": " ",
+      "dateDebut": "15 Fevrier 2024",
+      "dateFin": "28 Fevrier 2024",
+      "heureDebut": " 08:30 ",
+      "heureFin": "16:30",
+      "lieu": "OUAGADOUGOU - FIDALLI",
+      "cout": "$49",
+      "anotation": "true",
+      "resume": "xxxxxxxxxxx333333333333333333333333333333333333333",
+      "fk_coursId": "9"
+    },
+    {
+      "id": "5",
+      "niveau": " ",
+      "dateDebut": "01 Octobre 2024",
+      "dateFin": "12 Octobre 2024",
+      "heureDebut": " 09:30 ",
+      "heureFin": "16:30",
+      "lieu": "OUAGADOUGOU - FIDALLI",
+      "cout": "$49",
+      "anotation": "true",
+      "resume": "xxxxxxxxxxx4444444444444444444444444444444444444444444444",
+      "fk_coursId": "17"
+    }
+  ],
+  "webinaires": [
+    {
+      "id": "1",
+      "theme": "f1",
+      "dateDebut": "01 Octobre 2024",
+      "heureDebut": "09:00 ",
+      "duree": "01h",
+      "lieu": "OUAGADOUGOU - FIDALLI",
+      "cout": "$49",
+      "resume": "xxxxxxxooooooooooooooooooooooo",
+      "type": "Future des allies",
+      "statut": "Formation en ligne"
+    },
+    {
+      "id": "2",
+      "theme": "ff1",
+      "dateDebut": "05 decembre 2024",
+      "heureDebut": "08:00 ",
+      "duree": "04h",
+      "lieu": "OUAGADOUGOU - FIDALLI",
+      "cout": "",
+      "resume": "xxxxxxxooooooooooooooooooooooo",
+      "type": "Cafe des allies",
+      "statut": "Formation Presentielle"
+    },
+    {
+      "id": "3",
+      "theme": "fff1",
+      "dateDebut": "03 Juiellet 2024",
+      "heureDebut": "14:00 ",
+      "duree": "01h",
+      "lieu": "OUAGADOUGOU - FIDALLI",
+      "cout": "$49",
+      "resume": "xxxxxxxooooooooooooooooooooooo",
+      "type": "Future des allies",
+      "statut": "Formation en ligne"
+    },
+    {
+      "id": "4",
+      "theme": "ffffffffffffffffffffffffffff",
+      "dateDebut": "01 Janvier 2024",
+      "heureDebut": "14:00 ",
+      "duree": "04h",
+      "lieu": "OUAGADOUGOU - FIDALLI",
+      "cout": "",
+      "resume": "xxxxxxxooooooooooooooooooooooo",
+      "type": "Cafes des allies",
+      "statut": "Formation en presentielle"
+    },
+    {
+      "id": "5",
+      "theme": "ffffffffffffffffffffffffffff",
+      "dateDebut": "09 Juin 2024",
+      "heureDebut": "14:00 ",
+      "duree": "1h",
+      "lieu": "OUAGADOUGOU - FIDALLI",
+      "cout": "$49",
+      "resume": "xxxxxxxooooooooooooooooooooooo",
+      "type": "Future des allies",
+      "statut": "Formation en ligne"
+    }
+  ],
+  "ContenuCertificat": [
+    {
+      "id": "1",
+      "titre": "Bureautique",
+      "duree": "2h30min",
+      "Objectif": "Stimuler sa créativité"
+    },
+    {
+      "id": "2",
+      "titre": "SISCO",
+      "duree": "1h45min",
+      "Objectif": "Stimuler sa créativité"
+    }
+  ],
+  "Chapitre": [
+    {
+      "id": "1",
+      "idContenuCertificat": "1",
+      "titre": "Excel : Interface, mise en forme, cellules et saisie de données",
+      "duree": "18 min",
+      "podcast": ""
+    },
+    {
+      "id": "2",
+      "idContenuCertificat": "1",
+      "titre": "Sommes, mise en forme conditionnelle, fonctions et formules les plus courantes",
+      "duree": "45 min",
+      "podcast": ""
+    },
+    {
+      "id": "3",
+      "idContenuCertificat": "1",
+      "titre": "Excel : Interface, mise en forme, cellules et saisie de données",
+      "duree": "30 min",
+      "podcast": ""
+    },
+    {
+      "id": "4",
+      "idContenuCertificat": "1",
+      "titre": "Excel : Interface, mise en forme, cellules et saisie de données",
+      "duree": " 1h",
+      "podcast": ""
+    },
+    {
+      "id": "5",
+      "idContenuCertificat": "2",
+      "titre": "Introduction au reseau",
+      "duree": "20 min",
+      "podcast": ""
+    },
+    {
+      "id": "6",
+      "idContenuCertificat": "2",
+      "titre": "Configuration des routers, switchs, vlan,...",
+      "duree": "15 min",
+      "podcast": ""
+    },
+    {
+      "id": "7",
+      "idContenuCertificat": "2",
+      "titre": "Dimensionner un reseau",
+      "duree": "25 min",
+      "podcast": ""
+    },
+    {
+      "id": "8",
+      "idContenuCertificat": "2",
+      "titre": "Les bonnes pratiques dans un reseau",
+      "duree": "1h20min"
+    }
+  ],
+  "Article": [
+    {
+      "id": "1",
+      "idChapitre": "1",
+      "article": "",
+      "titreArticle": "titre article 1"
+    },
+    {
+      "id": "2",
+      "idChapitre": "2",
+      "article": "",
+      "titreArticle": "titre article 2"
+    },
+    {
+      "id": "3",
+      "idChapitre": "3",
+      "article": "",
+      "titreArticle": "titre article 3"
+    },
+    {
+      "id": "4",
+      "idChapitre": "4",
+      "article": "",
+      "titreArticle": "titre article 4"
+    },
+    {
+      "id": "5",
+      "idChapitre": "5",
+      "article": "",
+      "titreArticle": "titre article 5"
+    },
+    {
+      "id": "6",
+      "idChapitre": "6",
+      "article": "",
+      "titreArticle": "titre article 6"
+    },
+    {
+      "id": "7",
+      "idChapitre": "7",
+      "article": "",
+      "titreArticle": "titre article 7"
+    },
+    {
+      "id": "8",
+      "idChapitre": "8",
+      "article": "",
+      "titreArticle": "titre article 8"
+    }
+  ],
+  "Video": [
+    {
+      "id": "1",
+      "idChapitre": "1",
+      "video": "",
+      "titreVideo": "titre video 1"
+    },
+    {
+      "id": "2",
+      "idChapitre": "1",
+      "video": "",
+      "titreVideo": "titre video 2"
+    },
+    {
+      "id": "3",
+      "idChapitre": "2",
+      "video": "",
+      "titreVideo": "titre video 3"
+    },
+    {
+      "id": "4",
+      "idChapitre": "2",
+      "video": "",
+      "titreVideo": "titre video 4"
+    },
+    {
+      "id": "5",
+      "idChapitre": "3",
+      "video": "",
+      "titreVideo": "titre video 5"
+    },
+    {
+      "id": "6",
+      "idChapitre": "3",
+      "video": "",
+      "titreVideo": "titre video 6"
+    },
+    {
+      "id": "7",
+      "idChapitre": "4",
+      "video": "",
+      "titreVideo": "titre video 7"
+    },
+    {
+      "id": "8",
+      "idChapitre": "4",
+      "video": "",
+      "titreVideo": "titre video 8"
+    },
+    {
+      "id": "9",
+      "idChapitre": "5",
+      "video": "",
+      "titreVideo": "titre video 9"
+    },
+    {
+      "id": "10",
+      "idChapitre": "5",
+      "video": "",
+      "titreVideo": "titre video 10"
+    },
+    {
+      "id": "11",
+      "idChapitre": "6",
+      "video": "",
+      "titreVideo": "titre video 11"
+    },
+    {
+      "id": "12",
+      "idChapitre": "6",
+      "video": "",
+      "titreVideo": "titre video 12"
+    },
+    {
+      "id": "13",
+      "idChapitre": "7",
+      "video": "",
+      "titreVideo": "titre video 13"
+    },
+    {
+      "id": "14",
+      "idChapitre": "7",
+      "video": "",
+      "titreVideo": "titre video 14"
+    },
+    {
+      "id": "15",
+      "idChapitre": "8",
+      "video": "",
+      "titreVideo": "titre video 15"
+    },
+    {
+      "id": "16",
+      "idChapitre": "8",
+      "video": "",
+      "titreVideo": "titre video 16"
+    }
+  ],
+  "Podcast": [
+    {
+      "id": "1",
+      "idChapitre": "1",
+      "podcast": "",
+      "titrePodcast": "titre podcast 1"
+    },
+    {
+      "id": "2",
+      "idChapitre": "2",
+      "podcast": "",
+      "titrePodcast": "titre podcast 2"
+    },
+    {
+      "id": "3",
+      "idChapitre": "3",
+      "podcast": "",
+      "titrePodcast": "titre podcast 3"
+    },
+    {
+      "id": "4",
+      "idChapitre": "4",
+      "podcast": "",
+      "titrePodcast": "titre podcast 5"
+    },
+    {
+      "id": "5",
+      "idChapitre": "5",
+      "podcast": "",
+      "titrePodcast": "titre podcast 5"
+    },
+    {
+      "id": "6",
+      "idChapitre": "6",
+      "podcast": "",
+      "titrePodcast": "titre podcast 6"
+    },
+    {
+      "id": "7",
+      "idChapitre": "7",
+      "podcast": "",
+      "titrePodcast": "titre podcast 7"
+    },
+    {
+      "id": "8",
+      "idChapitre": "8",
+      "podcast": "",
+      "titrePodcast": "titre podcast 8"
+    }
+  ],
+  "Quiz": [
+    {
+      "id": "1",
+      "idChapitre": "1",
+      "qcm": "",
+      "note": "1"
+    },
+    {
+      "id": "2",
+      "idChapitre": "2",
+      "qcm": "",
+      "note": "1"
+    },
+    {
+      "id": "3",
+      "idChapitre": "3",
+      "qcm": "",
+      "note": "1"
+    },
+    {
+      "id": "4",
+      "idChapitre": "4",
+      "qcm": "",
+      "note": "1"
+    },
+    {
+      "id": "5",
+      "idChapitre": "5",
+      "qcm": "",
+      "note": "1"
+    },
+    {
+      "id": "6",
+      "idChapitre": "6",
+      "qcm": "",
+      "note": "1"
+    },
+    {
+      "id": "7",
+      "idChapitre": "7",
+      "qcm": "",
+      "note": "1"
+    },
+    {
+      "id": "8",
+      "idChapitre": "8",
+      "qcm": "",
+      "note": "1"
+    }
+  ],
+  "QuizFinal": [
+    {
+      "id": "1",
+      "idContenuCertificat": "1",
+      "qcm": "",
+      "note": "1"
+    },
+    {
+      "id": "2",
+      "idContenuCertificat": "2",
+      "qcm": "",
+      "note": "1"
+    }
+  ]
+    
+}

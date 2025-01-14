@@ -1,0 +1,71 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <mat-toolbar class="sidenav-toolbar">
+      <a href="/admin">
+        <span>FuturAllies</span>
+      </a>
+    </mat-toolbar>
+    <app-menu />
+  </mat-sidenav>
+
+  <!-- Contenu principal -->
+  <mat-sidenav-content>
+    <!-- Header -->
+    <header class="main-header">
+      <mat-toolbar class="main-toolbar">
+        <!-- Bouton pour ouvrir/fermer le sidenav -->
+        <button mat-icon-button (click)="sidenav.toggle()" aria-label="Toggle sidenav" matTooltip="Ouvrir le menu">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <!-- Logo de l'application -->
+        <div class="logo">
+          <img src="assets/images/futurallies-logo.png" alt="Logo de l'application" />
+        </div>
+
+        <!-- Espace vide pour pousser les éléments à droite -->
+        <span class="spacer"></span>
+
+        <!-- Notifications -->
+        <button mat-icon-button matTooltip="Notifications">
+          <mat-icon aria-hidden="false" matBadge="3" matBadgeColor="warn">notifications</mat-icon>
+        </button>
+
+        <!-- Messages -->
+        <button mat-icon-button matTooltip="Messages">
+          <mat-icon [matBadge]="user.messages" matBadgeColor="warn">mail</mat-icon>
+        </button>
+
+        <!-- Profil utilisateur -->
+        <button mat-button [matMenuTriggerFor]="userMenu">
+          <img [src]="user.avatarUrl" alt="Avatar" class="avatar" />
+          <span>{{ user.name }}</span>
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #userMenu="matMenu">
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Déconnexion</span>
+          </button>
+        </mat-menu>
+      </mat-toolbar>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="content">
+      <router-outlet></router-outlet> <!-- Affiche les routes enfants ici -->
+    </main>
+
+    <!-- Footer -->
+    <!-- <footer class="main-footer">
+      <div class="footer-content">
+        <p>&copy; 2024 FuturAllies. Tous droits réservés.</p>
+        <nav>
+          <a href="#">Politique de confidentialité</a>
+          <a href="#">Conditions d'utilisation</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </footer> -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,225 @@
+<body>
+<div class="container-fluid">
+  <nav class="navbar-light navbar-fixed-top bg-light py-4" style='color:#000000;' >
+    
+    <ul class="nav">
+        <li class="nav-item">
+            <a>
+            <img src="assets/icon.png" alt="FuturAlliés Logo" routerLink='/acceuil' class="logo" height="50">
+            </a>
+         </li>
+      <li class="nav-item">
+        <a routerLink='/formation/contenuLibre' class="nav-link" style="color: black;">Domaines</a>
+      </li>
+
+
+      <li class="nav-item">
+        <a href='#trainers' class="nav-link" style="color: black;">Certificat</a>
+      </li>
+
+     <li class="nav-item">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 search-input" type="search" placeholder="RESEARCH" aria-label="Search">
+        </form>
+      </li>
+
+      <li class="nav-item">
+        <a href="#trainers" class="nav-link" style="color: black;">Entreprises</a>
+      </li>
+      <li class="nav-item">
+        <a href='#trainers' class="nav-link" style="color: black;">Certificat</a>
+      </li>
+      <li class="nav-item" style="padding-left: 30px;">
+        <a routerLink="/usersPages/login" class="btn btn-warning" style="color: black;">Se connecter</a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <section class="banner bg-secondary text-white text-center" style="position: relative; overflow: hidden;color:secondary;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; no-repeat center center; background-size: cover; filter: brightness(1.2);"></div>
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 255, 0.3); mix-blend-mode: overlay;"></div>
+    <div class="container" style="position: relative; z-index: 1;">
+    <br/><br/>
+    </div>
+</section>
+
+
+
+    <div class="container" style='padding-left:200px'>
+      <!-- Barre latérale -->
+     
+      <!-- Contenu principal -->
+      <div class="col-md-9">
+        <div class="p-4">
+            <!-- Bloc de Quiz -->
+            <div class="quiz-section mb-5">
+              <h2 class="mb-3">Quiz : Testez vos connaissances en Angular</h2>
+    
+              <form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
+                <!-- Question 1 -->
+                <div class="mb-4">
+                  <label class="form-label">1. Quel est le rôle d’un composant dans Angular ?</label>
+                  <div class="form-check">
+                    <input type="radio" id="q1-option1" class="form-check-input" formControlName="question1" value="Afficher des données">
+                    <label class="form-check-label" for="q1-option1">Afficher des données</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="q1-option2" class="form-check-input" formControlName="question1" value="Gérer la logique de l’application">
+                    <label class="form-check-label" for="q1-option2">Gérer la logique de l’application</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="q1-option3" class="form-check-input" formControlName="question1" value="Les deux précédents">
+                    <label class="form-check-label" for="q1-option3">Les deux précédents</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="q1-option4" class="form-check-input" formControlName="question1" value="Aucun des précédents">
+                    <label class="form-check-label" for="q1-option4">Aucun des précédents</label>
+                  </div>
+                  <div *ngIf="quizForm.get('question1')?.invalid && quizForm.get('question1')?.touched" class="text-danger">
+                    Cette question est obligatoire.
+                  </div>
+                </div>
+    
+                <!-- Question 2 -->
+                <div class="mb-4">
+                  <label class="form-label">2. Quelle est la méthode pour lier des données dans Angular ?</label>
+                  <div class="form-check">
+                    <input type="radio" id="q2-option1" class="form-check-input" formControlName="question2" value="Data Binding">
+                    <label class="form-check-label" for="q2-option1">Data Binding</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="q2-option2" class="form-check-input" formControlName="question2" value="Event Binding">
+                    <label class="form-check-label" for="q2-option2">Event Binding</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="q2-option3" class="form-check-input" formControlName="question2" value="Property Binding">
+                    <label class="form-check-label" for="q2-option3">Property Binding</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="q2-option4" class="form-check-input" formControlName="question2" value="Template Binding">
+                    <label class="form-check-label" for="q2-option4">Template Binding</label>
+                  </div>
+                  <div *ngIf="quizForm.get('question2')?.invalid && quizForm.get('question2')?.touched" class="text-danger">
+                    Cette question est obligatoire.
+                  </div>
+                </div>
+    
+                <!-- Question 3 -->
+                <div class="mb-4">
+                  <label class="form-label">3. Quel est le rôle des services dans Angular ?</label>
+                  <div class="form-check">
+                    <input type="radio" id="q3-option1" class="form-check-input" formControlName="question3" value="Gérer le stockage des données">
+                    <label class="form-check-label" for="q3-option1">Gérer le stockage des données</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="q3-option2" class="form-check-input" formControlName="question3" value="Partager des données entre composants">
+                    <label class="form-check-label" for="q3-option2">Partager des données entre composants</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="q3-option3" class="form-check-input" formControlName="question3" value="Gérer les routes">
+                    <label class="form-check-label" for="q3-option3">Gérer les routes</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="q3-option4" class="form-check-input" formControlName="question3" value="Gérer le style des composants">
+                    <label class="form-check-label" for="q3-option4">Gérer le style des composants</label>
+                  </div>
+                  <div *ngIf="quizForm.get('question3')?.invalid && quizForm.get('question3')?.touched" class="text-danger">
+                    Cette question est obligatoire.
+                  </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">4. Quel est le rôle d’un composant dans Angular ?</label>
+                    <div class="form-check">
+                      <input type="radio" id="q1-option1" class="form-check-input" formControlName="question1" value="Afficher des données">
+                      <label class="form-check-label" for="q1-option1">Afficher des données</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="radio" id="q1-option2" class="form-check-input" formControlName="question1" value="Gérer la logique de l’application">
+                      <label class="form-check-label" for="q1-option2">Gérer la logique de l’application</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="radio" id="q1-option3" class="form-check-input" formControlName="question1" value="Les deux précédents">
+                      <label class="form-check-label" for="q1-option3">Les deux précédents</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="radio" id="q1-option4" class="form-check-input" formControlName="question1" value="Aucun des précédents">
+                      <label class="form-check-label" for="q1-option4">Aucun des précédents</label>
+                    </div>
+                    <div *ngIf="quizForm.get('question1')?.invalid && quizForm.get('question1')?.touched" class="text-danger">
+                      Cette question est obligatoire.
+                    </div>
+                  </div>
+      
+                  <!-- Question 2 (Checkboxes) -->
+                  <div class="mb-4">
+                    <label class="form-label">5. Quelles fonctionnalités sont fournies par Angular ? (Sélectionnez toutes les bonnes réponses)</label>
+                    <div class="form-check">
+                      <input type="checkbox" id="q2-option1" class="form-check-input" formControlName="question2Option1">
+                      <label class="form-check-label" for="q2-option1">Data Binding</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="q2-option2" class="form-check-input" formControlName="question2Option2">
+                      <label class="form-check-label" for="q2-option2">Routing</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="q2-option3" class="form-check-input" formControlName="question2Option3">
+                      <label class="form-check-label" for="q2-option3">Directives</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="q2-option4" class="form-check-input" formControlName="question2Option4">
+                      <label class="form-check-label" for="q2-option4">Services</label>
+                    </div>
+                    <div *ngIf="quizForm.get('question2Option1')?.invalid && quizForm.get('question2Option1')?.touched" class="text-danger">
+                      Veuillez sélectionner au moins une option.
+                    </div>
+                  </div>
+      
+                  <!-- Question 3 (Radio) -->
+                  <div class="mb-4">
+                    <label class="form-label">6. Quel est le rôle des services dans Angular ?</label>
+                    <div class="form-check">
+                      <input type="radio" id="q3-option1" class="form-check-input" formControlName="question3" value="Gérer le stockage des données">
+                      <label class="form-check-label" for="q3-option1">Gérer le stockage des données</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="radio" id="q3-option2" class="form-check-input" formControlName="question3" value="Partager des données entre composants">
+                      <label class="form-check-label" for="q3-option2">Partager des données entre composants</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="radio" id="q3-option3" class="form-check-input" formControlName="question3" value="Gérer les routes">
+                      <label class="form-check-label" for="q3-option3">Gérer les routes</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="radio" id="q3-option4" class="form-check-input" formControlName="question3" value="Gérer le style des composants">
+                      <label class="form-check-label" for="q3-option4">Gérer le style des composants</label>
+                    </div>
+                    <div *ngIf="quizForm.get('question3')?.invalid && quizForm.get('question3')?.touched" class="text-danger">
+                      Cette question est obligatoire.
+                    </div>
+                  </div>
+    
+                <!-- Bouton Soumettre -->
+                <button type="submit" class="btn btn-primary" [disabled]="quizForm.invalid">Soumettre le Quiz</button>
+              </form>
+            </div>
+    
+            <!-- Autres contenus principaux -->
+            <div>
+              <!-- Autre contenu que vous souhaitez ajouter -->
+            </div>
+          </div>
+ 
+      </div>
+
+  
+    </div>
+  
+    <!-- Pied de page -->
+    <footer class="bg-light text-center p-3">
+      <p>&copy; 2024 Mon Application. Tous droits réservés.</p>
+    </footer>
+  </div>
+</body>
+  
+  

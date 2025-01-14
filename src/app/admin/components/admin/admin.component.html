@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <mat-toolbar class="sidenav-toolbar">
+      <a href="/admin">
+        <span>FuturAllies</span>
+      </a>
+    </mat-toolbar>
+    <app-menu />
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- Header -->
+    <mat-toolbar color="primary" class="main-toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()" aria-label="Toggle sidenav" matTooltip="Ouvrir le menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="toolbar-title">Administration</span>
+      <!-- <app-breadcrumbs /> -->
+      <div class="spacer"></div>
+      <!-- User Section -->
+      <div class="user-profile">
+        <button mat-icon-button matBadge="{{user.notifications}}" matBadgeColor="warn" aria-label="Notifications" class="badge-button notifications-badge" matTooltip="Notifications">
+          <mat-icon>notifications</mat-icon>
+        </button>
+        <button mat-icon-button matBadge="{{user.messages}}" matBadgeColor="accent" aria-label="Messages" class="badge-button messages-badge" matTooltip="Messages">
+          <mat-icon>message</mat-icon>
+        </button>
+        <mat-menu #userMenu="matMenu">
+          <button mat-menu-item matTooltip="Voir mon profil">
+            <mat-icon>account_circle</mat-icon>
+            <span>Mon profil</span>
+          </button>
+          <button mat-menu-item matTooltip="Se déconnecter" (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Déconnexion</span>
+          </button>
+        </mat-menu>
+        <button mat-button class="user-menu-button" [matMenuTriggerFor]="userMenu">
+          <img *ngIf="user.isLoggedIn && user.avatarUrl" [src]="user.avatarUrl" class="avatar" matTooltip="Mon profil">
+          <mat-icon *ngIf="!user.avatarUrl" matTooltip="Mon profil">account_circle</mat-icon>
+          <span class="user-name">{{ user.name }}</span>
+        </button>
+      </div>
+    </mat-toolbar>
+
+    <!-- Content Section -->
+    <div class="content">
+      <router-outlet></router-outlet> <!-- Affiche les routes enfants ici -->
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

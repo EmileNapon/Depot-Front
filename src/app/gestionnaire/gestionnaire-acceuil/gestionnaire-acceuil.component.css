@@ -1,0 +1,108 @@
+
+/* Application de la police */
+body {
+  font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #333; /* Couleur de texte par défaut */
+  background-color: #f5f5f5; /* Couleur de fond */
+  font-size:90%;
+}
+
+  /* Couleurs des liens */
+  a {
+    color: #007bff; /* Couleur bleue pour les liens */
+  }
+  
+  a:hover {
+    color: #0056b3; /* Couleur bleue plus foncée pour les liens au survol */
+  }
+  
+  /* Couleurs des titres */
+  h1, h2, h3, h4, h5, h6 {
+    color: #222; /* Couleur légèrement plus foncée pour les titres */
+  }
+  
+  
+  /* Assurez-vous également que votre champ de saisie est bien stylé en blanc */
+  input[type="text"] {
+    background-color: #fff;
+    color: #000; /* Couleur du texte du champ de saisie */
+  }
+  
+  .nav-item {
+    margin-left: 10px;
+  }
+  
+   nav a {
+    color:black;
+  }
+  
+  
+
+
+
+  .navbar-brand.c{
+    font-size: 80%;
+  }
+
+
+
+
+
+
+  button {
+    border: none; /* Supprime la bordure du bouton */
+    outline: none; /* Supprime le contour du bouton lorsque celui-ci est focalisé (par exemple, lorsqu'il est sélectionné) */
+    background-color: transparent; /* Optionnel : rend l'arrière-plan transparent, si vous voulez que le bouton n'ait pas d'arrière-plan */
+    cursor: pointer; /* Change le curseur pour indiquer que le bouton est cliquable */
+  }
+
+.container-l {
+    border-radius: 2px; /* Les coins de l'élément sont arrondis avec un rayon de 10px */
+    box-shadow: 0 10px 15px rgba(79, 78, 78, 0.397),
+                0 5px 5px rgba(16, 15, 15, 0.397); /* Ajoute une ombre autour de l'élément, avec deux couches d'ombres */
+    position: relative; /* Positionne l'élément par rapport à sa position normale, permettant un positionnement plus précis des éléments enfants */
+    overflow: hidden; /* Cache tout le contenu qui dépasse les dimensions du conteneur */
+    width: 350px; /* Définit la largeur du conteneur à 768 pixels */
+    max-width: 100%; /* Empêche la largeur du conteneur de dépasser 100% de la largeur du conteneur parent */
+    min-height: 200px; /* Définit une hauteur minimale pour le conteneur de 550 pixels */
+    text-align: center;
+    color:white;
+    background-color:rgb(2, 85, 2);
+    font-size: 150%;
+    
+  }
+  .container-ll {
+    border-radius: 2px; /* Les coins de l'élément sont arrondis avec un rayon de 10px */
+    box-shadow: 0 10px 15px rgba(79, 78, 78, 0.397),
+                0 5px 5px rgba(16, 15, 15, 0.397); /* Ajoute une ombre autour de l'élément, avec deux couches d'ombres */
+    position: relative; /* Positionne l'élément par rapport à sa position normale, permettant un positionnement plus précis des éléments enfants */
+    overflow: hidden; /* Cache tout le contenu qui dépasse les dimensions du conteneur */
+    width: 350px; /* Définit la largeur du conteneur à 768 pixels */
+    max-width: 100%; /* Empêche la largeur du conteneur de dépasser 100% de la largeur du conteneur parent */
+    min-height: 200px; /* Définit une hauteur minimale pour le conteneur de 550 pixels */
+    text-align: center;
+    color:white;
+    background-color:rgb(5, 66, 112);
+    font-size: 150%;
+    
+  }
+
+  .container-lll {
+    border-radius: 2px; /* Les coins de l'élément sont arrondis avec un rayon de 10px */
+    box-shadow: 0 10px 15px rgba(79, 78, 78, 0.397),
+                0 5px 5px rgba(16, 15, 15, 0.397); /* Ajoute une ombre autour de l'élément, avec deux couches d'ombres */
+    position: relative; /* Positionne l'élément par rapport à sa position normale, permettant un positionnement plus précis des éléments enfants */
+    overflow: hidden; /* Cache tout le contenu qui dépasse les dimensions du conteneur */
+    width: 350px; /* Définit la largeur du conteneur à 768 pixels */
+    max-width: 100%; /* Empêche la largeur du conteneur de dépasser 100% de la largeur du conteneur parent */
+    min-height: 200px; /* Définit une hauteur minimale pour le conteneur de 550 pixels */
+    text-align: center;
+    color:white;
+    background-color:rgb(112, 32, 5);
+    font-size: 150%;
+    
+  }
+
+  .align{
+  display:inline-flex;
+  }

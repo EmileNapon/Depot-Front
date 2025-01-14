@@ -1,0 +1,155 @@
+
+       
+    <body>
+    
+        <!-- Entête principale -->
+    
+                <nav class="navbar-light navbar-fixed-top py-4">
+    
+                    <ul class="nav " >
+                        <li class="nav-item">
+                            <img src="assets/icon.png" alt="FuturAlliés Logo" routerLink='/acceuil' class="logo" height="50">
+                         </li>
+                    
+                      <li class="nav-item a_droite">
+                        <a routerLink='/orientation/etablissement' class="nav-link " >Etablissements</a>
+                      </li>
+                      <li class="nav-item">
+                        <a routerLink='/formation/contenuLibre' class="nav-link" >Vous etes</a>
+                      </li>
+                      <li class="nav-item">
+                        <a routerLink='/formation/certification' class="nav-link" > Formations </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a routerLink='/formation/certification' class="nav-link"> Emplois </a>
+                      </li>
+                      <li class="nav-item">
+                        <a routerLink='/formation/certification' class="nav-link" > Statistiques </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#trainers" class="nav-link" >Bourses </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="#trainers" class="nav-link" >Contact</a>
+                      </li>
+
+                      <li class="nav-item a_droite1" >
+                        <a routerLink="/usersPages/login" class='btn btn-warning'>Se connecter</a>
+                      </li>
+                    
+                    </ul>
+                  </nav>
+                  
+    
+    
+    
+        <section class="banner bg-secondary text-white text-center py-5" style="position: relative; overflow: hidden; ">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; no-repeat center center; background-size: cover; filter: brightness(1.2);"></div>
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 255, 0.3); mix-blend-mode: overlay;"></div>
+            <div class="container" style="position: relative; z-index: 1;padding-left:350px">
+                <br/>
+                <ul class='nav'>
+                    <li class="nav-item">
+                        <form class="d-flex" role="search">
+                            <input class="form-control search-input" type="search" placeholder="rechercher.." aria-label="Search">
+                            <button class='btn btn-primary'>recherche</button>
+                        </form>
+                    </li>
+                </ul> 
+                <br/>
+                <br/>               
+            </div>
+        </section>
+    
+
+    <!-- Section des meilleurs profils -->
+    <section class="orientation-guide" id="profiles">
+        <h2>Les Meilleurs Profils Recherchés</h2>
+        <div class="profile-stats">
+            <div class="profile-item">
+                <h3>Développeur Full Stack</h3>
+                <p>Taux d'employabilité : 95%</p>
+                <button class="view-more" (click)="toggleStats()">Voir plus</button>
+                <div class="stats-details" #profileStats>
+                    <ul>
+                        <li>Salaire moyen : 50,000 USD/an</li>
+                        <li>Top industries : Technologie, Finance, E-commerce</li>
+                        <li>Compétences requises : JavaScript, Python, DevOps</li>
+                    </ul>
+                    <button class="cta-btn">S'inscrire à ce parcours avec nous</button>
+                </div>
+            </div>
+                <div class="profile-item">
+                  <h3>Data Scientist</h3>
+                  <p>Taux d'employabilité : 92%</p>
+                  <button class="view-more" (click)="toggleStats()">Voir plus</button>
+                  <div class="stats-details" #profileStats>
+                    <ul>
+                      <li>Salaire moyen : 80,000 USD/an</li>
+                      <li>Top industries : Santé, Finance, Technologie</li>
+                      <li>Compétences requises : Python, Machine Learning, SQL</li>
+                    </ul>
+                    <button class="cta-btn">S'inscrire à ce parcours avec nous</button>
+                  </div>
+                </div>
+                <!-- Ajoutez d'autres profils avec le même modèle -->
+             
+              
+
+    <!-- Section des domaines prometteurs -->
+    <section class="orientation-guide" id="domains">
+        <h2>Domaines Prometteurs</h2>
+        <div class="domain-stats">
+            <div class="domain-item">
+                <h3>Intelligence Artificielle</h3>
+                <p>Croissance : 45%</p>
+                <button class="view-more" (click)="toggleStats()">Voir plus</button>
+                <div class="stats-details" #profileStats>
+                    <ul>
+                        <li>Applications : Automatisation, Reconnaissance vocale, Robotique</li>
+                        <li>Marché mondial : 190 milliards USD d'ici 2025</li>
+                        <li>Top entreprises : Google, Microsoft, Amazon</li>
+                    </ul>
+                    <button class="cta-btn">Consulter nos certifications à ce domaine</button>
+                </div>
+            </div>
+            <div class="domain-item">
+                <h3>Énergies Renouvelables</h3>
+                <p>Croissance : 38%</p>
+                <button class="view-more" (click)="toggleStats()">Voir plus</button>
+                <div class="stats-details" #profileStats>
+                    <ul>
+                        <li>Applications : Éolien, Solaire, Hydroélectrique</li>
+                        <li>Marché mondial : 1,5 trillion USD d'ici 2030</li>
+                        <li>Top entreprises : Tesla, Siemens, Vestas</li>
+                    </ul>
+                    <button class="cta-btn">Consulter nos certifications à ce domaine</button>
+                </div>
+            </div>
+            <!-- Ajoutez d'autres domaines avec le même modèle -->
+        </div>
+    </section>
+
+    <!-- Section des meilleures universités -->
+    <section class="orientation-guide" id="universities">
+        <h2>Meilleures Universités</h2>
+        <div class="university-stats">
+            <div class="university-item">
+                <h3>MIT (Massachusetts Institute of Technology)</h3>
+                <p>Classement : #1</p>
+                <button class="view-more" (click)="toggleStats()">Voir plus</button>
+                <div class="stats-details" #profileStats>
+                    <ul>
+                        <li>Programmes forts : Intelligence Artificielle, Ingénierie, Informatique</li>
+                        <li>Taux de placement : 94%</li>
+                        <li>Localisation : USA</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Ajoutez d'autres universités avec le même modèle -->
+        </div>
+    </section>
+
+    <app-footer></app-footer>
