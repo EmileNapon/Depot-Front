@@ -37,17 +37,25 @@
         </button>
 
         <!-- Profil utilisateur -->
-        <button mat-button [matMenuTriggerFor]="userMenu">
-          <img [src]="user.avatarUrl" alt="Avatar" class="avatar" />
-          <span>{{ user.name }}</span>
-          <mat-icon>arrow_drop_down</mat-icon>
-        </button>
-        <mat-menu #userMenu="matMenu">
-          <button mat-menu-item (click)="logout()">
-            <mat-icon>logout</mat-icon>
-            <span>Déconnexion</span>
-          </button>
-        </mat-menu>
+        <ul class="nav">
+        <li class='nav-item' *ngIf="userInfo?.email; else loginTemplate">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img  src='assets/profil.png' style='background-color:yellow' height="25" />
+          </a>
+          <ul class="dropdown-menu">
+            <li><span class="dropdown-item">{{ userInfo?.firstName }} {{ userInfo?.lastName }}</span></li>
+            <li><span class="dropdown-item">{{ userInfo?.email }}</span></li>
+             <li><button class="dropdown-item" (click)="onLogout()" > <i class="bi bi-power"></i><span  style='padding-left:5px'>Déconnexion</span></button></li>
+          </ul>
+        
+        </li>
+      </ul>
+        
+        <ng-template #loginTemplate>
+          <li class='nav-item'>
+            <a class="nav-link" class="btn btn-warning" href="/usersPages/login">Connexion</a> <!-- Remplacez par votre route de connexion -->
+          </li>
+        </ng-template>
       </mat-toolbar>
     </header>
 
@@ -69,3 +77,23 @@
     </footer> -->
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+
+
+<li class='nav-item' *ngIf="userInfo?.email; else loginTemplate">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <img  src='assets/profil.png' style='background-color:yellow' height="25" />
+  </a>
+  <ul class="dropdown-menu">
+    <li><span class="dropdown-item">{{ userInfo?.firstName }} {{ userInfo?.lastName }}</span></li>
+    <li><span class="dropdown-item">{{ userInfo?.email }}</span></li>
+     <li><button class="dropdown-item" (click)="onLogout()" > <i class="bi bi-power"></i><span  style='padding-left:5px'>Déconnexion</span></button></li>
+  </ul>
+
+</li>
+
+<ng-template #loginTemplate>
+  <li class='nav-item'>
+    <a class="nav-link" class="btn btn-warning" href="/usersPages/login">Connexion</a> <!-- Remplacez par votre route de connexion -->
+  </li>
+</ng-template>
