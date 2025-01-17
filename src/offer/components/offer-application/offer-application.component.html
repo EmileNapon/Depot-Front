@@ -20,7 +20,7 @@
         <label for="message">Message de Motivation</label>
         <textarea id="message" formControlName="message" rows="4" class="form-control" placeholder="Expliquez votre motivation"></textarea>
       </div>
-kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk{{isRequiredCvDoc}}
+       {{isRequiredCvDoc}}
       <!-- Fichiers requis -->
       <div *ngIf="isRequiredCvDoc" class="upload-card" (click)="cvInput.click()">
         <input #cvInput id="cv" type="file" (change)="onFileSelected($event, 'CV')" accept=".pdf,.doc,.docx" class="hidden"/>
