@@ -111,7 +111,8 @@ export class ListOfferComponent implements OnInit, OnDestroy {
    * Redirige vers la liste des candidatures pour une offre spécifique
    */
   viewCandidatures(offerId: string): void {
-    this.router.navigate([`/offers/dashboard/list-candidat/${offerId}`]);
+    this.router.navigate([`/dashboard/list-candidat/${offerId}`]);
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~',offerId)
   }
 
   /**

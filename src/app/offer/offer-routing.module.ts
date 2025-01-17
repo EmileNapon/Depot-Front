@@ -14,6 +14,7 @@ import { Offer } from './models/offer.models';
 const routes: Routes = [
   // Route par défaut (redirige vers le tableau de bord)
   { path: '', component: OfferListComponent},
+  
 
   // Route pour le tableau de bord
   {

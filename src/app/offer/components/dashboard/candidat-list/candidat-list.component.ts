@@ -13,7 +13,7 @@ export class CandidatListComponent implements OnInit {
   displayedColumns: string[] = ['candidateName', 'offer', 'date', 'status', 'actions'];
 
   // Source de données pour le tableau
-  dataSource = new MatTableDataSource<any>();
+  dataSource= new MatTableDataSource<any[]>();
 
   // Filtre de recherche
   filterValue: string = '';
@@ -32,7 +32,7 @@ export class CandidatListComponent implements OnInit {
   ngOnInit(): void {
     // Récupérer les paramètres de l'URL
     this.route.params.subscribe(params => {
-      this.offerId = params['id'] || null;
+      this.offerId = params['offerId'] || null;
       this.offerType = params['type'] || null;
       this.offerTitle = params['title'] || null;
       this.offerStatus = params['status'] || null;
@@ -40,6 +40,7 @@ export class CandidatListComponent implements OnInit {
       // Charger les candidatures en fonction des paramètres
       this.loadCandidatures();
     });
+    
   }
 
   /**
@@ -50,7 +51,9 @@ export class CandidatListComponent implements OnInit {
       // Si un ID d'offre est fourni, charger les candidatures pour cette offre
       this.offerService.getOfferById(this.offerId).subscribe({
         next: (candidatures) => {
-          this.dataSource.data = candidatures;
+          this.dataSource= candidatures;
+          // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~',this.dataSource)
+          // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~',this.dataSource.data)
         },
         error: (err) => {
           console.error('Erreur lors du chargement des candidatures :', err);
@@ -58,9 +61,11 @@ export class CandidatListComponent implements OnInit {
       });
     } else if (this.offerType) {
       // Si un type d'offre est fourni, charger les candidatures pour ce type
-      this.offerService.getOfferApplicationByOfferId(this.offerType).subscribe({
+      this.offerService.getOfferApplicationByOfferId(this.offerId).subscribe({
         next: (candidatures) => {
           this.dataSource.data = candidatures;
+          
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~',this.dataSource.data)
         },
         error: (err) => {
           console.error('Erreur lors du chargement des candidatures :', err);
@@ -68,6 +73,7 @@ export class CandidatListComponent implements OnInit {
       });
     }
   }
+
 
   /**
    * Appliquer le filtre de recherche

@@ -65,6 +65,15 @@ import { DashboardComponent } from './offer/components/dashboard/dashboard/dashb
 
 const routes: Routes = [
 
+
+
+
+
+
+
+
+  
+
   {path:'',component:AcceuilComponent},
   {path:'dasbord',component : DasbordEtudiantComponent},
   {path:'facturation', component:FacturationComponent},

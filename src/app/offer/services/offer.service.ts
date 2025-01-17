@@ -66,14 +66,14 @@ export class OfferService {
     return this.http.get(`${this.apiUrl}/internships-applications`);
   }
 
-  // Obtenir une candidature pour une offre par son ID
-  getOfferApplicationById(id: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/offer-applications/${id}`);
-  }
+  // // Obtenir une candidature pour une offre par son ID
+  // getOfferApplicationById(id: string): Observable<any> {
+  //   return this.http.get(`${this.apiUrl}/offer-applications/${id}`);
+  // }
 
    // Obtenir une candidature pour une offre par son ID
-   getOfferApplicationByOfferId(id: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/offer-applications/offer/${id}`);
+   getOfferApplicationByOfferId(id: string |null): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/offer-applications/offer/${id}/`);
   }
 
   // Mettre à jour une candidature pour une offre

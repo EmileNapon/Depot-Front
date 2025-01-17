@@ -54,7 +54,7 @@
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
         <mat-cell *matCellDef="let offer">
-          <button mat-icon-button color="primary" (click)="viewCandidatures(offer._id)" matTooltip="Voir les candidatures">
+          <button mat-icon-button color="primary" (click)="viewCandidatures(offer.id)" matTooltip="Voir les candidatures">
             <mat-icon>people</mat-icon>
           </button>
 

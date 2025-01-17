@@ -33,7 +33,7 @@
         <mat-cell *matCellDef="let candidature">
           <div class="candidate-info">
             <img [src]="candidature.avatarUrl" alt="Avatar" class="avatar" />
-            <span>{{ candidature.candidateName }}</span>
+            <span>{{ candidature.title }}</span>
           </div>
         </mat-cell>
       </ng-container>
@@ -41,14 +41,14 @@
       <!-- Colonne : Offre -->
       <ng-container matColumnDef="offer">
         <mat-header-cell *matHeaderCellDef>Offre</mat-header-cell>
-        <mat-cell *matCellDef="let candidature">{{ candidature.offer }}</mat-cell>
+        <mat-cell *matCellDef="let candidature">{{ candidature.title }}</mat-cell>
       </ng-container>
   
       <!-- Colonne : Date de candidature -->
       <ng-container matColumnDef="date">
         <mat-header-cell *matHeaderCellDef>Date de candidature</mat-header-cell>
         <mat-cell *matCellDef="let candidature">
-          {{ candidature.date | date: 'dd/MM/yyyy' }}
+          {{ candidature.title }}
         </mat-cell>
       </ng-container>
   
@@ -58,7 +58,7 @@
         <mat-cell *matCellDef="let candidature">
           <mat-chip-list>
             <mat-chip [ngClass]="getStatusClass(candidature.status)">
-              {{ candidature.status }}
+              {{ candidature.title }}
             </mat-chip>
           </mat-chip-list>
         </mat-cell>
