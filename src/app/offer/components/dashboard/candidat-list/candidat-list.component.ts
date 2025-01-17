@@ -1,3 +1,5 @@
+
+import { UtilisateurService } from '../../../../gestionnaire/programme-talent/services/utilisateur.service'
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OfferService } from '../../../services/offer.service';
@@ -13,7 +15,7 @@ export class CandidatListComponent implements OnInit {
   displayedColumns: string[] = ['candidateName', 'offer', 'date', 'status', 'actions'];
 
   // Source de données pour le tableau
-  dataSource= new MatTableDataSource<any[]>();
+  dataSource= new MatTableDataSource<any>();
 
   // Filtre de recherche
   filterValue: string = '';
@@ -26,7 +28,8 @@ export class CandidatListComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private offerService: OfferService
+    private offerService: OfferService,
+    private utilisateurService: UtilisateurService, 
   ) {}
 
   ngOnInit(): void {
@@ -39,40 +42,83 @@ export class CandidatListComponent implements OnInit {
 
       // Charger les candidatures en fonction des paramètres
       this.loadCandidatures();
+      
     });
-    
+   
   }
 
   /**
-   * Charger les candidatures en fonction des paramètres
-   */
-  loadCandidatures(): void {
-    if (this.offerId) {
-      // Si un ID d'offre est fourni, charger les candidatures pour cette offre
-      this.offerService.getOfferById(this.offerId).subscribe({
-        next: (candidatures) => {
-          this.dataSource= candidatures;
-          // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~',this.dataSource)
-          // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~',this.dataSource.data)
-        },
-        error: (err) => {
-          console.error('Erreur lors du chargement des candidatures :', err);
+ * Charger les candidatures en fonction des paramètres
+ */
+loadCandidatures(): void {
+  if (this.offerId) {
+    // Si un ID d'offre est fourni, charger les candidatures pour cette offre
+    this.offerService.getOfferById(this.offerId).subscribe({
+      next: (candidatures) => {
+        if (Array.isArray(candidatures)) {
+          this.dataSource = new MatTableDataSource(candidatures); // Crée une instance avec les données
+          this.loadUser()
+        } else {
+          console.error('Les candidatures reçues ne sont pas un tableau 11 :', candidatures);
         }
-      });
-    } else if (this.offerType) {
-      // Si un type d'offre est fourni, charger les candidatures pour ce type
-      this.offerService.getOfferApplicationByOfferId(this.offerId).subscribe({
-        next: (candidatures) => {
-          this.dataSource.data = candidatures;
-          
-          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~',this.dataSource.data)
-        },
-        error: (err) => {
-          console.error('Erreur lors du chargement des candidatures :', err);
+      },
+      error: (err) => {
+        console.error('Erreur lors du chargement des candidatures :', err);
+      },
+    });
+
+    this.offerService.getOfferApplicationByOfferId(this.offerId).subscribe({
+      next: (candidatures) => {
+        if (Array.isArray(candidatures)) {
+          this.dataSource = new MatTableDataSource(candidatures); // Crée une instance avec les données
+          console.error('Les candidatures reçues ne sont pas un tableau 1 :', candidatures);
+          this.loadUser()
+        } else {
+          console.error('Les candidatures reçues ne sont pas un tableau :', candidatures);
         }
-      });
-    }
-  }
+      },
+      error: (err) => {
+        console.error('Erreur lors du chargement des candidatures :', err);
+      },
+    });
+    
+  } 
+}
+
+
+
+FiltresOffer:any[]=[]
+etudiants:any[]=[]
+FiltresEtudiantParOffer:any[]=[]
+
+
+loadUser():void{
+  this.utilisateurService.getEtudiants().subscribe((data) => {
+    this.etudiants = data;
+    this.EtudiantParFormation()
+    console.log('Candidatures filtrées :', this.dataSource.data);
+  
+  });
+}
+EtudiantParFormation(): void {
+    // Filtrer les candidatures par formation
+    console.log('Candidatures filtrées mv:', this.dataSource.data);
+  
+    this.FiltresOffer = this.dataSource.data.filter(inscrit => inscrit.offer == this.offerId);
+
+    // Obtenir les IDs des utilisateurs associés aux candidatures filtrées
+    const userIds = new Set(this.FiltresOffer.map((inscrit) => inscrit.user));
+
+    // Filtrer les étudiants par les IDs trouvés
+    this.FiltresEtudiantParOffer = this.etudiants.filter((user) =>
+      userIds.has(user.id)
+    );
+
+    // Debugging : Afficher les résultats dans la console
+    console.log('Candidatures filtrées m:', this.dataSource.data);
+    console.log('Étudiants filtrés :', this.offerId);
+  } 
+
 
 
   /**

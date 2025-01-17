@@ -73,7 +73,7 @@ export class OfferService {
 
    // Obtenir une candidature pour une offre par son ID
    getOfferApplicationByOfferId(id: string |null): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/offer-applications/offer/${id}/`);
+    return this.http.get<any[]>(`${this.apiUrl}/offer-applications/${id}/`);
   }
 
   // Mettre à jour une candidature pour une offre
