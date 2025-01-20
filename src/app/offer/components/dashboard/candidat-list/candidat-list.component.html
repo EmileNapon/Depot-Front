@@ -25,15 +25,18 @@
       </mat-form-field>
     </div>
   
+
+
+
+
     <!-- Tableau des candidatures -->
-    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <mat-table [dataSource]="nouveau_donnees" class="mat-elevation-z8">
       <!-- Colonne : Nom du candidat -->
       <ng-container matColumnDef="candidateName">
         <mat-header-cell *matHeaderCellDef>Nom du candidat</mat-header-cell>
         <mat-cell *matCellDef="let candidature">
           <div class="candidate-info">
-            <img [src]="candidature.avatarUrl" alt="Avatar" class="avatar" />
-            <span>{{ candidature.candidateName }}</span>
+            <span>{{ candidature.nom }} {{ candidature.prenom }}</span>
           </div>
         </mat-cell>
       </ng-container>

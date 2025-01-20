@@ -100,24 +100,40 @@ loadUser():void{
   
   });
 }
+nouveau_donnees:any[]=[]
 EtudiantParFormation(): void {
     // Filtrer les candidatures par formation
-    console.log('Candidatures filtrées mv:', this.dataSource.data);
-  
     this.FiltresOffer = this.dataSource.data.filter(inscrit => inscrit.offer == this.offerId);
-
     // Obtenir les IDs des utilisateurs associés aux candidatures filtrées
-    const userIds = new Set(this.FiltresOffer.map((inscrit) => inscrit.user));
-
+    const userIds = new Set(this.FiltresOffer.map((inscrit) => inscrit.candidat));
     // Filtrer les étudiants par les IDs trouvés
     this.FiltresEtudiantParOffer = this.etudiants.filter((user) =>
       userIds.has(user.id)
     );
 
+
+    this.nouveau_donnees = this.FiltresOffer.map(elementInscrit => {
+      // Chercher l'objet correspondant dans data2
+      const item2= this.etudiants.find(id2 => id2.id === elementInscrit.candidat);
+      return { ...elementInscrit, ...item2 };  // Fusionner les objets item1 et item2
+  });
+
+
     // Debugging : Afficher les résultats dans la console
-    console.log('Candidatures filtrées m:', this.dataSource.data);
+    console.log('Candidatures filtrées m:', this.nouveau_donnees);
     console.log('Étudiants filtrés :', this.offerId);
   } 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
