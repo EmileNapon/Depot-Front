@@ -1,0 +1,371 @@
+
+<app-header/>
+    <br>
+<div class="container-fluid mt-4">
+  
+  <div class="row mt-4">
+    <nav class="col-2 bg-light text-black  d-flex flex-column">
+      <h2 class="text-center my-4">Gestion des Formateurs</h2>
+      <ul class="list-group">
+        <li class="list-group-item" (click)="navigateTo('exam')">
+          <button class="btn btn-link">Gérer les Examens</button>
+        </li>
+        <li class="list-group-item" (click)="navigateTo('exo')">
+          <button class="btn btn-link">Envoyer Exercices</button>
+        </li>
+      </ul>
+    </nav>
+    
+    <main class="col-10">
+
+      <div class="bg-light p-3 border-bottom">
+        <div class="row d-flex align-items-center justify-content-between" *ngIf="showExam">
+          <div class="col">
+              <h1 class="text-left">Tableau de bord formateur pour création des Examens</h1>
+          </div>
+          <div class="col-auto">
+            <button type="button" class="btn btn-secondary btn-lg" (click)="onShowList()">Afficher les Examens</button>
+          </div>
+        </div>
+        <div class="row d-flex align-items-center justify-content-between" *ngIf="showExo">
+          <div class="col">
+              <h1 class="text-left">Tableau de bord formateur pour chargement des exercices</h1>
+          </div>
+          <div class="col-auto">
+            <button type="button" class="btn btn-secondary btn-lg" (click)="onShowList()">Afficher les Exercices</button>
+        </div>
+      </div>
+      </div>
+      <br>
+
+      <!-- Affichages des examens et TD créer -->
+      <div class="row bg-light m-3 p-3 border-bottom"  *ngIf="showlist">
+        <div class="col-md-6">
+          <h1 class="text-left">Liste des examens</h1>
+           <p>  <a class="btn btn-link"> <h2>{{ quiz.title }}</h2>  </a> <span style="color: red;"> de {{ quiz.duration }} le {{ quiz.date }} à {{quiz.start_time}}  </span></p>
+        </div>
+        <div class="col-md-6">
+          <h1 class="text-left">Liste des exercices</h1>
+        </div>
+
+        <div class="mt-3 mb-3">
+          <button type="submit" class="btn btn-outline-danger mx-2" (click)="onShutList()">Fermer</button>
+        </div>
+      </div>
+      <br>
+
+    <div class="">
+      <!-- Section Examens -->
+      <div *ngIf="showExam">
+        <!-- <h2>Gestion des Examens</h2> -->
+        <form [formGroup]="quizForm" (ngSubmit)="gererQuiz()">
+          <div class="row">
+            <!-- Options Quiz (déjà expliqué) -->
+             <!-- Première colonne -->
+             <div class="col-md-6">
+              <div class="p-3 border bg-light">
+                <h2><b> Informations sur la Formation</b></h2>
+
+                <!-- Champ de saisie pour description -->
+                <div class="mb-3">
+                  <label for="title" class="form-label">Titre du quiz (Devoir n°1):</label>
+                  <input 
+                    type="text"
+                    id="title" 
+                    class="form-control" 
+                    placeholder="Entrez un titre" 
+                    formControlName="title" 
+                    rows=""
+                    [class.is-invalid]="quizForm.get('title')?.invalid && quizForm.get('title')?.touched">
+                  
+                </div>
+                <!-- Champ déroulant -->
+                <!-- <div class="mb-3">
+                  <label for="moduleSelect" class="form-label">Sélectionnez un module :</label>
+                  <select id="moduleSelect" formControlName="module_id" class="form-select">
+                    <option value="">-- Choisir un module --</option>
+                    <option value="module1">Module 1</option>
+                    <option value="module2">Module 2</option>
+                    <option value="module3">Module 3</option>
+                  </select>
+                </div> -->
+                <div class="mb-3">
+                  <label for="moduleSelect" class="form-label">Sélectionnez Sujet de module :</label>
+                  <select id="moduleSelect" formControlName="module_id" class="form-select">
+                    <option value="">-- Choisir un module --</option>
+                    <option *ngFor="let module of modules" [value]="module.id">{{ module.nom_module }}</option>
+                  </select>
+                  <div *ngIf="quizForm.get('module_id')?.invalid && quizForm.get('module_id')?.touched" class="text-danger">
+                    Le module de formation est obligatoire.
+                  </div>
+                </div>
+                <!-- <div class="mt-5"> </div> -->
+                
+                <!-- Champ de saisie pour description -->
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description :</label>
+                  <textarea 
+                    id="description" 
+                    class="form-control" 
+                    placeholder="Entrez une description pour rendre le QUIZ plus spécifique" 
+                    formControlName="description" 
+                    rows="5"
+                    [class.is-invalid]="quizForm.get('description')?.invalid && quizForm.get('description')?.touched">
+                  </textarea>
+                </div>
+            
+                <!-- ------------------ -->
+                <!-- <h4>Choix entre Description et Fichier</h4> -->
+                <!-- Boutons radio pour activer le champ "Description ou fichier" -->
+                <!-- <div class="mb-3"> -->
+                  <!-- <label class="form-label">Choisir entre Description ou Fichier :</label><br /> -->
+                  <!-- <div class="form-check form-check-inline">
+                    <input 
+                      type="radio" 
+                      id="descriptionRadio" 
+                      class="form-check-input" 
+                      formControlName="descriptionOrFile" 
+                      value="description">
+                    <label for="descriptionRadio" class="form-check-label">Utiliser une description</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input 
+                      type="radio" 
+                      id="fileRadio" 
+                      class="form-check-input" 
+                      formControlName="descriptionOrFile" 
+                      value="file">
+                    <label for="fileRadio" class="form-check-label">Télécharger un fichier</label>
+                  </div>
+                </div> -->
+
+                <!-- Champ de saisie pour description -->
+                <!-- <div class="mb-3">
+                  <label for="descriptionInput" class="form-label">Description :</label>
+                  <textarea 
+                    id="descriptionInput" 
+                    class="form-control" 
+                    placeholder="Entrez une description ou un titre" 
+                    formControlName="descriptQuiz" 
+                    rows="5"
+                    [class.is-invalid]="quizForm.get('descriptQuiz')?.invalid && quizForm.get('descriptQuiz')?.touched">
+                  </textarea>
+                </div> -->
+
+                <!-- Champ de chargement de fichier -->
+                <!-- <div class="mb-3">
+                  <label for="fileInput" class="form-label">Fichier :</label>
+                  <input 
+                    type="file" 
+                    id="fileInput" 
+                    class="form-control" 
+                    formControlName="file" 
+                    accept=".pdf, .docx">
+                </div> -->
+                 <!-- ---------------------- -->
+              </div>
+              <br>
+
+              <!-- Paramètres de QUIZ -->
+              <div class="p-3 border bg-light">
+                <h2><b> Paramètres du Quiz</b> </h2>
+
+                <!-- Nouveau champ pour le niveau de difficulté -->
+                <div class="mb-3">
+                  <label for="difficultyLevel" class="form-label">Niveau de difficulté :</label>
+                  <select 
+                    id="difficultyLevel" 
+                    formControlName="difficultyLevel" 
+                    class="form-select">
+                    <option value="">-- Sélectionner le niveau --</option>
+                    <option value="débutant">Débutant</option>
+                    <option value="intermediaire">Intermédiaire</option>
+                    <option value="advancé">Avancé</option>
+                  </select>
+                  <div *ngIf="quizForm.get('difficultyLevel')?.invalid && quizForm.get('difficultyLevel')?.touched" class="text-danger">
+                    Le niveau de difficulté est obligatoire.
+                  </div>
+                  
+                </div>
+                
+                <!-- Checkbox des types de quiz -->
+                <div class="mb-3">
+                  <label class="form-label">Types de Quiz :</label>
+                  <div class="form-check">
+                    <input 
+                      type="checkbox" 
+                      id="qcm" 
+                      class="form-check-input" 
+                      formControlName="qcm">
+                    <label for="qcm" class="form-check-label">QCM</label>
+                    <input 
+                      type="number" 
+                      class="form-control mt-2" 
+                      formControlName="qcmCount" 
+                      placeholder="Nombre pour QCM">
+                  </div>
+                  <div class="form-check mt-2">
+                    <input 
+                      type="checkbox" 
+                      id="unique" 
+                      class="form-check-input" 
+                      formControlName="uniqueQuestion">
+                    <label for="unique" class="form-check-label">Question à réponse unique</label>
+                    <input 
+                      type="number" 
+                      class="form-control mt-2" 
+                      formControlName="uniqueCount" 
+                      placeholder="Nombre pour réponse unique">
+                  </div>
+                  <div class="form-check mt-2">
+                    <input 
+                      type="checkbox" 
+                      id="vraiFaux" 
+                      class="form-check-input" 
+                      formControlName="vraiFaux">
+                    <label for="vraiFaux" class="form-check-label">Vrai/Faux</label>
+                    <input 
+                      type="number" 
+                      class="form-control mt-2" 
+                      formControlName="vraiFauxCount" 
+                      placeholder="Nombre pour Vrai/Faux">
+                  </div>
+                </div>
+
+                
+
+                <!-- Label pour nombre total -->
+                <div class="mb-3">
+                  <label class="form-label">Nombre total de questions :</label>
+                  <p id="totalQuestions" class="fw-bold">{{ totalQuestions }}</p>
+                </div>
+
+              </div>
+              <br>
+
+              
+            </div>
+            
+            <!-- Deuxième colonne -->
+            <div class="col-md-6">
+              <!-- Information de Quizz -->
+              <div class="p-3 border bg-light">
+                <h2><b>Informations pour la Soumission</b></h2>
+                <div class="mb-3">
+                  <label for="date" class="form-label">Date du quiz :</label>
+                  <input type="date" id="date" class="form-control" formControlName="date">
+                </div>
+                <div class="mb-3">
+                  <label for="start_time" class="form-label">Heure de démarrage :</label>
+                  <input type="time" id="start_time" class="form-control" formControlName="start_time">
+                </div>
+                <div class="mb-3">
+                  <label for="duration_minutes" class="form-label">Durée (en minutes) :</label>
+                  <input type="number" id="duration_minutes" class="form-control" formControlName="duration_minutes" placeholder="Entrez la durée">
+                </div>
+              </div>
+              <br>
+
+              <!-- Label du text à envoyer au modèle -->
+              <div class="mb-3">
+                <label for="besoin" class="form-label">VERIFIER LE BESOIN FORMULER DANS CE CHAMPS !</label>
+                <textarea
+                  id="besoin" 
+                  class="form-control" 
+                  placeholder="Le résumé de votre besoin sera affiché ici !" 
+                  formControlName="besoin" 
+                  rows="20"
+                  readonly
+                  [class.is-invalid]="quizForm.get('besoin')?.invalid && quizForm.get('besoin')?.touched">
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-4" *ngIf="showButtonGenerer">
+            <button type="submit" class="btn btn-primary" [disabled]="quizForm.invalid">Générer</button>
+            <!-- <button type="submit" class="btn btn-primary" [disabled]="quizForm.invalid" (click)="generateQuestions()">Générer</button> -->
+          </div>
+
+          <div class="text-center d-flex mt-4" *ngIf="showGeneratedQuestions">
+            <button type="button" class="btn btn-secondary mx-2" (click)="abandonQuestions()">Abandonner</button>
+            <button type="button" class="btn btn-secondary" (click)="regenerateQuestions()">Régénérer</button>
+          </div>
+          
+        </form>
+
+        <!-- Formulaire pour la soumission --------------------------------- -->
+        <form  *ngIf="showGeneratedQuestions">
+
+          <div class="mt-5">
+            <div class="container mt-4">
+              <h2 class="mb-3">QUIZ GENERE</h2>
+              <div class="card">
+                <div class="card-body">
+                  <div [innerHTML]="formattedText"></div>
+                </div>
+              </div>
+            </div>
+            <!-- <h1>{{ quiz.title }}</h1>
+            <p><strong>Description:</strong> {{ quiz.besoin }}</p>
+            <p><strong>Date:</strong> {{ quiz.date }}</p>
+            <p><strong>Durée:</strong> {{ quiz.duration_minutes }} minutes</p>
+          
+            <h2><strong>Questions</strong></h2>
+            <div *ngFor="let question of quiz.questions">
+              <h3>Question n° {{ question.id }}: {{ question.question }}</h3>
+              
+              <ul>
+                <li *ngFor="let option of question.options">
+                  {{ option.option_text }}
+                </li>
+              </ul>
+              <h4>Réponses correctes :</h4>
+              <ul>
+                <li *ngFor="let reponse of question.reponses" style="color: green;">
+                  {{ reponse.reponse }}
+                </li>
+              </ul>
+              <p>Explication: <em  style="color: orange;">{{ question.explanation }}</em></p>
+            </div> -->
+          </div>
+          
+          <div *ngIf="error">
+            <p>{{ error }}</p>
+          </div>
+          <!-- <div class="mt-4">
+            <div class="questionGenerer">
+              <h2><b>Questions Générées</b></h2>
+              <ul class="list-group">
+                <li *ngFor="let question of generatedQuestions" class="list-group-item">
+                  {{ question }}
+                </li>
+              </ul>
+            </div>
+          </div> -->
+
+          <div class="text-center mt-3">
+            <button type="button" class="btn btn-success ms-2" [disabled]="" (click)="createQuiz()">Soumettre</button>
+          </div>
+          
+        </form>
+
+        
+      </div>
+
+      <!-- Section Exercices -->
+      <div *ngIf="showExo">
+        <!-- <h2>Exercices</h2> -->
+        <p>Section en cours de développement...</p>
+      </div>
+
+    </div>
+  </main>
+  </div>
+</div>
+
+<br>
+<app-footer/>
+
+
+<!-- -------------------------------- -->
+  

@@ -62,6 +62,7 @@ import { OfferApplicationComponent } from './offer/components/offer-application/
 import { AuthGuard } from './admin/guards/auth.guard';
 import { LoginComponent } from './admin/components/login/login.component';
 import { DashboardComponent } from './offer/components/dashboard/dashboard/dashboard.component';
+import { DasbordFormateurComponent } from './gestionnaire/formateur/dasbord-formateur/dasbord-formateur.component';
 
 const routes: Routes = [
 
@@ -150,7 +151,8 @@ const routes: Routes = [
     {path:'Module-formation/:id_joutFormation/formation', component : ajoutModuleComponent},
     {path:'create/:id_joutFormation/:seanceId/seance', component : AjoutSeanceComponent},
 
-
+   // ------------------- Formateurs ----------------------------------------
+   {path: 'dasbord-formateur', component: DasbordFormateurComponent}
   ]},
   
   

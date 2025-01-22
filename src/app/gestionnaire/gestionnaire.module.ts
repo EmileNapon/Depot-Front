@@ -34,6 +34,7 @@ import { GroupeEtudiantComponent } from './programme-talent/groupe-etudiant/grou
 import {  GestionnaireFormationDetailComponent } from './programme-talent/formation/formation-detail/formation-detail.component';
 import {  GestionnaireDasbordProgTalentComponent } from './programme-talent/dasbord-prog-talent/dasbord-prog-talent.component';
 import { ajoutModuleComponent } from './programme-talent/formation/ajout-formation/ajouterModule/ajouteModule.component';
+import { DasbordFormateurComponent } from './formateur/dasbord-formateur/dasbord-formateur.component';
 
 @NgModule({
   declarations: [GestionnaireComponent, GestionnaireAcceuilComponent, GestionnaireModulesComponent, GestionnaireCoursComponent, GestionnaireCertificatComponent, GestionnaireCertificatCoursComponent, GestionnaireDomaineComponent, GestionnaireChapitreComponent, GestionnaireModifierContenuCoursComponent,
@@ -42,8 +43,10 @@ import { ajoutModuleComponent } from './programme-talent/formation/ajout-formati
       GestionnaireFormationComponent, ModuleComponent, FooterComponent, HeaderComponent, AnnonceComponent, 
       EtudiantComponent, EncadrantComponent, ModifEncadrantComponent, AjoutFormationComponent, ModificationFormationComponent, 
       AjoutSeanceComponent, ModificationSeanceComponent, AjoutAnnonceComponent, ModificationAnnonceComponent, 
-      AjoutEncadrantComponent, GroupeEtudiantComponent, GestionnaireFormationDetailComponent,ajoutModuleComponent
+      AjoutEncadrantComponent, GroupeEtudiantComponent, GestionnaireFormationDetailComponent,ajoutModuleComponent,
+      DasbordFormateurComponent
       // -------------------fin ----------------------------------
+
   ],
   imports: [
     CommonModule, HttpClientModule, RouterModule, ReactiveFormsModule,CKEditorModule,FormsModule
