@@ -197,6 +197,7 @@ export class DasbordFormateurComponent implements OnInit {
     this.moduleService.getModules().subscribe(
       (data) => {
         this.modules = data;
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!",this.modules )
       },
       (error) => {
         console.error('Erreur lors du chargement des modules:', error);

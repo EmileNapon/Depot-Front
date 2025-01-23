@@ -11,7 +11,7 @@ export class UtilisateurService {
 
   private apiUrl = 'http://127.0.0.1:8000/fidalli/formation/list_users/';  // URL vers votre fichier JSON ou API
   private groupesUrl = 'http://localhost:3000/Groups';  // URL vers l'API pour les groupes
-
+  private register="http://127.0.0.1:8000/fidalli/register/"
   constructor(private http: HttpClient) { }
 
   // Méthode générique pour récupérer tous les utilisateurs
@@ -41,7 +41,7 @@ export class UtilisateurService {
 
   // Création d'un utilisateur (par exemple un formateur)
   createUser(newUser: CustomUser): Observable<CustomUser> {
-    return this.http.post<CustomUser>(this.apiUrl, newUser);
+    return this.http.post<CustomUser>(this.register, newUser);
   }
 
   // Modification d'un utilisateur

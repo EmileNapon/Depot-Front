@@ -63,6 +63,7 @@ import { AuthGuard } from './admin/guards/auth.guard';
 import { LoginComponent } from './admin/components/login/login.component';
 import { DashboardComponent } from './offer/components/dashboard/dashboard/dashboard.component';
 import { DasbordFormateurComponent } from './gestionnaire/formateur/dasbord-formateur/dasbord-formateur.component';
+import { CreationFormateurComponent } from './gestionnaire/creation-formateur/creation-formateur.component';
 
 const routes: Routes = [
 
@@ -135,6 +136,7 @@ const routes: Routes = [
 
   {path:'gestionnaire',component:GestionUtilisateursComponent,children:[
     {path:'acceuil', component:GestionnaireAcceuilComponent},
+    {path:'create-formateur', component:CreationFormateurComponent},
     {path:'domaines', component:GestionnaireDomaineComponent},
 
     {path: 'dasbord/:dasbordId/dasbord-prog-talent', component: GestionnaireDasbordProgTalentComponent},
