@@ -48,7 +48,11 @@ export class ConnexionComponent implements OnInit {
           this.router.navigate(['/acceuil']);
         } else if (response.role === 'employeur') {
           this.router.navigate(['/EmployeurPage']);
-        } else {
+        }else if (response.role === 'formateur') {
+          this.router.navigate(['/gestionnaire/formateur-dashboard']);
+        }
+        
+         else {
           this.router.navigate(['/acceuil']);
         }
       },

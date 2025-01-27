@@ -62,8 +62,10 @@ import { OfferApplicationComponent } from './offer/components/offer-application/
 import { AuthGuard } from './admin/guards/auth.guard';
 import { LoginComponent } from './admin/components/login/login.component';
 import { DashboardComponent } from './offer/components/dashboard/dashboard/dashboard.component';
-import { DasbordFormateurComponent } from './gestionnaire/formateur/dasbord-formateur/dasbord-formateur.component';
+
 import { CreationFormateurComponent } from './gestionnaire/creation-formateur/creation-formateur.component';
+import { FormateurEvaluationComponent } from './gestionnaire/formateur/formateur-Evaluation/formateur-Evaluation';
+import { FormateurDashboardComponent } from './gestionnaire/formateur/formateur-dashboard/formateur-dashboard.component';
 
 const routes: Routes = [
 
@@ -154,7 +156,8 @@ const routes: Routes = [
     {path:'create/:id_joutFormation/:seanceId/seance', component : AjoutSeanceComponent},
 
    // ------------------- Formateurs ----------------------------------------
-   {path: 'dasbord-formateur', component: DasbordFormateurComponent}
+   {path: 'formateur-dashboard', component: FormateurDashboardComponent},
+   {path: 'formateur-evaluation', component: FormateurEvaluationComponent}
   ]},
   
   

@@ -1,0 +1,98 @@
+footer {
+    background-color: #003366; /* Bleu foncé */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacement entre les sections */
+}
+
+.footer-section {
+    flex: 1 1 200px; /* Permet aux sections de se développer et se réduire selon la taille */
+    min-width: 200px;
+    padding: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffcc00; /* Couleur dorée pour les titres */
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #ffcc00; /* Jaune doré */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+    color: #fff; /* Changement de couleur au survol */
+}
+
+/* Icones sociales */
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-links li {
+    list-style-type: none;
+}
+
+.social-links a mat-icon {
+    font-size: 36px;
+    color: #ffcc00; /* Jaune doré */
+}
+
+.social-links a:hover mat-icon {
+    color: #fff; /* Changer la couleur au survol */
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #ffcc00;
+}
+
+/* Séparateurs */
+mat-divider {
+    margin: 0 15px; /* Espacement autour des séparateurs */
+    background-color: #ffcc00; /* Séparateur jaune */
+    height: 2px; /* Ligne plus fine */
+    flex-grow: 1; /* Permet au divider de s'étirer sur toute la largeur disponible */
+    align-self: center; /* Pour que le diviseur soit centré entre les sections */
+}
+
+/* Pour les petits écrans, ajuster la disposition */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Les sections se placent verticalement sur les petits écrans */
+        gap: 10px; /* Moins d'espace entre les sections */
+    }
+
+    .footer-section {
+        padding: 15px;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+    }
+}

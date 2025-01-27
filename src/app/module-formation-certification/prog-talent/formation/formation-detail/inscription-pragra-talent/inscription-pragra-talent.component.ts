@@ -27,8 +27,8 @@ export class InscriptionPragraTalentComponent implements OnInit {
     this.userInfo = this.serviceAuth.getUserInfo();
    
     this.registrationForm = this.fb.group({
-      user:this.userInfo.id,
-      formation:this.formationId,
+      user:Number(this.userInfo.id),
+      formation:Number(this.formationId),
       phone_number:['',Validators.required],
       niveau_etude: ['', Validators.required],
       domaine_etude: ['', Validators.required] 

@@ -1,0 +1,222 @@
+<app-headerPrincipale></app-headerPrincipale>
+  
+<body>
+    <div class="container">
+        <div class="row">
+          <nav class="col-2 bg-light text-black  d-flex flex-column">
+            <h2 class="text-center my-5">Dashboard</h2>
+            <ul class="nav flex-column">
+              <li class="nav-item btn text-start">
+                <a class="nav-link text-black" (click)="onShowAnnonce()">Annonces</a>
+              </li>
+              <li class="nav-item btn text-start">
+                <a class="nav-link text-black" (click)="onShowAnnonce()">Mes seances</a>
+              </li>
+              <li class="nav-item btn text-start">
+                <a class="nav-link text-black" (click)="onShowGroupe()">Groupes des étudiant</a>
+              </li>
+              <li class="nav-item btn text-start">
+                <a class="nav-link text-black" (click)="onShowListe()">participants</a>
+              </li>
+              <li class="nav-item btn text-start">
+                <a class="nav-link text-black" (click)="onShowCalendar()">Calendrier</a>
+              </li>
+              <li class="nav-item btn text-start">
+                <a class="nav-link text-black" routerLink='/gestionnaire/formateur-evaluation' (click)="onShowExo()">TD & Examens</a>
+              </li>
+            </ul>
+          </nav>
+          <main class="col-10">
+            <div class="bg-light p-3 border-bottom">
+                <div class="row d-flex align-items-center justify-content-between" *ngIf="showAnnonce">
+                    <div class="col">
+                        <h1 class="text-left">Notifications</h1>
+                    </div>            
+                </div>
+                <div class="row d-flex align-items-center justify-content-between" *ngIf="showGroupe">
+                    <div class="col">
+                        <h1 class="text-left">Répartition des groupes</h1>
+                    </div>
+                </div> 
+                <div class="row d-flex align-items-center justify-content-between" *ngIf="showListe">
+                    <div class="col">
+                        <h1 class="text-left">Liste des participants de la cohorte</h1>
+                    </div>
+                </div> 
+                <div class="row d-flex align-items-center justify-content-between" *ngIf="showCalendar">
+                    <div class="col">
+                        <h1 class="text-left">L'emploi du temps</h1>
+                    </div>
+                </div>
+                <div class="row d-flex align-items-center justify-content-between"  *ngIf="showExo">
+                    <div class="col">
+                        <h1 class="text-left">Programme des Exercices et Examens</h1>
+                    </div>
+
+                </div>  
+            </div>
+          <div class="container my-4" *ngIf="showAnnonce">
+                <div class="col-12" *ngFor="let annonce of annonces">
+                    <div class="card mb-4">
+                      <div class="card-header text-white d-flex justify-content-between" style="background-color: #7609f3;">
+                        <span>{{ annonce.titre }}</span>
+                        <span class="text-white">Publié le : {{ annonce.date_publication | date: 'dd/MM/yyyy' }} - {{ annonce.heure }}</span>
+                      </div>
+                      <div class="card-body">
+                        <p>
+                          {{ annonce.description }}
+                        </p>
+                        <p><b> Lieu: </b>{{ annonce.lieu}}</p> 
+                        <!-- <p><b> Lieu: </b>{{ annonce.date_cours}}</p> -->
+                      </div>
+                    </div>
+                  </div>  
+             </div>
+             <div class="container my-4" *ngIf="showGroupe">
+                <div class="mt-4">
+                    <h3>Les différents groupes du cohort</h3>
+                    
+                    <table class="table table-striped table-bordered">
+                      <thead class="thead-dark">
+                          <tr>
+                              <th style="width: 20%; text-align: center; vertical-align: middle;">Groupes</th>
+                              <th style="width: 60%;">
+                                  <table class="table table-striped">
+                                      <tr>
+                                          <th colspan="3" style="width: 100%; text-align: center;">les membres</th>
+                                      </tr>
+                                      <tr>  
+                                          <th style="width: 60%;">Nom complet</th>
+                                          <th style="width: 40%;">Adresse Mail</th>
+                                          
+                                      </tr>
+                                      
+                                  </table>
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody class="">
+
+                          <tr  *ngFor="let groupe of groupes; let i = index">
+                              <td  style="width: 20%; text-align: center; vertical-align: middle;"> Groupe {{ i + 1 }}</td>
+                              <td style="width: 60%;">
+                                  <table class="table table-striped">
+                                      <tr *ngFor="let etudiant of etudiants">
+                                          <td style="width: 60%;">{{ etudiant.nom }} {{ etudiant.prenom }}</td>
+                                          <td style="width: 40%;">{{ etudiant.email }}</td>
+                                      </tr>
+                                  </table>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  </div>
+                </div>
+
+             <div class="container my-4" *ngIf="showListe">
+                <div class="container my-4">
+                    <h2 class="mb-4">Liste de cohorte de #Titre de Formation</h2>
+
+                    <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th>#</th>
+                        <th>Nom Complet</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        </tr>
+                    </thead>             
+                    <tbody>
+
+                        <tr *ngFor="let etudiant of FiltresEtudiantParFormation; let i = index">
+                        <td>{{ i + 1 }}</td> 
+                        <td>{{ etudiant.nom }} {{ etudiant.prenom }}</td>
+                        <td>{{ etudiant.email }}</td>
+                        <td>{{ etudiant.phone_number }}</td>
+                        </tr>
+                    </tbody> 
+                    </table>
+
+                </div>
+
+             </div>
+    
+              
+
+             <div class="container my-4" *ngIf="showCalendar">
+
+              
+
+                <h2 class="mb-4">Planning des modules</h2>
+    
+                
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th  style="width: 5%; text-align: center; vertical-align: middle;">Code Module</th>
+                        <th style="width: 20%; text-align: center; vertical-align: middle;">Nom de module</th>
+                        <th style="width: 75%;">
+                            <table class="table table-striped">
+                                <tr style="border-bottom: 2px solid black;">
+                                    <th colspan="6" style="width: 100%; text-align: center;">Séances</th>
+                                </tr>
+                                <tr>
+                                    
+                                    <th style="width: 20%;">Lieu</th>
+                                    <th style="width: 20%;">Formateur</th>
+                                    <th style="width: 15%;">Date</th>
+                                    <th style="width: 15%;">Heure</th>
+                                    <th style="width: 10%;">Statut</th>
+                                </tr>
+                            </table>
+                        </th>
+                        </tr>
+                    </thead>
+
+
+
+                    <tbody>
+                        <tr *ngFor="let module of FiltresModules; let i = index">
+                            <td  style="width: 5%; text-align: center; vertical-align: middle;">{{ module.code }}</td>
+                            <td  style="width: 20%; text-align: center; vertical-align: middle;">{{ module.nom_module }}</td>
+                            <td style="width: 75%;">
+                                <table class="table table-striped">
+                                        <tr *ngFor="let seance of seances" style="border-bottom: 1px solid black;">
+                                            <td *ngIf='seance.module==module.id' style="width: 20%;">{{ seance.lieu }}</td>
+                                            <td *ngIf='seance.module==module.id' style="width: 20%;">#</td>
+                                            <td  *ngIf='seance.module==module.id' style="width: 15%;">{{ seance.date_formation }}</td>
+                                            <td *ngIf='seance.module==module.id' style="width: 15%;">{{ seance.heure_debut }}-{{ seance.heure_fin }}</td> 
+                                            <td *ngIf='seance.module==module.id' style="width: 10%;"><div style="height: 70%; background-color: aqua; border-radius: 10px; margin: 5px; padding: 5px;">{{ seance.statut }}</div>
+                                            </td>
+                                        </tr>
+                                </table>
+                                
+                            </td>
+                            </tr>
+                
+                    </tbody>
+                </table>
+                
+             </div>
+   
+             <div class="container my-4" *ngIf="showExo">
+                <h1>Pas d'exo</h1>
+             </div>
+    
+             
+          </main>
+        </div>
+        
+      </div>
+    
+     
+     
+
+
+
+
+
+
+
+
+    </body>

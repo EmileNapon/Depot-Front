@@ -34,8 +34,14 @@ import { GroupeEtudiantComponent } from './programme-talent/groupe-etudiant/grou
 import {  GestionnaireFormationDetailComponent } from './programme-talent/formation/formation-detail/formation-detail.component';
 import {  GestionnaireDasbordProgTalentComponent } from './programme-talent/dasbord-prog-talent/dasbord-prog-talent.component';
 import { ajoutModuleComponent } from './programme-talent/formation/ajout-formation/ajouterModule/ajouteModule.component';
-import { DasbordFormateurComponent } from './formateur/dasbord-formateur/dasbord-formateur.component';
+
 import { CreationFormateurComponent } from './creation-formateur/creation-formateur.component';
+import { FormateurEvaluationComponent } from './formateur/formateur-Evaluation/formateur-Evaluation';
+import { FormateurDashboardComponent } from './formateur/formateur-dashboard/formateur-dashboard.component';
+import { HeaderPrincipaleGestionnaireComponent } from './header-footer/header-principal/headerPrincipale';
+
+
+
 
 @NgModule({
   declarations: [GestionnaireComponent, GestionnaireAcceuilComponent, GestionnaireModulesComponent, GestionnaireCoursComponent, GestionnaireCertificatComponent, GestionnaireCertificatCoursComponent, GestionnaireDomaineComponent, GestionnaireChapitreComponent, GestionnaireModifierContenuCoursComponent,
@@ -45,8 +51,9 @@ import { CreationFormateurComponent } from './creation-formateur/creation-format
       EtudiantComponent, EncadrantComponent, ModifEncadrantComponent, AjoutFormationComponent, ModificationFormationComponent, 
       AjoutSeanceComponent, ModificationSeanceComponent, AjoutAnnonceComponent, ModificationAnnonceComponent, 
       AjoutEncadrantComponent, GroupeEtudiantComponent, GestionnaireFormationDetailComponent,ajoutModuleComponent,
-      DasbordFormateurComponent,
-      CreationFormateurComponent
+      FormateurEvaluationComponent,
+      CreationFormateurComponent,
+      FormateurDashboardComponent,HeaderPrincipaleGestionnaireComponent 
       // -------------------fin ----------------------------------
 
   ],

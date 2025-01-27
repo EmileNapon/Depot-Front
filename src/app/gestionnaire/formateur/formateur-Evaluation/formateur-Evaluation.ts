@@ -15,7 +15,7 @@ import { marked } from 'marked';
   templateUrl: './dasbord-formateur.component.html',
   styleUrls: ['./dasbord-formateur.component.css']
 })
-export class DasbordFormateurComponent implements OnInit {
+export class FormateurEvaluationComponent implements OnInit {
   // Gestion des formulaires
   quizForm: FormGroup;
   // submissionForm: FormGroup;

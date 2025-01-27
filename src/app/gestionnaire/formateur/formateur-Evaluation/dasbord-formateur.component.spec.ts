@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DasbordFormateurComponent } from './dasbord-formateur.component';
+import { FormateurEvaluationComponent } from './formateur-Evaluation';
 
 describe('DasbordFormateurComponent', () => {
-  let component: DasbordFormateurComponent;
-  let fixture: ComponentFixture<DasbordFormateurComponent>;
+  let component: FormateurEvaluationComponent;
+  let fixture: ComponentFixture<FormateurEvaluationComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DasbordFormateurComponent]
+      declarations: [FormateurEvaluationComponent]
     });
-    fixture = TestBed.createComponent(DasbordFormateurComponent);
+    fixture = TestBed.createComponent(FormateurEvaluationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
