@@ -12,7 +12,8 @@ export class MenuComponent implements OnDestroy, AfterViewInit {
   menuItems = [
     { 
       label: 'Tableau de bord', 
-      icon: 'dashboard', route: 'dashboard' 
+      icon: 'dashboard', 
+      route: 'dashboard' 
     },
     {
       label: 'Utilisateurs',
@@ -28,7 +29,7 @@ export class MenuComponent implements OnDestroy, AfterViewInit {
       label: 'Audition',
       icon: 'menu_book',
       children: [
-        { label: 'Domaines', route: '/domains' },
+        { label: 'Domaines', route: 'domaines' },
         { label: 'Parcours de formations', route: '/training-paths' },
         { label: 'Cours libres', route: '/free-courses' },
         { label: 'Cours payants', route: '/paid-courses' }

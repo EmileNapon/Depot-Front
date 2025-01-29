@@ -6,6 +6,7 @@ import { ResourceListComponent } from './components/resource-list/resource-list.
 import { ResourceCreateComponent } from './components/resource-create/resource-create.component';
 import { ResourceEditComponent } from './components/resource-edit/resource-edit.component';
 import { ResourceDetailsComponent } from './components/resource-details/resource-details.component';
+import { GestionnaireDomaineComponent } from '../gestionnaire/gestionnaire-domaine/gestionnaire-domaine.component';
 
 const routes: Routes = [
   {
@@ -19,9 +20,11 @@ const routes: Routes = [
       { path: 'create/:resourceType', component: ResourceCreateComponent },
       { path: 'edit/:resourceType/:id', component: ResourceEditComponent },
       { path: 'details/:resourceType/:id', component: ResourceDetailsComponent },
+      {path:'domaines', component:GestionnaireDomaineComponent},
     ]
   }
 ];
+
 
 
 @NgModule({

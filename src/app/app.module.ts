@@ -25,6 +25,7 @@ import { DasbordEtudiantComponent } from './dasbord-etudiant/dasbord-etudiant.co
 import { OfferModule } from './offer/offer.module';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   imports: [
     BrowserModule,ReactiveFormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,  MatSlideToggleModule,
     AppRoutingModule, RouterModule, GestionUtilisateursModule, OrientationsModule, ModuleFormationCertificationModule, GestionnaireModule, OfferModule, MatDividerModule, MatIconModule
   ],
   providers: [
