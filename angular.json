@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "RecrutementIntelligent:build:production"
+              "buildTarget": "RecrutementIntelligent:build:production"
             },
             "development": {
-              "browserTarget": "RecrutementIntelligent:build:development"
+              "buildTarget": "RecrutementIntelligent:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "RecrutementIntelligent:build"
+            "buildTarget": "RecrutementIntelligent:build"
           }
         },
         "test": {
