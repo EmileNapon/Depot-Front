@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import{HttpClientModule} from '@angular/common/http';
+import{ provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ModuleFormationCertificationComponent } from './module-formation-certification.component';
 import { ContenuLibreComponent } from './contenu-libre/contenu-libre.component';
 import { CertificationComponent } from './certification/certification.component';
@@ -43,28 +43,20 @@ import { InscriptionPragraTalentComponent } from './prog-talent/formation/format
 
 
 
-@NgModule({
-  declarations: [
-    ModuleFormationCertificationComponent,
-    ContenuLibreComponent,
-    CertificationComponent,
-
-    CoursComponent,
-    AcceuilFormationComponent,ModuleComponent,
-    certificationContenuChapitreComponent,
-    HeaderFormationComponent,WebinarComponent,
-    WebinarListComponent,
-    WebinarDetailsComponent,
-    WebinarEnrollComponent,
-    WebinarManagementComponent,
-    ChapitreComponent,HeaderPrincipalePourFormationComponent,CertificationContenuComponent,FooterComponent,
-    
-
-  FormationComponent, FormationDetailComponent, InscriptionPragraTalentComponent,DasbordEtudiantTalentComponent, FormatDatePipe,
-   CustomDateTimePipe, ChapitreQuizComponent
-  ],
-  imports: [
-    CommonModule, ReactiveFormsModule,  HttpClientModule, RouterModule, FormsModule,ReactiveFormsModule, CKEditorModule, MatDividerModule, MatIconModule
-  ]
-})
+@NgModule({ declarations: [
+        ModuleFormationCertificationComponent,
+        ContenuLibreComponent,
+        CertificationComponent,
+        CoursComponent,
+        AcceuilFormationComponent, ModuleComponent,
+        certificationContenuChapitreComponent,
+        HeaderFormationComponent, WebinarComponent,
+        WebinarListComponent,
+        WebinarDetailsComponent,
+        WebinarEnrollComponent,
+        WebinarManagementComponent,
+        ChapitreComponent, HeaderPrincipalePourFormationComponent, CertificationContenuComponent, FooterComponent,
+        FormationComponent, FormationDetailComponent, InscriptionPragraTalentComponent, DasbordEtudiantTalentComponent, FormatDatePipe,
+        CustomDateTimePipe, ChapitreQuizComponent
+    ], imports: [CommonModule, ReactiveFormsModule, RouterModule, FormsModule, ReactiveFormsModule, CKEditorModule, MatDividerModule, MatIconModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class ModuleFormationCertificationModule { }

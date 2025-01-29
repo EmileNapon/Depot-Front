@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GestionnaireComponent } from './gestionnaire.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { GestionnaireAcceuilComponent } from './gestionnaire-acceuil/gestionnaire-acceuil.component';
 import { GestionnaireModulesComponent } from './gestionnaire-modules/gestionnaire-modules.component';
@@ -43,22 +43,16 @@ import { HeaderPrincipaleGestionnaireComponent } from './header-footer/header-pr
 
 
 
-@NgModule({
-  declarations: [GestionnaireComponent, GestionnaireAcceuilComponent, GestionnaireModulesComponent, GestionnaireCoursComponent, GestionnaireCertificatComponent, GestionnaireCertificatCoursComponent, GestionnaireDomaineComponent, GestionnaireChapitreComponent, GestionnaireModifierContenuCoursComponent,
-    GestionnaireDasbordProgTalentComponent,
-      // -----------programme talent ---------------------------
-      GestionnaireFormationComponent, ModuleComponent, FooterComponent, HeaderComponent, AnnonceComponent, 
-      EtudiantComponent, EncadrantComponent, ModifEncadrantComponent, AjoutFormationComponent, ModificationFormationComponent, 
-      AjoutSeanceComponent, ModificationSeanceComponent, AjoutAnnonceComponent, ModificationAnnonceComponent, 
-      AjoutEncadrantComponent, GroupeEtudiantComponent, GestionnaireFormationDetailComponent,ajoutModuleComponent,
-      FormateurEvaluationComponent,
-      CreationFormateurComponent,
-      FormateurDashboardComponent,HeaderPrincipaleGestionnaireComponent 
-      // -------------------fin ----------------------------------
-
-  ],
-  imports: [
-    CommonModule, HttpClientModule, RouterModule, ReactiveFormsModule,CKEditorModule,FormsModule
-  ]
-})
+@NgModule({ declarations: [GestionnaireComponent, GestionnaireAcceuilComponent, GestionnaireModulesComponent, GestionnaireCoursComponent, GestionnaireCertificatComponent, GestionnaireCertificatCoursComponent, GestionnaireDomaineComponent, GestionnaireChapitreComponent, GestionnaireModifierContenuCoursComponent,
+        GestionnaireDasbordProgTalentComponent,
+        // -----------programme talent ---------------------------
+        GestionnaireFormationComponent, ModuleComponent, FooterComponent, HeaderComponent, AnnonceComponent,
+        EtudiantComponent, EncadrantComponent, ModifEncadrantComponent, AjoutFormationComponent, ModificationFormationComponent,
+        AjoutSeanceComponent, ModificationSeanceComponent, AjoutAnnonceComponent, ModificationAnnonceComponent,
+        AjoutEncadrantComponent, GroupeEtudiantComponent, GestionnaireFormationDetailComponent, ajoutModuleComponent,
+        FormateurEvaluationComponent,
+        CreationFormateurComponent,
+        FormateurDashboardComponent, HeaderPrincipaleGestionnaireComponent
+        // -------------------fin ----------------------------------
+    ], imports: [CommonModule, RouterModule, ReactiveFormsModule, CKEditorModule, FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class GestionnaireModule { }

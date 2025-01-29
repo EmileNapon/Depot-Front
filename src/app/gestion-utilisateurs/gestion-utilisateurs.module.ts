@@ -8,26 +8,17 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { GestionUtilisateursComponent } from './gestion-utilisateurs.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import{HttpClientModule} from '@angular/common/http'
+import{ provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { UserService } from './inscription/service-inscription/service-inscription.service';
 
 
 
-@NgModule({
-  declarations: [
-    
-  
-    ConnexionComponent,
-            RegistrationComponent,
-            ProfileComponent,
-            PremiumComponent,
-            ForgotPasswordComponent,
-            GestionUtilisateursComponent
-  ],
-  imports: [
-    CommonModule, ReactiveFormsModule, RouterModule, HttpClientModule
-  ],
- providers:[UserService]
-
-})
+@NgModule({ declarations: [
+        ConnexionComponent,
+        RegistrationComponent,
+        ProfileComponent,
+        PremiumComponent,
+        ForgotPasswordComponent,
+        GestionUtilisateursComponent
+    ], imports: [CommonModule, ReactiveFormsModule, RouterModule], providers: [UserService, provideHttpClient(withInterceptorsFromDi())] })
 export class GestionUtilisateursModule { }
