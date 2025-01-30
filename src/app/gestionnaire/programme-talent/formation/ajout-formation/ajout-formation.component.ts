@@ -10,12 +10,10 @@ import { UtilisateurService } from '../../services/utilisateur.service';
 // import { ClassicEditor, Bold, Essentials, Italic, Mention, Paragraph, Undo } from 'ckeditor5';
 
 @Component({
-  selector: 'app-ajout-formation',
-  templateUrl: './ajout-formation.component.html',
-  styleUrls: ['./ajout-formation.component.css'],
-  // encapsulation: ViewEncapsulation.None,
-  // imports: [ CKEditorModule ],
-  // standalone: true
+    selector: 'app-ajout-formation',
+    templateUrl: './ajout-formation.component.html',
+    styleUrls: ['./ajout-formation.component.css'],
+    standalone: false
 })
 export class AjoutFormationComponent implements OnInit {
   formationForm: FormGroup;

@@ -5,23 +5,50 @@
     <div  class="container-xl">
         <div class="table-responsive">
             <div class="table-wrapper">
-                <div class="table-title">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h2>Domaines <b>de formation</b></h2>
-                        </div>
-                        <div class="col-sm-6">
-                            <a (click)='ondelete()' class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>supprimer</span></a>
-                            <a (click)=" OnAdd()"   class="btn btn-primary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>ajouter</span></a>
-                            <a (click)='onVoirDomaine()' class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Voir matieres</span></a>  						
-                        </div>
+
+
+                <div class="navbar bg-body-tertiary">
+                    <div class="container-fluid">
+                      <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      </form>
                     </div>
                 </div>
+                <i class="fa-solid fa-folder-open"></i>
+                <i class="fas fa-trash"  style="font-size: 24px; color: #ff5733;"></i>
+               
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Domaine(s)</th>
+                        <th scope="col">actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let domaine of __domaines__">
+                        <th scope="row">                                
+                            <div (click)="selecterDomaine(domaine.id)" >              
+                                <i class="circle" [ngClass]="{'bi bi-circle': selectedDomaineIndex !== domaine.id,'bi bi-circle-fill': selectedDomaineIndex === domaine.id}"></i>
+                            </div>
+                        </th>
+
+                        <td>{{domaine.nom_domaine}}</td>
+                        
+
+                        <td>
+                            <i class="fa-solid fa-folder-open"></i>
+                            <i class="fas fa-trash"  style="font-size: 24px; color: #ff5733;"></i>
+                        </td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>
 
                 <div *ngIf=" !__addDomaine__">
                 <table class="table">
                     
                     <tbody>
+                         
                         <tr class='tableau' *ngFor='let domaine of __domaines__'>
                             <td >
                                 <div (click)="selecterDomaine(domaine.id)" > 
@@ -36,26 +63,14 @@
                                 </div>
                                     
                             </td>
-                            <td >{{domaine.nom_domaine}}</td>
+                           <td >{{domaine.nom_domaine}}</td>
                             <td *ngIf='selectedDomaineIndex === domaine.id'>
                                 <a *ngIf='__iconVoirDomaine__' (click)='onSelectDomaine(domaine.id)' class="matiere" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="matiere"><i class="bi bi-chevron-right"></i></i></a>
-                                <a *ngIf='__iconDelete__'  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                <a *ngIf='__iconVoirDomaine__'  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                             </td>
                         </tr>					
                     </tbody>
                 </table>
-                <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                    <ul class="pagination">
-                        <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                    </ul>
-                </div>
                 </div>
             </div>
         </div>        
@@ -87,3 +102,6 @@
 </body>
     
 
+
+  
+  

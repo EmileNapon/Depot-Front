@@ -1,9 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-orientation-acceuil',
-  templateUrl: './orientation-acceuil.component.html',
-  styleUrls: ['./orientation-acceuil.component.css']
+    selector: 'app-orientation-acceuil',
+    templateUrl: './orientation-acceuil.component.html',
+    styleUrls: ['./orientation-acceuil.component.css'],
+    standalone: false
 })
 export class OrientationAcceuilComponent {
 

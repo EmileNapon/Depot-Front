@@ -6,9 +6,10 @@ import { ModuleService } from '../services/module.service';
 import { ModuleFormationService } from '../services/moduleFormation.service';
 
 @Component({
-  selector: 'app-formation',
-  templateUrl: './formation.component.html',
-  styleUrls: ['./formation.component.css']
+    selector: 'app-formation',
+    templateUrl: './formation.component.html',
+    styleUrls: ['./formation.component.css'],
+    standalone: false
 })
 export class GestionnaireFormationComponent implements OnInit {
   formations: any[] = [];

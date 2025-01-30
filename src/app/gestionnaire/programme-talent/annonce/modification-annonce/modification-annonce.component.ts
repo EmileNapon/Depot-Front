@@ -5,9 +5,10 @@ import { AnnonceService } from '../../services/annonce.service';
 import { Annonce } from '../../models/tousModel';
 
 @Component({
-  selector: 'app-modification-annonce',
-  templateUrl: './modification-annonce.component.html',
-  styleUrls: ['./modification-annonce.component.css']
+    selector: 'app-modification-annonce',
+    templateUrl: './modification-annonce.component.html',
+    styleUrls: ['./modification-annonce.component.css'],
+    standalone: false
 })
 export class ModificationAnnonceComponent implements OnInit{
 

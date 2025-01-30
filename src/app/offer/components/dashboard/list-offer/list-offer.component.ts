@@ -6,9 +6,10 @@ import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-offer-list',
-  templateUrl: './list-offer.component.html',
-  styleUrls: ['./list-offer.component.css'],
+    selector: 'app-offer-list',
+    templateUrl: './list-offer.component.html',
+    styleUrls: ['./list-offer.component.css'],
+    standalone: false
 })
 export class ListOfferComponent implements OnInit, OnDestroy {
   offers: Offer[] = []; // Liste complète des offres

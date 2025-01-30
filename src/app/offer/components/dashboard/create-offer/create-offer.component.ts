@@ -7,9 +7,10 @@ import { OfferService } from '../../../services/offer.service';
 import { Offer } from '../../../models/offer.models';
 
 @Component({
-  selector: 'app-create-offer',
-  templateUrl: './create-offer.component.html',
-  styleUrls: ['./create-offer.component.css']
+    selector: 'app-create-offer',
+    templateUrl: './create-offer.component.html',
+    styleUrls: ['./create-offer.component.css'],
+    standalone: false
 })
 export class CreateOfferComponent implements OnInit {
   offerForm: FormGroup;

@@ -13,9 +13,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AnnonceService } from '../services/annonce.service';
 
 @Component({
-  selector: 'app-dasbord-prog-talent',
-  templateUrl:'./dasbord-prog-talent.component.html',
-  styleUrls: ['./dasbord-prog-talent.component.css']
+    selector: 'app-dasbord-prog-talent',
+    templateUrl: './dasbord-prog-talent.component.html',
+    styleUrls: ['./dasbord-prog-talent.component.css'],
+    standalone: false
 })
 export class GestionnaireDasbordProgTalentComponent {
   showAnnonce!: boolean;

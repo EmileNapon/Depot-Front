@@ -7,6 +7,12 @@ import { ResourceCreateComponent } from './components/resource-create/resource-c
 import { ResourceEditComponent } from './components/resource-edit/resource-edit.component';
 import { ResourceDetailsComponent } from './components/resource-details/resource-details.component';
 import { GestionnaireDomaineComponent } from '../gestionnaire/gestionnaire-domaine/gestionnaire-domaine.component';
+import { GestionnaireModulesComponent } from '../gestionnaire/gestionnaire-modules/gestionnaire-modules.component';
+import { GestionnaireCoursComponent } from '../gestionnaire/gestionnaire-cours/gestionnaire-cours.component';
+import { GestionnaireChapitreComponent } from '../gestionnaire/gestionnaire-chapitre/gestionnaire-chapitre.component';
+import { GestionnaireModifierContenuCoursComponent } from '../gestionnaire/gestionnaire-modifier-contenu-cours/gestionnaire-modifier-contenu-cours.component';
+import { GestionnaireCertificatComponent } from '../gestionnaire/gestionnaire-certificat/gestionnaire-certificat.component';
+import { GestionnaireCertificatCoursComponent } from '../gestionnaire/gestionnaire-certificat-cours/gestionnaire-certificat-cours.component';
 
 const routes: Routes = [
   {
@@ -21,6 +27,15 @@ const routes: Routes = [
       { path: 'edit/:resourceType/:id', component: ResourceEditComponent },
       { path: 'details/:resourceType/:id', component: ResourceDetailsComponent },
       {path:'domaines', component:GestionnaireDomaineComponent},
+      {path:'gestionnaire/:iddomaineGestionnaireId/Gestionnaire-modules', component:GestionnaireModulesComponent},
+      {path:'gestionnaire/:idmoduleGestionnaireId/Gestionnaire-cours', component:GestionnaireCoursComponent},
+      {path:'gestionnaire/:idcoursGestionnaireId/gestionnaire-chapitre', component:GestionnaireChapitreComponent},
+
+      {path:'gestionnaire/:idchapitreGestionnaireId/gestionnaire-contenu', component:GestionnaireModifierContenuCoursComponent},
+    
+      {path:'gestionnaire/gestionnaire-certificat', component:GestionnaireCertificatComponent},
+      {path:'gestionnaire/:certificatGestionnaireId/GestionnaireCertificat', component:GestionnaireCertificatCoursComponent},
+    
     ]
   }
 ];

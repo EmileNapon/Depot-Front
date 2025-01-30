@@ -6,9 +6,10 @@ import { FormationService } from '../../services/formation.service';
 import { Formation } from '../../models/tousModel';
 
 @Component({
-  selector: 'app-modification-formation',
-  templateUrl: './modification-formation.component.html',
-  styleUrls: ['./modification-formation.component.css']
+    selector: 'app-modification-formation',
+    templateUrl: './modification-formation.component.html',
+    styleUrls: ['./modification-formation.component.css'],
+    standalone: false
 })
 export class ModificationFormationComponent implements OnInit {
 

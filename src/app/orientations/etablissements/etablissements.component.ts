@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-etablissements',
-  templateUrl: './etablissements.component.html',
-  styleUrls: ['./etablissements.component.css']
+    selector: 'app-etablissements',
+    templateUrl: './etablissements.component.html',
+    styleUrls: ['./etablissements.component.css'],
+    standalone: false
 })
 export class EtablissementsComponent {
   educationList = [

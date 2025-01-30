@@ -4,9 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import{ModuleService} from "./domaines_service/domainesServices"
 
 @Component({
-  selector: 'app-card-module',
-  templateUrl: './domaines.component.html',
-  styleUrls: ['./domaines.component.css']
+    selector: 'app-card-module',
+    templateUrl: './domaines.component.html',
+    styleUrls: ['./domaines.component.css'],
+    standalone: false
 })
 export class ModuleComponent implements OnInit {
 

@@ -3,9 +3,10 @@ import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { CoursService } from './cours-service/cours.service';
 
 @Component({
-  selector: 'app-cours',
-  templateUrl: './cours.component.html',
-  styleUrls: ['./cours.component.css']
+    selector: 'app-cours',
+    templateUrl: './cours.component.html',
+    styleUrls: ['./cours.component.css'],
+    standalone: false
 })
 export class CoursComponent implements OnInit{
  

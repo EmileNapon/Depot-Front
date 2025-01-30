@@ -1,9 +1,10 @@
 import { Component, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-contenu-libre',
-  templateUrl: './contenu-libre.component.html',
-  styleUrls: ['./contenu-libre.component.css']
+    selector: 'app-contenu-libre',
+    templateUrl: './contenu-libre.component.html',
+    styleUrls: ['./contenu-libre.component.css'],
+    standalone: false
 })
 export class ContenuLibreComponent {
 

@@ -39,6 +39,7 @@ import { CreationFormateurComponent } from './creation-formateur/creation-format
 import { FormateurEvaluationComponent } from './formateur/formateur-Evaluation/formateur-Evaluation';
 import { FormateurDashboardComponent } from './formateur/formateur-dashboard/formateur-dashboard.component';
 import { HeaderPrincipaleGestionnaireComponent } from './header-footer/header-principal/headerPrincipale';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -54,5 +55,5 @@ import { HeaderPrincipaleGestionnaireComponent } from './header-footer/header-pr
         CreationFormateurComponent,
         FormateurDashboardComponent, HeaderPrincipaleGestionnaireComponent
         // -------------------fin ----------------------------------
-    ], imports: [CommonModule, RouterModule, ReactiveFormsModule, CKEditorModule, FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+    ], imports: [CommonModule, RouterModule, ReactiveFormsModule, CKEditorModule, FormsModule, MatIconModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class GestionnaireModule { }

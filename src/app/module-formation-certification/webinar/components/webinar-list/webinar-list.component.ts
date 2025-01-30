@@ -8,9 +8,10 @@ import { Router } from '@angular/router';
 // import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
-  selector: 'app-webinar-list',
-  templateUrl: './webinar-list.component.html',
-  styleUrls: ['./webinar-list.component.css']
+    selector: 'app-webinar-list',
+    templateUrl: './webinar-list.component.html',
+    styleUrls: ['./webinar-list.component.css'],
+    standalone: false
 })
 export class WebinarListComponent implements OnInit {
   

@@ -5,9 +5,10 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/gestion-utilisateurs/connexion/service-connexion/service-connexion.service';
 
 @Component({
-  selector: 'app-certification',
-  templateUrl: './certification.component.html',
-  styleUrls: ['./certification.component.css']
+    selector: 'app-certification',
+    templateUrl: './certification.component.html',
+    styleUrls: ['./certification.component.css'],
+    standalone: false
 })
 export class CertificationComponent implements OnInit{
   

@@ -8,9 +8,10 @@ import { Inscrit } from './service-model/model';
 
 
 @Component({
-  selector: 'app-dasbord-etudiant',
-  templateUrl: './dasbord-etudiant.component.html',
-  styleUrls: ['./dasbord-etudiant.component.css']
+    selector: 'app-dasbord-etudiant',
+    templateUrl: './dasbord-etudiant.component.html',
+    styleUrls: ['./dasbord-etudiant.component.css'],
+    standalone: false
 })
 export class DasbordEtudiantComponent {
 

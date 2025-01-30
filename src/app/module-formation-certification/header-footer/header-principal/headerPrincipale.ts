@@ -3,9 +3,10 @@ import { Component, HostListener, OnInit } from "@angular/core";
 import { AuthService } from "src/app/gestion-utilisateurs/connexion/service-connexion/service-connexion.service";
 
 @Component({
-    selector:"app-headerPrincipale",
+    selector: "app-headerPrincipale",
     templateUrl: './headerPrincipale.html',
-    styleUrls:['./headerPrincipale.css']
+    styleUrls: ['./headerPrincipale.css'],
+    standalone: false
 })
 export class HeaderPrincipalePourFormationComponent implements OnInit{
 

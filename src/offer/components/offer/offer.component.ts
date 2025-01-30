@@ -4,10 +4,11 @@ import { Router } from '@angular/router';
 import { EnterpriseService } from '../../services/enterprise.service'; // Importer le service Enterprise  
 import { Enterprise } from '../../models/enterprise.model'; // Importer le modèle Enterprise  
 
-@Component({  
-  selector: 'app-offer',  
-  templateUrl: './offer.component.html',  
-  styleUrls: ['./offer.component.css']  
+@Component({
+    selector: 'app-offer',
+    templateUrl: './offer.component.html',
+    styleUrls: ['./offer.component.css'],
+    standalone: false
 })  
 export class OfferComponent implements OnInit {  
 

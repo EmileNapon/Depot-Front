@@ -5,9 +5,10 @@ import { GestionnairesCoursServiceService } from '../gestionnaire-cours/gestionn
 import { GestionnairesModulesServiceService } from '../gestionnaire-modules/gestionnaires-modules-service/gestionnaires-modules-service.service';
 
 @Component({
-  selector: 'app-gestionnaire-certificat-cours',
-  templateUrl: './gestionnaire-certificat-cours.component.html',
-  styleUrls: ['./gestionnaire-certificat-cours.component.css']
+    selector: 'app-gestionnaire-certificat-cours',
+    templateUrl: './gestionnaire-certificat-cours.component.html',
+    styleUrls: ['./gestionnaire-certificat-cours.component.css'],
+    standalone: false
 })
 export class GestionnaireCertificatCoursComponent implements OnInit{
 

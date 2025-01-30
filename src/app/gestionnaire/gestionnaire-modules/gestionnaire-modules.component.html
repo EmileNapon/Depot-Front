@@ -38,7 +38,7 @@
                             <td >{{module.nom_module}} </td>
                             <td *ngIf='selectedModuleIndex === module.id'>
                                 <a *ngIf='__iconVoirModule__' (click)="onSelectgestionnaireCours(module.id)" class="matiere" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="matiere"><i class="bi bi-chevron-right"></i></i></a>
-                                <a *ngIf='__iconDelete__' href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                <a *ngIf='__iconVoirModule__' href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                             </td>
                         </tr>					
                     </tbody>
@@ -79,6 +79,12 @@
                 </form>
             </div>
         </div>
+        
     </div>
+<!-- Bouton flottant pour ajouter -->
+<button *ngIf="__moduleGestionnaire__.length > 0" mat-fab color="primary" class="add-resource-button" (click)="OnAdd()">
+    <mat-icon>add</mat-icon>
+  </button>
+  
     </body>
     

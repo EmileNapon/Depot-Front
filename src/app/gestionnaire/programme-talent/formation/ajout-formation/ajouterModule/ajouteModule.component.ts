@@ -14,7 +14,8 @@ import { CustomUser, Module } from '../../../models/tousModel';
     selector: 'app-Moduleformation',
     templateUrl: './ajoutModule.component.html',
     styleUrls: ['./ajoutModule.component.css'],
-  })
+    standalone: false
+})
 
 export class ajoutModuleComponent implements OnInit{
 

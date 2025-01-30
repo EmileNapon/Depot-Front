@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/gestion-utilisateurs/connexion/service-connexion/service-connexion.service';
 
 @Component({
-  selector: 'app-acceuil-formation',
-  templateUrl: './acceuil-formation.component.html',
-  styleUrls: ['./acceuil-formation.component.css']
+    selector: 'app-acceuil-formation',
+    templateUrl: './acceuil-formation.component.html',
+    styleUrls: ['./acceuil-formation.component.css'],
+    standalone: false
 })
 export class AcceuilFormationComponent implements OnInit {
 

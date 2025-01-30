@@ -139,7 +139,7 @@ const routes: Routes = [
   {path:'gestionnaire',component:GestionUtilisateursComponent,children:[
     {path:'acceuil', component:GestionnaireAcceuilComponent},
     {path:'create-formateur', component:CreationFormateurComponent},
-    {path:'domaines', component:GestionnaireDomaineComponent},
+    // {path:'domaines', component:GestionnaireDomaineComponent},
 
     {path: 'dasbord/:dasbordId/dasbord-prog-talent', component: GestionnaireDasbordProgTalentComponent},
     {path: 'formation', component: GestionnaireFormationComponent},
@@ -165,14 +165,14 @@ const routes: Routes = [
 
 
 
-  {path:'gestionnaire/:iddomaineGestionnaireId/Gestionnaire-modules', component:GestionnaireModulesComponent},
-  {path:'gestionnaire/:idmoduleGestionnaireId/Gestionnaire-cours', component:GestionnaireCoursComponent},
-  {path:'gestionnaire/:idcoursGestionnaireId/gestionnaire-chapitre', component:GestionnaireChapitreComponent},
+  // {path:'gestionnaire/:iddomaineGestionnaireId/Gestionnaire-modules', component:GestionnaireModulesComponent},
+  // {path:'gestionnaire/:idmoduleGestionnaireId/Gestionnaire-cours', component:GestionnaireCoursComponent},
+  // {path:'gestionnaire/:idcoursGestionnaireId/gestionnaire-chapitre', component:GestionnaireChapitreComponent},
 
-  {path:'gestionnaire/:idchapitreGestionnaireId/gestionnaire-contenu', component:GestionnaireModifierContenuCoursComponent},
+  // {path:'gestionnaire/:idchapitreGestionnaireId/gestionnaire-contenu', component:GestionnaireModifierContenuCoursComponent},
 
-  {path:'gestionnaire/gestionnaire-certificat', component:GestionnaireCertificatComponent},
-  {path:'gestionnaire/:certificatGestionnaireId/GestionnaireCertificat', component:GestionnaireCertificatCoursComponent},
+  // {path:'gestionnaire/gestionnaire-certificat', component:GestionnaireCertificatComponent},
+  // {path:'gestionnaire/:certificatGestionnaireId/GestionnaireCertificat', component:GestionnaireCertificatCoursComponent},
 
   {path:'orientation',component:OrientationsComponent,children:[
     {path:'orientationAcceuil', component:OrientationAcceuilComponent},

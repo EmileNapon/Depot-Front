@@ -3,9 +3,10 @@ import { Annonce } from '../models/tousModel';
 import { AnnonceService } from '../services/annonce.service';
 
 @Component({
-  selector: 'app-annonce',
-  templateUrl: './annonce.component.html',
-  styleUrls: ['./annonce.component.css']
+    selector: 'app-annonce',
+    templateUrl: './annonce.component.html',
+    styleUrls: ['./annonce.component.css'],
+    standalone: false
 })
 export class AnnonceComponent {
 

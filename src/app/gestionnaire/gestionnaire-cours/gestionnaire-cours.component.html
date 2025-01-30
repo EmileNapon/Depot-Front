@@ -3,21 +3,7 @@
     <div class="container-xl">
         <div class="table-responsive">
             <div class="table-wrapper">
-                <div class="table-title">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h2>Liste des cours</h2>
-                        </div>
-                        <div class="col-sm-6">
-                            <a (click)='ondelete()' class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>supprimer</span></a>
-                            <a (click)=" OnAdd()"  class="btn btn-primary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>ajouter</span></a>
-                            <a (click)='onVoirCours()' class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Voir matieres</span></a>
 
-                            
-                            						
-                        </div>
-                    </div>
-                </div>
                 <div *ngIf=" !__addCours__">
                 <table class="table">
                     
@@ -38,7 +24,7 @@
                             <td >{{cours.nom_cours}} </td>
                             <td *ngIf='selectedCoursIndex === cours.id'>
                                 <a *ngIf='__iconVoirCours__' (click)="onSelectgestionnaireCours(cours.id)" class="matiere" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="matiere"><i class="bi bi-chevron-right"></i></i></a>
-                                <a *ngIf='__iconDelete__' href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                <a *ngIf='__iconVoirCours__' href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                             </td>
                         </tr>					
                     </tbody>

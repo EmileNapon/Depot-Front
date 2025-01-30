@@ -4,9 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UtilisateurService } from '../../services/utilisateur.service';
 
 @Component({
-  selector: 'app-modif-encadrant',
-  templateUrl: './modif-encadrant.component.html',
-  styleUrls: ['./modif-encadrant.component.css']
+    selector: 'app-modif-encadrant',
+    templateUrl: './modif-encadrant.component.html',
+    styleUrls: ['./modif-encadrant.component.css'],
+    standalone: false
 })
 export class ModifEncadrantComponent {
 

@@ -11,9 +11,10 @@ import { marked } from 'marked';
 
 
 @Component({
-  selector: 'app-dasbord-formateur',
-  templateUrl: './dasbord-formateur.component.html',
-  styleUrls: ['./dasbord-formateur.component.css']
+    selector: 'app-dasbord-formateur',
+    templateUrl: './dasbord-formateur.component.html',
+    styleUrls: ['./dasbord-formateur.component.css'],
+    standalone: false
 })
 export class FormateurEvaluationComponent implements OnInit {
   // Gestion des formulaires

@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-qiz-certification',
-  templateUrl: './qiz-certification.component.html',
-  styleUrls: ['./qiz-certification.component.css']
+    selector: 'app-qiz-certification',
+    templateUrl: './qiz-certification.component.html',
+    styleUrls: ['./qiz-certification.component.css'],
+    standalone: false
 })
 export class QizCertificationComponent implements OnInit {
 

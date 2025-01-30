@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-quiz',
-  templateUrl: './quiz-contenu-libre.component.html',
-  styleUrls: ['./quiz-contenu-libre.component.css']
+    selector: 'app-quiz',
+    templateUrl: './quiz-contenu-libre.component.html',
+    styleUrls: ['./quiz-contenu-libre.component.css'],
+    standalone: false
 })
 export class QizContenuLibreComponent {
   

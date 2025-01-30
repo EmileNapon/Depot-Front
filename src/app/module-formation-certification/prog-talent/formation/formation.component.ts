@@ -7,9 +7,10 @@ import { ModuleFormationService } from '../services/moduleFormation.service';
 import { ModuleService } from '../services/module.service';
 
 @Component({
-  selector: 'app-formation',
-  templateUrl: './formation.component.html',
-  styleUrls: ['./formation.component.css']
+    selector: 'app-formation',
+    templateUrl: './formation.component.html',
+    styleUrls: ['./formation.component.css'],
+    standalone: false
 })
 export class FormationComponent implements OnInit {
   formations: any[] = [];

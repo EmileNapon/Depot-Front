@@ -6,9 +6,10 @@ import { ModuleService } from '../../services/module.service';
 import { ModuleFormationService } from '../../services/moduleFormation.service';
 
 @Component({
-  selector: 'app-formation-detail',
-  templateUrl: './formation-detail.component.html',
-  styleUrls: ['./formation-detail.component.css']
+    selector: 'app-formation-detail',
+    templateUrl: './formation-detail.component.html',
+    styleUrls: ['./formation-detail.component.css'],
+    standalone: false
 })
 export class GestionnaireFormationDetailComponent implements OnInit{
   formations!: Formation;

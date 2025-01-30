@@ -7,9 +7,10 @@ import { WebinarEnrollment } from '../../models/webinar-enrollmnet.model';
 import { AuthService } from 'src/app/gestion-utilisateurs/connexion/service-connexion/service-connexion.service';
 
 @Component({
-  selector: 'app-webinar-enroll',
-  templateUrl: './webinar-enrollment.component.html',
-  styleUrls: ['./webinar-enrollment.component.css']
+    selector: 'app-webinar-enroll',
+    templateUrl: './webinar-enrollment.component.html',
+    styleUrls: ['./webinar-enrollment.component.css'],
+    standalone: false
 })
 export class WebinarEnrollComponent implements OnInit {
   enrollForm!: FormGroup;

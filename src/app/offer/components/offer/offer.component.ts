@@ -2,10 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Offer } from '../../models/offer.models';
 import { Router } from '@angular/router';  
 
-@Component({  
-  selector: 'app-offer',  
-  templateUrl: './offer.component.html',  
-  styleUrls: ['./offer.component.css']  
+@Component({
+    selector: 'app-offer',
+    templateUrl: './offer.component.html',
+    styleUrls: ['./offer.component.css'],
+    standalone: false
 })  
 export class OfferComponent implements OnInit {  
 

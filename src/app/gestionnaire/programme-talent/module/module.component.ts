@@ -6,9 +6,10 @@ import { SeanceService } from '../services/seance.service';
 import { FormationService } from '../services/formation.service';
 
 @Component({
-  selector: 'app-module',
-  templateUrl: './module.component.html',
-  styleUrls: ['./module.component.css']
+    selector: 'app-module',
+    templateUrl: './module.component.html',
+    styleUrls: ['./module.component.css'],
+    standalone: false
 })
 export class ModuleComponent implements OnInit {
   modules: Module[] = [];

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-last-activites',
-  templateUrl: './last-activites.component.html',
-  styleUrls: ['./last-activites.component.css'],
+    selector: 'app-last-activites',
+    templateUrl: './last-activites.component.html',
+    styleUrls: ['./last-activites.component.css'],
+    standalone: false
 })
 export class LastActivitiesComponent {
   // Données simulées pour les dernières activités

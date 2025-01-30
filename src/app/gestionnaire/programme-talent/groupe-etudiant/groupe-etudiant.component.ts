@@ -4,9 +4,10 @@ import { CustomUser, Group } from '../models/tousModel';
 import { UtilisateurService } from '../services/utilisateur.service';
 
 @Component({
-  selector: 'app-groupe-etudiant',
-  templateUrl: './groupe-etudiant.component.html',
-  styleUrls: ['./groupe-etudiant.component.css']
+    selector: 'app-groupe-etudiant',
+    templateUrl: './groupe-etudiant.component.html',
+    styleUrls: ['./groupe-etudiant.component.css'],
+    standalone: false
 })
 export class GroupeEtudiantComponent implements OnInit {
 

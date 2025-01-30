@@ -5,9 +5,10 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import DOMPurify from 'dompurify';
 
 @Component({
-  selector: 'app-gestionnaire-modifier-contenu-cours',
-  templateUrl: './gestionnaire-modifier-contenu-cours.component.html',
-  styleUrls: ['./gestionnaire-modifier-contenu-cours.component.css']
+    selector: 'app-gestionnaire-modifier-contenu-cours',
+    templateUrl: './gestionnaire-modifier-contenu-cours.component.html',
+    styleUrls: ['./gestionnaire-modifier-contenu-cours.component.css'],
+    standalone: false
 })
 export class GestionnaireModifierContenuCoursComponent implements OnInit{
 

@@ -11,9 +11,10 @@ import { AuthService } from 'src/app/gestion-utilisateurs/connexion/service-conn
 import { DasbordEtudiantService } from 'src/app/dasbord-etudiant/service-model/dasbord-etudiant.service';
 
 @Component({
-  selector: 'app-dasbord-etudiant-talent',
-  templateUrl: './dasbord-etudiant-talent.component.html',
-  styleUrls: ['./dasbord-etudiant-talent.component.css']
+    selector: 'app-dasbord-etudiant-talent',
+    templateUrl: './dasbord-etudiant-talent.component.html',
+    styleUrls: ['./dasbord-etudiant-talent.component.css'],
+    standalone: false
 })
 export class DasbordEtudiantTalentComponent implements OnInit{
 

@@ -4,9 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ChapitreService } from './chapitre-service/chapitre.service';
 import DOMPurify from 'dompurify';
 @Component({
-  selector: 'app-chapitre',
-  templateUrl: './chapitre.component.html',
-  styleUrls: ['./chapitre.component.css']
+    selector: 'app-chapitre',
+    templateUrl: './chapitre.component.html',
+    styleUrls: ['./chapitre.component.css'],
+    standalone: false
 })
 export class ChapitreComponent implements OnInit {
 

@@ -7,9 +7,10 @@ import { ModuleFormationService } from '../../services/moduleFormation.service';
 import { ModuleService } from '../../services/module.service';
 
 @Component({
-  selector: 'app-formation-detail',
-  templateUrl: './formation-detail.component.html',
-  styleUrls: ['./formation-detail.component.css']
+    selector: 'app-formation-detail',
+    templateUrl: './formation-detail.component.html',
+    styleUrls: ['./formation-detail.component.css'],
+    standalone: false
 })
 export class FormationDetailComponent implements OnInit{
   

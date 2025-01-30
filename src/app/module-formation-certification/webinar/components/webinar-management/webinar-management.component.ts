@@ -5,9 +5,10 @@ import { Webinar } from '../../models/webinar.model';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-create-webinar',
-  templateUrl: './webinar-management.component.html',
-  styleUrls: ['./webinar-management.component.css']
+    selector: 'app-create-webinar',
+    templateUrl: './webinar-management.component.html',
+    styleUrls: ['./webinar-management.component.css'],
+    standalone: false
 })
 export class WebinarManagementComponent implements OnInit {
 

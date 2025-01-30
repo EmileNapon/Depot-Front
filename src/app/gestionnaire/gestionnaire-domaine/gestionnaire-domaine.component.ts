@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { GestionnaireServiceService } from './gestionnaire_domaine-service/gestionnaire-service.service';
 
 @Component({
-  selector: 'app-gestionnaire-domaine',
-  templateUrl: './gestionnaire-domaine.component.html',
-  styleUrls: ['./gestionnaire-domaine.component.css']
+    selector: 'app-gestionnaire-domaine',
+    templateUrl: './gestionnaire-domaine.component.html',
+    styleUrls: ['./gestionnaire-domaine.component.css'],
+    standalone: false
 })
 export class GestionnaireDomaineComponent {
 
@@ -67,7 +68,7 @@ export class GestionnaireDomaineComponent {
 
 
   onSelectDomaine(domaineId: string): void {
-    this.router.navigate([`/gestionnaire/${domaineId}/Gestionnaire-modules`]); // Redirection vers la page des matières du domaine sélectionné
+    this.router.navigate([`/admin/gestionnaire/${domaineId}/Gestionnaire-modules`]); // Redirection vers la page des matières du domaine sélectionné
   }
 
 

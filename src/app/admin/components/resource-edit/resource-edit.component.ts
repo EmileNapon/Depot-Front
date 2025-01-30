@@ -8,9 +8,10 @@ import { Resource, Property } from '../../models/resource.model';
 import { ressources } from '../../configs/reource.config';
 
 @Component({
-  selector: 'app-resource-edit',
-  templateUrl: './resource-edit.component.html',
-  styleUrls: ['./resource-edit.component.css'],
+    selector: 'app-resource-edit',
+    templateUrl: './resource-edit.component.html',
+    styleUrls: ['./resource-edit.component.css'],
+    standalone: false
 })
 export class ResourceEditComponent implements OnInit, OnDestroy {
 

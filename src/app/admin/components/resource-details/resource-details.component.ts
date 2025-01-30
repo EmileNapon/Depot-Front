@@ -9,9 +9,10 @@ import { ressources } from '../../configs/reource.config';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
-  selector: 'app-resource-details',
-  templateUrl: './resource-details.component.html',
-  styleUrls: ['./resource-details.component.css'],
+    selector: 'app-resource-details',
+    templateUrl: './resource-details.component.html',
+    styleUrls: ['./resource-details.component.css'],
+    standalone: false
 })
 export class ResourceDetailsComponent implements OnInit, OnDestroy {
   resourceId!: string;

@@ -8,9 +8,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { DomaineService } from '../module-formation-certification/acceuil-formation/acceuil-formation-services/acceuil-formations-services';
 
 @Component({
-  selector: 'app-acceuil',
-  templateUrl: './acceuil.component.html',
-  styleUrls: ['./acceuil.component.css']
+    selector: 'app-acceuil',
+    templateUrl: './acceuil.component.html',
+    styleUrls: ['./acceuil.component.css'],
+    standalone: false
 })
 export class AcceuilComponent implements OnInit{
   constructor(private domaineService: DomaineService, private fb: FormBuilder ,private authService: AuthService, private ServiceConnexion: ServiceConnexionPrincipale, private http: HttpClient) {}

@@ -6,9 +6,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DasbordEtudiantService } from 'src/app/dasbord-etudiant/service-model/dasbord-etudiant.service';
 
 @Component({
-  selector: 'app-etudiant',
-  templateUrl: './etudiant.component.html',
-  styleUrls: ['./etudiant.component.css']
+    selector: 'app-etudiant',
+    templateUrl: './etudiant.component.html',
+    styleUrls: ['./etudiant.component.css'],
+    standalone: false
 })
 export class EtudiantComponent implements OnInit {
 

@@ -5,9 +5,10 @@ import { WebinarService } from '../../services/webinar.service';
 
 
 @Component({
-  selector: 'app-webinar-details',
-  templateUrl: './webinar-details.component.html',
-  styleUrls: ['./webinar-details.component.css']
+    selector: 'app-webinar-details',
+    templateUrl: './webinar-details.component.html',
+    styleUrls: ['./webinar-details.component.css'],
+    standalone: false
 })
 
 export class WebinarDetailsComponent implements OnInit {

@@ -10,9 +10,10 @@ import { ressources } from '../../configs/reource.config';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
-  selector: 'app-resource-create',
-  templateUrl: './resource-create.component.html',
-  styleUrls: ['./resource-create.component.css']
+    selector: 'app-resource-create',
+    templateUrl: './resource-create.component.html',
+    styleUrls: ['./resource-create.component.css'],
+    standalone: false
 })
 export class ResourceCreateComponent implements OnInit, OnDestroy {
   form!: FormGroup;

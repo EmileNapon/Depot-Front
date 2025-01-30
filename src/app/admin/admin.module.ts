@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -12,10 +13,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ReactiveFormsModule } from '@angular/forms';
 import { MatOptionModule } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
@@ -29,7 +29,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './components/admin/admin.component';
-import { MenuComponent } from './components/menu/menu.component';
+
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { ResourceListComponent } from './components/resource-list/resource-list.component';
@@ -38,6 +38,7 @@ import { ResourceCreateComponent } from './components/resource-create/resource-c
 import { ResourceDetailsComponent } from './components/resource-details/resource-details.component';
 import { LoginComponent } from './components/login/login.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 @NgModule({

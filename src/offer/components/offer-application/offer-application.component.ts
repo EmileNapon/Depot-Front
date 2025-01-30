@@ -8,9 +8,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from 'src/app/gestion-utilisateurs/connexion/service-connexion/service-connexion.service';
 
 @Component({
-  selector: 'app-offer-application',
-  templateUrl: './offer-application.component.html',
-  styleUrls: ['./offer-application.component.css'],
+    selector: 'app-offer-application',
+    templateUrl: './offer-application.component.html',
+    styleUrls: ['./offer-application.component.css'],
+    standalone: false
 })
 export class OfferApplicationComponent implements OnInit {
   applicationForm!: FormGroup;

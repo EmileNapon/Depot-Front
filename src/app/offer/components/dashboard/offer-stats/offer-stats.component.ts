@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-stats-offer',
-  templateUrl: './offer-stats.component.html',
-  styleUrls: ['./offer-stats.component.css']
+    selector: 'app-stats-offer',
+    templateUrl: './offer-stats.component.html',
+    styleUrls: ['./offer-stats.component.css'],
+    standalone: false
 })
 export class OfferStatsComponent {
   // Données pour le graphique en camembert

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-qiz-cours-formation-presentielle',
-  templateUrl: './qiz-cours-formation-presentielle.component.html',
-  styleUrls: ['./qiz-cours-formation-presentielle.component.css']
+    selector: 'app-qiz-cours-formation-presentielle',
+    templateUrl: './qiz-cours-formation-presentielle.component.html',
+    styleUrls: ['./qiz-cours-formation-presentielle.component.css'],
+    standalone: false
 })
 export class QizCoursFormationPresentielleComponent {
 

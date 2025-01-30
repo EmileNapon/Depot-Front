@@ -5,9 +5,10 @@ import { User } from './interface-inscription/interface-inscription';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './inscription.component.html',
-  styleUrls: ['./inscription.component.css']
+    selector: 'app-registration',
+    templateUrl: './inscription.component.html',
+    styleUrls: ['./inscription.component.css'],
+    standalone: false
 })
 export class RegistrationComponent implements OnInit {
   registrationForm!: FormGroup;

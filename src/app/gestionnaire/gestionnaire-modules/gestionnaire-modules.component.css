@@ -1,31 +1,16 @@
-
-
-.table-responsive {
-    margin: 30px 0;
-}
-.table-wrapper {
-	background: #fff;
-	padding: 20px 25px;
-	border-radius: 3px;
-	min-width: 1000px;
-	box-shadow: 0 1px 1px rgba(0,0,0,.05);
-}
-.table-title {        
-	padding-bottom: 15px;
-	background: #435d7d;
-	color: #fff;
-	padding: 16px 30px;
-	min-width: 100%;
-	margin: -20px -25px 10px;
-	border-radius: 3px 3px 0 0;
-}
-.table-title h2 {
-	margin: 5px 0 0;
+.add-resource-button {
+	position: fixed;
+	bottom: 16px; /* Positionné en bas */
+	right: 16px; /* Positionné à droite */
+	z-index: 1000; /* Toujours au-dessus des autres éléments */
+	width: 80px;
+	height: 80px;
+	border-radius: 50%; /* Bouton circulaire */
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	font-size: 24px;
-}
-.table-title .btn-group {
-	float: right;
-}
+	background-color: #0288d1; /* Couleur bleue pour info */
+  }
+
 .table-title .btn {
 	color: #fff;
 	float: right;

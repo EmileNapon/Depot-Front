@@ -6,9 +6,10 @@ import { OfferService } from '../../../services/offer.service';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-candidat-list',
-  templateUrl: './candidat-list.component.html',
-  styleUrls: ['./candidat-list.component.css']
+    selector: 'app-candidat-list',
+    templateUrl: './candidat-list.component.html',
+    styleUrls: ['./candidat-list.component.css'],
+    standalone: false
 })
 export class CandidatListComponent implements OnInit {
   // Colonnes à afficher dans le tableau

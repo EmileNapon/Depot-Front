@@ -6,9 +6,10 @@ import { SeanceService } from '../../services/seance.service';
 import { ModuleService } from '../../services/module.service';
 
 @Component({
-  selector: 'app-modification-seance',
-  templateUrl: './modification-seance.component.html',
-  styleUrls: ['./modification-seance.component.css']
+    selector: 'app-modification-seance',
+    templateUrl: './modification-seance.component.html',
+    styleUrls: ['./modification-seance.component.css'],
+    standalone: false
 })
 export class ModificationSeanceComponent implements OnInit{
 

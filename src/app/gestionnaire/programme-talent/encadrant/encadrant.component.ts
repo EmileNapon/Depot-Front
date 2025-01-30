@@ -3,9 +3,10 @@ import { CustomUser } from '../models/tousModel';
 import { UtilisateurService } from '../services/utilisateur.service';
 
 @Component({
-  selector: 'app-encadrant',
-  templateUrl: './encadrant.component.html',
-  styleUrls: ['./encadrant.component.css']
+    selector: 'app-encadrant',
+    templateUrl: './encadrant.component.html',
+    styleUrls: ['./encadrant.component.css'],
+    standalone: false
 })
 export class EncadrantComponent implements OnInit {
 

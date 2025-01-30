@@ -5,9 +5,10 @@ import { CertificationService } from '../certification/certification-service/cer
 import DOMPurify from 'dompurify';
 
 @Component({
-  selector: 'app-certification-contenu',
-  templateUrl: './certification-contenu.component.html',
-  styleUrls: ['./certification-contenu.component.css']
+    selector: 'app-certification-contenu',
+    templateUrl: './certification-contenu.component.html',
+    styleUrls: ['./certification-contenu.component.css'],
+    standalone: false
 })
 export class CertificationContenuComponent implements OnInit {
 

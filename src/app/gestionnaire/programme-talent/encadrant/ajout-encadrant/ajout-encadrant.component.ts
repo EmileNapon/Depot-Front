@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { UtilisateurService } from '../../services/utilisateur.service';
 
 @Component({
-  selector: 'app-ajout-encadrant',
-  templateUrl: './ajout-encadrant.component.html',
-  styleUrls: ['./ajout-encadrant.component.css']
+    selector: 'app-ajout-encadrant',
+    templateUrl: './ajout-encadrant.component.html',
+    styleUrls: ['./ajout-encadrant.component.css'],
+    standalone: false
 })
 export class AjoutEncadrantComponent implements OnInit{
 

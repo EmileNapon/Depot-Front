@@ -6,9 +6,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UtilisateurService } from '../formateur/services/utilisateur.service';
 
 @Component({
-  selector: 'app-creation-formateur',
-  templateUrl: './creation-formateur.component.html',
-  styleUrls: ['./creation-formateur.component.css']
+    selector: 'app-creation-formateur',
+    templateUrl: './creation-formateur.component.html',
+    styleUrls: ['./creation-formateur.component.css'],
+    standalone: false
 })
 export class CreationFormateurComponent {
   registrationForm!: FormGroup;

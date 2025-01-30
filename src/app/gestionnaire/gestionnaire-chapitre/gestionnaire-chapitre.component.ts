@@ -5,9 +5,10 @@ import { GestionnaireChapitreServiceService } from './gestionnaire_chapitre/gest
 
 import DOMPurify from 'dompurify';
 @Component({
-  selector: 'app-gestionnaire-chapitre',
-  templateUrl: './gestionnaire-chapitre.component.html',
-  styleUrls: ['./gestionnaire-chapitre.component.css']
+    selector: 'app-gestionnaire-chapitre',
+    templateUrl: './gestionnaire-chapitre.component.html',
+    styleUrls: ['./gestionnaire-chapitre.component.css'],
+    standalone: false
 })
 export class GestionnaireChapitreComponent implements OnInit {
 
@@ -204,7 +205,7 @@ export class GestionnaireChapitreComponent implements OnInit {
 
 
   onSelectgestionnaireCours(chapitreGestionnaireId: string): void {
-    this.route.navigate([`/gestionnaire/${chapitreGestionnaireId}/gestionnaire-contenu`]); 
+    this.route.navigate([`/admin/gestionnaire/${chapitreGestionnaireId}/gestionnaire-contenu`]); 
 
   }
 }

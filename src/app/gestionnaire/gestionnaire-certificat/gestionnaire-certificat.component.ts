@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { GestionnairesModulesServiceService } from '../gestionnaire-modules/gestionnaires-modules-service/gestionnaires-modules-service.service';
 
 @Component({
-  selector: 'app-gestionnaire-certificat',
-  templateUrl: './gestionnaire-certificat.component.html',
-  styleUrls: ['./gestionnaire-certificat.component.css']
+    selector: 'app-gestionnaire-certificat',
+    templateUrl: './gestionnaire-certificat.component.html',
+    styleUrls: ['./gestionnaire-certificat.component.css'],
+    standalone: false
 })
 export class GestionnaireCertificatComponent implements OnInit {
 

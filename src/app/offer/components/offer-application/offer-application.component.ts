@@ -7,9 +7,10 @@ import { Offer } from '../../models/offer.models';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-offer-application',
-  templateUrl: './offer-application.component.html',
-  styleUrls: ['./offer-application.component.css'],
+    selector: 'app-offer-application',
+    templateUrl: './offer-application.component.html',
+    styleUrls: ['./offer-application.component.css'],
+    standalone: false
 })
 export class OfferApplicationComponent implements OnInit {
   applicationForm!: FormGroup;

@@ -6,9 +6,10 @@ import { SeanceService } from '../../services/seance.service';
 import { ModuleService } from '../../services/module.service';
 
 @Component({
-  selector: 'app-ajout-seance',
-  templateUrl: './ajout-seance.component.html',
-  styleUrls: ['./ajout-seance.component.css']
+    selector: 'app-ajout-seance',
+    templateUrl: './ajout-seance.component.html',
+    styleUrls: ['./ajout-seance.component.css'],
+    standalone: false
 })
 export class AjoutSeanceComponent {
   seanceForm!: FormGroup;  

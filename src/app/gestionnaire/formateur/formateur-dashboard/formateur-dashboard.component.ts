@@ -11,9 +11,10 @@ import { DasbordEtudiantService } from 'src/app/dasbord-etudiant/service-model/d
 import { AuthService } from 'src/app/gestion-utilisateurs/connexion/service-connexion/service-connexion.service';
 
 @Component({
-  selector: 'app-formateur-dashboard',
-  templateUrl: './formateur-dashboard.component.html',
-  styleUrls: ['./formateur-dashboard.component.css']
+    selector: 'app-formateur-dashboard',
+    templateUrl: './formateur-dashboard.component.html',
+    styleUrls: ['./formateur-dashboard.component.css'],
+    standalone: false
 })
 export class FormateurDashboardComponent implements OnInit {
 

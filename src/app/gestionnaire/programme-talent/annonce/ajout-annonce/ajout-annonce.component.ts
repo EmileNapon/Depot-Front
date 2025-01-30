@@ -5,9 +5,10 @@ import { AnnonceService } from '../../services/annonce.service';
 import { Annonce } from '../../models/tousModel';
 
 @Component({
-  selector: 'app-ajout-annonce',
-  templateUrl: './ajout-annonce.component.html',
-  styleUrls: ['./ajout-annonce.component.css']
+    selector: 'app-ajout-annonce',
+    templateUrl: './ajout-annonce.component.html',
+    styleUrls: ['./ajout-annonce.component.css'],
+    standalone: false
 })
 export class AjoutAnnonceComponent {
   annonceForm: FormGroup;

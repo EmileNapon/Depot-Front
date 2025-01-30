@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Pipe({
-  name: 'customDateTime'
+    name: 'customDateTime',
+    standalone: false
 })
 export class CustomDateTimePipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) {}

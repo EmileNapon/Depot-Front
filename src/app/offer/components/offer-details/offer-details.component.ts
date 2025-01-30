@@ -3,10 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OfferService } from '../../services/offer.service';
 import { Offer } from '../../models/offer.models'; 
 
-@Component({  
-  selector: 'app-offer-details',  
-  templateUrl: './offer-details.component.html',  
-  styleUrls: ['./offer-details.component.css']  
+@Component({
+    selector: 'app-offer-details',
+    templateUrl: './offer-details.component.html',
+    styleUrls: ['./offer-details.component.css'],
+    standalone: false
 })  
 export class OfferDetailsComponent implements OnInit {  
   offer!: Offer; // Détails de l'offre  

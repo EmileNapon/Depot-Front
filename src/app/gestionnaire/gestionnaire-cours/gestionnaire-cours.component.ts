@@ -4,9 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GestionnairesCoursServiceService } from './gestionnaires-cours-service/gestionnaires-cours-service.service';
 
 @Component({
-  selector: 'app-gestionnaire-cours',
-  templateUrl: './gestionnaire-cours.component.html',
-  styleUrls: ['./gestionnaire-cours.component.css']
+    selector: 'app-gestionnaire-cours',
+    templateUrl: './gestionnaire-cours.component.html',
+    styleUrls: ['./gestionnaire-cours.component.css'],
+    standalone: false
 })
 export class GestionnaireCoursComponent implements OnInit{
 
@@ -74,7 +75,7 @@ export class GestionnaireCoursComponent implements OnInit{
 
 
   onSelectgestionnaireCours(coursGestionnaireId: string): void {
-    this.route.navigate([`/gestionnaire/${coursGestionnaireId}/gestionnaire-chapitre`]); // Redirection vers la page des matières du domaine sélectionné
+    this.route.navigate([`/admin/gestionnaire/${coursGestionnaireId}/gestionnaire-chapitre`]); // Redirection vers la page des matières du domaine sélectionné
  
   }
 

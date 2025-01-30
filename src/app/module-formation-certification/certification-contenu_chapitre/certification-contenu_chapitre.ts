@@ -5,9 +5,10 @@ import DOMPurify from 'dompurify';
 import { AuthService } from "../../gestion-utilisateurs/connexion/service-connexion/service-connexion.service";
 
 @Component({
-    selector:'app-certification-contenu_chapitre',
-    templateUrl:'./certification-contenu_chapitre.html',
-    styleUrls:['./certification-contenu_chapitre.css']
+    selector: 'app-certification-contenu_chapitre',
+    templateUrl: './certification-contenu_chapitre.html',
+    styleUrls: ['./certification-contenu_chapitre.css'],
+    standalone: false
 })
 
 export class certificationContenuChapitreComponent implements OnInit{

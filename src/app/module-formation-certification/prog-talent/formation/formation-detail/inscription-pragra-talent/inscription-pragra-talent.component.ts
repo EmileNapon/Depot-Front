@@ -6,9 +6,10 @@ import { AuthService } from 'src/app/gestion-utilisateurs/connexion/service-conn
 import { FormationService } from '../../../services/formation.service';
 import { Formation } from '../../../models/tousModel';
 @Component({
-  selector: 'app-inscription-pragra-talent',
-  templateUrl: './inscription-pragra-talent.component.html',
-  styleUrls: ['./inscription-pragra-talent.component.css']
+    selector: 'app-inscription-pragra-talent',
+    templateUrl: './inscription-pragra-talent.component.html',
+    styleUrls: ['./inscription-pragra-talent.component.css'],
+    standalone: false
 })
 export class InscriptionPragraTalentComponent implements OnInit {
 

@@ -5,10 +5,11 @@ import { EnterpriseService } from '../../services/enterprise.service'; // Import
 import { Offer } from '../../models/offer.model';  
 import { Enterprise } from '../../models/enterprise.model'; // Import du modèle Enterprise  
 
-@Component({  
-  selector: 'app-offer-details',  
-  templateUrl: './offer-details.component.html',  
-  styleUrls: ['./offer-details.component.css']  
+@Component({
+    selector: 'app-offer-details',
+    templateUrl: './offer-details.component.html',
+    styleUrls: ['./offer-details.component.css'],
+    standalone: false
 })  
 export class OfferDetailsComponent implements OnInit {  
   offer!: Offer; // Détails de l'offre  
