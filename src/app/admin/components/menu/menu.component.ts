@@ -30,7 +30,7 @@ export class MenuComponent implements OnDestroy, AfterViewInit {
       label: 'Audition',
       icon: 'menu_book',
       children: [
-        { label: 'Domaines', route: 'domaines' },
+        { label: 'Domaines', route: 'domaine' },
         { label: 'Parcours de formations', route: '/training-paths' },
         { label: 'Cours libres', route: '/free-courses' },
         { label: 'Cours payants', route: '/paid-courses' }

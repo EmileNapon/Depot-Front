@@ -17,25 +17,22 @@ export class GestionnaireModulesComponent implements OnInit{
   constructor(private moduleService:GestionnairesModulesServiceService ,  private fb: FormBuilder, private router: ActivatedRoute, private route:Router) { }
   selectedModuleIndex:string=""
   __iconDelete__:boolean=false
-  __iconVoirModule__:boolean= false
   __addModule__:boolean=false
+  loading: boolean=false
 
   ondelete():void{
     this.__iconDelete__=!this.__iconDelete__
-    this.__iconVoirModule__=false
   }
 
 
 
 
   onVoirModule():void{
-    this.__iconVoirModule__=!this.__iconVoirModule__
     this.__iconDelete__=false
   }
 
 
   selecterModule(module:string){
-    this.__iconVoirModule__=true
     this.__iconDelete__=false
     this.selectedModuleIndex=module
       
@@ -44,7 +41,6 @@ export class GestionnaireModulesComponent implements OnInit{
   OnAdd():void{
     this.__addModule__=!this.__addModule__
     this.__iconDelete__=false
-    this.__iconVoirModule__= false
   }
 
 
@@ -66,6 +62,7 @@ export class GestionnaireModulesComponent implements OnInit{
     this.moduleService.getModule().subscribe(data => {
       this.__moduleGestionnaire__ = data;
       this.filterModulesGestionnaire()
+      this.loading=true
       console.log( this.iddomaineGestionnaireId)
     });
   }
@@ -80,8 +77,8 @@ export class GestionnaireModulesComponent implements OnInit{
   }
 
 
-  onSelectgestionnaireCours(coursGestionnaireId: string): void {
-    this.route.navigate([`/admin/gestionnaire/${coursGestionnaireId}/Gestionnaire-cours`]); // Redirection vers la page des matières du domaine sélectionné
+  onSelectModule(coursGestionnaireId: string): void {
+    this.route.navigate([`/admin/${coursGestionnaireId}/cours`]); // Redirection vers la page des matières du domaine sélectionné
  
   }
 

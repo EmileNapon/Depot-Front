@@ -26,10 +26,10 @@ const routes: Routes = [
       { path: 'create/:resourceType', component: ResourceCreateComponent },
       { path: 'edit/:resourceType/:id', component: ResourceEditComponent },
       { path: 'details/:resourceType/:id', component: ResourceDetailsComponent },
-      {path:'domaines', component:GestionnaireDomaineComponent},
-      {path:'gestionnaire/:iddomaineGestionnaireId/Gestionnaire-modules', component:GestionnaireModulesComponent},
-      {path:'gestionnaire/:idmoduleGestionnaireId/Gestionnaire-cours', component:GestionnaireCoursComponent},
-      {path:'gestionnaire/:idcoursGestionnaireId/gestionnaire-chapitre', component:GestionnaireChapitreComponent},
+      {path:'domaine', component:GestionnaireDomaineComponent},
+      {path:':iddomaineGestionnaireId/module', component:GestionnaireModulesComponent},
+      {path:':idmoduleGestionnaireId/cours', component:GestionnaireCoursComponent},
+      {path:':idcoursGestionnaireId/chapitre', component:GestionnaireChapitreComponent},
 
       {path:'gestionnaire/:idchapitreGestionnaireId/gestionnaire-contenu', component:GestionnaireModifierContenuCoursComponent},
     

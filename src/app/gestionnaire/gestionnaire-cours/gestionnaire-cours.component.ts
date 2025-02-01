@@ -14,25 +14,22 @@ export class GestionnaireCoursComponent implements OnInit{
   constructor(private coursService: GestionnairesCoursServiceService,  private fb: FormBuilder, private router: ActivatedRoute, private route:Router) { }
   selectedCoursIndex:string=""
   __iconDelete__:boolean=false
-  __iconVoirCours__:boolean= false
   __addCours__:boolean=false
-
+  loading:boolean=false
   ondelete():void{
     this.__iconDelete__=!this.__iconDelete__
-    this.__iconVoirCours__=false
+
   }
 
 
 
 
   onVoirCours():void{
-    this.__iconVoirCours__=!this.__iconVoirCours__
     this.__iconDelete__=false
   }
 
 
-  selecterDomaine(cours:string){
-    this.__iconVoirCours__=true
+  selectCours(cours:string){
     this.__iconDelete__=false
     this.selectedCoursIndex=cours
       
@@ -41,7 +38,6 @@ export class GestionnaireCoursComponent implements OnInit{
   OnAdd():void{
     this.__addCours__=!this.__addCours__
     this.__iconDelete__=false
-    this.__iconVoirCours__= false
   }
 
 
@@ -61,6 +57,7 @@ export class GestionnaireCoursComponent implements OnInit{
     this.coursService.getCours().subscribe(data => {
       this.__coursGestionnaire__ = data;
       this.filterMatieresGestionnaire()
+      this.loading=true
       console.log( this.idmoduleGestionnaireId)
     });
   }
@@ -74,8 +71,8 @@ export class GestionnaireCoursComponent implements OnInit{
   }
 
 
-  onSelectgestionnaireCours(coursGestionnaireId: string): void {
-    this.route.navigate([`/admin/gestionnaire/${coursGestionnaireId}/gestionnaire-chapitre`]); // Redirection vers la page des matières du domaine sélectionné
+  onSelectCours(coursGestionnaireId: string): void {
+    this.route.navigate([`/admin/${coursGestionnaireId}/chapitre`]); // Redirection vers la page des matières du domaine sélectionné
  
   }
 

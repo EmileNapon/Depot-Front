@@ -16,28 +16,23 @@ export class GestionnaireDomaineComponent {
 
   selectedDomaineIndex:string=""
   __iconDelete__:boolean=false
-  __iconVoirDomaine__:boolean= false
   __addDomaine__:boolean=false
-
+  loading:boolean=false
   ondelete():void{
     this.__iconDelete__=!this.__iconDelete__
-    this.__iconVoirDomaine__=false
   }
 
   onEdit():void{
-    this.__iconVoirDomaine__=false
     this.__iconDelete__=false
   }
 
 
   onVoirDomaine():void{
-    this.__iconVoirDomaine__=!this.__iconVoirDomaine__
     this.__iconDelete__=false
   }
 
 
   selecterDomaine(domaine:string){
-    this.__iconVoirDomaine__=true
     this.__iconDelete__=false
     this.selectedDomaineIndex=domaine
       
@@ -57,21 +52,16 @@ export class GestionnaireDomaineComponent {
   loadDomaines(): void {
     this.domaineService.getDomaines().subscribe(data => {
       this.__domaines__ = data;
+      this.loading=false
     });
   }
    
 
 
 
-
-
-
-
   onSelectDomaine(domaineId: string): void {
-    this.router.navigate([`/admin/gestionnaire/${domaineId}/Gestionnaire-modules`]); // Redirection vers la page des matières du domaine sélectionné
+    this.router.navigate([`/admin/${domaineId}/module`]); // Redirection vers la page des matières du domaine sélectionné
   }
-
-
 
 
 
