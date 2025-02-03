@@ -16,6 +16,7 @@ interface MenuItem {
 export class MenuComponent implements OnDestroy, AfterViewInit {
 
   menuItems: MenuItem[] = [
+    
     { 
       label: 'Tableau de bord', 
       icon: 'dashboard', 
@@ -25,6 +26,8 @@ export class MenuComponent implements OnDestroy, AfterViewInit {
         { label: 'Dernières activités', icon: 'history', route: 'last-activities' },
       ]
     },
+
+    
     {
       label: 'Gestion des offres',
       icon: 'business_center',

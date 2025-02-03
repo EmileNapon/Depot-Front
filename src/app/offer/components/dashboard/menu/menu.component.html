@@ -1,40 +1,43 @@
 <mat-nav-list>
   <ng-container *ngFor="let item of menuItems">
-    <!-- Élément sans enfants -->
-    <mat-list-item *ngIf="!item.children" [routerLink]="item.route || null">
-      <mat-icon>{{ item.icon }}</mat-icon>
-      <span>{{ item.label }}</span>
-    </mat-list-item>
-
-    <!-- Élément avec enfants -->
-    <mat-expansion-panel *ngIf="item.children">
-      <mat-expansion-panel-header>
-        <mat-icon>{{ item.icon }}</mat-icon>
-        <span>{{ item.label }}</span>
-      </mat-expansion-panel-header>
-      <mat-nav-list>
-        <ng-container *ngFor="let child of item.children">
-          <!-- Sous-élément sans enfants -->
-          <mat-list-item *ngIf="!child.children" [routerLink]="child.route || null">
-            <mat-icon>{{ child.icon }}</mat-icon>
-            <span>{{ child.label }}</span>
-          </mat-list-item>
-
-          <!-- Sous-élément avec enfants -->
-          <mat-expansion-panel *ngIf="child.children">
-            <mat-expansion-panel-header>
-              <mat-icon>{{ child.icon }}</mat-icon>
-              <span>{{ child.label }}</span>
-            </mat-expansion-panel-header>
-            <mat-nav-list>
-              <mat-list-item *ngFor="let subChild of child.children" [routerLink]="subChild.route || null">
-                <mat-icon>{{ subChild.icon }}</mat-icon>
-                <span>{{ subChild.label }}</span>
+    <ng-container *ngIf="item.children?.length; else simpleItem">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon *ngIf="item.icon">{{ item.icon }}</mat-icon>
+          <span>{{ item.label }}</span>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <ng-container *ngFor="let child of item.children">
+            <ng-container *ngIf="child.children?.length; else simpleChild">
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-icon *ngIf="child.icon">{{ child.icon }}</mat-icon>
+                  <span>{{ child.label }}</span>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                  <mat-list-item *ngFor="let subChild of child.children" [routerLink]="subChild.route || null" routerLinkActive="active">
+                    <mat-icon *ngIf="subChild.icon">{{ subChild.icon }}</mat-icon>
+                    <span>{{ subChild.label }}</span>
+                  </mat-list-item>
+                </mat-nav-list>
+              </mat-expansion-panel>
+            </ng-container>
+            <ng-template #simpleChild>
+              <mat-list-item [routerLink]="child.route || null" routerLinkActive="active">
+                <mat-icon *ngIf="child.icon">{{ child.icon }}</mat-icon>
+                <span>{{ child.label }}</span>
               </mat-list-item>
-            </mat-nav-list>
-          </mat-expansion-panel>
-        </ng-container>
-      </mat-nav-list>
-    </mat-expansion-panel>
+            </ng-template>
+          </ng-container>
+        </mat-nav-list>
+      </mat-expansion-panel>
+    </ng-container>
+
+    <ng-template #simpleItem>
+      <mat-list-item [routerLink]="item.route || null" routerLinkActive="active">
+        <mat-icon *ngIf="item.icon">{{ item.icon }}</mat-icon>
+        <span>{{ item.label }}</span>
+      </mat-list-item>
+    </ng-template>
   </ng-container>
 </mat-nav-list>

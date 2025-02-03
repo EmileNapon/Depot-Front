@@ -93,7 +93,7 @@ export class GestionnaireFormationComponent implements OnInit {
   }
 
   onSelectProgrammeTalent(DasbordFormationId: number): void {
-    this.router.navigate([`/gestionnaire/dasbord/${DasbordFormationId}/dasbord-prog-talent`]); 
+    this.router.navigate([`/admin/${DasbordFormationId}/programme-talent`]); 
   }
     
 
