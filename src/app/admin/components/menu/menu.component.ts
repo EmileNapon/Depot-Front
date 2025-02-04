@@ -21,7 +21,7 @@ export class MenuComponent implements OnDestroy, AfterViewInit {
       icon: 'people',
       children: [
         { label: 'Étudiants', route: 'list/users/students' },
-        { label: 'Formateurs', route: 'list/users/trainers' },
+        { label: 'Formateurs', route: 'formateur' },
         { label: 'Entreprises', route: 'list/users/enterprises' },
         { label: 'Administrateurs', route: 'list/users/admins' },
       ]
@@ -40,7 +40,7 @@ export class MenuComponent implements OnDestroy, AfterViewInit {
       label: 'Formations',
       icon: 'library_books',
       children: [
-        { label: 'Prog. Talent', route: 'trainings/talent' },
+        { label: 'Prog. Talent', route: 'formation' },
         { label: 'Webinaires', route: 'trainings/webinars' },
         { label: 'Cafe des Allies', route: 'trainings/coffee' },
         { label: 'Formations externes', route: 'trainings/externes' }

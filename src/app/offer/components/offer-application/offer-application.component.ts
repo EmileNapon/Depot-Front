@@ -15,7 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class OfferApplicationComponent implements OnInit {
   applicationForm!: FormGroup;
   offerId!: string;  // ID de l'offre obtenue de la route
-  userId: string = '671cb559e6bff63f72443d9c'; // Remplacez par l'ID utilisateur réel
+  userId: string = '26'; // Remplacez par l'ID utilisateur réel
   offer!: Offer;
   cvFile?: { file: File; progress: number; name: string };
   lmFile?: { file: File; progress: number; name: string };
@@ -144,8 +144,8 @@ export class OfferApplicationComponent implements OnInit {
   
     // Logique de soumission du formulaire (inchangée)
     const offerApplication = {
-      offerId: this.offerId,
-      candidatId: this.userId,
+      offer: this.offerId,
+      candidat: this.userId,
       message: this.applicationForm.value.message,
       applicationDate: new Date(),
       status: 'Pending',
@@ -158,7 +158,7 @@ export class OfferApplicationComponent implements OnInit {
       this.lmFile?.file,
       ...this.otherFiles.map(f => f.file)
     ].filter((file): file is File => file !== undefined);
-  
+  console.log("fffffffffffffffffffffffffffff",offerApplication)
     this.offerService.submitOfferApplication(offerApplication).subscribe({
       next: (response) => {
         this.snackBar.open('Candidature soumise avec succès !', 'Fermer', {

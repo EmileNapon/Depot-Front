@@ -1,0 +1,43 @@
+
+
+  <div class="account-selection-page">
+    <h1 class="title">Choisissez Votre Type de Compte</h1>
+    <p class="description">
+      Accédez à des ressources adaptées à vos besoins pour progresser dans votre carrière.
+    </p>
+  
+    <div class="account-comparison">
+      <!-- Freemium Card -->
+      <a href="/signup?type=freemium" class="account-card freemium">
+        <h2>Compte Freemium</h2>
+        <p class="price">Gratuit</p>
+        <ul class="features">
+          <li><strong>🎓 Accès aux modules de base :</strong> Développez vos compétences avec des cours gratuits.</li>
+          <li><strong>🌐 Exploration des offres :</strong> Visualisez une sélection d'opportunités de stage et d'emploi.</li>
+          <li><strong>📚 Aperçu des formations :</strong> Accédez à un choix de webinaires et de formations en ligne.</li>
+          <li><strong>🔍 Orientation professionnelle :</strong> Profitez de conseils gratuits pour démarrer votre carrière.</li>
+          <li><strong>🎥 Témoignages et vidéos d’introduction :</strong> Découvrez les parcours de nos apprenants.</li>
+          <hr>
+          <li><em>Rejoignez notre communauté et accédez à des ressources pour évoluer à votre rythme, sans engagement financier.</em></li>
+        </ul>
+      </a>
+  
+      <!-- Premium Card -->
+      <a href="/signup?type=premium" class="account-card premium" (click)="onFreemiumClick($event)">
+        <div class="recommended-tag">Recommandé</div>
+        <h2>Compte Premium</h2>
+        <p class="price">À partir de 10.000 FCFA / mois</p>
+        <ul class="features">
+          <li><strong>📖 Accès illimité aux cours et certifications :</strong> Progressez avec des parcours approfondis.</li>
+          <li><strong>📝 Accès privilégié aux offres :</strong> Bénéficiez d'un accès en priorité aux meilleures offres de stage et d'emploi.</li>
+          <li><strong>🎥 Webinaires et formations avancées :</strong> Participez à des sessions interactives en direct.</li>
+          <li><strong>👩‍🏫 Suivi et mentorat personnalisés :</strong> Recevez un accompagnement pour atteindre vos objectifs.</li>
+          <li><strong>🏆 Orientation premium :</strong> Accédez à des conseils de carrière avancés et à un coaching professionnel.</li>
+          <hr>
+          <li><em>Choisissez le compte Premium pour bénéficier d’un support continu et d’opportunités exclusives dans votre domaine.</em></li>
+        </ul>
+      </a>
+    </div>
+  </div>
+  
+  

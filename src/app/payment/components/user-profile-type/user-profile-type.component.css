@@ -1,0 +1,107 @@
+/* Style général */
+.account-selection-page {
+    text-align: center;
+    padding: 3rem;
+    background-color: #f5f8fc;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #7f8c8d;
+  }
+  
+  /* Comparaison des comptes */
+  .account-comparison {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .account-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.85); /* Ajustement de la transparence pour les deux cartes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    height: 100%; /* Hauteur identique pour toutes les cartes */
+  }
+  
+  /* Accentuation Premium */
+  .premium {
+    border-top: 5px solid #2ecc71; /* Bordure verte pour indiquer Premium */
+    background: rgba(46, 204, 113, 0.15); /* Transparence verte subtile */
+  }
+  
+  .premium:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(46, 204, 113, 0.3); /* Ombre verte subtile */
+  }
+  
+  /* Étiquette recommandé */
+  .recommended-tag {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: #2ecc71; /* Étiquette verte pour le compte Premium */
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transform: rotate(10deg);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Freemium style neutre */
+  .freemium {
+    border-top: 4px solid #3498db;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Titres et contenu */
+  h2 {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin-bottom: 1rem;
+  }
+  
+  .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #16a085;
+  }
+  
+  .features {
+    list-style-type: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    color: #555;
+  }
+  
+  .features li {
+    margin: 0.75rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.5rem 0;
+  }
+  

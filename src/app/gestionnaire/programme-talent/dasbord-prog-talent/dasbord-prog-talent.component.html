@@ -1,23 +1,4 @@
 <body>
-  <div  class="container-xl">
-    <div class="table-responsive">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h2>Dashbord<b> gestionnaire</b> </h2>
-                    </div>
-                    <div class="col-sm-6">
-                        <a  class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i><span></span></a>
-                        <a   class="btn btn-primary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span></span></a>
-                        <a  class="btn btn-success" data-toggle="modal" ><i class="material-icons">&#xE147;</i><span></span></a>  						
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
-  <br>
 
     
     <div class="container-fluid">
@@ -64,7 +45,7 @@
                 </div>
                 <div class="row d-flex align-items-center justify-content-between" *ngIf="showFormation">
                     <div class="col">
-                        <h1 class="text-left">Les Programme de Formation Talent</h1>
+                        <h1 class="text-left">Les Programme de formation Talent</h1>
                     </div>
                 </div> 
                 <div class="row d-flex align-items-center justify-content-between" *ngIf="showGroupe">
@@ -97,14 +78,7 @@
                         <h1 class="text-left">Programme des Exercices et Examens</h1>
                     </div>
                 </div> 
-                <div class="row d-flex align-items-center justify-content-between" *ngIf="showWebinar">
-                    <div class="col">
-                        <h1 class="text-left">Webinaire des talents</h1>
-                    </div>
-                    <div class="col-auto">
-                        <button type="button" class="btn btn-secondary btn-lg">Programmer un Webinaire</button>
-                    </div>
-                </div> 
+              
                                  
               
               <!-- <h1 *ngIf="showGroupe">Répartition des groupes</h1>
@@ -190,7 +164,7 @@
 
               <div class="container my-4" *ngIf="showFormation">
 
-
+                <button routerLink='/admin/ajouter-formation' class='btn btn-secondary'> Ajouter un programme talent</button>
                 <div class="offer-card" *ngFor="let formation of filteredIncritsFormations">
                   <div class="offer-card"  >  
               
@@ -468,7 +442,7 @@
     
         
       </div>
-      <app-footer/>
+      
           
     </body>
 

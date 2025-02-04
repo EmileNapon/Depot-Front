@@ -25,6 +25,9 @@ import { AjoutEncadrantComponent } from '../gestionnaire/programme-talent/encadr
 import { ModifEncadrantComponent } from '../gestionnaire/programme-talent/encadrant/modif-encadrant/modif-encadrant.component';
 import { GestionnaireFormationDetailComponent } from '../gestionnaire/programme-talent/formation/formation-detail/formation-detail.component';
 import { ajoutModuleComponent } from '../gestionnaire/programme-talent/formation/ajout-formation/ajouterModule/ajouteModule.component';
+import { CreationFormateurComponent } from '../gestionnaire/creation-formateur/creation-formateur.component';
+import { EncadrantComponent } from '../gestionnaire/programme-talent/encadrant/encadrant.component';
+import { ListFormateurComponent } from '../gestionnaire/formateur/list-formateur/list-formateur.component';
 
 const routes: Routes = [
   {
@@ -49,6 +52,8 @@ const routes: Routes = [
       // {path:'gestionnaire/gestionnaire-certificat', component:GestionnaireCertificatComponent},
       // {path:'gestionnaire/:certificatGestionnaireId/GestionnaireCertificat', component:GestionnaireCertificatCoursComponent},
       
+      {path: 'dasbord/:dasbordId/dasbord-prog-talent', component: GestionnaireDasbordProgTalentComponent},
+      {path: 'formation', component: GestionnaireFormationComponent},
       { path: 'ajouter-formation', component: AjoutFormationComponent },
       { path: 'update/:id/formation', component: ModificationFormationComponent },
       {path: 'create-seance/:id', component: AjoutSeanceComponent},
@@ -56,11 +61,13 @@ const routes: Routes = [
       {path: 'ajouter-annonce', component: AjoutAnnonceComponent},
       {path: 'modification-annonce/:id', component: ModificationAnnonceComponent},
       {path: 'ajout-encadrant', component: AjoutEncadrantComponent},
+      {path: 'formateur', component: ListFormateurComponent},
       {path: 'modification-encadrant/:id', component: ModifEncadrantComponent},
       {path: 'formation-detail/:id', component: GestionnaireFormationDetailComponent},
       {path:'Module-formation/:id_joutFormation/formation', component : ajoutModuleComponent},
       {path:'create/:id_joutFormation/:seanceId/seance', component : AjoutSeanceComponent},
-  
+      {path:'create-formateur', component:CreationFormateurComponent},
+      
     ]
   }
 ];

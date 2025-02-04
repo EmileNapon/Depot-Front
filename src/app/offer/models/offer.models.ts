@@ -1,7 +1,7 @@
 // offer.model.ts
 
 export class Offer {
-    _id: string;
+    id: string;
     title: string;
     enterprise: string;
     enterpriseLocation: string;
@@ -34,7 +34,7 @@ export class Offer {
     expirationDate?: Date;
 
     constructor(
-        _id: string,
+        id: string,
         title: string,
         enterprise: string,
         enterpriseLocation: string,
@@ -66,7 +66,7 @@ export class Offer {
         additionalInfo?: string,
         updatedDate?: Date,
     ) {
-        this._id = _id;
+        this.id = id;
         this.title = title;
         this.enterprise = enterprise;
         this.enterpriseLocation = enterpriseLocation;
@@ -103,9 +103,9 @@ export class Offer {
 // offer-application.model.ts
 
 export class OfferApplication {
-    _id: string;
-    offerId: string;
-    candidatId: string;
+    id: string;
+    offer: string;
+    candidat: string;
     status: 'Pending' | 'Accepted' | 'Rejected' | 'In Review';
     message: string;
     submittedDocumentsIds: string[];
@@ -113,8 +113,8 @@ export class OfferApplication {
     lastUpdated: Date;
 
     constructor(
-        _id: string,
-        offerId: string,
+        id: string,
+        offer: string,
         candidatId: string,
         status: 'Pending' | 'Accepted' | 'Rejected' | 'In Review',
         message: string,
@@ -122,9 +122,9 @@ export class OfferApplication {
         applicationDate: Date,
         lastUpdated: Date
     ) {
-        this._id = _id;
-        this.offerId = offerId;
-        this.candidatId = candidatId;
+        this.id = id;
+        this.offer = offer;
+        this.candidat = candidatId;
         this.status = status;
         this.message = message;
         this.submittedDocumentsIds = submittedDocumentsIds;

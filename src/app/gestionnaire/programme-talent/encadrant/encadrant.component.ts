@@ -14,12 +14,6 @@ export class EncadrantComponent implements OnInit {
 
   constructor(private utilisateurService: UtilisateurService) { }
   
-  // ngOnInit():void{
-
-  //   this.utilisateurService.getEncadrants().subscribe((data: Encadrant[]) => {
-  //     this.encadrants = data;
-  //   });
-  // }
 
   ngOnInit(): void {
     this.loadEncadrants();

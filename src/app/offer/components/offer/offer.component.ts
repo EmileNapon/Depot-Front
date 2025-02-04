@@ -18,12 +18,12 @@ export class OfferComponent implements OnInit {
     console.log('Offre reçue dans OfferComponent:', this.offer);  
 
     // Vérification de la validité de l'offre  
-    if (!this.offer || !this.offer._id ) {  
+    if (!this.offer || !this.offer.id ) {  
         console.error("L'offre n'a pas été correctement chargée ou l'ID est manquant.");  
         return; // Sortie anticipée si l'offre n'est pas valide  
     }  
 
-    console.log('ID de l\'offre reçu (_id) :', this.offer._id);  
+    console.log('ID de l\'offre reçu (id) :', this.offer.id);  
     console.log('ID de l\'entreprise à récupérer :', this.offer.enterprise);  
     
 }  

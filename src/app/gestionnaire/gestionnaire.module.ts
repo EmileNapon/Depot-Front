@@ -44,6 +44,14 @@ import { MatIconModule } from '@angular/material/icon';
 
 
 
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import this!
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
+
+
 @NgModule({ declarations: [GestionnaireComponent, GestionnaireAcceuilComponent, GestionnaireModulesComponent, GestionnaireCoursComponent, GestionnaireCertificatComponent, GestionnaireCertificatCoursComponent, GestionnaireDomaineComponent, GestionnaireChapitreComponent, GestionnaireModifierContenuCoursComponent,
         GestionnaireDasbordProgTalentComponent,
         // -----------programme talent ---------------------------
@@ -55,5 +63,11 @@ import { MatIconModule } from '@angular/material/icon';
         CreationFormateurComponent,
         FormateurDashboardComponent, HeaderPrincipaleGestionnaireComponent
         // -------------------fin ----------------------------------
-    ], imports: [CommonModule, RouterModule, ReactiveFormsModule, CKEditorModule, FormsModule, MatIconModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+    ], imports: [CommonModule, RouterModule, ReactiveFormsModule, CKEditorModule, FormsModule, MatIconModule,
+    BrowserModule,
+    BrowserAnimationsModule, // Important for Angular Material
+    MatTableModule,
+    MatPaginatorModule, // Add this!
+    MatSortModule,],
+     providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class GestionnaireModule { }

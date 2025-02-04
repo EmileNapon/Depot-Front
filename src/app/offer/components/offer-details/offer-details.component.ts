@@ -24,13 +24,17 @@ export class OfferDetailsComponent implements OnInit {
   ) {}  
 
   ngOnInit(): void {  
-    this.getOfferDetails(); // Appel pour récupérer les détails de l'offre lors de l'initialisation  
+    this.getOfferDetails(); // Appel pour récupérer les détails de l'offre lors de l'initialisation
+    this.s()  
   }  
 
+  s(){
+    console.log('ID de l\'offre récupérénnnnnnnnnnnnbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbnnnn ');  
+  }
   // Méthode pour obtenir les détails de l'offre  
   getOfferDetails(): void {  
     const id = this.route.snapshot.paramMap.get('id');  
-    console.log('ID de l\'offre récupéré :', id);  
+    
     if (id) {  
       this.offerId = id;  
       this.loading = true;  

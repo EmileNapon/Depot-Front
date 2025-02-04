@@ -66,6 +66,7 @@ import { DashboardComponent } from './offer/components/dashboard/dashboard/dashb
 import { CreationFormateurComponent } from './gestionnaire/creation-formateur/creation-formateur.component';
 import { FormateurEvaluationComponent } from './gestionnaire/formateur/formateur-Evaluation/formateur-Evaluation';
 import { FormateurDashboardComponent } from './gestionnaire/formateur/formateur-dashboard/formateur-dashboard.component';
+import { UserProfileTypeComponent } from './payment/components/user-profile-type/user-profile-type.component';
 
 const routes: Routes = [
 
@@ -73,6 +74,7 @@ const routes: Routes = [
 
 
 
+  {path:'subscription', component:UserProfileTypeComponent}, 
 
 
 
@@ -103,7 +105,6 @@ const routes: Routes = [
     {path:'contenuLibre', component:ContenuLibreComponent}, 
 
 ]},
-
 
 
 
@@ -138,22 +139,22 @@ const routes: Routes = [
 
   {path:'gestionnaire',component:GestionUtilisateursComponent,children:[
     {path:'acceuil', component:GestionnaireAcceuilComponent},
-    {path:'create-formateur', component:CreationFormateurComponent},
+    // {path:'create-formateur', component:CreationFormateurComponent},
     // {path:'domaines', component:GestionnaireDomaineComponent},
 
-    {path: 'dasbord/:dasbordId/dasbord-prog-talent', component: GestionnaireDasbordProgTalentComponent},
-    {path: 'formation', component: GestionnaireFormationComponent},
-    { path: 'ajouter-formation', component: AjoutFormationComponent },
-    { path: 'update/:id/formation', component: ModificationFormationComponent },
-    {path: 'create-seance/:id', component: AjoutSeanceComponent},
-    {path: 'modification-seance/:id', component: ModificationSeanceComponent},
-    {path: 'ajouter-annonce', component: AjoutAnnonceComponent},
-    {path: 'modification-annonce/:id', component: ModificationAnnonceComponent},
-    {path: 'ajout-encadrant', component: AjoutEncadrantComponent},
-    {path: 'modification-encadrant/:id', component: ModifEncadrantComponent},
-    {path: 'formation-detail/:id', component: GestionnaireFormationDetailComponent},
-    {path:'Module-formation/:id_joutFormation/formation', component : ajoutModuleComponent},
-    {path:'create/:id_joutFormation/:seanceId/seance', component : AjoutSeanceComponent},
+    // {path: 'dasbord/:dasbordId/dasbord-prog-talent', component: GestionnaireDasbordProgTalentComponent},
+    // {path: 'formation', component: GestionnaireFormationComponent},
+    // { path: 'ajouter-formation', component: AjoutFormationComponent },
+    // { path: 'update/:id/formation', component: ModificationFormationComponent },
+    // {path: 'create-seance/:id', component: AjoutSeanceComponent},
+    // {path: 'modification-seance/:id', component: ModificationSeanceComponent},
+    // {path: 'ajouter-annonce', component: AjoutAnnonceComponent},
+    // {path: 'modification-annonce/:id', component: ModificationAnnonceComponent},
+    // {path: 'ajout-encadrant', component: AjoutEncadrantComponent},
+    // {path: 'modification-encadrant/:id', component: ModifEncadrantComponent},
+    // {path: 'formation-detail/:id', component: GestionnaireFormationDetailComponent},
+    // {path:'Module-formation/:id_joutFormation/formation', component : ajoutModuleComponent},
+    // {path:'create/:id_joutFormation/:seanceId/seance', component : AjoutSeanceComponent},
 
    // ------------------- Formateurs ----------------------------------------
    {path: 'formateur-dashboard', component: FormateurDashboardComponent},
