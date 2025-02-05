@@ -1,4 +1,5 @@
 <app-headerPrincipale></app-headerPrincipale>
+<<<<<<< HEAD
   
 
   
@@ -79,3 +80,68 @@
 
 
 <app-footer></app-footer>
+=======
+
+
+<body style='background-color:rgba(233, 233, 233, 0.1);'>
+  <div class="container-fluid">
+    <div class="header">
+        <h1>Programme des jeunes talents</h1>
+    </div>
+    <div class="content">
+
+<h5>Découvrez ici les informations complètes.</h5>
+    </div>
+</div>
+    <div class="container mt-8" style='padding-left:40px;' >
+        <div>
+        <div class="row ">
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="assets/f.webp" class="card-img-top" alt="Interview & Sélection MASTERCLASS" >
+                    <div class="card-body">
+                      <h5 class="card-title" style='font-size:120%'>{{ formation.titre }}</h5>
+                      <p class="card-text">Duree: {{formation.duree}}</p><br/><p>Niveau: {{ formation.niveau}} </p>
+                      <p class="card-text">Date: {{formation.date}}</p>
+                      <p class="card-text" style='color:red'>Prix: {{formation.prix}} cfa</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-8" style='padding-left:25px'>
+                <div >
+                  <h2>Description</h2>
+                 <p>{{ formation.description}}</p>
+                 <h2>Resume</h2>
+                 <p>{{ formation.resume}}</p>
+                 <h2>Modules</h2>
+                 <p *ngFor='let module of modulefiltre'>{{ module.nom_module}}</p>
+                 <h2>Lieu</h2>
+                 <p>{{ formation.localisation}}</p>
+                 <h2>Formateur</h2>
+                 <p>en cours</p>
+                    <div class="voir-plus">
+                   
+                        <a class="btn btn-outline-primary" (click)="onSelectFormationDetail(formationId)">S'inscrire &#9662;</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    <br/><br/>
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+
+
+
+<app-footer></app-footer>
+
+
+
+>>>>>>> 4579f492 (first commit)

@@ -5,6 +5,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/gestion-utilisateurs/connexion/service-connexion/service-connexion.service';
 import { FormationService } from '../../../services/formation.service';
 import { Formation } from '../../../models/tousModel';
+<<<<<<< HEAD
+=======
+
+declare var FlutterwaveCheckout: any;
+>>>>>>> 4579f492 (first commit)
 @Component({
     selector: 'app-inscription-pragra-talent',
     templateUrl: './inscription-pragra-talent.component.html',
@@ -42,6 +47,7 @@ export class InscriptionPragraTalentComponent implements OnInit {
 
   }
 
+<<<<<<< HEAD
   onSubmit(): void {
       const userInscrit= this.registrationForm.value;
       console.log(userInscrit)
@@ -60,6 +66,31 @@ export class InscriptionPragraTalentComponent implements OnInit {
     
   }
 
+=======
+
+
+  message: string = '';    // Variable pour afficher le message
+  isRegistered: boolean = false
+
+  
+  onSubmit(): void {
+    const userInscrit = this.registrationForm.value;
+    
+    this.userService.registerFormation(userInscrit).subscribe({
+      next: (response) => {
+        this.message = response.message;
+        this.isRegistered = true; // Désactiver le bouton après inscription
+        console.log('Inscription réussie:', response);
+        this.router.navigate(['/dasbord-prog-talent']);
+      },
+      error: (error) => {
+        this.message = error.error.message; // Afficher le message d'erreur du backend
+        console.error('Erreur d\'inscription:', error);
+      }
+    });
+  }
+  
+>>>>>>> 4579f492 (first commit)
 
 
 
@@ -78,4 +109,53 @@ export class InscriptionPragraTalentComponent implements OnInit {
     );
   }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+ // Méthode appelée lors du clic  
+ onFreemiumClick(event: Event) {  
+  event.preventDefault(); // Empêche la redirection  
+this.makePayment()
+}
+
+
+makePayment() {
+  FlutterwaveCheckout({
+    public_key: "FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X",
+    tx_ref: "txref-DI0NzMx13",
+    amount: 2500,
+    currency: "XOF",
+    payment_options: "card, banktransfer, mobileMoney",
+    meta: {
+      source: "docs-inline-test",
+      consumer_mac: "92a3-912ba-1192a",
+    },
+    customer: {
+      email:" s@gmail.com",
+      phone_number:"3333333333333",
+      name:"coool",
+    },
+    customizations: {
+      title: "Flutterwave Developers",
+      description: "Test Payment",
+      logo: "https://checkout.flutterwave.com/assets/img/rave-logo.png",
+    },
+    callback: (data: any) => {
+      console.log("payment callback:", data);
+    },
+    onclose: () => {
+      console.log("Payment cancelled!");
+    }
+  });
+}
+
+
+
+>>>>>>> 4579f492 (first commit)
 }

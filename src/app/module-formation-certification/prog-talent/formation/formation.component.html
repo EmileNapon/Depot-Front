@@ -1,4 +1,5 @@
 <app-headerPrincipale></app-headerPrincipale>
+<<<<<<< HEAD
   <div class="offer-card" *ngFor="let formation of formations">
     <div class="offer-card"  >  
 
@@ -67,3 +68,82 @@
     </div>
 </div>
 <app-footer></app-footer>
+=======
+
+
+
+
+
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <h1>Programme des jeunes talents</h1>
+        </div>
+        <div class="content">
+           <i> Un programme adapté à vos besoins</i>
+      <h2>Formations</h2>
+<h5>Découvrez ici les informations complètes et les modalités d'inscription.</h5>
+        </div>
+    </div>
+    
+    <div class="container mt-8" style='padding-left:40px;'  *ngFor="let formation of formations">
+        <div>
+        <div class="row ">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <img src="assets/f.webp" class="card-img-top" alt="Interview & Sélection MASTERCLASS" >
+                    <div class="card-body">
+                        <h5 class="card-title" style='font-size:120%'>{{ formation.titre }}</h5>
+                        <span class="card-text">Duree: {{formation.duree}}</span><br/><span>Niveau: {{ formation.niveau}} </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content">
+                    La gestion des individus est au cœur des organisations. C'est pourquoi on parle de gestion des talents et non plus de ressources. Cette gestion des talents en entreprise est un travail quotidien pour les gestionnaires, qu'ils soient RH ou pas. Elle favorise une relation plus ouverte, transparente et inclusive.<p class="secondary"> Les attentes des individus évoluent constamment : nouvelles générations, personnalités diverses et gestion interculturelle sont des défis clés.</p>
+                    <div class="voir-plus">
+                        <a class="btn btn-outline-primary" (click)="onSelectFormationDetail(formation.id)">Voir plus &#9662;</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    <br/><br/>
+
+    <div class="container mt-8" style='padding-left:40px;'  *ngFor="let formation of formations">
+        <div>
+        <div class="row ">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <img src="assets/f.webp" class="card-img-top" alt="Interview & Sélection MASTERCLASS" >
+                    <div class="card-body">
+                        <h5 class="card-title" style='font-size:120%'>{{ formation.titre }}</h5>
+                        <span class="card-text">Duree: {{formation.duree}}</span><br/><span>Niveau: {{ formation.niveau}} </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content">
+                    La gestion des individus est au cœur des organisations. C'est pourquoi on parle de gestion des talents et non plus de ressources. Cette gestion des talents en entreprise est un travail quotidien pour les gestionnaires, qu'ils soient RH ou pas. Elle favorise une relation plus ouverte, transparente et inclusive.<p class="secondary"> Les attentes des individus évoluent constamment : nouvelles générations, personnalités diverses et gestion interculturelle sont des défis clés.</p>
+                    <div class="voir-plus">
+                        <a class="btn btn-outline-primary" (click)="onSelectFormationDetail(formation.id)">Voir plus &#9662;</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+
+
+
+<app-footer></app-footer>
+
+>>>>>>> 4579f492 (first commit)

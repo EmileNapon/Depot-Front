@@ -76,7 +76,11 @@ export class ModificationSeanceComponent implements OnInit{
     if (this.seanceForm.valid) {
       const updatedModule: Seance = { id: this.seanceId, ...this.seanceForm.value };
       this.seanceService.updateSeance(updatedModule).subscribe(() => {
+<<<<<<< HEAD
         this.router.navigate([`/gestionnaire/formation`]); // Redirection après modification du module
+=======
+        this.router.navigate([`/admin/formation`]); // Redirection après modification du module
+>>>>>>> 4579f492 (first commit)
       });
     }
   }
@@ -95,6 +99,10 @@ export class ModificationSeanceComponent implements OnInit{
 
 
   onSelectProgrammeTalent(DasbordFormationId: number): void {
+<<<<<<< HEAD
     this.router.navigate([`/gestionnaire/dasbord/${DasbordFormationId}/dasbord-prog-talent`]); 
+=======
+    this.router.navigate([`/admin/dasbord/${DasbordFormationId}/dasbord-prog-talent`]); 
+>>>>>>> 4579f492 (first commit)
   }
 }

@@ -106,4 +106,13 @@ export class FormationComponent implements OnInit {
     this.router.navigate([`/formation/${FormationId}/detail`]); 
   }
     
+<<<<<<< HEAD
+=======
+
+
+
+
+
+  
+>>>>>>> 4579f492 (first commit)
 }
