@@ -5,11 +5,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/gestion-utilisateurs/connexion/service-connexion/service-connexion.service';
 import { FormationService } from '../../../services/formation.service';
 import { Formation } from '../../../models/tousModel';
-<<<<<<< HEAD
-=======
+
 
 declare var FlutterwaveCheckout: any;
->>>>>>> 4579f492 (first commit)
+
 @Component({
     selector: 'app-inscription-pragra-talent',
     templateUrl: './inscription-pragra-talent.component.html',
@@ -47,26 +46,6 @@ export class InscriptionPragraTalentComponent implements OnInit {
 
   }
 
-<<<<<<< HEAD
-  onSubmit(): void {
-      const userInscrit= this.registrationForm.value;
-      console.log(userInscrit)
-      this.userService.registerFormation(userInscrit).subscribe({
-        next: (response) => {
-          console.log('User registered successfully:', response);
-          this.router.navigate(['/dasbord-prog-talent']);
-        },
-        error: (error) => {
-          console.error('Error registering user:', error);
-        }
-      });
-    
-
-   
-    
-  }
-
-=======
 
 
   message: string = '';    // Variable pour afficher le message
@@ -90,9 +69,6 @@ export class InscriptionPragraTalentComponent implements OnInit {
     });
   }
   
->>>>>>> 4579f492 (first commit)
-
-
 
 
 
@@ -108,10 +84,6 @@ export class InscriptionPragraTalentComponent implements OnInit {
       }
     );
   }
-
-<<<<<<< HEAD
-=======
-
 
 
 
@@ -157,5 +129,5 @@ makePayment() {
 
 
 
->>>>>>> 4579f492 (first commit)
+
 }

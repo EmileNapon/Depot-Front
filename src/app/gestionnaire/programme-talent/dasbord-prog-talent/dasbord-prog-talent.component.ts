@@ -344,11 +344,7 @@ loadFormateurs(): void {
 deleteFormation(id: number): void {
   if (confirm('Êtes-vous sûr de vouloir supprimer cette formation ?')) {
     this.formationService.deleteFormation(id).subscribe(() => {
-<<<<<<< HEAD
-      this.router.navigate([`/gestionnaire/formation`]);
-=======
       this.router.navigate([`/admin/formation`]);
->>>>>>> 4579f492 (first commit)
       console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
     });
   }
@@ -517,29 +513,16 @@ isStatut():void{
   }
   
   onSelectModule( formationId :string,seanceId: string): void {
-<<<<<<< HEAD
-    this.router.navigate([`/gestionnaire/create/${formationId}/${seanceId}/seance`]);
-=======
     this.router.navigate([`/admin/create/${formationId}/${seanceId}/seance`]);
->>>>>>> 4579f492 (first commit)
   }
 
   
   onSelectFormation(id: string): void {
-<<<<<<< HEAD
-    this.router.navigate([`/gestionnaire/update/${id}/formation`]); 
-=======
     this.router.navigate([`/admin/update/${id}/formation`]); 
->>>>>>> 4579f492 (first commit)
   }
-    
 
   onSelectFormationModule(id: string): void {
-<<<<<<< HEAD
-    this.router.navigate([`/gestionnaire/Module-formation/${id}/formation`]); 
-=======
     this.router.navigate([`/admin/Module-formation/${id}/formation`]); 
->>>>>>> 4579f492 (first commit)
   }
 
 

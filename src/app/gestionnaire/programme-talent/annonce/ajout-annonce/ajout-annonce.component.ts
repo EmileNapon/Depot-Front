@@ -38,12 +38,7 @@ export class AjoutAnnonceComponent {
     if (this.annonceForm.valid) {
       const newAnnonce: Annonce =this.annonceForm.value;
       this.annonceService.addAnnonce(newAnnonce).subscribe(() => {
-        
-<<<<<<< HEAD
-          this.router.navigate(['/gestionnaire/dasbord-prog-talent']); // Redirection après ajout
-=======
           this.router.navigate(['/admin/dasbord-prog-talent']); // Redirection après ajout
->>>>>>> 4579f492 (first commit)
         },
         (error) => {
           console.error('Erreur lors de l\'ajout de annonce', error); // Gérer les erreurs

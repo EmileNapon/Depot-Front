@@ -130,11 +130,7 @@ export class ajoutModuleComponent implements OnInit{
    valider():void{
     this.moduleFormationService.addModuleFormation(this.selectedModules).subscribe(
       response => {
-<<<<<<< HEAD
-        this.router.navigate([`/gestionnaire/formation`]);
-=======
         this.router.navigate([`/admin/formation`]);
->>>>>>> 4579f492 (first commit)
           console.log('Nouvelle matière ajoutée avec succès', response)
       
         }

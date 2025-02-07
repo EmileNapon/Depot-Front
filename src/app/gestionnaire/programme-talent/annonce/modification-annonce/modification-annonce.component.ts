@@ -56,11 +56,7 @@ export class ModificationAnnonceComponent implements OnInit{
     if (this.annonceForm.valid) {
       const updatedAnnonce: Annonce = { id: this.annonceId, ...this.annonceForm.value };
       this.annonceService.updateAnnonce(updatedAnnonce).subscribe(() => {
-<<<<<<< HEAD
-        this.router.navigate(['/gestionnaire/dasbord-prog-talent']); // Redirection après modification du module
-=======
         this.router.navigate(['/admin/dasbord-prog-talent']); // Redirection après modification du module
->>>>>>> 4579f492 (first commit)
       });
     }
   }

@@ -10,7 +10,8 @@ import { CustomUser, Group } from '../models/tousModel';
 export class UtilisateurService {
 
   private apiUrl = 'http://127.0.0.1:8000/fidalli/formation/list_users/';  // URL vers votre fichier JSON ou API
-  private groupesUrl = 'http://localhost:3000/Groups';  // URL vers l'API pour les groupes
+  private addUrl = 'http://127.0.0.1:8000/fidalli/register/';  // URL vers l'API pour les groupes
+  
 
   constructor(private http: HttpClient) { }
 
@@ -40,8 +41,8 @@ export class UtilisateurService {
   }
 
   // Création d'un utilisateur (par exemple un formateur)
-  createUser(newUser: CustomUser): Observable<CustomUser> {
-    return this.http.post<CustomUser>(this.apiUrl, newUser);
+  createUser(newUser: any): Observable<any> {
+    return this.http.post<CustomUser>(this.addUrl, newUser);
   }
 
   // Modification d'un utilisateur
@@ -56,13 +57,13 @@ export class UtilisateurService {
     return this.http.delete<void>(url);
   }
 
-  // Méthode pour sauvegarder les groupes
-  saveGroupes(groupes: Group[]): Observable<Group> {
-    return this.http.post<Group>(this.groupesUrl, groupes);
-  }
+  // // Méthode pour sauvegarder les groupes
+  // saveGroupes(groupes: Group[]): Observable<Group> {
+  //   return this.http.post<Group>(this.groupesUrl, groupes);
+  // }
 
-  // Méthode pour récupérer les groupes
-  getGroupes(): Observable<Group[]> {
-    return this.http.get<Group[]>(this.groupesUrl);
-  }
+  // // Méthode pour récupérer les groupes
+  // getGroupes(): Observable<Group[]> {
+  //   return this.http.get<Group[]>(this.groupesUrl);
+  // }
 }

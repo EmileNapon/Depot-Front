@@ -1,0 +1,114 @@
+.no-data-message {
+	height: 50vh;
+	font-size: 1.2rem;
+	color: #6c757d;
+  }
+  
+  .fixed-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1050;
+  }
+  
+  .no-data-img {
+	max-width: 150px;
+	height: auto;
+	opacity: 0.7;
+  }
+  
+
+	  .header-bar {
+		background-color: #9b59b6; /* Couleur violette */
+		color: white;
+		text-align: center;
+		padding: 20px 0;
+	  }
+	  .breadcrumb {
+		background-color: transparent;
+		margin-bottom: 0;
+		font-size: 0.9rem;
+	  }
+
+
+
+
+
+
+
+
+
+
+
+	  .search-bar {
+		background-color: #f5f5f5; /* Couleur de fond du champ */
+		border-radius: 15px; /* Bordure arrondie */
+		display: flex;
+		align-items: center;
+		padding: 2px 5px; /* Espacement interne */
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+		width: 250px; /* Fixe une largeur spécifique */
+		padding-left: 10px; /* Espace interne à gauche */
+	  }
+  
+	  .search-bar input {
+		border: none; /* Supprimer la bordure */
+		outline: none; /* Supprimer le focus par défaut */
+		background: transparent; /* Fond transparent */
+		flex: 1; /* Occupe tout l'espace disponible */
+		font-size: 16px; /* Taille de police */
+		width: 20px; /* Fixe une largeur spécifique */
+		padding-left: 10px; /* Espace interne à gauche */
+	  }
+  
+	  .search-bar .icon {
+		font-size: 1.2rem;
+		color: gray;
+	  }
+  
+
+
+
+
+	  .bg-purple {
+		background-color: #AF7AC5; /* Couleur violet similaire */
+	  }
+	  
+	  
+	  .btn-primary {
+		background-color: #AF7AC5;
+		border-color: #AF7AC5;
+	  }
+	  
+	  .btn-primary:hover {
+		background-color: #9C6FB0; /* Couleur plus foncée au survol */
+		border-color: #9C6FB0;
+	  }
+	  
+
+
+	.floating-button {
+		position: fixed; /* Pour le positionner par rapport à la fenêtre */
+		bottom: 20px; /* Ajustez la position verticale */
+		right: 20px; /* Ajustez la position horizontale */
+		background-color: #9C6FB0; /* Couleur de fond bleue */
+		color: white; /* Couleur du texte blanche */
+		border: none;
+		border-radius: 50%; /* Pour le rendre rond */
+		width: 80px; /* Ajustez la taille */
+		height: 80px; /* Ajustez la taille */
+		font-size: 24px; /* Ajustez la taille du texte */
+		line-height: 60px; /* Pour centrer verticalement le texte */
+		text-align: center;
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre légère */
+		cursor: pointer;
+	}
+	  
+	  .floating-button:hover {
+		background-color: #0056b3; /* Couleur de fond plus foncée au survol */
+	  }
+
+

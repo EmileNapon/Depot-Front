@@ -61,7 +61,7 @@ const routes: Routes = [
       {path: 'ajouter-annonce', component: AjoutAnnonceComponent},
       {path: 'modification-annonce/:id', component: ModificationAnnonceComponent},
       {path: 'ajout-encadrant', component: AjoutEncadrantComponent},
-      {path: 'formateur', component: ListFormateurComponent},
+      {path: 'formateur', component: EncadrantComponent},
       {path: 'modification-encadrant/:id', component: ModifEncadrantComponent},
       {path: 'formation-detail/:id', component: GestionnaireFormationDetailComponent},
       {path:'Module-formation/:id_joutFormation/formation', component : ajoutModuleComponent},

@@ -1,74 +1,5 @@
 <app-headerPrincipale></app-headerPrincipale>
-<<<<<<< HEAD
-  <div class="offer-card" *ngFor="let formation of formations">
-    <div class="offer-card"  >  
 
-        <div ></div>
-        <div class="offer-header">  
-            <h2>{{ formation.titre }}</h2>  
-            <p class="company-name">{{ formation.localisation }}</p> <!-- Affichage du nom de l'entreprise -->  
-        </div>  
-        <!-- (Reste du code HTML...) -->  
-    </div>
-
-    <div class="offer-info">
-        <div class="info-section" >
-            <div class="info-item">
-                <i class="icon">📝</i>
-                <p><strong>Type :</strong> {{ formation.type }}</p>
-            </div>
-            <div class="info-item" *ngFor="let module of filterModulesForFormation(formation.id)">
-                <i class="icon">📄</i>
-                <p><strong>Module :</strong> {{ module.nom_module }}</p>
-            </div>
-
-            <div class="info-item">
-                <i class="icon">📄</i>
-                <p><strong>Nombre de places:</strong> {{ formation.nombre }}</p>
-            </div>
-            <div class="info-item" >
-                <i class="icon">💵</i>
-                <p><strong>Prix :</strong> {{ formation.prix }} cfa</p>
-            </div>
-            <div class="info-item">
-                <i class="icon">⏳</i>
-                <p><strong>Durée :</strong> {{formation.duree}} </p>
-            </div>
-            <div class="info-item">
-                <i class="icon">🏠</i>
-                <p><strong>Niveau requis :</strong> {{ formation.niveau}}</p>
-            </div>
-            <div class="info-item">
-                <i class="icon">📅</i>
-                <p><strong>Date de publication :</strong> {{ formation.date | date: 'short' }}</p>
-            </div>
-
-            <div class="info-item">
-                <i class="icon">🏢</i>
-                <p><strong>Entreprise :</strong> {{ formation.localisation }}</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="details-container">
-      <div class="row" *ngIf="shutDetail">
-        <div class="text-end" >
-            <button class="btn btn-outline-secondary" style="color: red;" (click)="onSelectFormationDetail(formation.id)" >Voir les details</button>  
-        </div>
-    </div>
-
-    <div class="text-end d-flex " *ngIf="showDetail">
-        <div class="mx-2">
-            <button class="btn btn-outline-danger" (click)="onShowDetail()">Réduire</button>
-        </div>
-        <div class="" >
-            <button class="btn btn-outline-secondary" style="color: red;" (click)="onShowDetail()" routerLink="/formation/etudiantPage">S'inscrire</button>  
-        </div>
-    </div>
-    </div>
-</div>
-<app-footer></app-footer>
-=======
 
 
 
@@ -85,32 +16,6 @@
 <h5>Découvrez ici les informations complètes et les modalités d'inscription.</h5>
         </div>
     </div>
-    
-    <div class="container mt-8" style='padding-left:40px;'  *ngFor="let formation of formations">
-        <div>
-        <div class="row ">
-            <div class="col-md-6">
-                <div class="card shadow-sm">
-                    <img src="assets/f.webp" class="card-img-top" alt="Interview & Sélection MASTERCLASS" >
-                    <div class="card-body">
-                        <h5 class="card-title" style='font-size:120%'>{{ formation.titre }}</h5>
-                        <span class="card-text">Duree: {{formation.duree}}</span><br/><span>Niveau: {{ formation.niveau}} </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="content">
-                    La gestion des individus est au cœur des organisations. C'est pourquoi on parle de gestion des talents et non plus de ressources. Cette gestion des talents en entreprise est un travail quotidien pour les gestionnaires, qu'ils soient RH ou pas. Elle favorise une relation plus ouverte, transparente et inclusive.<p class="secondary"> Les attentes des individus évoluent constamment : nouvelles générations, personnalités diverses et gestion interculturelle sont des défis clés.</p>
-                    <div class="voir-plus">
-                        <a class="btn btn-outline-primary" (click)="onSelectFormationDetail(formation.id)">Voir plus &#9662;</a>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    </div>
-    <br/><br/>
 
     <div class="container mt-8" style='padding-left:40px;'  *ngFor="let formation of formations">
         <div>
@@ -146,4 +51,4 @@
 
 <app-footer></app-footer>
 
->>>>>>> 4579f492 (first commit)
+

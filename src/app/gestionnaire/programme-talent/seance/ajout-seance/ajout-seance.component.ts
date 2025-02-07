@@ -69,11 +69,8 @@ x():void{
     if (this.seanceForm.valid) {
       const newSeance: any = this.seanceForm.value;
       this.seanceService.addSeance(newSeance).subscribe(() => {
-<<<<<<< HEAD
-        this.router.navigate([`/gestionnaire/dasbord/${this.formationId}/dasbord-prog-talent`]); 
-=======
         this.router.navigate([`/admin/dasbord/${this.formationId}/dasbord-prog-talent`]); 
->>>>>>> 4579f492 (first commit)
+
        
       });
     }

@@ -5,11 +5,9 @@ import { FormationService } from '../../services/formation.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModuleFormationService } from '../../services/moduleFormation.service';
 import { ModuleService } from '../../services/module.service';
-<<<<<<< HEAD
 
-=======
 declare var FlutterwaveCheckout: any;
->>>>>>> 4579f492 (first commit)
+
 @Component({
     selector: 'app-formation-detail',
     templateUrl: './formation-detail.component.html',
@@ -156,17 +154,6 @@ filterFormation(){
     this.router.navigate([`/formation/${FormationId}/inscrit`]); 
   }
 
-
-
-<<<<<<< HEAD
-
-
-
-
-
-=======
- 
->>>>>>> 4579f492 (first commit)
 
 
 

@@ -70,11 +70,9 @@ export class ModificationFormationComponent implements OnInit {
     if (this.formationForm.valid) {
       const updatedFormation: Formation = { ...this.formationForm.value };
       this.formationService.updateFormation(this.formationId, updatedFormation).subscribe(() => {
-<<<<<<< HEAD
-        this.router.navigate([`/gestionnaire/formation`]);
-=======
+
         this.router.navigate([`/admin/formation`]);
->>>>>>> 4579f492 (first commit)
+
       });
     }
   }

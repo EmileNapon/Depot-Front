@@ -11,35 +11,41 @@ import { UtilisateurService } from '../../services/utilisateur.service';
 })
 export class AjoutEncadrantComponent implements OnInit{
 
-  encadrantForm: FormGroup;
+  registrationForm!: FormGroup;
+  __addDomaine__:boolean=false
 
   constructor(
     private fb: FormBuilder,
     private utilisateurService: UtilisateurService,
     private router: Router
   ) {
-    this.encadrantForm = this.fb.group({
-      nom: ['', Validators.required],
-      prenom: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      telephone: ['', Validators.required],
-      role: ['encadrant', Validators.required],
-      specialite: ['', Validators.required],
-      annee_experience: ['', [Validators.required, Validators.min(0)]],
-      niveau_etudes: ['', Validators.required],
-      statut: ['', Validators.required]
-    });
+    
   }
 
   ngOnInit(): void {
-    // this.encadrantForm.patchValue({role: "encadrant"});
+    this.registrationForm = this.fb.group({
+      nom: ['', Validators.required],
+      prenom: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      phone_number: ['', Validators.required],
+      role:'formateur'
+    },);
   }
 
-  createEncadrant(): void {
-    if (this.encadrantForm.valid) {
-      this.utilisateurService.createUser(this.encadrantForm.value).subscribe({
+  onSubmit(): void {
+    const User={nom:this.registrationForm.value.nom,
+                prenom:this.registrationForm.value.prenom, 
+                password: this.registrationForm.value.password,
+                password2: this.registrationForm.value.password,
+                email: this.registrationForm.value.email,
+                phone_number: this.registrationForm.value.phone_number,
+                role : this.registrationForm.value.role}
+    console.log(User)
+    if (this.registrationForm.valid) {
+      this.utilisateurService.createUser(User).subscribe({
         next: () => {
-          this.router.navigate(['/gestionnaire/dasbord-prog-talent']);
+          this.router.navigate(['/admin/formateur']);
         },
         error: (err) => {
           console.error('Erreur lors de la création de l\'encadrant:', err);
@@ -48,5 +54,7 @@ export class AjoutEncadrantComponent implements OnInit{
       });
     }
   }
+
+
 
 }

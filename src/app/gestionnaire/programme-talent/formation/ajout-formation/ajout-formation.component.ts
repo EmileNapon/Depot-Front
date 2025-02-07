@@ -97,14 +97,9 @@ export class AjoutFormationComponent implements OnInit {
 statut:boolean=true
   
   ajouterNouvelleFormation(formationNom: any): void {
-      this.formationService.addFormation(formationNom).subscribe(response => {
-        
+      this.formationService.addFormation(formationNom).subscribe(response => {   
         console.log('Nouvelle matière ajoutée avec succès', response.id)
-<<<<<<< HEAD
-        this.router.navigate([`/gestionnaire/Module-formation/${response.id}/formation`])
-=======
         this.router.navigate([`/admin/Module-formation/${response.id}/formation`])
->>>>>>> 4579f492 (first commit)
       });
     } 
   

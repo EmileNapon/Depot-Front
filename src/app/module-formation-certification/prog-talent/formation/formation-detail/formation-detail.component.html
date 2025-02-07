@@ -1,86 +1,4 @@
 <app-headerPrincipale></app-headerPrincipale>
-<<<<<<< HEAD
-  
-
-  
-
-
-  <div class="offer-details" >   
-    <div >  
-        <div class="offer-header" >  
-            <h1>{{ formation.titre }}</h1>  
-        </div>  
-        <div class="info-item">
-          <i class="icon">📄</i>
-          <p><strong>Type :</strong> {{ formation.type }}</p>
-        </div>
-        <div class="info-section">  
-            <div class="summary-card">    
-                <div class="info-item" *ngFor="let module of modulefiltre">
-                  <i class="icon">📄</i>
-                  <p><strong>Module :</strong> {{ module.nom_module }}</p>
-              </div> 
-
-            
-              <div class="info-item">
-                <i class="icon">📄</i>
-                <p><strong>Nombre de places:</strong> {{ formation.nombre }}</p>
-              </div>
-            <div class="info-item" >
-                <i class="icon">💵</i>
-                <p><strong>Prix :</strong> {{ formation.prix }} cfa</p>
-            </div>
-            <div class="info-item">
-                <i class="icon">⏳</i>
-                <p><strong>Durée :</strong> {{formation.duree}} </p>
-            </div>
-            <div class="info-item">
-                <i class="icon">🏠</i>
-                <p><strong>Niveau requis :</strong> {{ formation.niveau}}</p>
-            </div>
-            <div class="info-item">
-                <i class="icon">📅</i>
-                <p><strong>Date :</strong> {{ formation.date | date: 'short' }}</p>
-            </div>
-
-            </div>  
-            
-            <!-- Informations sur l'entreprise -->  
-            <div class="company-card"> <!-- Vérification de l'existence de enterprise -->
-                <h3>Information de l'Entreprise</h3>  
-                <div class="info-item">  
-                    <i class="icon">📍</i>  
-                    <p><strong>Localisation :</strong> {{ formation.localisation }}</p>  
-                </div>  
-            </div>
-        </div>  
-  
-        <div class="details-cards">  
-            <div class="description-card">  
-                <h4>Resume du programme de formation</h4>  
-                <p>{{ formation.resume }}</p>  
-            </div>  
-
-            <div class="description-card">  
-              <h4>Description du programme de formation</h4>  
-              <p>{{ formation.description }}</p>  
-          </div> 
-          <div class="row">
-            <div class="text-end">
-              <button class="btn btn-danger mx-2" (click)="onSelectFormationDetail(formationId)">s'inscrire</button>
-            </div>
-          </div> 
-        </div>  
-      </div>  
-
-    
-  
-    
-</div>
-
-
-<app-footer></app-footer>
-=======
 
 
 <body style='background-color:rgba(233, 233, 233, 0.1);'>
@@ -144,4 +62,4 @@
 
 
 
->>>>>>> 4579f492 (first commit)
+
