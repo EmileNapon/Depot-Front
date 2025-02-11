@@ -2,10 +2,16 @@
 <body>
 
 
+    <!-- Message "Aucune donnée disponible" avec image -->
+    <div *ngIf="__filteredChapitresGestionnaire__.length === 0 && !loading" class="no-data-message d-flex flex-column align-items-center justify-content-center">
+      <img src="assets/no-data.png" alt="Aucune donnée disponible" class="no-data-img mb-3">
+      <mat-icon class="no-data-icon text-muted" style="font-size: 48px;">info</mat-icon>
+      <span class="mt-2 text-muted fs-5">Aucun contenu disponible</span>
+    </div>
+  
 
 
-
-              <div class="container main-content">
+              <div *ngIf='__filteredChapitresGestionnaire__.length>0' class="container main-content">
                   <br/> <br/> 
                 <span style='font-size:110%;' *ngFor='let chapitre of __filteredChapitresGestionnaire__; let i=index'>
                   <h2 >
@@ -32,9 +38,6 @@
                       </li>
                     </ul>
                   </section>
-           
-
-
                     <br/><br/>                
                 </span>
               </div>

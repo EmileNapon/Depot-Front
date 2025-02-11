@@ -124,7 +124,7 @@ export class GestionnaireModulesComponent implements OnInit{
 
   onSubmit(){
     const nom_module= this.ModuleForm.value.nom_module;
-    console.log(nom_module)
+    console.log("////////////////////////////////",nom_module)
     this.ajouterNouvelleModule(nom_module)
     this.loadModulegestionnaire()
     this.OnAdd();

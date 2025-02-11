@@ -28,6 +28,8 @@ import { ajoutModuleComponent } from '../gestionnaire/programme-talent/formation
 import { CreationFormateurComponent } from '../gestionnaire/creation-formateur/creation-formateur.component';
 import { EncadrantComponent } from '../gestionnaire/programme-talent/encadrant/encadrant.component';
 import { ListFormateurComponent } from '../gestionnaire/formateur/list-formateur/list-formateur.component';
+import { WebinarManagementComponent } from '../module-formation-certification/webinar/components/webinar-management/webinar-management.component';
+
 
 const routes: Routes = [
   {
@@ -67,6 +69,11 @@ const routes: Routes = [
       {path:'Module-formation/:id_joutFormation/formation', component : ajoutModuleComponent},
       {path:'create/:id_joutFormation/:seanceId/seance', component : AjoutSeanceComponent},
       {path:'create-formateur', component:CreationFormateurComponent},
+
+
+
+
+      {path:'webinaire', component:WebinarManagementComponent},
       
     ]
   }

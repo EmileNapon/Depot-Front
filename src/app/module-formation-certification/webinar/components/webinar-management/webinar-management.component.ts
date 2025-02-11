@@ -29,26 +29,46 @@ export class WebinarManagementComponent implements OnInit {
   errorMessage = '';
   isLoggedIn: any;
 
+
   constructor(
     private fb: FormBuilder,
     private webinarService: WebinarService,
     private router: Router,
   ) {
     this.webinarForm = this.fb.group({
-      title: ['', [Validators.required, Validators.maxLength(100)]],
+      title: ['', [Validators.required, Validators.maxLength(200)]],
       description: ['', [Validators.maxLength(500)]],
-      speaker: ['', [Validators.required]],
-      speakerPicture_url: [''],
       startDateTime: ['', [Validators.required]],
-      endDateTime: ['', [Validators.required]],
-      registrationDeadline: [''],
-      webinarUrl: [''],
+      duree: ['', [Validators.required]],
+      webinarUrl: "https://www.h5motivation.com/boost2025",
       maxParticipants: [100, [Validators.required, Validators.min(1)]],
       isPaid: [false],
       price: [0, [Validators.min(0)]],
       type: ['FuturAllies', [Validators.required]],
     });
   }
+
+  getFormJson(): string {
+    return JSON.stringify(this.webinarForm.value, null, 2);  // Indentation de 2 espaces pour rendre plus lisible
+  }
+
+      // conferencier: ['', [Validators.required]],
+      // conferencierPicture_url: [''],
+      // moderateur: ['', [Validators.required]],
+      // moderateurPicture_url: [''],
+       // registrationDeadline: [''],
+
+  onPaidChange(): void {
+    const isPaid = this.webinarForm.get('isPaid')?.value;
+    if (!isPaid) {
+      this.webinarForm.get('price')?.reset();
+      this.webinarForm.get('price')?.disable();
+    } else {
+      this.webinarForm.get('price')?.enable();
+    }
+  }
+
+
 
   ngOnInit() {
     this.loadWebinars(); // Charger la liste des webinaires au démarrage
@@ -103,61 +123,61 @@ export class WebinarManagementComponent implements OnInit {
     });
   }
 
+  // onSubmit() {
+  //   if (this.webinarForm.valid) {
+  //     this.isLoading = true;
+  //       console.log("lilililililililili",this.webinarForm.value)
+  //     if (this.webinarToUpdateId) {
+  //       console.log('Editing webinar with ID:', this.webinarToUpdateId);
+  //       this.webinarService.editWebinar(this.webinarToUpdateId,this.webinarForm.value).subscribe({
+  //         next: (response) => {
+  //           console.log('Webinar updated successfully:', response);
+  //           this.isLoading = false;
+  //           this.showDashboard(); // Affiche le tableau de bord après la mise à jour réussie
+  //         },
+  //         error: (error) => {
+  //           console.error('Error updating webinar:', error);
+  //           this.errorMessage = 'Erreur lors de la mise à jour du webinaire.';
+  //           this.isLoading = false;
+  //         }
+  //       });
+  //     } else {
+  //       console.log('Creating new webinar');
+  //       this.webinarService.createWebinar(this.webinarForm.value).subscribe({
+  //         next: (response) => {
+  //           console.log('Webinar created successfully:', response);
+  //           this.isLoading = false;
+  //           this.showDashboard(); // Affiche le tableau de bord après la création réussie
+  //         },
+  //         error: (error) => {
+  //           console.error('Error creating webinar:', error);
+  //           this.errorMessage = 'Erreur lors de la création du webinaire.';
+  //           this.isLoading = false;
+  //         }
+  //       });
+  //     }
+  //   } else {
+  //     console.log('Form is invalid');
+  //   }
+  // }
+  
   onSubmit() {
-    if (this.webinarForm.valid) {
-      this.isLoading = true;
-  
-      const webinar: Webinar = new Webinar(
-        this.webinarToUpdateId || '', // Utiliser l'ID si en mode édition
-        this.webinarForm.value.title,
-        this.webinarForm.value.speaker,
-        new Date(this.webinarForm.value.startDateTime),
-        new Date(this.webinarForm.value.endDateTime),
-        this.webinarForm.value.maxParticipants,
-        this.webinarForm.value.isPaid,
-        this.webinarForm.value.type,
-        this.webinarForm.value.description,
-        this.webinarForm.value.speakerPicture_url,
-        this.webinarForm.value.registrationDeadline ? new Date(this.webinarForm.value.registrationDeadline) : undefined,
-        this.webinarForm.value.webinarUrl,
-        this.webinarForm.value.isPaid ? this.webinarForm.value.price : undefined,
-      );
-  
-      console.log('Submitting webinar:', webinar);
-      
-      if (this.webinarToUpdateId) {
-        console.log('Editing webinar with ID:', this.webinarToUpdateId);
-        this.webinarService.editWebinar(this.webinarToUpdateId, webinar).subscribe({
-          next: (response) => {
-            console.log('Webinar updated successfully:', response);
-            this.isLoading = false;
-            this.showDashboard(); // Affiche le tableau de bord après la mise à jour réussie
-          },
-          error: (error) => {
-            console.error('Error updating webinar:', error);
-            this.errorMessage = 'Erreur lors de la mise à jour du webinaire.';
-            this.isLoading = false;
-          }
-        });
-      } else {
-        console.log('Creating new webinar');
-        this.webinarService.createWebinar(webinar).subscribe({
-          next: (response) => {
-            console.log('Webinar created successfully:', response);
-            console.log(webinar);
-            this.isLoading = false;
-            this.showDashboard(); // Affiche le tableau de bord après la création réussie
-          },
-          error: (error) => {
-            console.error('Error creating webinar:', error);
-            this.errorMessage = 'Erreur lors de la création du webinaire.';
-            this.isLoading = false;
-          }
-        });
-      }
-    } else {
-      console.log('Form is invalid');
+    const formData = this.webinarForm.value;
+    
+    // Si le webinaire n'est pas payant, mettre price à null
+    if (!formData.isPaid) {
+      formData.price = 0;
     }
+
+    console.log(formData)
+    
+    // Envoyer formData à l'API
+    this.webinarService.createWebinar(formData).subscribe(response => {
+      console.log('Webinar created successfully', response);
+    }, error => {
+      console.error('Error creating webinar', error);
+    });
   }
-  
+
+
 }

@@ -23,8 +23,8 @@ export class WebinarService {
   }
 
   // Créer un nouveau webinaire
-  createWebinar(webinar: Webinar): Observable<Webinar> {
-    return this.http.post<Webinar>(`${this.apiUrl}/create`, webinar);
+  createWebinar(webinar: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/create/`, webinar);
   }
 
   // Modifier un webinaire existant

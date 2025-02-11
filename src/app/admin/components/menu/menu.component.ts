@@ -41,7 +41,7 @@ export class MenuComponent implements OnDestroy, AfterViewInit {
       icon: 'library_books',
       children: [
         { label: 'Prog. Talent', route: 'formation' },
-        { label: 'Webinaires', route: 'trainings/webinars' },
+        { label: 'Webinaires', route: 'webinaire' },
         { label: 'Cafe des Allies', route: 'trainings/coffee' },
         { label: 'Formations externes', route: 'trainings/externes' }
       ]

@@ -39,6 +39,7 @@ import { ResourceDetailsComponent } from './components/resource-details/resource
 import { LoginComponent } from './components/login/login.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { MenuComponent } from './components/menu/menu.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { MenuComponent } from './components/menu/menu.component';
     ResourceCreateComponent,
     ResourceDetailsComponent,
     ConfirmationDialogComponent,
+    
   ],
   imports: [
 
@@ -84,7 +86,8 @@ import { MenuComponent } from './components/menu/menu.component';
     MatNativeDateModule,
     MatDialogModule,
     MatSnackBarModule,
-    NgxChartsModule
+    NgxChartsModule,
+    MatDividerModule, MatIconModule, ReactiveFormsModule
   ],
   exports: [
     LoginComponent,

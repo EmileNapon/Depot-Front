@@ -17,6 +17,7 @@ export class GestionnaireChapitreComponent implements OnInit {
   __iconDelete__:boolean=false
   __iconVoirChapitre__:boolean= false
   __addChapitre__:boolean=false
+  loading:boolean=false
 
   ondelete():void{
     this.__iconDelete__=!this.__iconDelete__
