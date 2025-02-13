@@ -40,7 +40,6 @@ export class WebinarEnrollComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('////')
     
       // Préparer les données d'inscription sans générer d'ID ici
       const webinarEnrollment:  Omit<any, 'id'> = {
@@ -53,29 +52,21 @@ export class WebinarEnrollComponent implements OnInit {
         paymentStatus: 'free', // Exemples de valeurs par défaut (ajustables selon le cas)
       };
 
-      console.log(webinarEnrollment);
-      
-      // Enregistrer via le service
+      console.log('mmmmmmmmmmmmmmm', webinarEnrollment)
       this.webinarService.enrollToWebinar(webinarEnrollment).subscribe({
         next: (response) => {
           this.snackBar.open('Inscription réussie', 'Fermer', {
-            duration: 3000,
+            duration: 30000,
             verticalPosition: 'top',
             horizontalPosition: 'center',
           });
-          this.router.navigate(['/webinar-list']);
+          this.router.navigate(['/dasbord']);
         },
         error: (err) => {
-          this.snackBar.open('Échec de l\'inscription', 'Fermer', {
-            duration: 3000,
-            verticalPosition: 'top',
-            horizontalPosition: 'center',
-          });
+          this.router.navigate(['/dasbord']);
         }
       });
     }
-    register(_id:number):void{
-      this.router.navigate([`/webinar-enroll/${_id}/incription`]); 
-    }
+
   }
 

@@ -27,12 +27,14 @@ import { OfferModule } from './offer/offer.module';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FormatDatePipe } from './module-formation-certification/a_pipes/datePipe';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AcceuilComponent,PremiumEtudiantComponent, HeaderPrincipaleComponent, HeaderGestionnaireComponent, DasbordEtudiantComponent, FooterComponent
+    AcceuilComponent,PremiumEtudiantComponent, HeaderPrincipaleComponent, HeaderGestionnaireComponent, DasbordEtudiantComponent, FooterComponent,
   ],
   imports: [
     BrowserModule,ReactiveFormsModule,

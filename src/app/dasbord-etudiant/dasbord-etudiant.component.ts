@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../gestion-utilisateurs/connexion/service-connexion/service-connexion.service';
 import { DasbordEtudiantService } from './service-model/dasbord-etudiant.service';
 import { Inscrit } from './service-model/model';
+import { FormatDatePipe } from '../module-formation-certification/a_pipes/datePipe';
 
 
 
@@ -11,7 +12,8 @@ import { Inscrit } from './service-model/model';
     selector: 'app-dasbord-etudiant',
     templateUrl: './dasbord-etudiant.component.html',
     styleUrls: ['./dasbord-etudiant.component.css'],
-    standalone: false
+    standalone: false,
+    
 })
 export class DasbordEtudiantComponent {
 
@@ -26,6 +28,11 @@ export class DasbordEtudiantComponent {
   user!:number
   userInfo: { email: string | null, firstName: string | null, lastName: string | null, profilePic: string | null, id:string | null } | null = null;
   isactive:boolean=false
+  filteredIncritsWebinar:any[]=[]
+  inscritsWebinar:any[]=[]
+  webinars:any[]=[]
+  filteredIninscritsWebinar:any[]=[]
+  filteredWebinar:any[]=[]
 
   constructor(private serviceAuth: AuthService, private DasbordService: DasbordEtudiantService, private router: Router) {}
 
@@ -33,6 +40,7 @@ export class DasbordEtudiantComponent {
     this.userInfo = this.serviceAuth.getUserInfo();
     this.loadInscrits()
     this.loadFormations()
+    this.getWebinar()
     
   }
 
@@ -65,6 +73,35 @@ export class DasbordEtudiantComponent {
     this.router.navigate([`/dasbord/${DasbordFormationId}/dasbord-etudiant`]); 
   }
     
+
+
+  getWebinar(): void {
+    this.DasbordService.getWebinars().subscribe(
+      (data) => { 
+        this.webinars = data;
+        this.getWebinarInscrit();
+      }
+    );
+  }  
+
+
+  getWebinarInscrit(): void {
+    this.DasbordService.getWebinarInscrit().subscribe(
+      (data) => { 
+        this.inscritsWebinar = data;
+        this.filterWebinar()
+      }
+    );
+  }  
+
+
+
+  filterWebinar(): void {
+    
+      this.filteredIncritsWebinar= this.inscritsWebinar.filter(inscrit => inscrit.user ==this.userInfo?.id );
+      this.filteredWebinar= this.webinars.filter(webinar => this.filteredIncritsWebinar.some(inscrit => inscrit.webinarId==webinar.id ));
+      console.log("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv",this.filteredWebinar )
+  }
 
 
 

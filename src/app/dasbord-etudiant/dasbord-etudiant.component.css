@@ -64,3 +64,45 @@
     padding-left: 25px;
   }
   
+
+
+   
+  .webinar-section {
+    background-color: #f8f9fa;
+    padding: 2rem;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .card-img-top {
+    transition: transform 0.3s;
+  }
+  
+  .card-img-top:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+  
+  .card-footer {
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #0056b3, #003f7f);
+  }
+  
+
+
+

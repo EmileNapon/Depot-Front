@@ -42,4 +42,6 @@ export class WebinarService {
     const apiUrlEnrollments = 'http://127.0.0.1:8000/fidalli/webinarEnrollments/enroll';
     return this.http.post<WebinarEnrollment>(apiUrlEnrollments, enrollData);
   }
+
+  
 }

@@ -21,4 +21,46 @@
   </div>
 </div>
 
+<div class='container images-fixed' >
+
+</div>
+
+
+
+<div class="container">
+  <h2 class="mt-5 mb-4">Tous les webinars</h2>
+
+  <!-- Webinar Cards -->
+  <div class="row" >
+    <!-- Webinar 1 -->
+    <div class="col-md-4 mb-4" *ngFor="let webinar of filteredWebinar; let j= index">
+      <div class="card h-100" *ngIf="j<=2">
+        <div class="card-body">
+          
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-primary fw-bold">{{ webinar?.title }}</h5>
+            <p class="card-text text-muted">
+              <strong>Thème :</strong> {{ webinar.description }}
+            </p>
+            <p class="card-text text-muted">
+              <i class="bi bi-calendar3"></i> <strong>Date :</strong> {{ webinar.startDateTime }}
+              <br />
+              <i class="bi bi-clock"></i> <strong>Heure :</strong> {{ webinar.duree }}
+              <br/>
+              <strong>Nombre max :</strong> {{ webinar.maxParticipants }}
+            </p>
+
+
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <app-footer></app-footer>

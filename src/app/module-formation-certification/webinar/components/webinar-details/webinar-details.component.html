@@ -1,127 +1,76 @@
-<app-headerPrincipale></app-headerPrincipale>
-<body >
-  
-<div class="webinar-details" *ngIf="webinar">
-  <div *ngIf="loading" class="loading-spinner">
-    <!-- Tu peux utiliser une animation de type spinner ici -->
-    <p>Chargement en cours...</p>
-  </div>
-   <!-- Afficher la liste des webinaires une fois qu'ils sont chargés -->
-  <div *ngIf="!loading">
-    <!-- <h1>{{ webinar.title }}</h1>
-    <img [src]="webinar.speakerPicture_url" alt="Orateur" />
-    <p><strong>Formateur :</strong> {{ webinar.speaker }}</p>
-    <p><strong>Date :</strong> {{ webinar.startDateTime | date:'short' }}</p>
-    <p><strong>Heure :</strong> {{ webinar.endDateTime | date:'short' }}</p>
-    <p><strong>Description :</strong> {{ webinar.description }}</p>
-    <p><strong>Maximum de participants :</strong> {{ webinar.maxParticipants }}</p>
-    <p><strong>Prix :</strong> {{ webinar.isPaid ? (webinar.price + ' FCFA') : 'Gratuit' }}</p> -->
 
-        
-  <div  style="background-color: #fff;">
-    <div class="container text-center" >
-      <!-- En-tête avec les logos et texte -->
-      <div class="webinar-header d-flex justify-content-between align-items-center ">
-        <!-- Logo de gauche avec texte -->
-        <div class="logo-left-wrapper text-center">
-          <a >
-            <img src="assets/icon.png" alt="FuturAlliés" href='#' class="logo" height="60" >
-          </a>
-          <p class="text-secondary fw-bold m-0">Une initiative de <span class="text-primary">FIDALLI</span></p>
-        </div>
-  
-        <!-- Logo de droite avec "Webinaire" en arrière-plan -->
-        <div class="logo-right-wrapper position-relative text-center">
-          <img src="assets/u.jpg" alt="Logo Droit" class="logo-right mb-2" />
-          <div class="webinaire-background text-light fw-bold position-absolute">
-            WEBINAIRE
-          </div>
-          
-        </div>
-      </div>
-  
-      <!-- Titre principal -->
-      <div >
-        <div class="text-center">
-          <h1 class="webinaire-title">WEBINAIRE N°{{webinarId}}</h1>
-          <p class="webinaire-subtitle">Hebdomadaire</p>
-        </div>
-    </div>
-    <div class="theme-section text-center py-2">
-      <h3>{{webinar.description}}</h3>
-    </div>
-<br/>
-      <div class="date-time-container">
-        
 
-        <div [innerHTML]=" webinar.startDateTime | customDateTime"></div>
-      
-        <!-- Webinaire gratuit -->
-        <div class="webinaire-info">
-          <span class="badge bg-success text-uppercase">
-            <i class="bi bi-play-circle"></i> Webinaire Gratuit
-          </span>
-        </div>
-      </div>
-      
-              <div class="row justify-content-center align-items-center py-2" >
-                <!-- Formateur -->
-                <div  id='display-image' >
-                  <ul class="text-center"  >
-                  <li class="photo-container">
-                    <img src="assets/d.jpg" alt="Formateur" class="photo-rectangle">
-                  </li>
-                  <h4 class="mt-3">Formateur</h4>
-                  <p class="fw-bold">Anthony Nebie</p>
-                  <p>Web Entrepreneur</p>
-                </ul>
-                        <!-- Formateur -->
-                        
-                  <ul  style='padding-left:270px' >
-                  <li class="photo-container">
-                    <img src="assets/d.jpg" alt="Formateur" class="photo-rectangle">
-                  </li>
-                  <h4 class="mt-3">Modératrice</h4>
-                  <p class="fw-bold">Massogolo Latifah Sanogo</p>
-                  <p>Auditrice Comptable et Financière</p>
-                </ul>
-        
-        
-      </div></div>
-      
-      
-  
-      <!-- Liens -->
-      
-      <div class="links d-flex justify-content-center gap-3"  >
-        
-        <a  class="btn btn-danger" target="_blank"  id='btn-custom'> 
-          <i class="bi bi-youtube me-2" ></i> YouTube
-        </a>
-        <a  id='btn-custom' >
-          <i class="bi bi-envelope-at"></i> Email : <strong>infos&#64;fidalli-ec.com</strong>
-        </a>
-        <a
-          target="_blank" 
-           id='btn-custom'
-        >
-          <i class="bi bi-whatsapp me-2"></i> WhatsApp :  <strong>+226 72 77 69 69</strong>
-        </a>
+<body>
 
-      </div>
-    </div>
-  </div>
-  <div class='py-1 text-center'>
-  <button class='btn btn-primary ' (click)='register(webinar._id)'> S'inscrire</button> 
+  <div class="header">
+      <h1>WEBINAIRE N°{{webinarId}}</h1>
+      <button class="btn btn-custom" (click)='register(webinar.id)'>S'inscrire </button>
   </div>
 
+  <div class="content">
+    <h2>
+     Theme: {{webinar?.title}}
+    </h2>
+      <p>
+        {{webinar.description}}
+      </p>
+      <p class="card-text text-muted">
+        <i class="bi bi-calendar3"></i> <strong>Date :</strong> {{ webinar.startDateTime |formatDate}}
+        <br />
+        <i class="bi bi-clock"></i> <strong>Heure :</strong> {{ webinar.duree }}
+        <br/>
+        <strong>Nombre max :</strong> {{ webinar.maxParticipants }}
+      </p>
+
+     
     
+    
+  
+
+<br/>
+
+<div class="d-flex justify-content-center gap-3">
+  <!-- Formateur -->
+  <div class="text-center p-3 bg-light rounded shadow-sm">
+    <p class="overview mb-0">
+      <span class="fw-bold">Formateur:</span>
+      <b>Anthony Nebie</b>, Web Entrepreneur
+    </p>
+  </div>
+
+  <!-- Modérateur -->
+  <div class="text-center p-3 bg-light rounded shadow-sm">
+    <p class="overview mb-0">
+      <span class="fw-bold">Modérateur:</span>
+      <b>Massogolo Latifah Sanogo</b>, Auditrice Comptable et Financière
+    </p>
   </div>
 </div>
-  
+
+<br/>
+<br/>
+<br/>
+
+<div class="links d-flex justify-content-center gap-3"  >
+        
+  <a  class="btn btn-danger" target="_blank"  id='btn-custom'> 
+    <i class="bi bi-youtube me-2" ></i> YouTube
+  </a>
+  <a  id='btn-custom' >
+    <i class="bi bi-envelope-at"></i> Email : <strong>infos&#64;fidalli-ec.com</strong>
+  </a>
+  <a
+    target="_blank" 
+     id='btn-custom'
+  >
+    <i class="bi bi-whatsapp me-2"></i> WhatsApp :  <strong>+226 72 77 69 69</strong>
+  </a>
+
+</div>
+
+</div>
+
+
+
 
 </body>
-
-  
-  
-<app-footer></app-footer>

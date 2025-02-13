@@ -40,7 +40,7 @@ export class WebinarManagementComponent implements OnInit {
       description: ['', [Validators.maxLength(500)]],
       startDateTime: ['', [Validators.required]],
       duree: ['', [Validators.required]],
-      webinarUrl: "https://www.h5motivation.com/boost2025",
+      webinarUrl: [''],
       maxParticipants: [100, [Validators.required, Validators.min(1)]],
       isPaid: [false],
       price: [0, [Validators.min(0)]],
@@ -173,6 +173,8 @@ export class WebinarManagementComponent implements OnInit {
     
     // Envoyer formData à l'API
     this.webinarService.createWebinar(formData).subscribe(response => {
+      this.webinarForm.patchValue({ webinarUrl: response.meet_link });
+      console.log('Webinaire créé avec succès', response);
       console.log('Webinar created successfully', response);
     }, error => {
       console.error('Error creating webinar', error);
