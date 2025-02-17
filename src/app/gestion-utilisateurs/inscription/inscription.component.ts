@@ -21,17 +21,17 @@ export class RegistrationComponent implements OnInit {
       prenom: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      password2: ['', Validators.required],
+      // password2: ['', Validators.required],
       phone_number: ['', Validators.required],
       role: ['', Validators.required]
-    }, this.passwordMatchValidator);
+    });
   }
 
-  passwordMatchValidator(formGroup: FormGroup): { [key: string]: boolean } | null {
-    const password = formGroup.get('password')?.value;
-    const confirmPassword = formGroup.get('confirmPassword')?.value;
-    return password === confirmPassword ? null : { mismatch: true };
-  }
+  // passwordMatchValidator(formGroup: FormGroup): { [key: string]: boolean } | null {
+  //   const password = formGroup.get('password')?.value;
+  //   const confirmPassword = formGroup.get('confirmPassword')?.value;
+  //   return password === confirmPassword ? null : { mismatch: true };
+  // }
 
   onSubmit(): void {
     if (this.registrationForm.valid) {

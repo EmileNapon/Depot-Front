@@ -15,6 +15,8 @@ export class AuthService {
   private userLastName: string | null = null;
   private userProfilePic: string | null = null;
   private userRole: string | null = null; // Ajout de la variable pour le rôle
+  private userIsSuperuser: string | null = null; // Ajout de la variable pour le rôle
+
 
   constructor(private http: HttpClient) {
     const storedEmail = localStorage.getItem('user_email');
@@ -25,6 +27,7 @@ export class AuthService {
       this.userLastName = localStorage.getItem('user_nom');
       this.userProfilePic = localStorage.getItem('user_profile_pic');
       this.userRole = localStorage.getItem('user_role'); // Récupérer le rôle
+      this.userIsSuperuser = localStorage.getItem('user_is_superuser'); // Récupérer le rôle
     }
   }
 
@@ -42,6 +45,7 @@ export class AuthService {
       this.userFirstName = response.prenom; // Prénom
       this.userLastName = response.nom; // Nom
       this.userRole = response.role; // Récupération du rôle
+      this.userIsSuperuser = response.userIsSuperuser; // Récupération du rôle
 
       // Stocker les informations dans le localStorage
       localStorage.setItem('user_id', response.id);
@@ -49,6 +53,7 @@ export class AuthService {
       localStorage.setItem('user_prenom', response.prenom);
       localStorage.setItem('user_nom', response.nom);
       localStorage.setItem('user_role', response.role); // Stocker le rôle
+      localStorage.setItem('user_is_superuser', response.role); // Stocker le rôle
 
       return response; // Retourner la réponse complète
     }));
@@ -63,6 +68,7 @@ export class AuthService {
     localStorage.removeItem('user_prenom');
     localStorage.removeItem('user_nom');
     localStorage.removeItem('user_role'); // Retirer le rôle
+    localStorage.removeItem('user_is_superuser'); // Retirer le rôle
 
     // Réinitialiser les variables d'instance
     this.userId = null;
@@ -71,17 +77,19 @@ export class AuthService {
     this.userLastName = null;
     this.userProfilePic = null;
     this.userRole = null; // Réinitialiser le rôle
+    this.userIsSuperuser = null; // Réinitialiser le rôle
   }
 
   // Méthode pour obtenir les informations de l'utilisateur
-  getUserInfo(): { email: string | null, firstName: string | null, lastName: string | null, profilePic: string | null, id: string | null, role: string | null } {
+  getUserInfo(): { email: string | null, firstName: string | null, lastName: string | null, profilePic: string | null, id: string | null, role: string | null, is_superuser:string |null } {
     return {
       id: this.userId,
       email: this.userEmail,
       firstName: this.userFirstName,
       lastName: this.userLastName,
       profilePic: this.userProfilePic,
-      role: this.userRole // Ajouter le rôle
+      role: this.userRole, // Ajouter le rôle,
+      is_superuser: this.userIsSuperuser
     };
   }
 }

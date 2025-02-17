@@ -6,7 +6,7 @@
   <thead class="thead-dark">
     <tr>
       <th>#</th>
-      <th>Nom Complet</th>
+      <th>Name</th>
       <th>Email</th>
       <th>Téléphone</th>
       <th>Action</th>
@@ -16,6 +16,13 @@
     <!-- Boucle Angular pour itérer sur la liste des étudiants -->
     <tr *ngFor="let encadrant of encadrants; let i = index">
       <td>{{ i + 1 }}</td> <!-- Index de l'étudiant dans la liste -->
+      <td>
+        <div class="user-icon">
+          <img src="assets/IA.jpg" alt="{{ encadrant.nom }}" style="width: 100%; height: auto;">
+        </div>
+      </td>
+
+      
       <td>{{ encadrant.nom }} {{ encadrant.prenom }}</td>
       <td>{{ encadrant.email }}</td>
       <td>{{ encadrant.phone_number }}</td>
@@ -32,3 +39,5 @@
 <button class="floating-button" routerLink='/admin/ajout-encadrant'>
   + 
 </button>
+
+

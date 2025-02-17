@@ -29,6 +29,7 @@ import { CreationFormateurComponent } from '../gestionnaire/creation-formateur/c
 import { EncadrantComponent } from '../gestionnaire/programme-talent/encadrant/encadrant.component';
 import { ListFormateurComponent } from '../gestionnaire/formateur/list-formateur/list-formateur.component';
 import { WebinarManagementComponent } from '../module-formation-certification/webinar/components/webinar-management/webinar-management.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 const routes: Routes = [

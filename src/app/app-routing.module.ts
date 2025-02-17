@@ -94,7 +94,7 @@ const routes: Routes = [
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
 
-  { path: 'login', component: LoginComponent },
+  { path: 'admin-login', component: LoginComponent },
 
   { path: 'webinar-list', component: WebinarListComponent },
   { path: 'webinar-details/:id/detail', component: WebinarDetailsComponent },

@@ -27,21 +27,56 @@ export class AjoutEncadrantComponent implements OnInit{
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
       phone_number: ['', Validators.required],
-      role:'formateur'
+      image: ['', Validators.required],
+      specialite:['', Validators.required],
+      fonction:['', Validators.required],
+      role:'formateur', 
     },);
   }
 
+
+  imageUrl: string | ArrayBuffer | null = null;  // Cette variable va contenir l'URL de l'image.
+
+  // // Fonction pour traiter le fichier image sélectionné
+  // onImageSelected(event: any): void {
+  //   const file = event.target.files[0];  // Récupérer le premier fichier
+  //   if (file) {
+  //     const reader = new FileReader();
+  //     reader.onload = () => {
+  //       this.imageUrl = reader.result;  // Charger l'image en base64
+  //     };
+  //     reader.readAsDataURL(file);  // Lire l'image comme URL en base64
+  //   }
+  // }
+
+  selectedFile: File | null = null;
+
+
+
+  onFileChange(event: any) {
+    this.selectedFile = event.target.files[0]; // Sélectionner le premier fichier
+    this.registrationForm.patchValue({
+      file: this.selectedFile,                // Mettre à jour le formulaire avec le fichier sélectionné
+    });
+  }
   onSubmit(): void {
+
     const User={nom:this.registrationForm.value.nom,
                 prenom:this.registrationForm.value.prenom, 
-                password: this.registrationForm.value.password,
-                password2: this.registrationForm.value.password,
                 email: this.registrationForm.value.email,
                 phone_number: this.registrationForm.value.phone_number,
-                role : this.registrationForm.value.role}
-    console.log(User)
+                password: this.registrationForm.value.phone_number,
+                role : this.registrationForm.value.role,
+                specialite:this.registrationForm.value.specialite,
+                fonction: this.registrationForm.value.fonction,
+                profile_pic:this.selectedFile
+              }
+    console.log(User,'//////////////////')
+   
+
+
+
     if (this.registrationForm.valid) {
       this.utilisateurService.createUser(User).subscribe({
         next: () => {

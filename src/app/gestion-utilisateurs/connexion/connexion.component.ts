@@ -43,19 +43,23 @@ export class ConnexionComponent implements OnInit {
         // Stocker les informations utilisateur (nom, prénom, etc.)
         localStorage.setItem('user_first_name', response.firstName);
         localStorage.setItem('user_last_name', response.lastName);
-      console.log(response.role)
+         console.log("gggggggggggggg",response.role,"mmm", response.is_superuser)
         // Rediriger en fonction du rôle de l'utilisateur
         if (response.role === 'apprenant') {
           this.router.navigate(['/acceuil']);
-        } else if (response.role === 'employeur') {
+        } 
+        else if (response.role === 'employeur') {
           this.router.navigate(['/EmployeurPage']);
-        }else if (response.role === 'formateur') {
+        }
+        else if (response.role === 'formateur') {
           this.router.navigate(['/gestionnaire/formateur-dashboard']);
         }
-        
-         else {
-          this.router.navigate(['/acceuil']);
+        else if (response.role === 'admin' && Boolean(response.is_superuser) === true) {
+          console.log('L\'utilisateur est un admin superutilisateur');
+          this.router.navigate(['/admin/dashboard']);
         }
+        
+
       },
       error: (error) => {
         console.error('Error logging in:', error);
