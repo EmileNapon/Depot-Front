@@ -32,11 +32,12 @@ export class AjoutEncadrantComponent implements OnInit{
       specialite:['', Validators.required],
       fonction:['', Validators.required],
       role:'formateur', 
-    },);
+      profile_pic:[null],
+    });
   }
 
-
-  imageUrl: string | ArrayBuffer | null = null;  // Cette variable va contenir l'URL de l'image.
+cool:string='jjjjjjjjjjj'
+  // imageUrl: string | ArrayBuffer | null = null;  // Cette variable va contenir l'URL de l'image.
 
   // // Fonction pour traiter le fichier image sélectionné
   // onImageSelected(event: any): void {
@@ -53,43 +54,35 @@ export class AjoutEncadrantComponent implements OnInit{
   selectedFile: File | null = null;
 
 
-
-  onFileChange(event: any) {
-    this.selectedFile = event.target.files[0]; // Sélectionner le premier fichier
-    this.registrationForm.patchValue({
-      file: this.selectedFile,                // Mettre à jour le formulaire avec le fichier sélectionné
-    });
-  }
-  onSubmit(): void {
-
-    const User={nom:this.registrationForm.value.nom,
-                prenom:this.registrationForm.value.prenom, 
-                email: this.registrationForm.value.email,
-                phone_number: this.registrationForm.value.phone_number,
-                password: this.registrationForm.value.phone_number,
-                role : this.registrationForm.value.role,
-                specialite:this.registrationForm.value.specialite,
-                fonction: this.registrationForm.value.fonction,
-                profile_pic:this.selectedFile
-              }
-    console.log(User,'//////////////////')
-   
-
-
-
-    if (this.registrationForm.valid) {
-      this.utilisateurService.createUser(User).subscribe({
-        next: () => {
-          this.router.navigate(['/admin/formateur']);
-        },
-        error: (err) => {
-          console.error('Erreur lors de la création de l\'encadrant:', err);
-          // Vous pouvez également afficher un message d'erreur à l'utilisateur ici.
-        }
-      });
+  onFileSelected(event: any) {
+    if (event.target.files.length > 0) {
+      this.selectedFile = event.target.files[0];
     }
   }
 
 
+  onSubmit(): void {
+                const formData = new FormData();
 
-}
+                formData.append('email', this.registrationForm.value.email);
+                formData.append('nom', this.registrationForm.value.nom);
+                formData.append('prenom', this.registrationForm.value.prenom);
+                formData.append('phone_number', this.registrationForm.value.phone_number);
+                formData.append('password', this.registrationForm.value.phone_number);
+                formData.append('role', this.registrationForm.value.role);
+                formData.append('fonction', this.registrationForm.value.fonction);
+                formData.append('specialite', this.registrationForm.value.specialite);
+                // Ajouter l'image si elle est sélectionnée
+                if (this.selectedFile) {
+                  formData.append('profile_pic', this.selectedFile, this.selectedFile.name);
+                }
+
+                formData.forEach((value, key) => {
+                  console.log(`${key}: ${value}`);
+                });
+                this.utilisateurService.createUser(formData).subscribe((response) => {
+                  console.log('Utilisateur enregistré avec succès', response);
+                });     
+            }
+  }
+

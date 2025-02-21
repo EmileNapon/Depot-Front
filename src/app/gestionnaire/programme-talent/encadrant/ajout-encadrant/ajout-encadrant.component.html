@@ -48,10 +48,8 @@
             </div>
             
 
-
-            <label for="file">Image:</label>
-            <input type="file" id="file" (change)="onFileChange($event)" accept="image/*" required />
-          
+            <input type="file" (change)="onFileSelected($event)">
+          <br/>
             <!-- Boutons -->
             <div class="d-flex justify-content-between">
               <button type="submit" class="btn btn-primary">Ajouter</button>
