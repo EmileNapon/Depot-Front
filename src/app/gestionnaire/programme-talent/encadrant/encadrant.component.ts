@@ -11,7 +11,7 @@ import { UtilisateurService } from '../services/utilisateur.service';
 export class EncadrantComponent implements OnInit {
 
   encadrants: CustomUser[] = [];
-
+  public baseUrl = 'http://127.0.0.1:8000';
   constructor(private utilisateurService: UtilisateurService) { }
   
 
@@ -22,6 +22,7 @@ export class EncadrantComponent implements OnInit {
   loadEncadrants(): void {
     this.utilisateurService.getFormateurs().subscribe((data) => {
       this.encadrants = data;
+      console.log('ppppp',this.encadrants)
     });
   }
 

@@ -71,9 +71,6 @@ const routes: Routes = [
       {path:'create/:id_joutFormation/:seanceId/seance', component : AjoutSeanceComponent},
       {path:'create-formateur', component:CreationFormateurComponent},
 
-
-
-
       {path:'webinaire', component:WebinarManagementComponent},
       
     ]

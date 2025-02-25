@@ -27,8 +27,8 @@
             <td>{{ webinar.startDateTime | date: 'short' }}</td>
             <td>{{ webinar.maxParticipants }}</td>
             <td>
-              <button (click)="editWebinar(webinar._id)">Modifier</button>
-              <button (click)="deleteWebinar(webinar._id)">Supprimer</button>
+              <button (click)="editWebinar(webinar.id)">Modifier</button>
+              <button (click)="deleteWebinar(webinar.id)">Supprimer</button>
             </td>
           </tr>
         </tbody>
@@ -39,7 +39,7 @@
       <h1>Créer un Webinaire</h1>
       <form [formGroup]="webinarForm" (ngSubmit)="onSubmit()">
         <!-- Informations générales -->
-        <fieldset >
+        <fieldset *ngIf='isTitleDesc' >
           <legend>Informations générales</legend>
           <div class="form-group">
             <label for="title">Titre du Webinaire</label>
@@ -48,7 +48,7 @@
               <small class="error">Le titre est requis et ne doit pas dépasser 100 caractères.</small>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" >
             <label for="description">Description</label>
             <textarea id="description" formControlName="description" placeholder="Description du webinaire"></textarea>
             <div *ngIf="webinarForm.get('description')?.invalid && webinarForm.get('description')?.touched">
@@ -56,12 +56,11 @@
             </div>
           </div>
         </fieldset>
-        
-
-
-
+        <div class="form-actions"  *ngIf='isTitleDesc'>
+          <button (click)='continuer1()' >Continuer</button>
+        </div>
         <!-- Dates et horaires -->
-        <fieldset>
+        <fieldset *ngIf='isStartDuree'>
           <legend>Dates et horaires</legend>
           <div class="form-group">
             <label for="startDateTime">Date et heure de début</label>
@@ -78,13 +77,14 @@
             </div>
           </div>
         </fieldset>
-
-
+        <div class="form-actions" *ngIf='isStartDuree' >
+          <button (click)='continuer2()' >Continuer</button>
+        </div>
 
 
         <!-- Options supplémentaires -->
         
-        <fieldset>
+        <fieldset *ngIf='isUrlMax'>
           <legend>Options supplémentaires</legend>
           <div class="form-group">
             <label for="maxParticipants">Nombre maximum de participants</label>
@@ -109,40 +109,36 @@
             </select>
           </div>
         </fieldset>
-  
+        <div class="form-actions" *ngIf='isUrlMax' >
+          <button (click)='continuer3()' >Continuer</button>
+        </div>
 
 
-<!--
+
      
-        <fieldset>
+        <fieldset *ngIf='isConfMode'>
           <legend>Détails du conférencier</legend>
           <div class="form-group">
-            <label for="speaker">Conférencier</label>
-            <input id="conferencier" formControlName="conferencier" type="text" placeholder="Nom du conférencier" />
+            <label for="contractor">Conférencier</label>
+              <select id="contractor" formControlName="contractor" class="form-control">
+                <option *ngFor="let conf of encadrantsFiltres" [value]="conf.id">
+                  {{ conf.nom}} - {{ conf.prenom}}
+                </option>
+              </select>
           </div>
           <div class="form-group">
-            <label for="conferencierPicture_url">URL de la photo du conférencier</label>
-            <input id="conferencierPicture_url" formControlName="conferencierPicture_url" type="url" placeholder="URL de la photo" />
+            <label for="moderateurs">Conférencier</label>
+              <select id="moderateurs" formControlName="moderateurs" class="form-control">
+                <option *ngFor="let mod of encadrantsFiltres" [value]="mod.id">
+                  {{ mod.nom}} - {{ mod.prenom}}
+                </option>
+              </select>
           </div>
+         
         </fieldset>
 
-
-
-        <fieldset >
-  
-          <div class="form-group">
-            <label for="moderateur">Moderateur</label>
-            <input id="moderateur" formControlName="moderateur" type="text" placeholder="Nom du moderateur" />
-          </div>
-          <div class="form-group">
-            <label for="speakerPicture_url">URL de la photo du moderateur</label>
-            <input id="moderateurPicture_url" formControlName="moderateurPicture_url" type="url" placeholder="URL de la photo" />
-          </div>
-        </fieldset>
-      -->
-        <!-- Actions -->
-        <div class="form-actions" >
-          <button type="submit" [disabled]="webinarForm.invalid">Créer le Webinaire</button>
+        <div class="form-actions"  *ngIf='isVisible'>
+          <button type="submit" [disabled]="webinarForm.invalid">Terminer</button>
         </div>
       </form>
     </div>

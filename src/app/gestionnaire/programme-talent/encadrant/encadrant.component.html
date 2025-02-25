@@ -13,17 +13,16 @@
     </tr>
   </thead>
   <tbody>
-    <!-- Boucle Angular pour itérer sur la liste des étudiants -->
+
     <tr *ngFor="let encadrant of encadrants; let i = index">
-      <td>{{ i + 1 }}</td> <!-- Index de l'étudiant dans la liste -->
+      <td>{{ i + 1 }}</td>
       <td>
         <div class="user-icon">
-          <img src="assets/IA.jpg" alt="{{ encadrant.nom }}" style="width: 100%; height: auto;">
+          <img [src]="baseUrl + encadrant.profile_pic" [alt]="encadrant.nom + ' ' + encadrant.prenom" style="width: 100%; height: auto;">
         </div>
       </td>
-
+    
       
-      <td>{{ encadrant.nom }} {{ encadrant.prenom }}</td>
       <td>{{ encadrant.email }}</td>
       <td>{{ encadrant.phone_number }}</td>
       <td>

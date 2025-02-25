@@ -8,7 +8,6 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
   private apiUrl = 'http://127.0.0.1:8000/fidalli'; // Base URL de votre API
-
   private userId: string | null = null;
   private userEmail: string | null = null;
   private userFirstName: string | null = null;
@@ -16,6 +15,7 @@ export class AuthService {
   private userProfilePic: string | null = null;
   private userRole: string | null = null; // Ajout de la variable pour le rôle
   private userIsSuperuser: string | null = null; // Ajout de la variable pour le rôle
+
 
 
   constructor(private http: HttpClient) {
@@ -28,10 +28,10 @@ export class AuthService {
       this.userProfilePic = localStorage.getItem('user_profile_pic');
       this.userRole = localStorage.getItem('user_role'); // Récupérer le rôle
       this.userIsSuperuser = localStorage.getItem('user_is_superuser'); // Récupérer le rôle
+
+     
     }
   }
-
-  // Méthode de connexion
   login(email: string, password: string): Observable<any> {
     const url = `${this.apiUrl}/login/`;
     const body = { email, password };
@@ -47,6 +47,8 @@ export class AuthService {
       this.userRole = response.role; // Récupération du rôle
       this.userIsSuperuser = response.userIsSuperuser; // Récupération du rôle
 
+
+
       // Stocker les informations dans le localStorage
       localStorage.setItem('user_id', response.id);
       localStorage.setItem('user_email', response.email);
@@ -54,6 +56,7 @@ export class AuthService {
       localStorage.setItem('user_nom', response.nom);
       localStorage.setItem('user_role', response.role); // Stocker le rôle
       localStorage.setItem('user_is_superuser', response.role); // Stocker le rôle
+
 
       return response; // Retourner la réponse complète
     }));
@@ -70,6 +73,8 @@ export class AuthService {
     localStorage.removeItem('user_role'); // Retirer le rôle
     localStorage.removeItem('user_is_superuser'); // Retirer le rôle
 
+
+
     // Réinitialiser les variables d'instance
     this.userId = null;
     this.userEmail = null;
@@ -78,6 +83,8 @@ export class AuthService {
     this.userProfilePic = null;
     this.userRole = null; // Réinitialiser le rôle
     this.userIsSuperuser = null; // Réinitialiser le rôle
+
+
   }
 
   // Méthode pour obtenir les informations de l'utilisateur

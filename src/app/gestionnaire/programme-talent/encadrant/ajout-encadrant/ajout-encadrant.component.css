@@ -20,6 +20,11 @@
 	opacity: 0.7;
   }
   
+  .error {
+	color: #e53e3e;
+	font-size: 0.9em;
+	margin-top: 5px;
+  }
 
 	  .header-bar {
 		background-color: #9b59b6; /* Couleur violette */

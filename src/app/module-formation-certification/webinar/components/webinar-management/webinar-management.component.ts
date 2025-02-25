@@ -1,8 +1,11 @@
+
+import { CustomUser } from './../../../prog-talent/models/tousModel';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { WebinarService } from '../../services/webinar.service';
 import { Webinar } from '../../models/webinar.model';
-import { Router } from '@angular/router';
+import { Router, TitleStrategy } from '@angular/router';
+import { UtilisateurService } from 'src/app/gestionnaire/formateur/services/utilisateur.service';
 
 @Component({
     selector: 'app-create-webinar',
@@ -28,12 +31,13 @@ export class WebinarManagementComponent implements OnInit {
   isLoading = false;
   errorMessage = '';
   isLoggedIn: any;
-
-
+  encadrants: CustomUser[] = [];
+  encadrantsFiltres: CustomUser[] = [];
   constructor(
     private fb: FormBuilder,
     private webinarService: WebinarService,
     private router: Router,
+    private utilisateurService: UtilisateurService
   ) {
     this.webinarForm = this.fb.group({
       title: ['', [Validators.required, Validators.maxLength(200)]],
@@ -45,6 +49,8 @@ export class WebinarManagementComponent implements OnInit {
       isPaid: [false],
       price: [0, [Validators.min(0)]],
       type: ['FuturAllies', [Validators.required]],
+      contractor:['', [Validators.required]],
+      moderateurs:['', [Validators.required]],
     });
   }
 
@@ -52,11 +58,6 @@ export class WebinarManagementComponent implements OnInit {
     return JSON.stringify(this.webinarForm.value, null, 2);  // Indentation de 2 espaces pour rendre plus lisible
   }
 
-      // conferencier: ['', [Validators.required]],
-      // conferencierPicture_url: [''],
-      // moderateur: ['', [Validators.required]],
-      // moderateurPicture_url: [''],
-       // registrationDeadline: [''],
 
   onPaidChange(): void {
     const isPaid = this.webinarForm.get('isPaid')?.value;
@@ -72,6 +73,7 @@ export class WebinarManagementComponent implements OnInit {
 
   ngOnInit() {
     this.loadWebinars(); // Charger la liste des webinaires au démarrage
+    this.loadEncadrants()
   }
 
   loadWebinars() {
@@ -83,6 +85,17 @@ export class WebinarManagementComponent implements OnInit {
         console.error('Error loading webinars:', error);
       }
     });
+  }
+
+  loadEncadrants(): void {
+    this.utilisateurService.getFormateurs().subscribe((data) => {
+      this.encadrants = data;
+      this.filDataEncadrant()
+    });
+  }
+  filDataEncadrant(){
+  
+  this.encadrantsFiltres=this.encadrants.filter(user=>user.role=='formateur')
   }
 
   showCreateWebinar() {
@@ -123,44 +136,7 @@ export class WebinarManagementComponent implements OnInit {
     });
   }
 
-  // onSubmit() {
-  //   if (this.webinarForm.valid) {
-  //     this.isLoading = true;
-  //       console.log("lilililililililili",this.webinarForm.value)
-  //     if (this.webinarToUpdateId) {
-  //       console.log('Editing webinar with ID:', this.webinarToUpdateId);
-  //       this.webinarService.editWebinar(this.webinarToUpdateId,this.webinarForm.value).subscribe({
-  //         next: (response) => {
-  //           console.log('Webinar updated successfully:', response);
-  //           this.isLoading = false;
-  //           this.showDashboard(); // Affiche le tableau de bord après la mise à jour réussie
-  //         },
-  //         error: (error) => {
-  //           console.error('Error updating webinar:', error);
-  //           this.errorMessage = 'Erreur lors de la mise à jour du webinaire.';
-  //           this.isLoading = false;
-  //         }
-  //       });
-  //     } else {
-  //       console.log('Creating new webinar');
-  //       this.webinarService.createWebinar(this.webinarForm.value).subscribe({
-  //         next: (response) => {
-  //           console.log('Webinar created successfully:', response);
-  //           this.isLoading = false;
-  //           this.showDashboard(); // Affiche le tableau de bord après la création réussie
-  //         },
-  //         error: (error) => {
-  //           console.error('Error creating webinar:', error);
-  //           this.errorMessage = 'Erreur lors de la création du webinaire.';
-  //           this.isLoading = false;
-  //         }
-  //       });
-  //     }
-  //   } else {
-  //     console.log('Form is invalid');
-  //   }
-  // }
-  
+ 
   onSubmit() {
     const formData = this.webinarForm.value;
     
@@ -169,17 +145,44 @@ export class WebinarManagementComponent implements OnInit {
       formData.price = 0;
     }
 
-    console.log(formData)
+    console.log('oooooooooooo',formData)
     
     // Envoyer formData à l'API
     this.webinarService.createWebinar(formData).subscribe(response => {
-      this.webinarForm.patchValue({ webinarUrl: response.meet_link });
+      // this.webinarForm.patchValue({ webinarUrl: response.meet_link });
       console.log('Webinaire créé avec succès', response);
-      console.log('Webinar created successfully', response);
+      this.webinarForm.reset();
     }, error => {
       console.error('Error creating webinar', error);
     });
   }
+
+
+
+isTitleDesc:boolean=true
+isStartDuree:boolean=false
+isUrlMax:boolean=false
+isConfMode:boolean=false
+isVisible: boolean=false
+
+
+continuer1(){
+  this.isTitleDesc=false
+  this.isStartDuree=true
+
+}
+
+continuer2(){
+  this.isStartDuree=false
+  this.isUrlMax=true
+}
+
+continuer3(){
+  this.isUrlMax=false
+  this.isConfMode=true
+  this.isVisible=true
+}
+
 
 
 }
